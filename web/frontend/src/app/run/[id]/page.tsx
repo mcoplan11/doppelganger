@@ -109,7 +109,7 @@ export default function RunDetail() {
           </div>
 
           {run.error && (
-            <div className="mt-4 bg-red-900/30 border border-red-800 rounded-lg px-4 py-3 text-red-300 text-sm">
+            <div className="mt-4 bg-red-900/30 border border-red-800 rounded-lg px-4 py-3 text-red-300 text-sm whitespace-pre-line leading-relaxed">
               {run.error}
             </div>
           )}
