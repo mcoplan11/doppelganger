@@ -13,8 +13,8 @@ from qualtrics_client import QualtricsClient, Question, SessionBlock, SurveyDefi
 
 
 # Default cross-persona-batch threshold: above this, run_many switches to the
-# Gemini Batch API (50% cost). Below, sync round-trips (fast for smoke tests).
-DEFAULT_BATCH_THRESHOLD = 20
+# Gemini Batch API (50% cost). Set to 1 so any multi-session run uses batch.
+DEFAULT_BATCH_THRESHOLD = 1
 
 
 _NUMERIC_HINTS = (

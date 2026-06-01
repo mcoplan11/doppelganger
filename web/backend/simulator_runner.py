@@ -56,6 +56,41 @@ def _deduct_credits(user_id: int, amount: int) -> None:
         db.close()
 
 
+def _friendly_error(exc: Exception, datacenter: str) -> str:
+    """Translate known infrastructure errors into actionable user guidance.
+
+    Raw API errors like 'probe failed unexpectedly: 404 ... SVY_1.2 NotFound'
+    are useless to a non-technical researcher. Catch the ones we've actually
+    seen in production and rewrite them with a concrete next step.
+    """
+    text = str(exc)
+    if "probe failed unexpectedly: 404" in text or "SVY_1.2" in text:
+        return (
+            "Qualtrics couldn't find the AI survey copy we just created. "
+            "This usually means your Qualtrics account has accumulated too many "
+            "survey copies from prior runs.\n\n"
+            "How to fix:\n"
+            f"1. Open https://{datacenter}.qualtrics.com/responses/#/surveys\n"
+            "2. Find any surveys whose name ends with '- AI Copy' (these are "
+            "leftover from your previous Doppelganger runs and contain no real data)\n"
+            "3. Delete them, then start a new run here."
+        )
+    if "503 UNAVAILABLE" in text and ("high demand" in text or "experiencing high demand" in text):
+        return (
+            "Gemini's servers are overloaded right now ('high demand'). "
+            "This is upstream — nothing's wrong with your setup. "
+            "Wait a few minutes and try again."
+        )
+    if "401" in text and "qualtrics" in text.lower():
+        return (
+            "Qualtrics rejected your API token (401 Unauthorized). "
+            "Double-check the token from Qualtrics → Account Settings → "
+            "Qualtrics IDs → API Token, and confirm the datacenter matches "
+            "(e.g. 'yul1' for yul1.qualtrics.com)."
+        )
+    return text[:2000]
+
+
 def _convert_survey(survey_id: str, base_url: str, token: str) -> str:
     """Mirror of convert_to_ai.main() as a callable. Returns the new AI-ready survey ID."""
     from convert_to_ai import (
@@ -107,7 +142,7 @@ def run_simulation(run_id: int) -> None:
     except Exception as exc:
         _set_status(
             run_id, "failed",
-            error=str(exc)[:2000],
+            error=_friendly_error(exc, qualtrics_datacenter),
             completed_at=datetime.now(timezone.utc),
         )
 
@@ -141,9 +176,6 @@ def _run_inner(
     output_dir = Path(SIMULATOR_ROOT) / "responses" / f"web_run_{run_id}"
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Smoke tests force sync mode for fast feedback; real runs let run_many auto-pick.
-    use_batch = False if is_smoke else None
-
     runs = run_many(
         qualtrics=qualtrics,
         gemini=gemini,
@@ -151,7 +183,6 @@ def _run_inner(
         personas=persona_pool,
         runs_per_persona=1,
         out_dir=output_dir,
-        use_batch=use_batch,
     )
 
     completed = [r for r in runs if r.completed]

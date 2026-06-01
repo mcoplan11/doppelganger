@@ -118,11 +118,28 @@ class GeminiClient:
         results: dict[str, dict[str, Any] | None] = {}
         inline_requests = [_build_inline_request(inp, self._temperature) for inp in to_send]
 
-        job = self._client.batches.create(
-            model=self._model,
-            src=inline_requests,
-            config={"display_name": f"sim-batch-{int(time.time())}"},
-        )
+        last_exc: Exception | None = None
+        for attempt in range(4):
+            if attempt:
+                wait = min(60, 10 * 2 ** (attempt - 1))
+                print(f"  503 on batch create, retrying in {wait}s (attempt {attempt + 1}/4)...",
+                      flush=True)
+                time.sleep(wait)
+            try:
+                job = self._client.batches.create(
+                    model=self._model,
+                    src=inline_requests,
+                    config={"display_name": f"sim-batch-{int(time.time())}"},
+                )
+                break
+            except Exception as exc:
+                msg = str(exc)
+                if "503" in msg or "UNAVAILABLE" in msg:
+                    last_exc = exc
+                    continue
+                raise
+        else:
+            raise last_exc  # type: ignore[misc]
         job_name = job.name
         if on_progress:
             on_progress(f"submitted {label}batch {job_name} with {len(to_send)} requests")
