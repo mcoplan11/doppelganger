@@ -14,3 +14,4 @@ python-multipart==0.0.20      # form data
 google-genai==1.14.0          # Gemini (same as simulator)
 requests==2.32.3
 truststore==0.9.2
+psycopg2-binary==2.9.10
