@@ -21,9 +21,15 @@ from simulator_runner import run_simulation
 
 app = FastAPI(title="Doppelganger API", version="1.0.0")
 
+_allowed_origins = list({
+    settings.frontend_url,
+    "http://localhost:3000",
+    "https://doppelganger-two.vercel.app",
+})
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[settings.frontend_url, "http://localhost:3000"],
+    allow_origins=_allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
