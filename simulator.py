@@ -5,7 +5,7 @@ import re
 import sys
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 from gemini_client import BatchInput, GeminiClient, is_answerable
 from personas import Persona
@@ -122,12 +122,16 @@ def run_many(
     out_dir: "Path | None" = None,
     use_batch: bool | None = None,
     batch_threshold: int = DEFAULT_BATCH_THRESHOLD,
+    on_progress: "Callable[[int], None] | None" = None,
 ) -> list[SessionRun]:
     """Run each persona through the survey N times.
 
     Default (`use_batch=None`): auto-detect. Switches to the Gemini Batch API
     (50% cost discount) when total sessions > batch_threshold; uses per-persona
     sync calls otherwise. Pass use_batch=True/False to override explicitly.
+
+    `on_progress(n)` is called after each batch round with the cumulative count
+    of completed sessions so the caller can report live progress.
     """
     total_sessions = len(personas) * runs_per_persona
     if use_batch is None:
@@ -137,7 +141,9 @@ def run_many(
         print(f"Using Gemini Batch API "
               f"({total_sessions} sessions > threshold {batch_threshold} = batch mode).",
               flush=True)
-        return _run_many_batched(qualtrics, gemini, survey, personas, runs_per_persona, out_dir)
+        return _run_many_batched(
+            qualtrics, gemini, survey, personas, runs_per_persona, out_dir, on_progress,
+        )
     return _run_many_sync(qualtrics, gemini, survey, personas, runs_per_persona, out_dir)
 
 
@@ -201,6 +207,7 @@ def _run_many_batched(
     personas: list[Persona],
     runs_per_persona: int,
     out_dir: "Path | None",
+    on_progress: "Callable[[int], None] | None" = None,
 ) -> list[SessionRun]:
     """Cross-persona batched runner.
 
@@ -376,6 +383,9 @@ def _run_many_batched(
                 s.run.completed = True
                 _save_run(out_dir, s.idx, s.run)
                 print(f"  ✓ {s.persona.name}: completed", flush=True)
+
+        if on_progress:
+            on_progress(sum(1 for s in states if s.run.completed))
 
         # NOTE: we intentionally do NOT save in-progress sessions mid-batch.
         # Doing so creates duplicate `_failed` files that get superseded by

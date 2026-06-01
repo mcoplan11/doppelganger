@@ -98,6 +98,21 @@ export default function RunDetail() {
             {isActive && <span className="ml-1 animate-pulse">Auto-refreshing…</span>}
           </div>
 
+          {run.status === "running" && (
+            <div className="mb-4">
+              <div className="flex justify-between text-xs text-gray-400 mb-1">
+                <span>{run.credits_used} of {run.n_participants} completed</span>
+                <span>{run.n_participants - run.credits_used} remaining</span>
+              </div>
+              <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-blue-500 rounded-full transition-all duration-500"
+                  style={{ width: run.n_participants > 0 ? `${(run.credits_used / run.n_participants) * 100}%` : "0%" }}
+                />
+              </div>
+            </div>
+          )}
+
           <div className="grid grid-cols-2 gap-4 text-sm">
             <Stat label="Participants" value={run.n_participants.toString()} />
             <Stat label="Credits used" value={run.credits_used.toString()} />

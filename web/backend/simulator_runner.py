@@ -176,6 +176,9 @@ def _run_inner(
     output_dir = Path(SIMULATOR_ROOT) / "responses" / f"web_run_{run_id}"
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    def _on_progress(completed: int) -> None:
+        _set_status(run_id, "running", credits_used=completed)
+
     runs = run_many(
         qualtrics=qualtrics,
         gemini=gemini,
@@ -183,6 +186,7 @@ def _run_inner(
         personas=persona_pool,
         runs_per_persona=1,
         out_dir=output_dir,
+        on_progress=_on_progress,
     )
 
     completed = [r for r in runs if r.completed]
