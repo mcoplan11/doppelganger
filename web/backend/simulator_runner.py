@@ -126,7 +126,7 @@ def _run_inner(
     from qualtrics_client import QualtricsClient
     from simulator import run_many
 
-    base_url = f"https://{qualtrics_datacenter}.qualtrics.com"
+    base_url = f"https://{qualtrics_datacenter}.qualtrics.com/API/v3"
 
     _set_status(run_id, "converting")
     ai_survey_id = _convert_survey(original_survey_id, base_url, qualtrics_token)
