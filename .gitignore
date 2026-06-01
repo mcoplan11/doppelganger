@@ -1,5 +1,6 @@
-# Research data — never commit
-responses/
+# Research data — never commit (synthetic personas file is the lone exception)
+responses/*
+!responses/generated_personas.json
 
 # Environment files — never commit
 .env
