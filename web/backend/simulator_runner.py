@@ -171,6 +171,18 @@ def _run_inner(
     if credits_used > 0 and not is_smoke:
         _deduct_credits(user_id, credits_used)
 
+    # When sessions fail, surface the actual per-session errors so the
+    # dashboard shows something diagnosable instead of just a count.
+    error_msg = None
+    if failed_count:
+        sample_errors = [
+            f"[{r.persona.name}] {r.error}"
+            for r in runs if not r.completed and r.error
+        ][:3]
+        error_msg = f"{failed_count}/{len(runs)} sessions failed. " + (
+            " | ".join(sample_errors) if sample_errors else "no error detail captured"
+        )
+
     final_status = "done" if credits_used > 0 else "failed"
     _set_status(
         run_id, final_status,
@@ -178,5 +190,5 @@ def _run_inner(
         result_path=result_index_path,
         branch_summary=json.dumps(dict(branch_counts)),
         completed_at=datetime.now(timezone.utc),
-        error=f"{failed_count} sessions failed" if failed_count else None,
+        error=error_msg,
     )
