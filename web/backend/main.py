@@ -66,14 +66,18 @@ def request_magic_link(body: MagicLinkRequest, db: Session = Depends(get_db)):
 
 
 @app.get("/auth/verify")
-def verify_magic_link(token: str, response: Response, db: Session = Depends(get_db)):
+def verify_magic_link(token: str, db: Session = Depends(get_db)):
     """Validate token, set session cookie, redirect to dashboard."""
     email = verify_magic_token(token)
     user = db.query(User).filter(User.email == email).first()
     if not user:
         raise HTTPException(status_code=404, detail="User not found.")
-    create_session_cookie(response, user.id)
-    return RedirectResponse(url=f"{settings.frontend_url}/dashboard", status_code=302)
+    # Set cookie on the RedirectResponse directly — FastAPI discards
+    # cookies set on the injected `response` parameter when the handler
+    # returns a different Response object.
+    redirect = RedirectResponse(url=f"{settings.frontend_url}/dashboard", status_code=302)
+    create_session_cookie(redirect, user.id)
+    return redirect
 
 
 @app.post("/auth/logout")
