@@ -23,7 +23,7 @@ truststore.inject_into_ssl()
 
 from sqlalchemy.orm import Session
 
-from config import settings
+from app_config import settings
 from crypto import decrypt
 from database import CreditBalance, Run, SessionLocal
 

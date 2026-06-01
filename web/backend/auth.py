@@ -15,7 +15,7 @@ from fastapi import Cookie, Depends, HTTPException, Response, status
 from itsdangerous import BadSignature, SignatureExpired, URLSafeTimedSerializer
 from sqlalchemy.orm import Session
 
-from config import settings
+from app_config import settings
 from database import User, get_db
 
 

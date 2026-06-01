@@ -4,7 +4,7 @@ from sqlalchemy import (
 from sqlalchemy.orm import DeclarativeBase, Session, relationship, sessionmaker
 from datetime import datetime, timezone
 
-from config import settings
+from app_config import settings
 
 engine = create_engine(
     settings.database_url,

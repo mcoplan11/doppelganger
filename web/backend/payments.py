@@ -2,7 +2,7 @@
 import stripe
 from fastapi import HTTPException
 
-from config import settings
+from app_config import settings
 
 stripe.api_key = settings.stripe_secret_key
 

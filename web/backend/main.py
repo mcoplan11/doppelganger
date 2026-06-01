@@ -12,7 +12,7 @@ from pydantic import BaseModel, EmailStr
 from sqlalchemy.orm import Session
 
 from auth import create_session_cookie, get_current_user, make_magic_token, verify_magic_token
-from config import settings
+from app_config import settings
 from crypto import encrypt
 from database import CreditBalance, Purchase, Run, User, create_tables, get_db
 from email_client import send_magic_link

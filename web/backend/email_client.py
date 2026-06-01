@@ -4,7 +4,7 @@ If RESEND_API_KEY is empty (local dev), just prints the link to stdout.
 """
 import resend
 
-from config import settings
+from app_config import settings
 
 
 def send_magic_link(to_email: str, magic_url: str) -> None:
