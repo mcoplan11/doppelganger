@@ -78,7 +78,12 @@ def verify_magic_link(token: str, response: Response, db: Session = Depends(get_
 
 @app.post("/auth/logout")
 def logout(response: Response):
-    response.delete_cookie("session")
+    is_https = settings.frontend_url.startswith("https://")
+    response.delete_cookie(
+        "session",
+        samesite="none" if is_https else "lax",
+        secure=is_https,
+    )
     return {"detail": "Logged out."}
 
 

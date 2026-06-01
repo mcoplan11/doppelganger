@@ -47,16 +47,17 @@ def verify_magic_token(token: str) -> str:
 def create_session_cookie(response: Response, user_id: int) -> str:
     """Generate an opaque session token, set it as an httpOnly cookie, return the token."""
     token = secrets.token_urlsafe(32)
-    # We store the token in a signed cookie (not in DB — simpler for now).
-    # The cookie value is "user_id:token" signed by the secret key.
     signed = _signer.dumps({"uid": user_id, "tok": token})
+    # Cross-site cookies (Railway backend → Vercel frontend) require SameSite=None + Secure.
+    # Local dev over http falls back to Lax so the cookie still works without HTTPS.
+    is_https = settings.frontend_url.startswith("https://")
     response.set_cookie(
         COOKIE_NAME,
         signed,
         max_age=settings.session_expiry,
         httponly=True,
-        samesite="lax",
-        secure=False,  # set True in prod (HTTPS)
+        samesite="none" if is_https else "lax",
+        secure=is_https,
     )
     return token
 
