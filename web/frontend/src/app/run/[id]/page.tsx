@@ -48,6 +48,7 @@ export default function RunDetail() {
   const isActive = !["done", "failed", "cancelled"].includes(run.status);
 
   async function handleCancel() {
+    if (!run) return;
     if (!window.confirm("Are you sure you want to cancel this run? This cannot be undone.")) return;
     setCancelling(true);
     try {
