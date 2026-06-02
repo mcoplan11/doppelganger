@@ -45,6 +45,7 @@ export const api = {
 
   listRuns: () => request<Run[]>("/runs"),
   getRun: (id: number) => request<Run>(`/runs/${id}`),
+  cancelRun: (id: number) => request<Run>(`/runs/${id}/cancel`, { method: "POST" }),
   downloadUrl: (id: number) => `${BASE}/runs/${id}/download`,
 };
 

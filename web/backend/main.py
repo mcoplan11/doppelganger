@@ -268,6 +268,23 @@ def get_run(
     return _run_to_dict(run)
 
 
+@app.post("/runs/{run_id}/cancel")
+def cancel_run(
+    run_id: int,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    run = db.query(Run).filter(Run.id == run_id, Run.user_id == user.id).first()
+    if not run:
+        raise HTTPException(status_code=404, detail="Run not found.")
+    if run.status in ("done", "failed", "cancelled"):
+        raise HTTPException(status_code=400, detail=f"Run is already {run.status}.")
+    run.status = "cancelled"
+    run.completed_at = datetime.now(timezone.utc)
+    db.commit()
+    return _run_to_dict(run)
+
+
 @app.get("/runs/{run_id}/download")
 def download_run(
     run_id: int,

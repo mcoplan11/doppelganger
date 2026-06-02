@@ -35,7 +35,7 @@ def _set_status(run_id: int, status: str, **kwargs) -> None:
     db = _db()
     try:
         run = db.query(Run).filter(Run.id == run_id).first()
-        if run:
+        if run and run.status != "cancelled":
             run.status = status
             for k, v in kwargs.items():
                 setattr(run, k, v)

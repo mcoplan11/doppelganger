@@ -8,6 +8,7 @@ const STATUS_LABELS: Record<string, string> = {
   running: "Simulation in progress…",
   done: "Completed",
   failed: "Failed",
+  cancelled: "Cancelled",
 };
 
 const STATUS_COLORS: Record<string, string> = {
@@ -15,6 +16,7 @@ const STATUS_COLORS: Record<string, string> = {
   running: "text-blue-400",
   done: "text-green-400",
   failed: "text-red-400",
+  cancelled: "text-gray-400",
 };
 
 const STEPS = ["converting", "running", "done"];
@@ -23,6 +25,7 @@ export default function RunDetail() {
   const { id } = useParams<{ id: string }>();
   const router = useRouter();
   const [run, setRun] = useState<Run | null>(null);
+  const [cancelling, setCancelling] = useState(false);
 
   useEffect(() => {
     if (!id) return;
@@ -42,7 +45,18 @@ export default function RunDetail() {
   if (!run) return <div className="min-h-screen bg-gray-950 flex items-center justify-center text-white">Loading…</div>;
 
   const currentStep = STEPS.indexOf(run.status);
-  const isActive = !["done", "failed"].includes(run.status);
+  const isActive = !["done", "failed", "cancelled"].includes(run.status);
+
+  async function handleCancel() {
+    if (!window.confirm("Are you sure you want to cancel this run? This cannot be undone.")) return;
+    setCancelling(true);
+    try {
+      const updated = await api.cancelRun(run.id);
+      setRun(updated);
+    } finally {
+      setCancelling(false);
+    }
+  }
   const color = STATUS_COLORS[run.status] ?? "text-gray-400";
 
   return (
@@ -177,6 +191,16 @@ export default function RunDetail() {
             className="w-full border border-gray-700 hover:border-gray-500 text-gray-300 py-3 rounded-lg transition"
           >
             Try again
+          </button>
+        )}
+
+        {isActive && (
+          <button
+            onClick={handleCancel}
+            disabled={cancelling}
+            className="w-full border border-red-800 hover:border-red-600 disabled:opacity-40 text-red-400 hover:text-red-300 py-3 rounded-lg transition text-sm"
+          >
+            {cancelling ? "Cancelling…" : "Cancel this run"}
           </button>
         )}
       </div>
