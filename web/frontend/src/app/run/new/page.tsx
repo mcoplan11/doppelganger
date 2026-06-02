@@ -44,9 +44,13 @@ export default function NewRun() {
 
       <div className="max-w-xl mx-auto px-6 py-12">
         <h1 className="text-2xl font-bold mb-2">New simulation</h1>
-        <p className="text-gray-400 text-sm mb-8">
-          We recommend starting with a <strong className="text-white">free trial run (3 participants)</strong> to confirm your survey converts correctly before running the full study.
-        </p>
+
+        <div className="bg-blue-950/50 border border-blue-800 rounded-xl px-4 py-3 mb-8 text-sm text-blue-200 leading-relaxed">
+          <span className="font-semibold text-white">Tip: always start with a trial run.</span>{" "}
+          Every survey is different — a free 3-participant trial run confirms your survey converts
+          correctly and that the AI responses look sensible before you commit to a full study.
+          It only takes a couple of minutes and costs nothing.
+        </div>
 
         <div className="flex flex-col gap-5">
           <Field label="Qualtrics survey URL or ID" hint="e.g. https://mccombs.qualtrics.com/jfe/form/SV_abc123 or just SV_abc123">
