@@ -169,7 +169,7 @@ def _run_inner(
     _set_status(run_id, "running", ai_survey_id=ai_survey_id)
     qualtrics = QualtricsClient(base_url, qualtrics_token)
     # Trial runs use a cheap fast model — quality doesn't matter, just verifying the survey works.
-    model = "gemini-2.0-flash" if is_smoke else settings.gemini_model
+    model = "gemini-2.5-flash-lite" if is_smoke else settings.gemini_model
     gemini = GeminiClient(settings.gemini_api_key, model, temperature=0.5)
     survey = qualtrics.get_survey_definition(ai_survey_id)
 
