@@ -15,6 +15,7 @@ export default function NewRun() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [copyConsent, setCopyConsent] = useState(true);
+  const [showTokenHelp, setShowTokenHelp] = useState(false);
 
   function set(field: string, value: string | number | boolean) {
     setForm((f) => ({ ...f, [field]: value }));
@@ -58,7 +59,7 @@ export default function NewRun() {
             />
           </Field>
 
-          <Field label="Qualtrics API token" hint="Found under Account Settings → Qualtrics IDs → API Token">
+          <Field label="Qualtrics API token" hint="">
             <input
               type="password"
               placeholder="Your API token"
@@ -66,9 +67,26 @@ export default function NewRun() {
               onChange={(e) => set("qualtrics_token", e.target.value)}
               className="input"
             />
+            <button
+              type="button"
+              onClick={() => setShowTokenHelp((v) => !v)}
+              className="text-blue-400 hover:text-blue-300 text-xs mt-1.5 underline underline-offset-2"
+            >
+              {showTokenHelp ? "Hide instructions" : "How do I find my API token?"}
+            </button>
+            {showTokenHelp && (
+              <div className="mt-2 bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-xs text-gray-300 leading-relaxed space-y-1">
+                <p className="font-medium text-white mb-2">Finding your Qualtrics API token:</p>
+                <p>1. Log in to Qualtrics and click your <strong>profile icon</strong> in the top-right corner.</p>
+                <p>2. Select <strong>Account Settings</strong> from the dropdown.</p>
+                <p>3. Click the <strong>Qualtrics IDs</strong> tab.</p>
+                <p>4. Under <strong>API</strong>, you&apos;ll see your token. Click <strong>Generate Token</strong> if you don&apos;t have one yet.</p>
+                <p>5. Copy the full token and paste it here — it&apos;s a long string of letters and numbers.</p>
+              </div>
+            )}
           </Field>
 
-          <Field label="Datacenter ID" hint="Usually 'yul1' or 'fra1' — found in your Qualtrics URL">
+          <Field label="Datacenter ID" hint="The subdomain of your Qualtrics login URL — e.g. if you log in at https://yul1.qualtrics.com, your datacenter ID is yul1.">
             <input
               type="text"
               value={form.qualtrics_datacenter}
