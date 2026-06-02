@@ -188,7 +188,7 @@ class RunRequest(BaseModel):
     qualtrics_token: str
     qualtrics_datacenter: str = "yul1"
     n_participants: int
-    smoke_test: bool = False  # if True, run 5 participants, don't deduct credits
+    smoke_test: bool = False  # if True, run 3 participants, don't deduct credits
 
 
 def _extract_survey_id(survey_url: str) -> str:
@@ -208,7 +208,7 @@ def create_run(
     db: Session = Depends(get_db),
 ):
     survey_id = _extract_survey_id(body.survey_url)
-    n = 5 if body.smoke_test else body.n_participants
+    n = 3 if body.smoke_test else body.n_participants
 
     if n < 1 or n > 1000:
         raise HTTPException(status_code=400, detail="n_participants must be 1–1000.")

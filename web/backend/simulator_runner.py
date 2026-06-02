@@ -186,6 +186,7 @@ def _run_inner(
         personas=persona_pool,
         runs_per_persona=1,
         out_dir=output_dir,
+        use_batch=False if is_smoke else None,
         on_progress=_on_progress,
     )
 

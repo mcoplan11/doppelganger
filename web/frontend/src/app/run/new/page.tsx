@@ -145,7 +145,7 @@ export default function NewRun() {
               disabled={loading || !form.survey_url || !form.qualtrics_token || !copyConsent}
               className="flex-1 border border-gray-700 hover:border-gray-500 disabled:opacity-40 text-gray-200 font-medium py-3 rounded-lg transition"
             >
-              {loading ? "Starting…" : "Smoke test (5 participants, free)"}
+              {loading ? "Starting…" : "Smoke test (3 participants, free)"}
             </button>
             <button
               onClick={() => submit(false)}
