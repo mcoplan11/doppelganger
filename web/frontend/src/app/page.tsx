@@ -140,8 +140,65 @@ export default function Home() {
         </p>
       </section>
 
+      {/* What you can test */}
+      <section className="bg-slate-50 border-y border-slate-200">
+        <div className="max-w-5xl mx-auto px-6 py-20">
+          <h2 className="font-serif text-3xl font-bold text-center mb-3 text-slate-900">What you can pretest today</h2>
+          <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+            If your survey is text-based, you can run it through Doppelganger right now. Our AI
+            respondents read and answer written questions — they can&apos;t yet see images or watch video.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {/* Works today */}
+            <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+              <h3 className="font-semibold text-lg mb-5 text-slate-900">Works today</h3>
+              <ul className="space-y-3">
+                {[
+                  "Multiple choice & checkboxes",
+                  "Likert scales & matrix / grid questions",
+                  "Open-ended text responses",
+                  "Demographic & screening questions",
+                  "Branching, skip logic & randomized conditions",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-slate-700">
+                    <span className="text-green-600 font-bold mt-0.5">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Coming soon */}
+            <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+              <div className="flex items-center gap-2 mb-5">
+                <h3 className="font-semibold text-lg text-slate-900">Not yet</h3>
+                <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 bg-blue-50 border border-blue-200 rounded-full px-2 py-0.5">
+                  Coming soon
+                </span>
+              </div>
+              <ul className="space-y-3">
+                {[
+                  "Image stimuli (e.g. rating an ad or product photo)",
+                  "Video stimuli",
+                  "Audio clips",
+                  "Interactive tasks — heatmaps, drag-and-drop, sliders",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-slate-500">
+                    <span className="text-slate-300 font-bold mt-0.5">○</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-sm text-slate-500 mt-5 pt-4 border-t border-slate-200 leading-relaxed">
+                We&apos;re building multimodal pretesting — soon your AI respondents will see images
+                and watch video too.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing */}
-      <section id="pricing" className="bg-slate-50 border-y border-slate-200">
+      <section id="pricing" className="bg-white">
         <div className="max-w-5xl mx-auto px-6 py-20">
           <h2 className="font-serif text-3xl font-bold text-center mb-3 text-slate-900">Pricing that fits a research budget</h2>
           <p className="text-center text-slate-600 mb-12">
