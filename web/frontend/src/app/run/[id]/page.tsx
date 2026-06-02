@@ -58,7 +58,7 @@ export default function RunDetail() {
         <div className="flex items-start justify-between mb-8">
           <div>
             <h1 className="text-2xl font-bold mb-1">
-              {run.is_smoke_test ? "Smoke test" : "Simulation"} #{run.id}
+              {run.is_smoke_test ? "Trial run" : "Simulation"} #{run.id}
             </h1>
             <p className="text-gray-400 text-sm">{run.original_survey_id}</p>
           </div>
@@ -116,7 +116,7 @@ export default function RunDetail() {
           <div className="grid grid-cols-2 gap-4 text-sm">
             <Stat label="Participants" value={run.n_participants.toString()} />
             <Stat label="Credits used" value={run.credits_used.toString()} />
-            <Stat label="Type" value={run.is_smoke_test ? "Smoke test" : "Full run"} />
+            <Stat label="Type" value={run.is_smoke_test ? "Trial run" : "Full run"} />
             {run.ai_survey_id && <Stat label="AI survey copy" value={run.ai_survey_id} />}
             {run.completed_at && (
               <Stat label="Completed" value={new Date(run.completed_at).toLocaleString()} />

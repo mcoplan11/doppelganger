@@ -62,7 +62,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
           {[
             { n: "1", title: "Paste your survey URL", desc: "Drop in your Qualtrics survey link. We auto-convert it to an AI-compatible version in seconds." },
-            { n: "2", title: "Choose participants", desc: "Pick how many AI personas to run (1–1000). Smoke test with 5 first to verify everything looks right." },
+            { n: "2", title: "Choose participants", desc: "Pick how many AI personas to run (1–1000). Do a free trial run with 3 first to verify everything looks right." },
             { n: "3", title: "Download results", desc: "Results land directly in your Qualtrics Data & Analysis tab. Download a CSV from here too." },
           ].map((step) => (
             <div key={step.n} className="bg-gray-900 rounded-xl p-6 border border-gray-800">

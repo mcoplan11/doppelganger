@@ -148,7 +148,7 @@ function RunRow({ run }: { run: Run }) {
       <div>
         <div className="font-medium text-sm">{run.original_survey_id}</div>
         <div className="text-gray-500 text-xs mt-0.5">
-          {run.n_participants} participants · {run.is_smoke_test ? "smoke test" : "full run"} ·{" "}
+          {run.n_participants} participants · {run.is_smoke_test ? "trial run" : "full run"} ·{" "}
           {new Date(run.created_at).toLocaleDateString()}
         </div>
       </div>

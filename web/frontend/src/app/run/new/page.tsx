@@ -45,7 +45,7 @@ export default function NewRun() {
       <div className="max-w-xl mx-auto px-6 py-12">
         <h1 className="text-2xl font-bold mb-2">New simulation</h1>
         <p className="text-gray-400 text-sm mb-8">
-          We recommend running a <strong className="text-white">smoke test (5 participants)</strong> first to confirm your survey converts correctly — it&apos;s free.
+          We recommend starting with a <strong className="text-white">free trial run (3 participants)</strong> to confirm your survey converts correctly before running the full study.
         </p>
 
         <div className="flex flex-col gap-5">
@@ -146,7 +146,7 @@ export default function NewRun() {
               disabled={loading || !form.survey_url || !form.qualtrics_token || !copyConsent}
               className="flex-1 border border-gray-700 hover:border-gray-500 disabled:opacity-40 text-gray-200 font-medium py-3 rounded-lg transition"
             >
-              {loading ? "Starting…" : "Smoke test (3 participants, free)"}
+              {loading ? "Starting…" : "Trial run (3 participants, free)"}
             </button>
             <button
               onClick={() => submit(false)}
