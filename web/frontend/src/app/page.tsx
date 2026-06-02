@@ -9,6 +9,15 @@ const PACKS = [
   { id: "research", credits: 500, price: "$69.99", per: "$0.14", label: "Research" },
 ];
 
+// Team-background affiliations (honest "built by", NOT customer endorsements).
+// Drop the matching SVG/PNG files into web/frontend/public/logos/.
+const TEAM_FROM = [
+  { name: "UT Austin McCombs", src: "/logos/ut-austin.png" },
+  { name: "Chicago Booth",     src: "/logos/uchicago.png" },
+  { name: "Northwestern",      src: "/logos/northwestern.jpeg" },
+  { name: "Wisconsin",         src: "/logos/wisconsin.png" },
+];
+
 export default function Home() {
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
@@ -30,95 +39,154 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-950 text-white">
+    <main className="min-h-screen bg-white text-slate-900">
       {/* Nav */}
-      <nav className="border-b border-gray-800 px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
+      <nav className="border-b border-slate-200 px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
         <span className="font-bold text-lg tracking-tight">Doppelganger</span>
-        <a href="#login" className="text-sm text-blue-400 hover:text-blue-300">Sign in →</a>
+        <a href="#login" className="text-sm font-medium text-blue-700 hover:text-blue-800">Sign in →</a>
       </nav>
 
       {/* Hero */}
-      <section className="max-w-3xl mx-auto px-6 pt-24 pb-16 text-center">
-        <h1 className="text-5xl font-bold leading-tight mb-6">
-          Test your idea with<br />an AI audience first
+      <section className="max-w-3xl mx-auto px-6 pt-20 pb-12 text-center">
+        <h1 className="font-serif text-4xl sm:text-5xl font-bold leading-tight tracking-tight mb-6 text-slate-900">
+          Pretest your study before<br />you pay for real participants
         </h1>
-        <p className="text-xl text-gray-400 mb-10">
-          Run your survey through hundreds of AI personas in minutes.
-          Get realistic, condition-aware responses — before you spend on real participants.
+        <p className="text-lg sm:text-xl text-slate-600 leading-relaxed mb-8">
+          Doppelganger runs your Qualtrics survey through AI respondents in minutes —
+          so you catch problems and gauge your effect before you spend on participants.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="#login" className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-3 rounded-lg transition">
-            Get started free
+          <a href="#login" className="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-8 py-3 rounded-lg transition">
+            Pretest a survey free
           </a>
-          <a href="#how" className="border border-gray-700 hover:border-gray-500 text-gray-300 px-8 py-3 rounded-lg transition">
-            How it works
+          <a href="#how" className="border border-slate-300 hover:bg-slate-50 text-slate-700 font-medium px-8 py-3 rounded-lg transition">
+            See how it works
           </a>
+        </div>
+        <p className="text-sm text-slate-500 mt-4">
+          Free to try · No credit card · Results in minutes
+        </p>
+      </section>
+
+      {/* Built by — team-background affiliations */}
+      <section className="max-w-4xl mx-auto px-6 pb-16">
+        <div className="border-y border-slate-200 py-8">
+          <p className="text-center text-xs font-semibold uppercase tracking-wider text-slate-400 mb-6">
+            Built by a team from
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+            {TEAM_FROM.map((org) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={org.name}
+                src={org.src}
+                alt={org.name}
+                className="h-10 sm:h-12 w-auto object-contain opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why researchers use it */}
+      <section className="bg-slate-50 border-y border-slate-200">
+        <div className="max-w-5xl mx-auto px-6 py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Cheaper than a pilot",
+                desc: "A full AI pretest costs less than a coffee. Save your participant budget for the studies that already show signs of life.",
+              },
+              {
+                title: "Hours, not weeks",
+                desc: "No recruiting, no fielding wait. Catch broken skip logic and dead-on-arrival manipulations the same afternoon you build the survey.",
+              },
+              {
+                title: "Works with your Qualtrics survey",
+                desc: "Point it at an existing survey — branches, conditions, and embedded data included. Your original is never touched.",
+              },
+            ].map((item) => (
+              <div key={item.title}>
+                <h3 className="font-semibold text-lg mb-2 text-slate-900">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* How it works */}
-      <section id="how" className="max-w-5xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12">How it works</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <section id="how" className="max-w-5xl mx-auto px-6 py-20">
+        <h2 className="font-serif text-3xl font-bold text-center mb-12 text-slate-900">How it works</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {[
-            { n: "1", title: "Paste your survey URL", desc: "Drop in your Qualtrics survey link. We auto-convert it to an AI-compatible version in seconds." },
-            { n: "2", title: "Choose participants", desc: "Pick how many AI personas to run (1–1000). Do a free trial run with 3 first to verify everything looks right." },
-            { n: "3", title: "Download results", desc: "Results land directly in your Qualtrics Data & Analysis tab. Download a CSV from here too." },
+            { n: "1", title: "Paste your Qualtrics survey", desc: "Drop in your survey link. We create an AI-compatible copy automatically — your original stays exactly as it is." },
+            { n: "2", title: "Run a free trial first", desc: "Send 3 AI respondents through to confirm everything flows correctly. Scale up to a full pretest once it looks right." },
+            { n: "3", title: "Read the results", desc: "Responses land in your Qualtrics Data & Analysis tab, plus a CSV here. See whether the manipulation moved anything before you spend a cent on MTurk." },
           ].map((step) => (
-            <div key={step.n} className="bg-gray-900 rounded-xl p-6 border border-gray-800">
-              <div className="text-blue-400 font-bold text-2xl mb-3">{step.n}</div>
-              <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+            <div key={step.n} className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+              <div className="text-blue-700 font-bold text-2xl mb-3">{step.n}</div>
+              <h3 className="font-semibold text-lg mb-2 text-slate-900">{step.title}</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>
+
+        {/* Honest framing — builds trust with a skeptical academic audience */}
+        <p className="max-w-2xl mx-auto text-center text-sm text-slate-500 leading-relaxed mt-12 border-t border-slate-200 pt-8">
+          Doppelganger is a pretesting tool, not a substitute for human data. Use it to catch
+          problems and judge whether an idea is worth fielding — then run the real study with
+          confidence.
+        </p>
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="max-w-5xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold text-center mb-4">Simple, per-participant pricing</h2>
-        <p className="text-center text-gray-400 mb-12">Buy credits upfront. 1 credit = 1 simulated participant.</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {PACKS.map((pack) => (
-            <div
-              key={pack.id}
-              className={`rounded-xl border p-6 flex flex-col ${
-                pack.popular
-                  ? "border-blue-500 bg-blue-950"
-                  : "border-gray-800 bg-gray-900"
-              }`}
-            >
-              {pack.popular && (
-                <span className="text-blue-400 text-xs font-semibold uppercase tracking-wider mb-3">
-                  Most popular
-                </span>
-              )}
-              <div className="text-2xl font-bold mb-1">{pack.price}</div>
-              <div className="text-gray-400 text-sm mb-4">{pack.credits} participants · {pack.per} each</div>
-              <div className="font-semibold text-lg mb-6">{pack.label}</div>
-              <a
-                href="#login"
-                className={`mt-auto text-center py-2 rounded-lg font-medium text-sm transition ${
-                  pack.popular
-                    ? "bg-blue-600 hover:bg-blue-500 text-white"
-                    : "bg-gray-800 hover:bg-gray-700 text-gray-200"
+      <section id="pricing" className="bg-slate-50 border-y border-slate-200">
+        <div className="max-w-5xl mx-auto px-6 py-20">
+          <h2 className="font-serif text-3xl font-bold text-center mb-3 text-slate-900">Pricing that fits a research budget</h2>
+          <p className="text-center text-slate-600 mb-12">
+            Buy credits up front · 1 credit = 1 AI respondent · A full pretest costs less than a single MTurk pilot.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {PACKS.map((pack) => (
+              <div
+                key={pack.id}
+                className={`rounded-xl border p-6 flex flex-col bg-white shadow-sm ${
+                  pack.popular ? "border-blue-600 ring-1 ring-blue-600" : "border-slate-200"
                 }`}
               >
-                Buy {pack.label}
-              </a>
-            </div>
-          ))}
+                {pack.popular && (
+                  <span className="text-blue-700 text-xs font-semibold uppercase tracking-wider mb-3">
+                    Most popular
+                  </span>
+                )}
+                <div className="text-2xl font-bold mb-1 text-slate-900">{pack.price}</div>
+                <div className="text-slate-500 text-sm mb-4">{pack.credits} respondents · {pack.per} each</div>
+                <div className="font-semibold text-lg mb-6 text-slate-900">{pack.label}</div>
+                <a
+                  href="#login"
+                  className={`mt-auto text-center py-2 rounded-lg font-medium text-sm transition ${
+                    pack.popular
+                      ? "bg-blue-700 hover:bg-blue-800 text-white"
+                      : "bg-slate-100 hover:bg-slate-200 text-slate-800"
+                  }`}
+                >
+                  Buy {pack.label}
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Login */}
-      <section id="login" className="max-w-md mx-auto px-6 py-16">
-        <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8">
-          <h2 className="text-2xl font-bold mb-2">Sign in</h2>
-          <p className="text-gray-400 text-sm mb-6">No password needed — we&apos;ll email you a link.</p>
+      <section id="login" className="max-w-md mx-auto px-6 py-20">
+        <div className="bg-white border border-slate-200 shadow-sm rounded-2xl p-8">
+          <h2 className="font-serif text-2xl font-bold mb-2 text-slate-900">Start pretesting</h2>
+          <p className="text-slate-600 text-sm mb-6">No password — we&apos;ll email you a secure sign-in link.</p>
           {sent ? (
-            <div className="text-green-400 font-medium">
-              ✓ Check your email for a magic link!
+            <div className="text-green-700 font-medium">
+              ✓ Check your email for a magic link.
             </div>
           ) : (
             <form onSubmit={handleLogin} className="flex flex-col gap-4">
@@ -128,13 +196,13 @@ export default function Home() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
+                className="bg-white border border-slate-300 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600"
               />
-              {error && <p className="text-red-400 text-sm">{error}</p>}
+              {error && <p className="text-red-600 text-sm">{error}</p>}
               <button
                 type="submit"
                 disabled={loading}
-                className="bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white font-semibold py-3 rounded-lg transition"
+                className="bg-blue-700 hover:bg-blue-800 disabled:opacity-50 text-white font-semibold py-3 rounded-lg transition"
               >
                 {loading ? "Sending…" : "Send magic link"}
               </button>
@@ -143,8 +211,8 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-gray-800 text-center text-gray-600 text-sm py-8">
-        © {new Date().getFullYear()} Doppelganger · Not affiliated with Qualtrics or Google
+      <footer className="border-t border-slate-200 text-center text-slate-500 text-sm py-8">
+        © {new Date().getFullYear()} Doppelganger · A survey pretesting tool · Not affiliated with Qualtrics or Google
       </footer>
     </main>
   );
