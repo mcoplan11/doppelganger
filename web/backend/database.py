@@ -24,6 +24,10 @@ class User(Base):
     email = Column(String, unique=True, index=True, nullable=False)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
+    # Saved Qualtrics credentials — auto-populated from the most recent run
+    qualtrics_token_enc = Column(Text)
+    qualtrics_datacenter = Column(String)
+
     credits = relationship("CreditBalance", back_populates="user", uselist=False)
     purchases = relationship("Purchase", back_populates="user")
     runs = relationship("Run", back_populates="user")
@@ -99,6 +103,8 @@ def create_tables():
     with engine.connect() as conn:
         for sql in [
             "ALTER TABLE runs ADD COLUMN platform VARCHAR DEFAULT 'prolific'",
+            "ALTER TABLE users ADD COLUMN qualtrics_token_enc TEXT",
+            "ALTER TABLE users ADD COLUMN qualtrics_datacenter VARCHAR",
         ]:
             try:
                 conn.execute(__import__("sqlalchemy").text(sql))

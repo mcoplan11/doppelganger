@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { api } from "@/lib/api";
 
@@ -17,6 +17,19 @@ export default function NewRun() {
   const [error, setError] = useState("");
   const [copyConsent, setCopyConsent] = useState(true);
   const [showTokenHelp, setShowTokenHelp] = useState(false);
+  const [tokenSaved, setTokenSaved] = useState(false);
+
+  useEffect(() => {
+    api.me().then((me) => {
+      if (me.qualtrics_token) {
+        setForm((f) => ({ ...f, qualtrics_token: me.qualtrics_token! }));
+        setTokenSaved(true);
+      }
+      if (me.qualtrics_datacenter) {
+        setForm((f) => ({ ...f, qualtrics_datacenter: me.qualtrics_datacenter! }));
+      }
+    }).catch(() => {});
+  }, []);
 
   function set(field: string, value: string | number | boolean) {
     setForm((f) => ({ ...f, [field]: value }));
@@ -64,7 +77,7 @@ export default function NewRun() {
             />
           </Field>
 
-          <Field label="Qualtrics API token" hint="">
+          <Field label="Qualtrics API token" hint="" badge={tokenSaved ? "Saved from last run" : undefined}>
             <input
               type="password"
               placeholder="Your API token"
@@ -205,10 +218,17 @@ export default function NewRun() {
   );
 }
 
-function Field({ label, hint, children }: { label: string; hint?: string; children: React.ReactNode }) {
+function Field({ label, hint, badge, children }: { label: string; hint?: string; badge?: string; children: React.ReactNode }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-300 mb-1">{label}</label>
+      <div className="flex items-center gap-2 mb-1">
+        <label className="block text-sm font-medium text-gray-300">{label}</label>
+        {badge && (
+          <span className="text-xs text-green-400 bg-green-900/30 border border-green-800 rounded-full px-2 py-0.5">
+            {badge}
+          </span>
+        )}
+      </div>
       {children}
       {hint && <p className="text-gray-600 text-xs mt-1">{hint}</p>}
     </div>

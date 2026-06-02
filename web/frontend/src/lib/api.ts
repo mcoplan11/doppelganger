@@ -20,7 +20,7 @@ export const api = {
   logout: () => request("/auth/logout", { method: "POST" }),
 
   // Me
-  me: () => request<{ id: number; email: string; credits: number }>("/me"),
+  me: () => request<{ id: number; email: string; credits: number; qualtrics_token: string | null; qualtrics_datacenter: string | null }>("/me"),
 
   // Credits
   packs: () =>

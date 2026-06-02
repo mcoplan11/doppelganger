@@ -13,7 +13,7 @@ from sqlalchemy.orm import Session
 
 from auth import create_session_cookie, get_current_user, make_magic_token, verify_magic_token
 from app_config import settings
-from crypto import encrypt
+from crypto import decrypt, encrypt
 from database import CreditBalance, Purchase, Run, User, create_tables, get_db
 from email_client import send_magic_link
 from payments import CREDIT_PACKS, construct_webhook_event, create_checkout_session
@@ -104,6 +104,8 @@ def get_me(
         "email": user.email,
         "credits": bal.balance if bal else 0,
         "created_at": user.created_at,
+        "qualtrics_datacenter": user.qualtrics_datacenter,
+        "qualtrics_token": decrypt(user.qualtrics_token_enc) if user.qualtrics_token_enc else None,
     }
 
 
@@ -223,11 +225,17 @@ def create_run(
                 detail=f"Not enough credits. You have {bal.balance if bal else 0}, need {n}.",
             )
 
+    token_enc = encrypt(body.qualtrics_token)
+
+    # Persist credentials to the user profile so future runs are pre-filled.
+    user.qualtrics_token_enc = token_enc
+    user.qualtrics_datacenter = body.qualtrics_datacenter
+
     run = Run(
         user_id=user.id,
         original_survey_id=survey_id,
         qualtrics_datacenter=body.qualtrics_datacenter,
-        qualtrics_token_enc=encrypt(body.qualtrics_token),
+        qualtrics_token_enc=token_enc,
         n_participants=n,
         is_smoke_test=body.smoke_test,
         platform=body.platform,
