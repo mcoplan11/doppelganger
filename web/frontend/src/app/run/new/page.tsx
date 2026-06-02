@@ -82,6 +82,7 @@ export default function NewRun() {
                 <p>3. Click the <strong>Qualtrics IDs</strong> tab.</p>
                 <p>4. Under <strong>API</strong>, you&apos;ll see your token. Click <strong>Generate Token</strong> if you don&apos;t have one yet.</p>
                 <p>5. Copy the full token and paste it here — it&apos;s a long string of letters and numbers.</p>
+                <p className="text-yellow-400 mt-2">Note: if you don&apos;t see the API Token section or the Generate Token button, your account may not have API access enabled. Contact your Qualtrics administrator to request it.</p>
               </div>
             )}
           </Field>
