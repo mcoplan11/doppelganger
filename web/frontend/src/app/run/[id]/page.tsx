@@ -121,6 +121,9 @@ export default function RunDetail() {
             {run.completed_at && (
               <Stat label="Completed" value={new Date(run.completed_at).toLocaleString()} />
             )}
+            {run.completed_at && (
+              <Stat label="Duration" value={formatDuration(run.created_at, run.completed_at)} />
+            )}
           </div>
 
           {run.error && (
@@ -188,4 +191,15 @@ function Stat({ label, value }: { label: string; value: string }) {
       <div className="font-medium text-white">{value}</div>
     </div>
   );
+}
+
+function formatDuration(start: string, end: string): string {
+  const secs = Math.round((new Date(end).getTime() - new Date(start).getTime()) / 1000);
+  if (secs < 60) return `${secs}s`;
+  const m = Math.floor(secs / 60);
+  const s = secs % 60;
+  if (m < 60) return s > 0 ? `${m}m ${s}s` : `${m}m`;
+  const h = Math.floor(m / 60);
+  const rem = m % 60;
+  return rem > 0 ? `${h}h ${rem}m` : `${h}h`;
 }

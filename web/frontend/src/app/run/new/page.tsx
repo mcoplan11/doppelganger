@@ -14,6 +14,7 @@ export default function NewRun() {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [copyConsent, setCopyConsent] = useState(true);
 
   function set(field: string, value: string | number | boolean) {
     setForm((f) => ({ ...f, [field]: value }));
@@ -87,6 +88,33 @@ export default function NewRun() {
             />
           </Field>
 
+          {/* AI copy disclosure */}
+          <div className="bg-gray-900 border border-gray-700 rounded-xl p-4 text-sm">
+            <p className="text-gray-300 font-medium mb-1">An AI-compatible survey copy will be created</p>
+            <p className="text-gray-500 text-xs leading-relaxed mb-3">
+              Some questions aren&apos;t compatible with AI respondents — sliders, CAPTCHAs, and redirect
+              flows will be modified or removed. We create a separate copy of your survey (named
+              &ldquo;[Your Survey Name] - AI Copy&rdquo;) so your original is never touched. The copy
+              will appear in your Qualtrics account and can be deleted after the run.
+            </p>
+            <label className="flex items-center gap-2 cursor-pointer select-none">
+              <input
+                type="checkbox"
+                checked={copyConsent}
+                onChange={(e) => setCopyConsent(e.target.checked)}
+                className="w-4 h-4 accent-blue-500"
+              />
+              <span className="text-gray-300 text-xs">
+                I understand an AI copy of my survey will be created in my Qualtrics account
+              </span>
+            </label>
+            {!copyConsent && (
+              <p className="text-yellow-400 text-xs mt-2">
+                The AI copy is required to run a simulation. Uncheck only if you don&apos;t want to proceed.
+              </p>
+            )}
+          </div>
+
           {error && (
             <div className="bg-red-900/30 border border-red-700 text-red-300 rounded-lg px-4 py-3 text-sm">
               {error}
@@ -96,14 +124,14 @@ export default function NewRun() {
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
             <button
               onClick={() => submit(true)}
-              disabled={loading || !form.survey_url || !form.qualtrics_token}
+              disabled={loading || !form.survey_url || !form.qualtrics_token || !copyConsent}
               className="flex-1 border border-gray-700 hover:border-gray-500 disabled:opacity-40 text-gray-200 font-medium py-3 rounded-lg transition"
             >
               {loading ? "Starting…" : "Smoke test (5 participants, free)"}
             </button>
             <button
               onClick={() => submit(false)}
-              disabled={loading || !form.survey_url || !form.qualtrics_token}
+              disabled={loading || !form.survey_url || !form.qualtrics_token || !copyConsent}
               className="flex-1 bg-blue-600 hover:bg-blue-500 disabled:opacity-40 text-white font-semibold py-3 rounded-lg transition"
             >
               {loading ? "Starting…" : `Run ${form.n_participants} participants`}
