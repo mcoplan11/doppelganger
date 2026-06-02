@@ -68,6 +68,7 @@ class Run(Base):
 
     n_participants = Column(Integer, nullable=False)
     is_smoke_test = Column(Boolean, default=False)
+    platform = Column(String, default="prolific")  # prolific | mturk
 
     # run lifecycle: converting | smoke_test | awaiting_approval | running | done | failed
     status = Column(String, default="converting")
@@ -94,3 +95,13 @@ def get_db():
 
 def create_tables():
     Base.metadata.create_all(bind=engine)
+    # Add columns introduced after initial deploy (create_all won't alter existing tables).
+    with engine.connect() as conn:
+        for sql in [
+            "ALTER TABLE runs ADD COLUMN platform VARCHAR DEFAULT 'prolific'",
+        ]:
+            try:
+                conn.execute(__import__("sqlalchemy").text(sql))
+                conn.commit()
+            except Exception:
+                pass  # column already exists

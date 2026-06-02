@@ -40,6 +40,7 @@ export const api = {
     qualtrics_datacenter?: string;
     n_participants: number;
     smoke_test?: boolean;
+    platform?: string;
   }) => request<Run>("/runs", { method: "POST", body: JSON.stringify(body) }),
 
   listRuns: () => request<Run[]>("/runs"),
@@ -53,6 +54,7 @@ export interface Run {
   ai_survey_id: string | null;
   n_participants: number;
   is_smoke_test: boolean;
+  platform: string;
   status: string;
   credits_used: number;
   error: string | null;

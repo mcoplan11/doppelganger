@@ -189,6 +189,7 @@ class RunRequest(BaseModel):
     qualtrics_datacenter: str = "yul1"
     n_participants: int
     smoke_test: bool = False  # if True, run 3 participants, don't deduct credits
+    platform: str = "prolific"  # prolific | mturk
 
 
 def _extract_survey_id(survey_url: str) -> str:
@@ -229,6 +230,7 @@ def create_run(
         qualtrics_token_enc=encrypt(body.qualtrics_token),
         n_participants=n,
         is_smoke_test=body.smoke_test,
+        platform=body.platform,
         status="converting",
     )
     db.add(run)
@@ -318,6 +320,7 @@ def _run_to_dict(run: Run) -> dict:
         "ai_survey_id": run.ai_survey_id,
         "n_participants": run.n_participants,
         "is_smoke_test": run.is_smoke_test,
+        "platform": run.platform,
         "status": run.status,
         "credits_used": run.credits_used,
         "error": run.error,

@@ -11,6 +11,7 @@ export default function NewRun() {
     qualtrics_datacenter: "yul1",
     n_participants: 100,
     smoke_test: false,
+    platform: "prolific",
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -100,6 +101,17 @@ export default function NewRun() {
             />
           </Field>
 
+          <Field label="Recruitment platform" hint="Where you plan to recruit real participants. This helps us tailor the AI personas to match your sample.">
+            <select
+              value={form.platform}
+              onChange={(e) => set("platform", e.target.value)}
+              className="input"
+            >
+              <option value="prolific">Prolific</option>
+              <option value="mturk">Amazon Mechanical Turk (MTurk)</option>
+            </select>
+          </Field>
+
           <Field label="Number of participants" hint="Full run size. Credits deducted per completed participant.">
             <input
               type="number"
@@ -180,6 +192,13 @@ export default function NewRun() {
         }
         .input::placeholder {
           color: rgb(107 114 128);
+        }
+        select.input {
+          appearance: none;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: right 1rem center;
+          padding-right: 2.5rem;
         }
       `}</style>
     </main>
