@@ -97,6 +97,7 @@ def _convert_survey(survey_id: str, base_url: str, token: str) -> str:
         ConverterError,
         Qualtrics as Converter,
         hard_strip,
+        pre_activation_flow_strip,
         pre_activation_strip,
     )
 
@@ -107,6 +108,7 @@ def _convert_survey(survey_id: str, base_url: str, token: str) -> str:
     new_id = client.copy_survey(survey_id, f"{src_name} - AI Copy", owner_id)
     try:
         pre_activation_strip(client, new_id, do_soft=True)
+        pre_activation_flow_strip(client, new_id)
         client.activate(new_id)
         hard_strip(client, new_id)
         return new_id

@@ -92,6 +92,20 @@ class Qualtrics:
         r.raise_for_status()
         return r.json()["result"].get("Questions", {}) or {}
 
+    def get_flow(self, survey_id: str) -> dict:
+        r = self._s.get(f"{self._base}/survey-definitions/{survey_id}/flow", timeout=30)
+        r.raise_for_status()
+        return r.json()["result"]
+
+    def update_flow(self, survey_id: str, flow: dict) -> None:
+        r = self._s.put(
+            f"{self._base}/survey-definitions/{survey_id}/flow",
+            json=flow,
+            timeout=30,
+        )
+        if r.status_code != 200:
+            raise ConverterError(f"update flow failed: {r.status_code} {r.text[:200]}")
+
     def get_survey_name(self, survey_id: str) -> str:
         r = self._s.get(f"{self._base}/survey-definitions/{survey_id}", timeout=30)
         r.raise_for_status()
@@ -119,10 +133,12 @@ class Qualtrics:
         if r.status_code != 200:
             raise ConverterError(f"delete survey failed: {r.status_code} {r.text[:200]}")
 
-    def probe_session(self, survey_id: str) -> tuple[bool, dict[str, list[str]], str | None]:
-        """Try POST /sessions. Returns (runnable, incompat_map, session_id_to_close).
+    def probe_session(self, survey_id: str) -> tuple[bool, dict[str, Any], str | None]:
+        """Try POST /sessions. Returns (runnable, incompatibilities, session_id_to_close).
 
-        incompat_map: {qid_from_api: [reason_str, ...]} — empty if runnable.
+        `incompatibilities` is the FULL block the API returns — it can contain
+        a `questions` map ({qid: [reason, ...]}) and/or a `flow` map
+        ({flow_id: [reason, ...]}). Empty if runnable.
         Note: QIDs returned by the Sessions API can refer to the ORIGINAL survey,
         not the current copy (Qualtrics bug). The caller should treat the reason
         strings as authoritative and match against the copy's questions by type.
@@ -134,9 +150,8 @@ class Qualtrics:
         if r.status_code == 400:
             try:
                 body = r.json()
-                incompat = body.get("meta", {}).get("error", {}).get("incompatibilities", {})
-                qmap = incompat.get("questions") or {}
-                return False, qmap, None
+                incompat = body.get("meta", {}).get("error", {}).get("incompatibilities", {}) or {}
+                return False, incompat, None
             except ValueError:
                 pass
         raise ConverterError(f"probe failed unexpectedly: {r.status_code} {r.text[:300]}")
@@ -181,6 +196,38 @@ def pre_activation_strip(
     return removed
 
 
+def pre_activation_flow_strip(client: Qualtrics, survey_id: str) -> list[str]:
+    """Neutralize EndSurvey flow elements the Sessions API rejects.
+
+    Surveys fielded on Prolific/MTurk end with an advanced EndSurvey element that
+    redirects the participant to a completion URL (EOSRedirectURL / custom
+    SurveyTermination). The Sessions API refuses to start a session on a survey
+    with such a redirect. An AI run never needs the participant redirect — it just
+    needs to reach the end — so we strip these elements down to a plain default
+    end-of-survey. Like question strips, this must happen BEFORE activation
+    (Qualtrics caches survey state at activation time).
+
+    Returns the list of FlowIDs that were neutralized.
+    """
+    flow = client.get_flow(survey_id)
+    neutralized: list[str] = []
+
+    def walk(el: dict) -> None:
+        if el.get("Type") == "EndSurvey" and (el.get("Options") or el.get("EndingType") == "Advanced"):
+            el.pop("Options", None)
+            el.pop("EndingType", None)
+            neutralized.append(el.get("FlowID", "?"))
+        for child in el.get("Flow", []) or []:
+            walk(child)
+
+    for el in flow.get("Flow", []) or []:
+        walk(el)
+
+    if neutralized:
+        client.update_flow(survey_id, flow)
+    return neutralized
+
+
 def _question_type_signature(q: dict) -> str:
     """Build the 'Matrix-Likert-SingleAnswer'-style signature that matches what
     the Sessions API reports in `Unsupported question type ...` messages."""
@@ -214,12 +261,23 @@ def hard_strip(client: Qualtrics, survey_id: str) -> list[tuple[str, str]]:
     removed = []
     all_deleted: set[str] = set()
     for round_idx in range(MAX_HARD_STRIP_ROUNDS):
-        runnable, incompat_map, session_id = client.probe_session(survey_id)
+        runnable, incompat, session_id = client.probe_session(survey_id)
         if runnable:
             if session_id:
                 client.close_session(survey_id, session_id)
             return removed
+
+        incompat_map = incompat.get("questions") or {}
         if not incompat_map:
+            # Non-question incompatibilities (e.g. flow redirects) can't be fixed
+            # by deleting questions. These should have been handled pre-activation;
+            # surface exactly what's wrong instead of a useless generic error.
+            other = {k: v for k, v in incompat.items() if k != "questions"}
+            if other:
+                raise ConverterError(
+                    f"survey has non-question incompatibilities that must be fixed "
+                    f"before activation (e.g. end-of-survey redirects): {other}"
+                )
             raise ConverterError("survey marked incompatible but API gave no details")
 
         # Qualtrics caches the incompatibility list: after deleting the flagged
@@ -299,6 +357,12 @@ def main() -> int:
         for qid, tag, reason in pre:
             print(f"  - removed {qid}  ({reason})")
         print(f"  total pre-activation: {len(pre)}")
+
+        print("\nNeutralizing end-of-survey redirects in flow...")
+        flow_fixed = pre_activation_flow_strip(client, new_id)
+        for fid in flow_fixed:
+            print(f"  - neutralized EndSurvey {fid} (removed redirect/termination)")
+        print(f"  total flow elements fixed: {len(flow_fixed)}")
 
         print("\nActivating copy...")
         client.activate(new_id)
