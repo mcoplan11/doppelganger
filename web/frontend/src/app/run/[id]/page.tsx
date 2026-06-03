@@ -208,6 +208,14 @@ export default function RunDetail() {
             {cancelling ? "Cancelling…" : "Cancel this run"}
           </button>
         )}
+
+        {/* Always available — researchers often realize here they want more runs */}
+        <a
+          href="/dashboard#buy-credits"
+          className="mt-3 block text-center text-sm text-blue-400 hover:text-blue-300"
+        >
+          Need more participants? Buy more credits →
+        </a>
       </div>
     </main>
   );

@@ -93,7 +93,7 @@ function DashboardInner() {
         </div>
 
         {/* Buy credits */}
-        <section className="mb-10">
+        <section id="buy-credits" className="mb-10 scroll-mt-20">
           <h2 className="font-semibold text-gray-300 mb-4">Buy credits</h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {packs.map((pack) => (
