@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { api } from "@/lib/api";
 
 const PACKS = [
@@ -23,6 +23,14 @@ export default function Home() {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [authed, setAuthed] = useState(false);
+
+  // If the visitor already has a valid session (e.g. clicked the magic link
+  // earlier), surface a "Go to dashboard" path so they're never stranded on the
+  // marketing page thinking they're locked out.
+  useEffect(() => {
+    api.me().then(() => setAuthed(true)).catch(() => setAuthed(false));
+  }, []);
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
@@ -43,7 +51,9 @@ export default function Home() {
       {/* Nav */}
       <nav className="border-b border-slate-200 px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
         <span className="font-bold text-lg tracking-tight">Doppelganger</span>
-        <a href="#login" className="text-sm font-medium text-blue-700 hover:text-blue-800">Sign in →</a>
+        {authed
+          ? <a href="/dashboard" className="text-sm font-medium text-blue-700 hover:text-blue-800">Go to dashboard →</a>
+          : <a href="#login" className="text-sm font-medium text-blue-700 hover:text-blue-800">Sign in →</a>}
       </nav>
 
       {/* Hero */}
@@ -56,8 +66,8 @@ export default function Home() {
           so you catch problems and gauge your effect before you spend on participants.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="#login" className="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-8 py-3 rounded-lg transition">
-            Pretest a survey free
+          <a href={authed ? "/dashboard" : "#login"} className="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-8 py-3 rounded-lg transition">
+            {authed ? "Go to my dashboard" : "Pretest a survey free"}
           </a>
           <a href="#how" className="border border-slate-300 hover:bg-slate-50 text-slate-700 font-medium px-8 py-3 rounded-lg transition">
             See how it works
@@ -239,6 +249,19 @@ export default function Home() {
       {/* Login */}
       <section id="login" className="max-w-md mx-auto px-6 py-20">
         <div className="bg-white border border-slate-200 shadow-sm rounded-2xl p-8">
+          {authed ? (
+            <div className="text-center">
+              <h2 className="font-serif text-2xl font-bold mb-2 text-slate-900">You&apos;re signed in</h2>
+              <p className="text-slate-600 text-sm mb-6">No need to log in again — head to your dashboard.</p>
+              <a
+                href="/dashboard"
+                className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-semibold px-8 py-3 rounded-lg transition"
+              >
+                Go to dashboard →
+              </a>
+            </div>
+          ) : (
+          <>
           <h2 className="font-serif text-2xl font-bold mb-2 text-slate-900">Start pretesting</h2>
           <p className="text-slate-600 text-sm mb-6">No password — we&apos;ll email you a secure sign-in link.</p>
           {sent ? (
@@ -264,6 +287,8 @@ export default function Home() {
                 {loading ? "Sending…" : "Send magic link"}
               </button>
             </form>
+          )}
+          </>
           )}
         </div>
       </section>
