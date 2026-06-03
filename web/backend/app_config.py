@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     gemini_model: str = "gemini-3.5-flash"
 
     resend_api_key: str = ""
-    from_email: str = "noreply@example.com"
+    from_email: str = "Doppelganger <noreply@doppelgangerlabs.com>"
 
     stripe_secret_key: str = ""
     stripe_webhook_secret: str = ""
