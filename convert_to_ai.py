@@ -424,8 +424,10 @@ def hard_strip(client: Qualtrics, survey_id: str) -> list[tuple[str, str]]:
     """
     removed = []
     all_deleted: set[str] = set()
+    last_incompat: dict = {}
     for round_idx in range(MAX_HARD_STRIP_ROUNDS):
         runnable, incompat, session_id = client.probe_session(survey_id)
+        last_incompat = incompat
         if runnable:
             if session_id:
                 client.close_session(survey_id, session_id)
@@ -484,7 +486,8 @@ def hard_strip(client: Qualtrics, survey_id: str) -> list[tuple[str, str]]:
         all_deleted |= deleted_this_round
 
     raise ConverterError(
-        f"still incompatible after {MAX_HARD_STRIP_ROUNDS} rounds; manual review needed"
+        f"still incompatible after {MAX_HARD_STRIP_ROUNDS} rounds; manual review needed. "
+        f"Remaining incompatibilities: {last_incompat}"
     )
 
 

@@ -88,6 +88,30 @@ def _friendly_error(exc: Exception, datacenter: str) -> str:
             "Qualtrics IDs → API Token, and confirm the datacenter matches "
             "(e.g. 'yul1' for yul1.qualtrics.com)."
         )
+    # Converter couldn't make the survey AI-compatible (a feature/element we don't
+    # auto-handle yet). Give the researcher a self-serve path AND keep the raw
+    # detail so support can add a fix. The full traceback is also logged server-side.
+    if "incompatib" in text.lower() or "BadSurvey" in text:
+        ai_copy = getattr(exc, "ai_survey_id", None)
+        lines = [
+            "Your survey uses something our converter can't automatically make "
+            "AI-compatible yet. We've logged the technical details so we can add "
+            "support for it — you can also email them to support@doppelgangerlabs.com.",
+        ]
+        if ai_copy:
+            link = f"https://{datacenter}.qualtrics.com/survey-builder/{ai_copy}/edit"
+            lines += [
+                "",
+                "We kept the partial AI copy in your Qualtrics account so you can "
+                "fix it yourself if you'd like:",
+                f"  1. Open {link}",
+                "  2. Remove or simplify the flagged question(s) / flow element(s) "
+                "shown in the details below.",
+                "  3. The copy holds no real data — delete it when done, then start "
+                "a new run.",
+            ]
+        lines += ["", f"Technical details (for support): {text[:1500]}"]
+        return "\n".join(lines)
     return text[:2000]
 
 
@@ -118,11 +142,12 @@ def _convert_survey(survey_id: str, base_url: str, token: str) -> str:
         client.activate(new_id)
         hard_strip(client, new_id)
         return new_id
-    except ConverterError:
-        try:
-            client.delete_survey(new_id)
-        except Exception:
-            pass
+    except ConverterError as exc:
+        # Keep the partial copy so the researcher can inspect/clean it manually,
+        # and attach its id so the error message can link straight to it. (These
+        # failures are now rare — the converter auto-handles the common cases —
+        # so leftover copies won't pile up the way auto-stripping every run would.)
+        exc.ai_survey_id = new_id  # type: ignore[attr-defined]
         raise
 
 
@@ -177,6 +202,14 @@ def run_simulation(run_id: int) -> None:
             qualtrics_datacenter, qualtrics_token, n_participants, is_smoke,
         )
     except Exception as exc:
+        # Full traceback to the server logs (Railway) so we can diagnose and fix
+        # root causes — especially new converter incompatibilities — for future runs.
+        import traceback
+        print(
+            f"[run {run_id}] simulation FAILED (survey={original_survey_id}):\n"
+            f"{traceback.format_exc()}",
+            flush=True,
+        )
         _set_status(
             run_id, "failed",
             error=_friendly_error(exc, qualtrics_datacenter),
