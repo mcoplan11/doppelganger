@@ -61,7 +61,18 @@ def request_magic_link(body: MagicLinkRequest, db: Session = Depends(get_db)):
 
     token = make_magic_token(body.email)
     magic_url = f"{settings.frontend_url}/auth/verify?token={token}"
-    send_magic_link(body.email, magic_url)
+    try:
+        send_magic_link(body.email, magic_url)
+    except Exception as exc:
+        # Don't let an email-provider failure surface as an uncaught 500 (which
+        # loses CORS headers and shows the browser a useless "failed to fetch").
+        # Return a clean, readable error instead.
+        print(f"Magic link send failed for {body.email}: {exc}", flush=True)
+        raise HTTPException(
+            status_code=502,
+            detail="We couldn't send the login email right now. Please try again "
+                   "in a moment, or contact support if it keeps happening.",
+        )
     return {"detail": "Magic link sent. Check your email."}
 
 
