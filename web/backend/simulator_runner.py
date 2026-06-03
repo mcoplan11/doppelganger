@@ -96,6 +96,7 @@ def _convert_survey(survey_id: str, base_url: str, token: str) -> str:
     from convert_to_ai import (
         ConverterError,
         Qualtrics as Converter,
+        convert_matrix_to_mc,
         hard_strip,
         pre_activation_flow_strip,
         pre_activation_strip,
@@ -109,6 +110,7 @@ def _convert_survey(survey_id: str, base_url: str, token: str) -> str:
     new_id = client.copy_survey(survey_id, f"{src_name} - AI Copy", owner_id)
     try:
         pre_activation_trash_strip(client, new_id)
+        convert_matrix_to_mc(client, new_id)
         pre_activation_strip(client, new_id, do_soft=True)
         pre_activation_flow_strip(client, new_id)
         client.activate(new_id)

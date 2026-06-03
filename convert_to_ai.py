@@ -116,6 +116,15 @@ class Qualtrics:
         r.raise_for_status()
         return r.json()["result"].get("SurveyName", "")
 
+    def create_question(self, survey_id: str, payload: dict, block_id: str | None = None) -> str:
+        url = f"{self._base}/survey-definitions/{survey_id}/questions"
+        if block_id:
+            url += f"?blockId={block_id}"
+        r = self._s.post(url, json=payload, timeout=30)
+        if r.status_code != 200:
+            raise ConverterError(f"create question failed: {r.status_code} {r.text[:300]}")
+        return r.json()["result"]["QuestionID"]
+
     def delete_question(self, survey_id: str, qid: str) -> None:
         r = self._s.delete(
             f"{self._base}/survey-definitions/{survey_id}/questions/{qid}",
@@ -241,6 +250,80 @@ def pre_activation_trash_strip(client: Qualtrics, survey_id: str) -> list[tuple[
                 except ConverterError:
                     pass  # already gone / not deletable
     return removed
+
+
+def convert_matrix_to_mc(client: Qualtrics, survey_id: str) -> list[tuple[str, list[str]]]:
+    """Convert Matrix-Likert questions into single-answer MC questions.
+
+    The Sessions API rejects Matrix-Likert outright, but these are often the
+    study's key DVs. Rather than strip them, we explode each matrix into one
+    single-select MC question per row (statement), with the matrix's rating scale
+    as the answer choices. Each row becomes its own Likert item the AI can answer,
+    and the simulator already handles single-select MC + numeric recodes.
+
+    Runs before activation. The new questions are added to the same block as the
+    original matrix (preserving the experimental condition), then the matrix is
+    deleted. Returns list of (original_qid, [new_qids]).
+    """
+    defn = client.get_definition(survey_id)
+    questions = defn.get("Questions", {}) or {}
+    blocks = defn.get("Blocks", {}) or {}
+
+    qid_block: dict[str, str] = {}
+    for bid, b in blocks.items():
+        for e in b.get("BlockElements", []) or []:
+            if e.get("Type") == "Question" and e.get("QuestionID"):
+                qid_block[e["QuestionID"]] = bid
+
+    converted: list[tuple[str, list[str]]] = []
+    for qid, q in list(questions.items()):
+        if (q.get("QuestionType"), q.get("Selector")) != ("Matrix", "Likert"):
+            continue
+
+        block_id = qid_block.get(qid)
+        stem = q.get("QuestionText", "")
+        tag = q.get("DataExportTag", "") or qid
+        answers = q.get("Answers", {}) or {}
+        rows = q.get("Choices", {}) or {}
+        row_tags = q.get("ChoiceDataExportTags") or {}
+        # Qualtrics is inconsistent: ChoiceOrder/AnswerOrder entries can be ints
+        # or strings while the dict keys are always strings — normalize to str.
+        answer_order = [str(x) for x in (q.get("AnswerOrder") or list(answers.keys()))]
+        row_order = [str(x) for x in (q.get("ChoiceOrder") or list(rows.keys()))]
+
+        # Shared choice set = the matrix's rating scale (Answers). Keeping the
+        # original answer keys means the implicit recode stays the scale value.
+        choices = {a: {"Display": answers[a].get("Display", "")}
+                   for a in answer_order if a in answers}
+        choice_order = [a for a in answer_order if a in choices]
+
+        new_qids: list[str] = []
+        for rk in row_order:
+            if rk not in rows:
+                continue
+            row_text = rows[rk].get("Display", "")
+            row_tag = (row_tags.get(rk) if isinstance(row_tags, dict) else None) or rk
+            qtext = f"{stem}<br><strong>{row_text}</strong>"
+            payload = {
+                "QuestionText": qtext,
+                "QuestionText_Unsafe": qtext,
+                "DataExportTag": f"{tag}_{row_tag}",
+                "QuestionType": "MC",
+                "Selector": "SAVR",
+                "SubSelector": "TX",
+                "Configuration": {"QuestionDescriptionOption": "UseText"},
+                "QuestionDescription": (row_text or qid)[:100],
+                "Choices": choices,
+                "ChoiceOrder": choice_order,
+                "Validation": {"Settings": {
+                    "ForceResponse": "OFF", "ForceResponseType": "ON", "Type": "None"}},
+                "Language": [],
+            }
+            new_qids.append(client.create_question(survey_id, payload, block_id))
+
+        client.delete_question(survey_id, qid)
+        converted.append((qid, new_qids))
+    return converted
 
 
 def pre_activation_flow_strip(client: Qualtrics, survey_id: str) -> list[str]:
@@ -402,6 +485,12 @@ def main() -> int:
         print("\nDropping trash / unused-block questions...")
         trash = pre_activation_trash_strip(client, new_id)
         print(f"  removed {len(trash)} unused questions")
+
+        print("\nConverting Matrix-Likert questions to single-answer MC...")
+        mtx = convert_matrix_to_mc(client, new_id)
+        for oq, nqs in mtx:
+            print(f"  - {oq} → {len(nqs)} MC questions")
+        print(f"  total matrices converted: {len(mtx)}")
 
         print("\nPre-activation strip (incompatible types + soft-strip tags)...")
         pre = pre_activation_strip(client, new_id, do_soft=not args.no_soft_strip)
