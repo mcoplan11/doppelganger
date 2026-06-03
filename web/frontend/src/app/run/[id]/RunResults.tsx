@@ -63,9 +63,19 @@ function QuestionBlock({ q, hasConditions }: { q: QuestionResult; hasConditions:
 // ── Choice / scale, no conditions ────────────────────────────────────────────
 function SingleSummary({ summary }: { summary: Summary }) {
   if (summary.mean != null) {
-    return <MeanBar mean={summary.mean} bounds={scaleBounds(summary.distribution)} n={summary.n} />;
+    return (
+      <>
+        <div className="text-xs text-gray-500 mb-2 uppercase tracking-wider">Mean response</div>
+        <MeanBar mean={summary.mean} bounds={scaleBounds(summary.distribution)} n={summary.n} />
+      </>
+    );
   }
-  return <DistributionBars dist={summary.distribution ?? []} />;
+  return (
+    <>
+      <div className="text-xs text-gray-500 mb-2 uppercase tracking-wider">Response count</div>
+      <DistributionBars dist={summary.distribution ?? []} />
+    </>
+  );
 }
 
 // ── Choice / scale, broken out by condition (the headline view) ──────────────
@@ -75,24 +85,30 @@ function ChoiceByCondition({ q }: { q: QuestionResult }) {
 
   if (isScale) {
     return (
-      <div className="flex flex-col gap-2.5">
-        {q.by_condition!.map((c) => (
-          <MeanBar key={c.condition} label={c.condition} mean={c.mean ?? 0} bounds={bounds} n={c.n} />
-        ))}
-      </div>
+      <>
+        <div className="text-xs text-gray-500 mb-2 uppercase tracking-wider">Mean response by condition</div>
+        <div className="flex flex-col gap-2.5">
+          {q.by_condition!.map((c) => (
+            <MeanBar key={c.condition} label={c.condition} mean={c.mean ?? 0} bounds={bounds} n={c.n} />
+          ))}
+        </div>
+      </>
     );
   }
 
   // Categorical: a small distribution per condition
   return (
-    <div className="flex flex-col gap-4">
-      {q.by_condition!.map((c) => (
-        <div key={c.condition}>
-          <div className="text-xs text-gray-400 mb-1.5">{c.condition} <span className="text-gray-600">· n={c.n}</span></div>
-          <DistributionBars dist={c.distribution ?? []} />
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="text-xs text-gray-500 mb-2 uppercase tracking-wider">Response count by condition</div>
+      <div className="flex flex-col gap-4">
+        {q.by_condition!.map((c) => (
+          <div key={c.condition}>
+            <div className="text-xs text-gray-400 mb-1.5">{c.condition} <span className="text-gray-600">· n={c.n}</span></div>
+            <DistributionBars dist={c.distribution ?? []} />
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
 
@@ -108,6 +124,8 @@ function MatrixView({ q, hasConditions }: { q: QuestionResult; hasConditions: bo
       return c?.rows?.find((r) => r.row === rowLabel)?.mean ?? null;
     };
     return (
+      <>
+      <div className="text-xs text-gray-500 mb-2 uppercase tracking-wider">Mean response by condition</div>
       <div className="overflow-x-auto">
         <table className="w-full text-xs">
           <thead>
@@ -135,17 +153,21 @@ function MatrixView({ q, hasConditions }: { q: QuestionResult; hasConditions: bo
           </tbody>
         </table>
       </div>
+      </>
     );
   }
 
   return (
-    <div className="flex flex-col gap-2.5">
-      {rows.map((r) => (
-        r.mean != null
-          ? <MeanBar key={r.row} label={r.row} mean={r.mean} bounds={scaleBoundsFromRow(r.distribution)} n={r.n} />
-          : <div key={r.row}><div className="text-xs text-gray-400 mb-1.5">{r.row}</div><DistributionBars dist={r.distribution} /></div>
-      ))}
-    </div>
+    <>
+      <div className="text-xs text-gray-500 mb-2 uppercase tracking-wider">Mean response per row</div>
+      <div className="flex flex-col gap-2.5">
+        {rows.map((r) => (
+          r.mean != null
+            ? <MeanBar key={r.row} label={r.row} mean={r.mean} bounds={scaleBoundsFromRow(r.distribution)} n={r.n} />
+            : <div key={r.row}><div className="text-xs text-gray-400 mb-1.5">{r.row}</div><DistributionBars dist={r.distribution} /></div>
+        ))}
+      </div>
+    </>
   );
 }
 
