@@ -116,6 +116,15 @@ class Qualtrics:
         r.raise_for_status()
         return r.json()["result"].get("SurveyName", "")
 
+    def update_question(self, survey_id: str, qid: str, payload: dict) -> None:
+        r = self._s.put(
+            f"{self._base}/survey-definitions/{survey_id}/questions/{qid}",
+            json=payload,
+            timeout=30,
+        )
+        if r.status_code != 200:
+            raise ConverterError(f"update {qid} failed: {r.status_code} {r.text[:200]}")
+
     def create_question(self, survey_id: str, payload: dict, block_id: str | None = None) -> str:
         url = f"{self._base}/survey-definitions/{survey_id}/questions"
         if block_id:
@@ -250,6 +259,31 @@ def pre_activation_trash_strip(client: Qualtrics, survey_id: str) -> list[tuple[
                 except ConverterError:
                     pass  # already gone / not deletable
     return removed
+
+
+def pre_activation_validation_strip(client: Qualtrics, survey_id: str) -> list[tuple[str, str]]:
+    """Neutralize answer-correctness validations that block AI progression.
+
+    Studies gate progression with "you must answer correctly to continue"
+    validations — transcription bot-checks (often shown as an IMAGE the AI can't
+    read), comprehension checks, "type X to proceed". The Sessions API enforces
+    these, so the AI gets stuck with a 400 ValidationErrors and the session dies.
+    None of these are DVs, so we drop the validation (set Type=None, ForceResponse
+    OFF) and let any answer through. Must run before activation.
+
+    Returns list of (qid, tag) neutralized.
+    """
+    questions = client.get_questions(survey_id)
+    fixed: list[tuple[str, str]] = []
+    for qid, q in questions.items():
+        settings = (q.get("Validation") or {}).get("Settings") or {}
+        if settings.get("Type") in ("CustomValidation", "ContentType"):
+            q["Validation"]["Settings"]["Type"] = "None"
+            q["Validation"]["Settings"]["ForceResponse"] = "OFF"
+            q["Validation"]["Settings"].pop("CustomValidation", None)
+            client.update_question(survey_id, qid, q)
+            fixed.append((qid, q.get("DataExportTag", "")))
+    return fixed
 
 
 def convert_matrix_to_mc(client: Qualtrics, survey_id: str) -> list[tuple[str, list[str]]]:
@@ -497,6 +531,12 @@ def main() -> int:
         for qid, tag, reason in pre:
             print(f"  - removed {qid}  ({reason})")
         print(f"  total pre-activation: {len(pre)}")
+
+        print("\nNeutralizing answer-correctness validation gates...")
+        val = pre_activation_validation_strip(client, new_id)
+        for qid, tag in val:
+            print(f"  - neutralized {qid} (tag={tag})")
+        print(f"  total validation gates fixed: {len(val)}")
 
         print("\nNeutralizing end-of-survey redirects in flow...")
         flow_fixed = pre_activation_flow_strip(client, new_id)

@@ -101,6 +101,7 @@ def _convert_survey(survey_id: str, base_url: str, token: str) -> str:
         pre_activation_flow_strip,
         pre_activation_strip,
         pre_activation_trash_strip,
+        pre_activation_validation_strip,
     )
 
     client = Converter(base_url, token)
@@ -112,6 +113,7 @@ def _convert_survey(survey_id: str, base_url: str, token: str) -> str:
         pre_activation_trash_strip(client, new_id)
         convert_matrix_to_mc(client, new_id)
         pre_activation_strip(client, new_id, do_soft=True)
+        pre_activation_validation_strip(client, new_id)
         pre_activation_flow_strip(client, new_id)
         client.activate(new_id)
         hard_strip(client, new_id)
