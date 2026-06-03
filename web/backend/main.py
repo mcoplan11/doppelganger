@@ -25,6 +25,8 @@ _allowed_origins = list({
     settings.frontend_url,
     "http://localhost:3000",
     "https://doppelganger-two.vercel.app",
+    "https://doppelgangerlabs.com",
+    "https://www.doppelgangerlabs.com",
 })
 
 app.add_middleware(
