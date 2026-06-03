@@ -99,6 +99,7 @@ def _convert_survey(survey_id: str, base_url: str, token: str) -> str:
         hard_strip,
         pre_activation_flow_strip,
         pre_activation_strip,
+        pre_activation_trash_strip,
     )
 
     client = Converter(base_url, token)
@@ -107,6 +108,7 @@ def _convert_survey(survey_id: str, base_url: str, token: str) -> str:
     src_name = client.get_survey_name(survey_id)
     new_id = client.copy_survey(survey_id, f"{src_name} - AI Copy", owner_id)
     try:
+        pre_activation_trash_strip(client, new_id)
         pre_activation_strip(client, new_id, do_soft=True)
         pre_activation_flow_strip(client, new_id)
         client.activate(new_id)

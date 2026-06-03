@@ -92,6 +92,11 @@ class Qualtrics:
         r.raise_for_status()
         return r.json()["result"].get("Questions", {}) or {}
 
+    def get_definition(self, survey_id: str) -> dict:
+        r = self._s.get(f"{self._base}/survey-definitions/{survey_id}", timeout=30)
+        r.raise_for_status()
+        return r.json()["result"]
+
     def get_flow(self, survey_id: str) -> dict:
         r = self._s.get(f"{self._base}/survey-definitions/{survey_id}/flow", timeout=30)
         r.raise_for_status()
@@ -193,6 +198,48 @@ def pre_activation_strip(
         if reason:
             client.delete_question(survey_id, qid)
             removed.append((qid, tag, reason))
+    return removed
+
+
+def pre_activation_trash_strip(client: Qualtrics, survey_id: str) -> list[tuple[str, str]]:
+    """Delete questions living in blocks not referenced by the survey flow.
+
+    Qualtrics keeps removed-but-not-purged questions in a "Trash / Unused
+    Questions" block (and surveys can accumulate other orphaned blocks). These
+    never run, so they're pure noise — converting or probing them wastes time and
+    can surface spurious incompatibilities. We strip them first, before any other
+    pass, so the rest of the conversion only deals with live questions.
+
+    Returns list of (qid, block_description) removed.
+    """
+    defn = client.get_definition(survey_id)
+    blocks = defn.get("Blocks", {}) or {}
+    flow = defn.get("SurveyFlow", {}) or {}
+
+    referenced: set[str] = set()
+
+    def walk(el: dict) -> None:
+        if el.get("ID"):
+            referenced.add(el["ID"])
+        for child in el.get("Flow", []) or []:
+            walk(child)
+
+    for el in flow.get("Flow", []) or []:
+        walk(el)
+
+    removed: list[tuple[str, str]] = []
+    for bid, b in blocks.items():
+        if bid in referenced:
+            continue
+        desc = b.get("Description", "")
+        for e in b.get("BlockElements", []) or []:
+            if e.get("Type") == "Question" and e.get("QuestionID"):
+                qid = e["QuestionID"]
+                try:
+                    client.delete_question(survey_id, qid)
+                    removed.append((qid, desc))
+                except ConverterError:
+                    pass  # already gone / not deletable
     return removed
 
 
@@ -352,6 +399,10 @@ def main() -> int:
     print(f"  → {new_id}")
 
     try:
+        print("\nDropping trash / unused-block questions...")
+        trash = pre_activation_trash_strip(client, new_id)
+        print(f"  removed {len(trash)} unused questions")
+
         print("\nPre-activation strip (incompatible types + soft-strip tags)...")
         pre = pre_activation_strip(client, new_id, do_soft=not args.no_soft_strip)
         for qid, tag, reason in pre:
