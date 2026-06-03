@@ -293,6 +293,21 @@ def cancel_run(
     return _run_to_dict(run)
 
 
+@app.get("/runs/{run_id}/results")
+def get_run_results(
+    run_id: int,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    run = db.query(Run).filter(Run.id == run_id, Run.user_id == user.id).first()
+    if not run:
+        raise HTTPException(status_code=404, detail="Run not found.")
+    if not run.result_path:
+        return {"available": False, "questions": []}
+    from results import build_results
+    return build_results(Path(run.result_path).parent)
+
+
 @app.get("/runs/{run_id}/download")
 def download_run(
     run_id: int,

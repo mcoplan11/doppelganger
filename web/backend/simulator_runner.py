@@ -118,6 +118,35 @@ def _convert_survey(survey_id: str, base_url: str, token: str) -> str:
         raise
 
 
+def _save_survey_meta(output_dir: Path, survey) -> None:
+    """Persist question metadata (labels, choices, recodes) so the results view
+    can join saved answers back to human-readable labels after the run."""
+    from gemini_client import is_answerable
+
+    questions = []
+    for q in survey.questions:
+        if not is_answerable(q):
+            continue
+        questions.append({
+            "qid": q.qid,
+            "export_tag": q.export_tag,
+            "prompt": q.prompt_text,
+            "type": q.question_type,
+            "multi_select": q.allows_multiple_answers,
+            "choices": [
+                {"choice_id": c.choice_id, "text": c.text, "recode": c.recode}
+                for c in q.choices
+            ],
+            "sub_questions": [
+                {"choice_id": s.choice_id, "text": s.text}
+                for s in q.sub_questions
+            ],
+        })
+    (output_dir / "survey_meta.json").write_text(
+        json.dumps({"name": survey.name, "questions": questions}, indent=2)
+    )
+
+
 def run_simulation(run_id: int) -> None:
     """Entry point called as a FastAPI background task."""
     db = _db()
@@ -177,6 +206,7 @@ def _run_inner(
 
     output_dir = Path(SIMULATOR_ROOT) / "responses" / f"web_run_{run_id}"
     output_dir.mkdir(parents=True, exist_ok=True)
+    _save_survey_meta(output_dir, survey)
 
     def _on_progress(completed: int) -> None:
         _set_status(run_id, "running", credits_used=completed)

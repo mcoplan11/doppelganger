@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { api, type Run } from "@/lib/api";
+import RunResults from "./RunResults";
 
 const STATUS_LABELS: Record<string, string> = {
   converting: "Converting survey to AI-compatible copy…",
@@ -168,6 +169,9 @@ export default function RunDetail() {
             </div>
           </div>
         )}
+
+        {/* Results preview */}
+        {run.status === "done" && <RunResults runId={run.id} />}
 
         {/* Actions */}
         {run.status === "done" && (

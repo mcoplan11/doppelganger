@@ -45,6 +45,7 @@ export const api = {
 
   listRuns: () => request<Run[]>("/runs"),
   getRun: (id: number) => request<Run>(`/runs/${id}`),
+  getResults: (id: number) => request<ResultsSummary>(`/runs/${id}/results`),
   cancelRun: (id: number) => request<Run>(`/runs/${id}/cancel`, { method: "POST" }),
   downloadUrl: (id: number) => `${BASE}/runs/${id}/download`,
 };
@@ -62,4 +63,45 @@ export interface Run {
   branch_distribution: Record<string, number>;
   created_at: string;
   completed_at: string | null;
+}
+
+export interface DistItem {
+  label: string;
+  count: number;
+  recode: number | null;
+}
+
+export interface MatrixRow {
+  row: string;
+  n: number;
+  mean: number | null;
+  distribution: DistItem[];
+}
+
+export interface Summary {
+  kind: "choice" | "multi" | "text" | "matrix";
+  n: number;
+  mean?: number | null;
+  distribution?: DistItem[];
+  responses?: string[];
+  rows?: MatrixRow[];
+}
+
+export type ConditionSummary = Summary & { condition: string };
+
+export interface QuestionResult {
+  qid: string;
+  prompt: string;
+  type: string;
+  n: number;
+  overall: Summary;
+  by_condition?: ConditionSummary[];
+}
+
+export interface ResultsSummary {
+  available: boolean;
+  n_completed?: number;
+  has_conditions?: boolean;
+  conditions?: string[];
+  questions: QuestionResult[];
 }
