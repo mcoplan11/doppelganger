@@ -98,16 +98,22 @@ def get_db():
 
 
 def create_tables():
+    import sqlalchemy
+
     Base.metadata.create_all(bind=engine)
-    # Add columns introduced after initial deploy (create_all won't alter existing tables).
-    with engine.connect() as conn:
-        for sql in [
-            "ALTER TABLE runs ADD COLUMN platform VARCHAR DEFAULT 'prolific'",
-            "ALTER TABLE users ADD COLUMN qualtrics_token_enc TEXT",
-            "ALTER TABLE users ADD COLUMN qualtrics_datacenter VARCHAR",
-        ]:
-            try:
-                conn.execute(__import__("sqlalchemy").text(sql))
+    # Add columns introduced after initial deploy (create_all won't alter existing
+    # tables). Each statement runs on its OWN connection: on Postgres a failed
+    # statement (e.g. the column already exists) aborts its whole transaction, so
+    # sharing one connection lets the first failure swallow every later migration.
+    migrations = [
+        "ALTER TABLE runs ADD COLUMN platform VARCHAR DEFAULT 'prolific'",
+        "ALTER TABLE users ADD COLUMN qualtrics_token_enc TEXT",
+        "ALTER TABLE users ADD COLUMN qualtrics_datacenter VARCHAR",
+    ]
+    for sql in migrations:
+        try:
+            with engine.connect() as conn:
+                conn.execute(sqlalchemy.text(sql))
                 conn.commit()
-            except Exception:
-                pass  # column already exists
+        except Exception:
+            pass  # column already exists
