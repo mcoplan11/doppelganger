@@ -1,6 +1,6 @@
 """FastAPI application — Doppelganger web service."""
 import json
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Annotated
 
@@ -262,6 +262,40 @@ def create_run(
     return _run_to_dict(run)
 
 
+# A run that's been active far longer than any plausible runtime was almost
+# certainly orphaned by a backend restart (simulations run as in-process
+# background tasks, so a redeploy kills them mid-flight and nothing ever updates
+# the row). Trial runs finish in ~2 min and normal batch runs in minutes, so this
+# threshold is deliberately generous to avoid reaping a legitimately long run.
+STUCK_RUN_MINUTES = 60
+
+
+def _reap_stuck_runs(db: Session, runs: list[Run]) -> None:
+    """Mark long-orphaned active runs as failed. Self-heals on read so a run
+    interrupted by a deploy doesn't spin forever. No credits were charged
+    (deduction only happens on completion), so this is purely cosmetic recovery."""
+    cutoff = datetime.now(timezone.utc) - timedelta(minutes=STUCK_RUN_MINUTES)
+    changed = False
+    for run in runs:
+        if run.status not in ("converting", "running"):
+            continue
+        created = run.created_at
+        if created is None:
+            continue
+        if created.tzinfo is None:  # SQLite returns naive datetimes
+            created = created.replace(tzinfo=timezone.utc)
+        if created < cutoff:
+            run.status = "failed"
+            run.error = (
+                "This run was interrupted before it finished (most likely a "
+                "server update). No credits were charged — please start it again."
+            )
+            run.completed_at = datetime.now(timezone.utc)
+            changed = True
+    if changed:
+        db.commit()
+
+
 @app.get("/runs")
 def list_runs(
     user: User = Depends(get_current_user),
@@ -274,6 +308,7 @@ def list_runs(
         .limit(50)
         .all()
     )
+    _reap_stuck_runs(db, runs)
     return [_run_to_dict(r) for r in runs]
 
 
@@ -286,6 +321,7 @@ def get_run(
     run = db.query(Run).filter(Run.id == run_id, Run.user_id == user.id).first()
     if not run:
         raise HTTPException(status_code=404, detail="Run not found.")
+    _reap_stuck_runs(db, [run])
     return _run_to_dict(run)
 
 
