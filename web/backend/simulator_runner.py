@@ -188,43 +188,61 @@ def run_simulation(run_id: int) -> None:
         if not run:
             return
         user_id = run.user_id
+        user_email = run.user.email if run.user else "unknown"
         original_survey_id = run.original_survey_id
         qualtrics_datacenter = run.qualtrics_datacenter
         qualtrics_token = decrypt(run.qualtrics_token_enc)
         n_participants = run.n_participants
         is_smoke = run.is_smoke_test
+        started_at = datetime.now(timezone.utc)
     finally:
         db.close()
 
     try:
         _run_inner(
-            run_id, user_id, original_survey_id,
+            run_id, user_id, user_email, original_survey_id,
             qualtrics_datacenter, qualtrics_token, n_participants, is_smoke,
+            started_at,
         )
     except Exception as exc:
-        # Full traceback to the server logs (Railway) so we can diagnose and fix
-        # root causes — especially new converter incompatibilities — for future runs.
         import traceback
         print(
             f"[run {run_id}] simulation FAILED (survey={original_survey_id}):\n"
             f"{traceback.format_exc()}",
             flush=True,
         )
+        friendly = _friendly_error(exc, qualtrics_datacenter)
         _set_status(
             run_id, "failed",
-            error=_friendly_error(exc, qualtrics_datacenter),
+            error=friendly,
             completed_at=datetime.now(timezone.utc),
+        )
+        from email_client import send_run_notification
+        send_run_notification(
+            run_id=run_id,
+            user_email=user_email,
+            survey_id=original_survey_id,
+            ai_survey_id=getattr(exc, "ai_survey_id", None),
+            is_smoke=is_smoke,
+            status="failed",
+            credits_used=0,
+            n_participants=n_participants,
+            duration_seconds=int((datetime.now(timezone.utc) - started_at).total_seconds()),
+            branch_counts={},
+            error=friendly,
         )
 
 
 def _run_inner(
     run_id: int,
     user_id: int,
+    user_email: str,
     original_survey_id: str,
     qualtrics_datacenter: str,
     qualtrics_token: str,
     n_participants: int,
     is_smoke: bool,
+    started_at: datetime,
 ) -> None:
     from gemini_client import GeminiClient
     from personas import DEFAULT_PERSONAS
@@ -299,5 +317,20 @@ def _run_inner(
         result_path=result_index_path,
         branch_summary=json.dumps(dict(branch_counts)),
         completed_at=datetime.now(timezone.utc),
+        error=error_msg,
+    )
+
+    from email_client import send_run_notification
+    send_run_notification(
+        run_id=run_id,
+        user_email=user_email,
+        survey_id=original_survey_id,
+        ai_survey_id=ai_survey_id,
+        is_smoke=is_smoke,
+        status=final_status,
+        credits_used=credits_used,
+        n_participants=n_participants,
+        duration_seconds=int((datetime.now(timezone.utc) - started_at).total_seconds()),
+        branch_counts=dict(branch_counts),
         error=error_msg,
     )
