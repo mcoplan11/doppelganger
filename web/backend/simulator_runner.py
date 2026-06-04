@@ -279,6 +279,7 @@ def _run_inner(
         out_dir=output_dir,
         use_batch=False if is_smoke else None,
         on_progress=_on_progress,
+        max_pending_seconds=30 * 60 if is_smoke else 60 * 60,
     )
 
     completed = [r for r in runs if r.completed]

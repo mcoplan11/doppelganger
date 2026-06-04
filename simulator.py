@@ -124,6 +124,7 @@ def run_many(
     use_batch: bool | None = None,
     batch_threshold: int = DEFAULT_BATCH_THRESHOLD,
     on_progress: "Callable[[int], None] | None" = None,
+    max_pending_seconds: int = 30 * 60,
 ) -> list[SessionRun]:
     """Run each persona through the survey N times.
 
@@ -143,7 +144,8 @@ def run_many(
               f"({total_sessions} sessions > threshold {batch_threshold} = batch mode).",
               flush=True)
         return _run_many_batched(
-            qualtrics, gemini, survey, personas, runs_per_persona, out_dir, on_progress,
+            qualtrics, gemini, survey, personas, runs_per_persona, out_dir,
+            on_progress, max_pending_seconds,
         )
     return _run_many_sync(qualtrics, gemini, survey, personas, runs_per_persona, out_dir)
 
@@ -209,6 +211,7 @@ def _run_many_batched(
     runs_per_persona: int,
     out_dir: "Path | None",
     on_progress: "Callable[[int], None] | None" = None,
+    max_pending_seconds: int = 30 * 60,
 ) -> list[SessionRun]:
     """Cross-persona batched runner.
 
@@ -311,6 +314,7 @@ def _run_many_batched(
                     raw = gemini.answer_blocks_batch(
                         inputs,
                         poll_interval_seconds=30,
+                        max_pending_seconds=max_pending_seconds,
                         on_progress=lambda msg: print(f"  {msg}", flush=True),
                     )
                     break

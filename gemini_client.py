@@ -72,6 +72,7 @@ class GeminiClient:
         *,
         poll_interval_seconds: int = 30,
         max_wait_seconds: int = 2 * 3600,
+        max_pending_seconds: int = 30 * 60,
         on_progress=None,
     ) -> dict[str, dict[str, Any] | None]:
         """Submit a batch of block-answers to Gemini Batch API; wait for completion.
@@ -103,7 +104,7 @@ class GeminiClient:
                            if len(chunks) > 1 else "")
             results.update(self._submit_chunk(
                 chunk, chunk_label, poll_interval_seconds,
-                max_wait_seconds, on_progress,
+                max_wait_seconds, max_pending_seconds, on_progress,
             ))
         return results
 
@@ -113,6 +114,7 @@ class GeminiClient:
         label: str,
         poll_interval_seconds: int,
         max_wait_seconds: int,
+        max_pending_seconds: int,
         on_progress,
     ) -> dict[str, dict[str, Any] | None]:
         results: dict[str, dict[str, Any] | None] = {}
@@ -146,10 +148,10 @@ class GeminiClient:
 
         terminal = {"JOB_STATE_SUCCEEDED", "JOB_STATE_FAILED",
                     "JOB_STATE_CANCELLED", "JOB_STATE_EXPIRED"}
-        # A job stuck in PENDING for >30 min has almost certainly been dropped by
-        # Gemini's queue and will never transition to RUNNING. Fail fast rather
-        # than holding a Railway process hostage for hours.
-        MAX_PENDING_SECONDS = 30 * 60
+        # A job stuck in PENDING for too long has been dropped by Gemini's queue.
+        # Trial runs use 30 min (fast failure feedback); full runs allow 60 min
+        # since the model may be under demand and the stakes are higher.
+        MAX_PENDING_SECONDS = max_pending_seconds
         start = time.time()
         pending_since: float | None = None
         while True:
