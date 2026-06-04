@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+import time
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Callable
@@ -295,16 +296,32 @@ def _run_many_batched(
         session_error: dict[str, str] = {}
 
         if inputs:
-            try:
-                raw = gemini.answer_blocks_batch(
-                    inputs,
-                    poll_interval_seconds=30,
-                    on_progress=lambda msg: print(f"  {msg}", flush=True),
-                )
-            except Exception as e:
-                print(f"  BATCH ERROR: {e}", file=sys.stderr, flush=True)
+            raw = None
+            last_batch_err: Exception | None = None
+            for batch_attempt in range(3):
+                if batch_attempt:
+                    wait = 5 * 60  # 5 min between retries
+                    print(
+                        f"  Batch attempt {batch_attempt + 1}/3 — waiting {wait//60} min "
+                        f"before retry (last error: {last_batch_err})...",
+                        flush=True,
+                    )
+                    time.sleep(wait)
+                try:
+                    raw = gemini.answer_blocks_batch(
+                        inputs,
+                        poll_interval_seconds=30,
+                        on_progress=lambda msg: print(f"  {msg}", flush=True),
+                    )
+                    break
+                except Exception as e:
+                    last_batch_err = e
+                    print(f"  BATCH ERROR (attempt {batch_attempt + 1}/3): {e}", file=sys.stderr, flush=True)
+
+            if raw is None:
+                print(f"  All batch attempts failed. Marking sessions as failed.", file=sys.stderr, flush=True)
                 for s in active:
-                    s.run.error = f"batch error: {e}"
+                    s.run.error = f"batch error: {last_batch_err}"
                     _save_run(out_dir, s.idx, s.run)
                 break
 
