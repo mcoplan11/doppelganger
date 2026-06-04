@@ -293,8 +293,16 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-slate-200 text-center text-slate-500 text-sm py-8">
-        © {new Date().getFullYear()} Doppelganger · A survey pretesting tool · Not affiliated with Qualtrics or Google
+      <footer className="border-t border-slate-200 text-slate-500 text-sm py-8">
+        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <span>© {new Date().getFullYear()} Doppelganger · A survey pretesting tool · Not affiliated with Qualtrics or Google</span>
+          <a
+            href="mailto:hello@doppelgangerlabs.com"
+            className="text-blue-600 hover:text-blue-700 font-medium"
+          >
+            hello@doppelgangerlabs.com
+          </a>
+        </div>
       </footer>
     </main>
   );
