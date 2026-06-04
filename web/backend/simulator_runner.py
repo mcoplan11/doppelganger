@@ -151,6 +151,65 @@ def _convert_survey(survey_id: str, base_url: str, token: str) -> str:
         raise
 
 
+def _cleanup_ai_copy(
+    ai_survey_id: str | None,
+    original_survey_id: str,
+    base_url: str,
+    token: str,
+    run_id: int,
+) -> None:
+    """Delete the AI survey copy after a total-failure run (0 sessions completed).
+
+    Guards (ALL must pass before deletion fires):
+      1. ai_survey_id is not None or empty
+      2. ai_survey_id != original_survey_id (never touch the source survey)
+      3. Survey name fetched from Qualtrics ends with '- AI Copy'
+
+    Any failure in this function is caught and logged — it must never affect
+    the run's final status or error message.
+    """
+    try:
+        # Guard 1 — must have an AI copy ID
+        if not ai_survey_id:
+            print(f"[run {run_id}] cleanup skipped: no ai_survey_id", flush=True)
+            return
+
+        # Guard 2 — must not be the original survey
+        if ai_survey_id == original_survey_id:
+            print(
+                f"[run {run_id}] cleanup ABORTED: ai_survey_id == original_survey_id "
+                f"({ai_survey_id}). This should never happen.",
+                flush=True,
+            )
+            return
+
+        # Guard 3 — fetch the survey name and verify the '- AI Copy' suffix
+        from convert_to_ai import Qualtrics as Converter
+        client = Converter(base_url, token)
+        try:
+            name = client.get_survey_name(ai_survey_id)
+        except Exception as e:
+            print(f"[run {run_id}] cleanup skipped: could not fetch survey name for {ai_survey_id}: {e}", flush=True)
+            return
+
+        if not name.endswith("- AI Copy"):
+            print(
+                f"[run {run_id}] cleanup ABORTED: survey {ai_survey_id} name {name!r} "
+                f"does not end with '- AI Copy'. Refusing to delete.",
+                flush=True,
+            )
+            return
+
+        # All guards passed — safe to delete
+        print(f"[run {run_id}] deleting failed AI copy {ai_survey_id} ({name!r})...", flush=True)
+        client.delete_survey(ai_survey_id)
+        print(f"[run {run_id}] AI copy {ai_survey_id} deleted.", flush=True)
+
+    except Exception as e:
+        # Deletion failure must never affect the run record
+        print(f"[run {run_id}] cleanup error (non-fatal): {e}", flush=True)
+
+
 def _save_survey_meta(output_dir: Path, survey) -> None:
     """Persist question metadata (labels, choices, recodes) so the results view
     can join saved answers back to human-readable labels after the run."""
@@ -320,6 +379,12 @@ def _run_inner(
         completed_at=datetime.now(timezone.utc),
         error=error_msg,
     )
+
+    # Clean up the AI survey copy when the run failed completely (no sessions
+    # succeeded, so the copy holds no real data). Multiple guards ensure we
+    # never accidentally touch the original survey or a partial-success copy.
+    if final_status == "failed" and credits_used == 0:
+        _cleanup_ai_copy(ai_survey_id, original_survey_id, base_url, qualtrics_token, run_id)
 
     from email_client import send_run_notification
     send_run_notification(
