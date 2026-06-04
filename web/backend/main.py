@@ -1,5 +1,7 @@
 """FastAPI application — Doppelganger web service."""
+import asyncio
 import json
+import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Annotated
@@ -14,7 +16,7 @@ from sqlalchemy.orm import Session
 from auth import create_session_cookie, get_current_user, make_magic_token, verify_magic_token
 from app_config import settings
 from crypto import decrypt, encrypt
-from database import CreditBalance, Purchase, Run, User, create_tables, get_db
+from database import CreditBalance, Purchase, Run, SessionLocal, User, create_tables, get_db
 from email_client import send_magic_link, send_run_notification
 from payments import CREDIT_PACKS, construct_webhook_event, create_checkout_session
 from simulator_runner import run_simulation
@@ -39,8 +41,36 @@ app.add_middleware(
 
 
 @app.on_event("startup")
-def startup():
+async def startup():
     create_tables()
+    asyncio.create_task(_reaper_loop())
+
+
+async def _reaper_loop() -> None:
+    """Proactively reap and notify stuck runs every 5 minutes.
+
+    The on-read reaper in _reap_stuck_runs only fires when a user hits /runs.
+    Runs orphaned by a Railway restart would never be caught if no one checks.
+    This loop ensures we always notify even when users aren't watching.
+    """
+    while True:
+        await asyncio.sleep(5 * 60)
+        try:
+            db = SessionLocal()
+            try:
+                cutoff = datetime.now(timezone.utc) - timedelta(minutes=STUCK_RUN_MINUTES)
+                stuck = (
+                    db.query(Run)
+                    .filter(Run.status.in_(["converting", "running"]))
+                    .filter(Run.created_at < cutoff)
+                    .all()
+                )
+                if stuck:
+                    _reap_stuck_runs(db, stuck)
+            finally:
+                db.close()
+        except Exception as e:
+            print(f"[reaper-loop] error: {e}", file=sys.stderr, flush=True)
 
 
 # ── Auth ─────────────────────────────────────────────────────────────────────
@@ -267,7 +297,7 @@ def create_run(
 # background tasks, so a redeploy kills them mid-flight and nothing ever updates
 # the row). Trial runs finish in ~2 min and normal batch runs in minutes, so this
 # threshold is deliberately generous to avoid reaping a legitimately long run.
-STUCK_RUN_MINUTES = 60
+STUCK_RUN_MINUTES = 120
 
 
 def _reap_stuck_runs(db: Session, runs: list[Run]) -> None:

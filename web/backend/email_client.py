@@ -2,6 +2,9 @@
 
 If RESEND_API_KEY is empty (local dev), just prints the link to stdout.
 """
+import sys
+import time
+
 import resend
 
 from app_config import settings
@@ -14,7 +17,17 @@ def _send(to: str, subject: str, html: str) -> None:
         print(f"\n[DEV] Email to {to}\nSubject: {subject}\n{html}\n")
         return
     resend.api_key = settings.resend_api_key
-    resend.Emails.send({"from": settings.from_email, "to": to, "subject": subject, "html": html})
+    last_exc: Exception | None = None
+    for attempt in range(3):
+        if attempt:
+            time.sleep(5 * attempt)  # 5s, 10s
+        try:
+            resend.Emails.send({"from": settings.from_email, "to": to, "subject": subject, "html": html})
+            return
+        except Exception as e:
+            last_exc = e
+            print(f"[email] send attempt {attempt + 1}/3 failed: {e}", file=sys.stderr, flush=True)
+    raise last_exc  # type: ignore[misc]
 
 
 def send_magic_link(to_email: str, magic_url: str) -> None:
@@ -79,6 +92,7 @@ def send_run_notification(
         """
 
         _send(ADMIN_EMAIL, subject, html)
+        print(f"[run {run_id}] admin notification sent: {subject}", flush=True)
     except Exception as e:
         # Never let a notification failure affect the run outcome
-        print(f"[run {run_id}] admin notification failed: {e}", flush=True)
+        print(f"[run {run_id}] admin notification FAILED (all retries exhausted): {e}", file=sys.stderr, flush=True)
