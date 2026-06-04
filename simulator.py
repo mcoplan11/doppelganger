@@ -169,6 +169,47 @@ def _save_run(out_dir: "Path | None", idx: int, run: SessionRun) -> None:
     )
 
 
+def _is_transient_error(error: str | None) -> bool:
+    """True for errors that are worth retrying (Gemini capacity issues)."""
+    if not error:
+        return False
+    return any(s in error for s in ("503", "UNAVAILABLE", "429", "Too Many Requests", "overloaded"))
+
+
+def _run_session_with_retry(
+    qualtrics: QualtricsClient,
+    gemini: GeminiClient,
+    survey: SurveyDefinition,
+    persona: Persona,
+    max_retries: int = 3,
+) -> SessionRun:
+    """Run a single session with per-attempt retry on transient Gemini errors.
+
+    Non-transient errors (bad survey, bad answer, etc.) fail immediately —
+    no point retrying those. Transient errors (503, 429) get up to max_retries
+    attempts with exponential backoff (30s → 60s → 120s).
+    """
+    last_run: SessionRun | None = None
+    for attempt in range(max_retries):
+        if attempt:
+            wait = 30 * (2 ** (attempt - 1))  # 30s, 60s, 120s
+            print(
+                f"    [sync retry {attempt + 1}/{max_retries}] {persona.name} — "
+                f"waiting {wait}s (last error: {last_run.error if last_run else '?'})...",
+                flush=True,
+            )
+            time.sleep(wait)
+        run = run_session(qualtrics, gemini, survey, persona)
+        if run.completed:
+            return run
+        if _is_transient_error(run.error):
+            last_run = run
+            continue
+        # Non-transient — give up immediately
+        return run
+    return last_run or run_session(qualtrics, gemini, survey, persona)
+
+
 def _run_many_sync(
     qualtrics: QualtricsClient,
     gemini: GeminiClient,
@@ -323,10 +364,22 @@ def _run_many_batched(
                     print(f"  BATCH ERROR (attempt {batch_attempt + 1}/3): {e}", file=sys.stderr, flush=True)
 
             if raw is None:
-                print(f"  All batch attempts failed. Marking sessions as failed.", file=sys.stderr, flush=True)
+                print(
+                    f"  All batch attempts failed — falling back to sync for "
+                    f"{len(active)} remaining sessions. Last error: {last_batch_err}",
+                    file=sys.stderr, flush=True,
+                )
                 for s in active:
-                    s.run.error = f"batch error: {last_batch_err}"
+                    sync_run = _run_session_with_retry(qualtrics, gemini, survey, s.persona)
+                    s.run.completed = sync_run.completed
+                    s.run.answers = sync_run.answers
+                    s.run.error = sync_run.error
+                    s.run.branch_id = sync_run.branch_id
+                    s.run.branch_description = sync_run.branch_description
+                    s.run.embedded_data = sync_run.embedded_data
                     _save_run(out_dir, s.idx, s.run)
+                    status = "✓ completed" if sync_run.completed else f"✗ failed ({sync_run.error})"
+                    print(f"  [sync fallback] {s.persona.name}: {status}", flush=True)
                 break
 
             # Collect batch results; queue any missing/empty answers for a
