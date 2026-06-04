@@ -71,7 +71,7 @@ class GeminiClient:
         inputs: list[BatchInput],
         *,
         poll_interval_seconds: int = 30,
-        max_wait_seconds: int = 24 * 3600,
+        max_wait_seconds: int = 2 * 3600,
         on_progress=None,
     ) -> dict[str, dict[str, Any] | None]:
         """Submit a batch of block-answers to Gemini Batch API; wait for completion.
@@ -146,16 +146,32 @@ class GeminiClient:
 
         terminal = {"JOB_STATE_SUCCEEDED", "JOB_STATE_FAILED",
                     "JOB_STATE_CANCELLED", "JOB_STATE_EXPIRED"}
+        # A job stuck in PENDING for >30 min has almost certainly been dropped by
+        # Gemini's queue and will never transition to RUNNING. Fail fast rather
+        # than holding a Railway process hostage for hours.
+        MAX_PENDING_SECONDS = 30 * 60
         start = time.time()
+        pending_since: float | None = None
         while True:
             job = self._client.batches.get(name=job_name)
             state = job.state.name
             if state in terminal:
                 break
-            if time.time() - start > max_wait_seconds:
+            elapsed = time.time() - start
+            if elapsed > max_wait_seconds:
                 raise RuntimeError(
                     f"batch {job_name} exceeded max_wait_seconds={max_wait_seconds}"
                 )
+            if state == "JOB_STATE_PENDING":
+                if pending_since is None:
+                    pending_since = time.time()
+                elif time.time() - pending_since > MAX_PENDING_SECONDS:
+                    raise RuntimeError(
+                        f"batch {job_name} stuck in PENDING for >{MAX_PENDING_SECONDS//60} min "
+                        f"— Gemini queue appears stalled. Try again later."
+                    )
+            else:
+                pending_since = None  # reset if it transitions out of pending
             if on_progress:
                 on_progress(f"batch {job_name} state={state}, waiting...")
             time.sleep(poll_interval_seconds)
