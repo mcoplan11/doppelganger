@@ -15,7 +15,7 @@ from auth import create_session_cookie, get_current_user, make_magic_token, veri
 from app_config import settings
 from crypto import decrypt, encrypt
 from database import CreditBalance, Purchase, Run, User, create_tables, get_db
-from email_client import send_magic_link
+from email_client import send_magic_link, send_run_notification
 from payments import CREDIT_PACKS, construct_webhook_event, create_checkout_session
 from simulator_runner import run_simulation
 
@@ -272,28 +272,52 @@ STUCK_RUN_MINUTES = 60
 
 def _reap_stuck_runs(db: Session, runs: list[Run]) -> None:
     """Mark long-orphaned active runs as failed. Self-heals on read so a run
-    interrupted by a deploy doesn't spin forever. No credits were charged
-    (deduction only happens on completion), so this is purely cosmetic recovery."""
+    interrupted by a deploy or a Gemini stall doesn't spin forever."""
     cutoff = datetime.now(timezone.utc) - timedelta(minutes=STUCK_RUN_MINUTES)
-    changed = False
+    reaped: list[Run] = []
     for run in runs:
         if run.status not in ("converting", "running"):
             continue
         created = run.created_at
         if created is None:
             continue
-        if created.tzinfo is None:  # SQLite returns naive datetimes
+        if created.tzinfo is None:
             created = created.replace(tzinfo=timezone.utc)
         if created < cutoff:
+            completed_at = datetime.now(timezone.utc)
             run.status = "failed"
             run.error = (
-                "This run was interrupted before it finished (most likely a "
-                "server update). No credits were charged — please start it again."
+                "This run didn't complete in time — it may have been interrupted "
+                "by a server update or a Gemini API issue. No credits were charged "
+                "— please start it again."
             )
-            run.completed_at = datetime.now(timezone.utc)
-            changed = True
-    if changed:
+            run.completed_at = completed_at
+            reaped.append(run)
+    if reaped:
         db.commit()
+        # Notify admin for each reaped run (same visibility as normal failures)
+        for run in reaped:
+            try:
+                user_email = run.user.email if run.user else "unknown"
+                created = run.created_at
+                if created and created.tzinfo is None:
+                    created = created.replace(tzinfo=timezone.utc)
+                duration = int((run.completed_at - created).total_seconds()) if created else 0
+                send_run_notification(
+                    run_id=run.id,
+                    user_email=user_email,
+                    survey_id=run.original_survey_id,
+                    ai_survey_id=run.ai_survey_id,
+                    is_smoke=run.is_smoke_test,
+                    status="failed (reaped — stuck >{} min)".format(STUCK_RUN_MINUTES),
+                    credits_used=run.credits_used or 0,
+                    n_participants=run.n_participants,
+                    duration_seconds=duration,
+                    branch_counts={},
+                    error=run.error,
+                )
+            except Exception as e:
+                print(f"[reaper] notification failed for run {run.id}: {e}", flush=True)
 
 
 @app.get("/runs")
