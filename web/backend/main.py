@@ -411,10 +411,20 @@ def get_run_results(
     run = db.query(Run).filter(Run.id == run_id, Run.user_id == user.id).first()
     if not run:
         raise HTTPException(status_code=404, detail="Run not found.")
+    # Prefer the DB-cached summary (survives Railway redeploys).
+    if run.results_json:
+        return json.loads(run.results_json)
+    # Fallback: build from files (works on local dev or runs that completed
+    # before results_json was introduced).
     if not run.result_path:
         return {"available": False, "questions": []}
     from results import build_results
-    return build_results(Path(run.result_path).parent)
+    result = build_results(Path(run.result_path).parent)
+    # Cache it now so future requests don't hit disk again.
+    if result.get("available"):
+        run.results_json = json.dumps(result)
+        db.commit()
+    return result
 
 
 @app.get("/runs/{run_id}/download")

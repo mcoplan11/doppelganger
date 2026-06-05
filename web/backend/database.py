@@ -82,6 +82,7 @@ class Run(Base):
     # result stored as JSON path (file on disk) or inline for small runs
     result_path = Column(Text)
     branch_summary = Column(Text)  # JSON string of condition counts
+    results_json = Column(Text)    # serialized build_results() output; survives Railway deploys
 
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
     completed_at = Column(DateTime)
@@ -113,6 +114,7 @@ def create_tables():
         "ALTER TABLE users ADD COLUMN qualtrics_token_enc TEXT",
         "ALTER TABLE users ADD COLUMN qualtrics_datacenter VARCHAR",
         "ALTER TABLE runs ADD COLUMN last_heartbeat_at TIMESTAMP",
+        "ALTER TABLE runs ADD COLUMN results_json TEXT",
     ]
     for sql in migrations:
         try:

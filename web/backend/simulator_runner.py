@@ -389,6 +389,18 @@ def _run_inner(
         )
 
     final_status = "done" if credits_used > 0 else "failed"
+
+    # Build and persist results summary now, while output_dir still exists.
+    # Railway's filesystem is ephemeral — files vanish on every redeploy, so
+    # the results endpoint must not depend on them being present later.
+    results_json_str: str | None = None
+    if final_status == "done":
+        try:
+            from results import build_results
+            results_json_str = json.dumps(build_results(output_dir))
+        except Exception as e:
+            print(f"[run {run_id}] results build failed (non-fatal): {e}", flush=True)
+
     _set_status(
         run_id, final_status,
         credits_used=credits_used,
@@ -396,6 +408,7 @@ def _run_inner(
         branch_summary=json.dumps(dict(branch_counts)),
         completed_at=datetime.now(timezone.utc),
         error=error_msg,
+        results_json=results_json_str,
     )
 
     # Clean up the AI survey copy when the run failed completely (no sessions
