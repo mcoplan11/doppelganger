@@ -37,6 +37,7 @@ def _set_status(run_id: int, status: str, **kwargs) -> None:
         run = db.query(Run).filter(Run.id == run_id).first()
         if run and run.status != "cancelled":
             run.status = status
+            run.last_heartbeat_at = datetime.now(timezone.utc)
             for k, v in kwargs.items():
                 setattr(run, k, v)
             db.commit()

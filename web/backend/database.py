@@ -85,6 +85,9 @@ class Run(Base):
 
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
     completed_at = Column(DateTime)
+    # Updated on every _set_status call so the reaper can tell a legitimately
+    # slow run (heartbeat advances) from a Railway-restart orphan (frozen).
+    last_heartbeat_at = Column(DateTime)
 
     user = relationship("User", back_populates="runs")
 
@@ -109,6 +112,7 @@ def create_tables():
         "ALTER TABLE runs ADD COLUMN platform VARCHAR DEFAULT 'prolific'",
         "ALTER TABLE users ADD COLUMN qualtrics_token_enc TEXT",
         "ALTER TABLE users ADD COLUMN qualtrics_datacenter VARCHAR",
+        "ALTER TABLE runs ADD COLUMN last_heartbeat_at TIMESTAMP",
     ]
     for sql in migrations:
         try:

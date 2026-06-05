@@ -11,6 +11,7 @@ from fastapi import BackgroundTasks, Body, Depends, FastAPI, HTTPException, Requ
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse, RedirectResponse
 from pydantic import BaseModel, EmailStr
+from sqlalchemy import func
 from sqlalchemy.orm import Session
 
 from auth import create_session_cookie, get_current_user, make_magic_token, verify_magic_token
@@ -62,7 +63,9 @@ async def _reaper_loop() -> None:
                 stuck = (
                     db.query(Run)
                     .filter(Run.status.in_(["converting", "running"]))
-                    .filter(Run.created_at < cutoff)
+                    .filter(
+                        func.coalesce(Run.last_heartbeat_at, Run.created_at) < cutoff
+                    )
                     .all()
                 )
                 if stuck:
@@ -308,12 +311,15 @@ def _reap_stuck_runs(db: Session, runs: list[Run]) -> None:
     for run in runs:
         if run.status not in ("converting", "running"):
             continue
-        created = run.created_at
-        if created is None:
+        # Use last_heartbeat_at if available — a run actively calling _set_status
+        # keeps bumping this, so we won't reap it while it's legitimately running.
+        # Fall back to created_at for old rows that predate the column.
+        last_active = run.last_heartbeat_at or run.created_at
+        if last_active is None:
             continue
-        if created.tzinfo is None:
-            created = created.replace(tzinfo=timezone.utc)
-        if created < cutoff:
+        if last_active.tzinfo is None:
+            last_active = last_active.replace(tzinfo=timezone.utc)
+        if last_active < cutoff:
             completed_at = datetime.now(timezone.utc)
             run.status = "failed"
             run.error = (
