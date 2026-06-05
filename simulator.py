@@ -125,6 +125,7 @@ def run_many(
     batch_threshold: int = DEFAULT_BATCH_THRESHOLD,
     on_progress: "Callable[[int], None] | None" = None,
     max_pending_seconds: int = 30 * 60,
+    is_cancelled: "Callable[[], bool] | None" = None,
 ) -> list[SessionRun]:
     """Run each persona through the survey N times.
 
@@ -134,6 +135,9 @@ def run_many(
 
     `on_progress(n)` is called after each batch round with the cumulative count
     of completed sessions so the caller can report live progress.
+
+    `is_cancelled()` is polled between rounds/sessions; if it returns True the
+    run stops immediately and returns whatever completed so far.
     """
     total_sessions = len(personas) * runs_per_persona
     if use_batch is None:
@@ -145,9 +149,9 @@ def run_many(
               flush=True)
         return _run_many_batched(
             qualtrics, gemini, survey, personas, runs_per_persona, out_dir,
-            on_progress, max_pending_seconds,
+            on_progress, max_pending_seconds, is_cancelled,
         )
-    return _run_many_sync(qualtrics, gemini, survey, personas, runs_per_persona, out_dir)
+    return _run_many_sync(qualtrics, gemini, survey, personas, runs_per_persona, out_dir, is_cancelled)
 
 
 def _save_run(out_dir: "Path | None", idx: int, run: SessionRun) -> None:
@@ -217,11 +221,15 @@ def _run_many_sync(
     personas: list[Persona],
     runs_per_persona: int,
     out_dir: "Path | None",
+    is_cancelled: "Callable[[], bool] | None" = None,
 ) -> list[SessionRun]:
     runs: list[SessionRun] = []
     idx = 0
     for persona in personas:
         for i in range(runs_per_persona):
+            if is_cancelled and is_cancelled():
+                print(f"[run cancelled] stopping sync run before {persona.name}", flush=True)
+                return runs
             idx += 1
             print(f"\n[{persona.name} {i + 1}/{runs_per_persona}] starting session...", flush=True)
             run = run_session(qualtrics, gemini, survey, persona)
@@ -253,6 +261,7 @@ def _run_many_batched(
     out_dir: "Path | None",
     on_progress: "Callable[[int], None] | None" = None,
     max_pending_seconds: int = 30 * 60,
+    is_cancelled: "Callable[[], bool] | None" = None,
 ) -> list[SessionRun]:
     """Cross-persona batched runner.
 
@@ -287,6 +296,9 @@ def _run_many_batched(
 
     round_idx = 0
     while True:
+        if is_cancelled and is_cancelled():
+            print(f"[run cancelled] stopping batched run after round {round_idx}", flush=True)
+            return [s.run for s in states]
         active = [s for s in states
                   if not s.run.completed and not s.run.error
                   and s.current_block is not None and not s.current_block.done]
@@ -370,6 +382,9 @@ def _run_many_batched(
                     file=sys.stderr, flush=True,
                 )
                 for s in active:
+                    if is_cancelled and is_cancelled():
+                        print(f"[run cancelled] stopping sync fallback before {s.persona.name}", flush=True)
+                        return [s2.run for s2 in states]
                     sync_run = _run_session_with_retry(qualtrics, gemini, survey, s.persona)
                     s.run.completed = sync_run.completed
                     s.run.answers = sync_run.answers

@@ -352,6 +352,7 @@ def _run_inner(
         use_batch=False if is_smoke else None,
         on_progress=_on_progress,
         max_pending_seconds=30 * 60 if is_smoke else 10 * 60,
+        is_cancelled=lambda: _is_cancelled(run_id),
     )
 
     completed = [r for r in runs if r.completed]
