@@ -31,6 +31,15 @@ def _db() -> Session:
     return SessionLocal()
 
 
+def _is_cancelled(run_id: int) -> bool:
+    db = _db()
+    try:
+        run = db.query(Run).filter(Run.id == run_id).first()
+        return run is not None and run.status == "cancelled"
+    finally:
+        db.close()
+
+
 def _set_status(run_id: int, status: str, **kwargs) -> None:
     db = _db()
     try:
@@ -271,6 +280,9 @@ def run_simulation(run_id: int) -> None:
             f"{traceback.format_exc()}",
             flush=True,
         )
+        if _is_cancelled(run_id):
+            print(f"[run {run_id}] cancelled — skipping failure notification", flush=True)
+            return
         friendly = _friendly_error(exc, qualtrics_datacenter)
         _set_status(
             run_id, "failed",
@@ -355,6 +367,10 @@ def _run_inner(
             "failed": failed_count,
             "branch_distribution": dict(branch_counts),
         }, f, indent=2)
+
+    if _is_cancelled(run_id):
+        print(f"[run {run_id}] cancelled — skipping credit deduction and notification", flush=True)
+        return
 
     if credits_used > 0 and not is_smoke:
         _deduct_credits(user_id, credits_used)
