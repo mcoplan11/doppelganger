@@ -31,6 +31,8 @@ export default function RunResults({ runId }: { runId: number }) {
         on whether your design produces a signal, not a substitute for human data.
       </p>
 
+      <QuestionTOC questions={results.questions} />
+
       <div className="flex flex-col divide-y divide-gray-800">
         {results.questions.map((q) => (
           <QuestionBlock key={q.qid} q={q} hasConditions={!!results.has_conditions} />
@@ -40,10 +42,36 @@ export default function RunResults({ runId }: { runId: number }) {
   );
 }
 
+function QuestionTOC({ questions }: { questions: QuestionResult[] }) {
+  const scrollTo = (qid: string) => {
+    document.getElementById(`q-${qid}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+  return (
+    <div className="mb-6 border border-gray-800 rounded-lg overflow-hidden">
+      <div className="px-3 py-2 bg-gray-800/50 text-xs text-gray-500 uppercase tracking-wider">
+        All questions — click to jump
+      </div>
+      <div className="flex flex-col divide-y divide-gray-800">
+        {questions.map((q, i) => (
+          <button
+            key={q.qid}
+            onClick={() => scrollTo(q.qid)}
+            title={q.prompt}
+            className="flex items-center gap-3 px-3 py-2 text-left hover:bg-gray-800 transition-colors"
+          >
+            <span className="shrink-0 w-6 text-gray-600 text-xs font-mono text-right">{i + 1}</span>
+            <span className="text-gray-300 text-xs truncate">{q.prompt}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function QuestionBlock({ q, hasConditions }: { q: QuestionResult; hasConditions: boolean }) {
   return (
-    <div className="py-5 first:pt-0 last:pb-0">
-      <div className="text-sm font-medium text-white mb-3 leading-snug">{q.prompt}</div>
+    <div id={`q-${q.qid}`} className="py-5 first:pt-0 last:pb-0 scroll-mt-4">
+      <div className="text-sm font-medium text-white mb-3 leading-snug" title={q.prompt}>{q.prompt}</div>
 
       {q.overall.kind === "text" && <TextResponses responses={q.overall.responses ?? []} />}
 
@@ -132,7 +160,7 @@ function MatrixView({ q, hasConditions }: { q: QuestionResult; hasConditions: bo
             <tr className="text-gray-500">
               <th className="text-left font-normal pb-2 pr-3" />
               {conditions.map((cond) => (
-                <th key={cond} className="text-right font-normal pb-2 px-2">{cond}</th>
+                <th key={cond} title={cond} className="text-right font-normal pb-2 px-2 max-w-[80px] truncate">{cond}</th>
               ))}
             </tr>
           </thead>
