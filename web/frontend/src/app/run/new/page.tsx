@@ -153,7 +153,7 @@ export default function NewRun() {
                 className="w-4 h-4 accent-blue-500"
               />
               <span className="text-gray-300 text-xs">
-                I understand an AI copy of my survey will be created in my Qualtrics account
+                I understand an AI copy of my survey will be created in my Qualtrics account, and AI participant responses will be stored there
               </span>
             </label>
             {!copyConsent && (

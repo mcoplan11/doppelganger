@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { api, type DistItem, type QuestionResult, type ResultsSummary, type Summary } from "@/lib/api";
 
 export default function RunResults({ runId }: { runId: number }) {
@@ -131,7 +131,10 @@ function ChoiceByCondition({ q }: { q: QuestionResult }) {
       <div className="flex flex-col gap-4">
         {q.by_condition!.map((c) => (
           <div key={c.condition}>
-            <div className="text-xs text-gray-400 mb-1.5">{c.condition} <span className="text-gray-600">· n={c.n}</span></div>
+            <div className="flex items-center gap-1.5 text-xs text-gray-400 mb-1.5">
+              <ConditionLabel name={c.condition} className="max-w-[220px]" />
+              <span className="text-gray-600 shrink-0">· n={c.n}</span>
+            </div>
             <DistributionBars dist={c.distribution ?? []} />
           </div>
         ))}
@@ -160,7 +163,9 @@ function MatrixView({ q, hasConditions }: { q: QuestionResult; hasConditions: bo
             <tr className="text-gray-500">
               <th className="text-left font-normal pb-2 pr-3" />
               {conditions.map((cond) => (
-                <th key={cond} title={cond} className="text-right font-normal pb-2 px-2 max-w-[80px] truncate">{cond}</th>
+                <th key={cond} className="text-right font-normal pb-2 px-2 max-w-[80px]">
+                  <FixedTooltipLabel name={cond} className="max-w-[80px]" />
+                </th>
               ))}
             </tr>
           </thead>
@@ -200,13 +205,51 @@ function MatrixView({ q, hasConditions }: { q: QuestionResult; hasConditions: bo
 }
 
 // ── Primitives ────────────────────────────────────────────────────────────────
+function ConditionLabel({ name, className = "" }: { name: string; className?: string }) {
+  return (
+    <span className={`relative group/cl ${className}`}>
+      <span className="block truncate">{name}</span>
+      <span className="pointer-events-none absolute z-50 left-0 top-full mt-1 bg-gray-900 border border-gray-700 text-white text-xs rounded px-2 py-1.5 whitespace-normal break-words w-max max-w-xs shadow-xl opacity-0 group-hover/cl:opacity-100 transition-opacity duration-150">
+        {name}
+      </span>
+    </span>
+  );
+}
+
+// For use inside overflow-x-auto containers (e.g. matrix table headers) where
+// absolutely positioned children get clipped. Uses fixed positioning keyed to
+// the mouse position so the tooltip escapes the overflow context entirely.
+function FixedTooltipLabel({ name, className = "" }: { name: string; className?: string }) {
+  const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
+  const ref = useRef<HTMLSpanElement>(null);
+  return (
+    <span
+      ref={ref}
+      className={`block truncate cursor-default ${className}`}
+      onMouseEnter={(e) => setPos({ x: e.clientX, y: e.clientY })}
+      onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY })}
+      onMouseLeave={() => setPos(null)}
+    >
+      {name}
+      {pos && (
+        <span
+          className="fixed z-50 bg-gray-900 border border-gray-700 text-white text-xs rounded px-2 py-1.5 whitespace-normal break-words max-w-xs shadow-xl pointer-events-none"
+          style={{ left: pos.x + 12, top: pos.y + 16 }}
+        >
+          {name}
+        </span>
+      )}
+    </span>
+  );
+}
+
 function MeanBar({ label, mean, bounds, n }: { label?: string; mean: number; bounds: Bounds | null; n: number }) {
   const pct = bounds && bounds.max > bounds.min
     ? ((mean - bounds.min) / (bounds.max - bounds.min)) * 100
     : 100;
   return (
     <div className="flex items-center gap-3">
-      {label && <div className="w-28 shrink-0 text-xs text-gray-300 truncate" title={label}>{label}</div>}
+      {label && <div className="w-28 shrink-0 text-xs text-gray-300"><ConditionLabel name={label} /></div>}
       <div className="flex-1 h-2 bg-gray-800 rounded-full overflow-hidden">
         <div className="h-full bg-blue-500 rounded-full transition-all" style={{ width: `${Math.max(2, Math.min(100, pct))}%` }} />
       </div>
