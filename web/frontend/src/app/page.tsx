@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import { api } from "@/lib/api";
 
 const PACKS = [
-  { id: "starter",  credits: 50,  price: "$9.99",  per: "$0.20", label: "Starter" },
-  { id: "standard", credits: 100, price: "$17.99", per: "$0.18", label: "Standard", popular: true },
-  { id: "pro",      credits: 250, price: "$39.99", per: "$0.16", label: "Pro" },
-  { id: "research", credits: 500, price: "$69.99", per: "$0.14", label: "Research" },
+  { id: "starter",  credits: 50,  price: "$4.99",  per: "$0.10", label: "Starter" },
+  { id: "standard", credits: 100, price: "$8.99",  per: "$0.09", label: "Standard", popular: true },
+  { id: "pro",      credits: 250, price: "$19.99", per: "$0.08", label: "Pro" },
+  { id: "research", credits: 500, price: "$34.99", per: "$0.07", label: "Research" },
 ];
 
 // Team-background affiliations (honest "built by", NOT customer endorsements).

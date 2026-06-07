@@ -9,10 +9,10 @@ stripe.api_key = settings.stripe_secret_key
 # Credit packs: (credits, price_cents, display_name, stripe_price_id_or_None)
 # price_id is None → we use ad-hoc price_data (easier for dev; use Price IDs in prod)
 CREDIT_PACKS = [
-    {"id": "starter",  "credits": 50,  "price_cents": 999,  "label": "Starter",  "per": "$0.20"},
-    {"id": "standard", "credits": 100, "price_cents": 1799, "label": "Standard", "per": "$0.18"},
-    {"id": "pro",      "credits": 250, "price_cents": 3999, "label": "Pro",       "per": "$0.16"},
-    {"id": "research", "credits": 500, "price_cents": 6999, "label": "Research",  "per": "$0.14"},
+    {"id": "starter",  "credits": 50,  "price_cents": 499,  "label": "Starter",  "per": "$0.10"},
+    {"id": "standard", "credits": 100, "price_cents": 899,  "label": "Standard", "per": "$0.09"},
+    {"id": "pro",      "credits": 250, "price_cents": 1999, "label": "Pro",       "per": "$0.08"},
+    {"id": "research", "credits": 500, "price_cents": 3499, "label": "Research",  "per": "$0.07"},
 ]
 
 _PACK_BY_ID = {p["id"]: p for p in CREDIT_PACKS}

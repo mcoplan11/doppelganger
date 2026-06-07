@@ -77,10 +77,10 @@ Next.js (Vercel)  →  FastAPI (Railway)  →  Gemini API
 
 | Pack | Credits | Price |
 |---|---|---|
-| Starter | 50 | $9.99 |
-| Standard | 100 | $17.99 |
-| Pro | 250 | $39.99 |
-| Research | 500 | $69.99 |
+| Starter | 50 | $4.99 |
+| Standard | 100 | $8.99 |
+| Pro | 250 | $19.99 |
+| Research | 500 | $34.99 |
 
 ---
 

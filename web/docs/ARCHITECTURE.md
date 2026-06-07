@@ -32,12 +32,12 @@ Web application that lets researchers buy credits and run AI-powered Qualtrics s
 
 | Pack | Credits | Price | Per-participant |
 |------|---------|-------|-----------------|
-| Starter | 50 | $9.99 | $0.20 |
-| Standard | 100 | $17.99 | $0.18 |
-| Pro | 250 | $39.99 | $0.16 |
-| Research | 500 | $69.99 | $0.14 |
+| Starter | 50 | $4.99 | $0.10 |
+| Standard | 100 | $8.99 | $0.09 |
+| Pro | 250 | $19.99 | $0.08 |
+| Research | 500 | $34.99 | $0.07 |
 
-Gemini cost per participant ≈ $0.01–0.02 (batch mode, gemini-3.5-flash). Margin ≈ 8–18×.
+Gemini cost per participant ≈ $0.01–0.02 (batch mode, gemini-3.5-flash). Margin ≈ 4–9×.
 
 ## User Flow
 
