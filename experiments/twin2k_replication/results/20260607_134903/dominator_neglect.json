@@ -1,0 +1,20 @@
+[
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "communications_major_20f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "paralegal_30f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "psychology_major_20f",
+    "answer": "dominant",
+    "error": null
+  }
+]

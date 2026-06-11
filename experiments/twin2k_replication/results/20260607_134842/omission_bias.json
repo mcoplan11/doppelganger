@@ -1,0 +1,44 @@
+[
+  {
+    "experiment_id": "omission_bias",
+    "persona": "communications_major_20f",
+    "condition_id": "commission",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "omission_bias",
+    "persona": "communications_major_20f",
+    "condition_id": "omission",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "omission_bias",
+    "persona": "paralegal_30f",
+    "condition_id": "commission",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "omission_bias",
+    "persona": "paralegal_30f",
+    "condition_id": "omission",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "omission_bias",
+    "persona": "psychology_major_20f",
+    "condition_id": "commission",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "omission_bias",
+    "persona": "psychology_major_20f",
+    "condition_id": "omission",
+    "answer": null,
+    "error": "no response"
+  }
+]

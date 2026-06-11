@@ -1,0 +1,122 @@
+[
+  {
+    "experiment_id": "wta_wtp",
+    "persona": "communications_major_20f",
+    "condition_id": "wta_certain",
+    "condition_name": "WTA Certainty",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "wta_wtp",
+    "persona": "communications_major_20f",
+    "condition_id": "wtp_certain",
+    "condition_name": "WTP Certainty",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "wta_wtp",
+    "persona": "communications_major_20f",
+    "condition_id": "wtp_noncertain",
+    "condition_name": "WTP Non-Certainty",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "wta_wtp",
+    "persona": "paralegal_30f",
+    "condition_id": "wta_certain",
+    "condition_name": "WTA Certainty",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "wta_wtp",
+    "persona": "paralegal_30f",
+    "condition_id": "wtp_certain",
+    "condition_name": "WTP Certainty",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "wta_wtp",
+    "persona": "paralegal_30f",
+    "condition_id": "wtp_noncertain",
+    "condition_name": "WTP Non-Certainty",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "wta_wtp",
+    "persona": "psychology_major_20f",
+    "condition_id": "wta_certain",
+    "condition_name": "WTA Certainty",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "wta_wtp",
+    "persona": "psychology_major_20f",
+    "condition_id": "wtp_certain",
+    "condition_name": "WTP Certainty",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "wta_wtp",
+    "persona": "psychology_major_20f",
+    "condition_id": "wtp_noncertain",
+    "condition_name": "WTP Non-Certainty",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "wta_wtp",
+    "persona": "computer_technician_26m",
+    "condition_id": "wta_certain",
+    "condition_name": "WTA Certainty",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "wta_wtp",
+    "persona": "computer_technician_26m",
+    "condition_id": "wtp_certain",
+    "condition_name": "WTP Certainty",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "wta_wtp",
+    "persona": "computer_technician_26m",
+    "condition_id": "wtp_noncertain",
+    "condition_name": "WTP Non-Certainty",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "wta_wtp",
+    "persona": "delivery_driver_37m",
+    "condition_id": "wta_certain",
+    "condition_name": "WTA Certainty",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "wta_wtp",
+    "persona": "delivery_driver_37m",
+    "condition_id": "wtp_certain",
+    "condition_name": "WTP Certainty",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "wta_wtp",
+    "persona": "delivery_driver_37m",
+    "condition_id": "wtp_noncertain",
+    "condition_name": "WTP Non-Certainty",
+    "answer": null,
+    "error": "no response"
+  }
+]

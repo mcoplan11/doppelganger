@@ -1,0 +1,50 @@
+[
+  {
+    "experiment_id": "savings",
+    "persona": "communications_major_20f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "communications_major_20f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "paralegal_30f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "paralegal_30f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "psychology_major_20f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "psychology_major_20f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  }
+]

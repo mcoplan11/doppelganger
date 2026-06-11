@@ -1,0 +1,82 @@
+[
+  {
+    "experiment_id": "anchoring_mississippi",
+    "persona": "communications_major_20f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "anchoring_mississippi",
+    "persona": "communications_major_20f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "anchoring_mississippi",
+    "persona": "paralegal_30f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "anchoring_mississippi",
+    "persona": "paralegal_30f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "anchoring_mississippi",
+    "persona": "psychology_major_20f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "anchoring_mississippi",
+    "persona": "psychology_major_20f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "anchoring_mississippi",
+    "persona": "computer_technician_26m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "anchoring_mississippi",
+    "persona": "computer_technician_26m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "anchoring_mississippi",
+    "persona": "delivery_driver_37m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "anchoring_mississippi",
+    "persona": "delivery_driver_37m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": null,
+    "error": "no response"
+  }
+]

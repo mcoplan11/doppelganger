@@ -1,0 +1,44 @@
+[
+  {
+    "experiment_id": "omission_bias",
+    "persona": "communications_major_20f",
+    "condition_id": "commission",
+    "answer": "vaccinate",
+    "error": null
+  },
+  {
+    "experiment_id": "omission_bias",
+    "persona": "communications_major_20f",
+    "condition_id": "omission",
+    "answer": "vaccinate",
+    "error": null
+  },
+  {
+    "experiment_id": "omission_bias",
+    "persona": "paralegal_30f",
+    "condition_id": "commission",
+    "answer": "vaccinate",
+    "error": null
+  },
+  {
+    "experiment_id": "omission_bias",
+    "persona": "paralegal_30f",
+    "condition_id": "omission",
+    "answer": "skip",
+    "error": null
+  },
+  {
+    "experiment_id": "omission_bias",
+    "persona": "psychology_major_20f",
+    "condition_id": "commission",
+    "answer": "vaccinate",
+    "error": null
+  },
+  {
+    "experiment_id": "omission_bias",
+    "persona": "psychology_major_20f",
+    "condition_id": "omission",
+    "answer": "skip",
+    "error": null
+  }
+]

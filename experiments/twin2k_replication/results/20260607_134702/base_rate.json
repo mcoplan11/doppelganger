@@ -1,0 +1,82 @@
+[
+  {
+    "experiment_id": "base_rate",
+    "persona": "communications_major_20f",
+    "condition_id": "low_baserate",
+    "condition_name": "Low Base Rate (30%)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "base_rate",
+    "persona": "communications_major_20f",
+    "condition_id": "high_baserate",
+    "condition_name": "High Base Rate (70%)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "base_rate",
+    "persona": "paralegal_30f",
+    "condition_id": "low_baserate",
+    "condition_name": "Low Base Rate (30%)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "base_rate",
+    "persona": "paralegal_30f",
+    "condition_id": "high_baserate",
+    "condition_name": "High Base Rate (70%)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "base_rate",
+    "persona": "psychology_major_20f",
+    "condition_id": "low_baserate",
+    "condition_name": "Low Base Rate (30%)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "base_rate",
+    "persona": "psychology_major_20f",
+    "condition_id": "high_baserate",
+    "condition_name": "High Base Rate (70%)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "base_rate",
+    "persona": "computer_technician_26m",
+    "condition_id": "low_baserate",
+    "condition_name": "Low Base Rate (30%)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "base_rate",
+    "persona": "computer_technician_26m",
+    "condition_id": "high_baserate",
+    "condition_name": "High Base Rate (70%)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "base_rate",
+    "persona": "delivery_driver_37m",
+    "condition_id": "low_baserate",
+    "condition_name": "Low Base Rate (30%)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "base_rate",
+    "persona": "delivery_driver_37m",
+    "condition_id": "high_baserate",
+    "condition_name": "High Base Rate (70%)",
+    "answer": null,
+    "error": "no response"
+  }
+]

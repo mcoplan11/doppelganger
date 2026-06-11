@@ -1,0 +1,98 @@
+[
+  {
+    "experiment_id": "false_consensus",
+    "persona": "communications_major_20f",
+    "item_id": "abortion",
+    "own_view": 4,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "communications_major_20f",
+    "item_id": "gun_control",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "communications_major_20f",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "communications_major_20f",
+    "item_id": "climate",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "paralegal_30f",
+    "item_id": "abortion",
+    "own_view": 5,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "paralegal_30f",
+    "item_id": "gun_control",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "paralegal_30f",
+    "item_id": "immigration",
+    "own_view": 2,
+    "public_estimate": 48,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "paralegal_30f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 70,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "psychology_major_20f",
+    "item_id": "abortion",
+    "own_view": 5,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "psychology_major_20f",
+    "item_id": "gun_control",
+    "own_view": 5,
+    "public_estimate": 75,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "psychology_major_20f",
+    "item_id": "immigration",
+    "own_view": 1,
+    "public_estimate": 38,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "psychology_major_20f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 68,
+    "error": null
+  }
+]

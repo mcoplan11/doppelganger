@@ -1,0 +1,19 @@
+# Fine-tuning dependencies — install with: pip install -r requirements_runpod.txt
+# Tested on Python 3.11, CUDA 12.1, RTX A6000 48GB
+
+# Core training stack
+unsloth[cu121-torch240] @ git+https://github.com/unslothai/unsloth.git
+trl>=0.8.6
+peft>=0.10.0
+bitsandbytes>=0.43.0
+accelerate>=0.27.0
+transformers>=4.40.0
+
+# Data loading
+datasets>=2.19.0
+huggingface_hub>=0.22.0
+pandas>=2.0.0
+
+# Analysis (shared with twin2k_replication)
+scipy>=1.12.0
+pyyaml>=6.0

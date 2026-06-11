@@ -1,0 +1,50 @@
+[
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "communications_major_20f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "communications_major_20f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "michigan",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "paralegal_30f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "paralegal_30f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "psychology_major_20f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "psychology_major_20f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  }
+]

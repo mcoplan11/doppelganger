@@ -1,0 +1,18 @@
+[
+  {
+    "experiment_id": "framing",
+    "persona": "communications_major_20f",
+    "condition_id": "gain",
+    "condition_name": "Gain Frame",
+    "answer": "A",
+    "error": null
+  },
+  {
+    "experiment_id": "framing",
+    "persona": "communications_major_20f",
+    "condition_id": "loss",
+    "condition_name": "Loss Frame",
+    "answer": "B",
+    "error": null
+  }
+]

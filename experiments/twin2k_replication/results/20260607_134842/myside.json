@@ -1,0 +1,50 @@
+[
+  {
+    "experiment_id": "myside",
+    "persona": "communications_major_20f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "communications_major_20f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "paralegal_30f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "paralegal_30f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "psychology_major_20f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "psychology_major_20f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": null,
+    "error": "no response"
+  }
+]

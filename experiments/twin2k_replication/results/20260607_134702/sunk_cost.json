@@ -1,0 +1,82 @@
+[
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "communications_major_20f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "communications_major_20f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "paralegal_30f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "paralegal_30f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "psychology_major_20f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "psychology_major_20f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "computer_technician_26m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "computer_technician_26m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "delivery_driver_37m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "delivery_driver_37m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": null,
+    "error": "no response"
+  }
+]

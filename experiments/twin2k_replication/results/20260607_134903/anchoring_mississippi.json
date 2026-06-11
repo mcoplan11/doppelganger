@@ -1,0 +1,50 @@
+[
+  {
+    "experiment_id": "anchoring_mississippi",
+    "persona": "communications_major_20f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 2500,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_mississippi",
+    "persona": "communications_major_20f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 1500,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_mississippi",
+    "persona": "paralegal_30f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 2500,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_mississippi",
+    "persona": "paralegal_30f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 2300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_mississippi",
+    "persona": "psychology_major_20f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 3200,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_mississippi",
+    "persona": "psychology_major_20f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 2100,
+    "error": null
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "experiment_id": "linda",
+    "persona": "communications_major_20f",
+    "condition_id": "single",
+    "condition_name": "Single Event",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "linda",
+    "persona": "communications_major_20f",
+    "condition_id": "conjunction",
+    "condition_name": "Conjunction",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "linda",
+    "persona": "paralegal_30f",
+    "condition_id": "single",
+    "condition_name": "Single Event",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "linda",
+    "persona": "paralegal_30f",
+    "condition_id": "conjunction",
+    "condition_name": "Conjunction",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "linda",
+    "persona": "psychology_major_20f",
+    "condition_id": "single",
+    "condition_name": "Single Event",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "linda",
+    "persona": "psychology_major_20f",
+    "condition_id": "conjunction",
+    "condition_name": "Conjunction",
+    "answer": 1,
+    "error": null
+  }
+]

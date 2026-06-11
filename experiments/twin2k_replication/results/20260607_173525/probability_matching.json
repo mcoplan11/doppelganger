@@ -1,0 +1,902 @@
+[
+  {
+    "experiment_id": "probability_matching",
+    "persona": "communications_major_20f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "paralegal_30f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "psychology_major_20f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "computer_technician_26m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "delivery_driver_37m",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "graphic_designer_34f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "real_estate_agent_32m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "part_time_bartender_29m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "remote_support_33f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "freelance_writer_29nb",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "freelance_copywriter_32nb",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "hotel_receptionist_24f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "substitute_teacher_29m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "car_detailer_23m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "content_moderator_27f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "fast_food_worker_19m",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "part_time_tutor_24f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "hr_assistant_27f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "freelance_photographer_30m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "pharmacy_tech_28m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "juice_barista_19f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "research_assistant_24f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "office_assistant_51m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "bus_driver_35m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "grant_writer_34f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "private_tutor_27f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "senior_clerk_55f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "online_reseller_29m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "virtual_assistant_25f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "english_tutor_28f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "cafe_manager_28f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "legal_secretary_44f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "retail_cashier_22m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "copywriter_28f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "biology_graduate_24nb",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "unemployed_manager_47m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "pastry_chef_26f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "unemployed_chef_33m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "inventory_specialist_27f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "administrative_assistant_52f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "evening_receptionist_22f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "remote_billing_clerk_29m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "empty_nester_58f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "stay_home_dad_32m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "truck_driver_51m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "customer_service_rep_50f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "stay_home_mom_36f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "nursing_student_22f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "dry_cleaning_clerk_22f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "freelance_animator_27f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "seo_specialist_33m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "retired_accountant_68m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "software_dev_28m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "pool_cleaner_21m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "night_shift_nurse_38f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "local_gov_clerk_48f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "unemployed_mechanic_33m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "theater_major_21f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "physics_student_21f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "occupational_therapist_33f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "insurance_adjuster_43m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "woodworker_29m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "junior_analyst_24m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "office_manager_31f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "dog_trainer_30f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "tutor_coordinator_42m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "chemistry_major_19nb",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "real_estate_appraiser_54m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "night_auditor_27m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "part_time_florist_45f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "medical_transcriptionist_53f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "property_manager_31m",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "logistics_coordinator_40m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "retail_store_manager_46m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "marketing_coordinator_26f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "screen_printer_28m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "daycare_owner_40f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "junior_designer_23f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "stay_home_dad_39m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "server_37m",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "data_entry_clerk_26f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "virtual_tutor_26f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "stay_home_mother_28f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "technical_writer_32m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "data_entry_operator_23nb",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "dropshipper_24m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "dental_hygienist_28f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "stay_home_mom_30f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "web_designer_29m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "high_school_substitute_30f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "call_center_agent_28m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "freelance_indexer_47f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "travel_agent_33m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "landscape_laborer_25m",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "part_time_consultant_60m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "retired_mechanic_65m",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "retail_merchandiser_31f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "job_seeker_admin_28m",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "undeclared_freshman_18f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "physical_therapy_aide_23f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "it_technician_27m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "music_teacher_32f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "locksmith_28m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "fitness_instructor_26m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "unemployed_sales_41m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "freelance_programmer_27nb",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "math_tutor_22f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "online_seller_33f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "electrician_43m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "audio_engineer_31m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "grocery_shopper_26f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "bakery_assistant_20f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "math_graduate_student_26m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "community_college_student_19m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "warehouse_manager_34m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "floral_designer_28f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "veterinary_assistant_24f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "transcriptionist_30nb",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "barista_trainer_24m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "high_school_teacher_49m",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "bookkeeper_48f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "stay_home_mom_26f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "construction_estimator_36m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "pet_sitter_24f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "social_media_manager_26f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "voice_actor_31m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "data_analyst_35f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "accountant_38m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "proofreader_35f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "nanny_25f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "stay_home_father_28m",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "film_student_20m",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "tech_support_agent_22f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "videographer_25m",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "massage_therapist_41f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "flight_attendant_29f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "gig_delivery_driver_31m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "delivery_rider_22m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "event_planner_32f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "freelance_translator_28nb",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "freelance_editor_44f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "library_assistant_24m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "retired_teacher_64f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "house_sitter_23m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "biology_student_19f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "retail_supervisor_29m",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "stay_home_parent_34f",
+    "answer": "match",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "remote_proofreader_31f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "retired_librarian_62f",
+    "answer": "maximize",
+    "error": null
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "line_cook_25m",
+    "answer": "maximize",
+    "error": null
+  }
+]

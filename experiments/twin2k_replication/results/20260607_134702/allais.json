@@ -1,0 +1,82 @@
+[
+  {
+    "experiment_id": "allais",
+    "persona": "communications_major_20f",
+    "condition_id": "problem1",
+    "condition_name": "Allais Problem 1 (Certainty Effect)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "allais",
+    "persona": "communications_major_20f",
+    "condition_id": "problem2",
+    "condition_name": "Allais Problem 2 (No Certainty)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "allais",
+    "persona": "paralegal_30f",
+    "condition_id": "problem1",
+    "condition_name": "Allais Problem 1 (Certainty Effect)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "allais",
+    "persona": "paralegal_30f",
+    "condition_id": "problem2",
+    "condition_name": "Allais Problem 2 (No Certainty)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "allais",
+    "persona": "psychology_major_20f",
+    "condition_id": "problem1",
+    "condition_name": "Allais Problem 1 (Certainty Effect)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "allais",
+    "persona": "psychology_major_20f",
+    "condition_id": "problem2",
+    "condition_name": "Allais Problem 2 (No Certainty)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "allais",
+    "persona": "computer_technician_26m",
+    "condition_id": "problem1",
+    "condition_name": "Allais Problem 1 (Certainty Effect)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "allais",
+    "persona": "computer_technician_26m",
+    "condition_id": "problem2",
+    "condition_name": "Allais Problem 2 (No Certainty)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "allais",
+    "persona": "delivery_driver_37m",
+    "condition_id": "problem1",
+    "condition_name": "Allais Problem 1 (Certainty Effect)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "allais",
+    "persona": "delivery_driver_37m",
+    "condition_id": "problem2",
+    "condition_name": "Allais Problem 2 (No Certainty)",
+    "answer": null,
+    "error": "no response"
+  }
+]

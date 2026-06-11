@@ -1,0 +1,82 @@
+[
+  {
+    "experiment_id": "linda",
+    "persona": "communications_major_20f",
+    "condition_id": "single",
+    "condition_name": "Single Event",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "linda",
+    "persona": "communications_major_20f",
+    "condition_id": "conjunction",
+    "condition_name": "Conjunction",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "linda",
+    "persona": "paralegal_30f",
+    "condition_id": "single",
+    "condition_name": "Single Event",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "linda",
+    "persona": "paralegal_30f",
+    "condition_id": "conjunction",
+    "condition_name": "Conjunction",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "linda",
+    "persona": "psychology_major_20f",
+    "condition_id": "single",
+    "condition_name": "Single Event",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "linda",
+    "persona": "psychology_major_20f",
+    "condition_id": "conjunction",
+    "condition_name": "Conjunction",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "linda",
+    "persona": "computer_technician_26m",
+    "condition_id": "single",
+    "condition_name": "Single Event",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "linda",
+    "persona": "computer_technician_26m",
+    "condition_id": "conjunction",
+    "condition_name": "Conjunction",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "linda",
+    "persona": "delivery_driver_37m",
+    "condition_id": "single",
+    "condition_name": "Single Event",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "linda",
+    "persona": "delivery_driver_37m",
+    "condition_id": "conjunction",
+    "condition_name": "Conjunction",
+    "answer": null,
+    "error": "no response"
+  }
+]

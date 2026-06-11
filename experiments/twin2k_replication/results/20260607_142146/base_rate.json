@@ -1,0 +1,50 @@
+[
+  {
+    "experiment_id": "base_rate",
+    "persona": "communications_major_20f",
+    "condition_id": "low_baserate",
+    "condition_name": "Low Base Rate (30%)",
+    "answer": 70,
+    "error": null
+  },
+  {
+    "experiment_id": "base_rate",
+    "persona": "communications_major_20f",
+    "condition_id": "high_baserate",
+    "condition_name": "High Base Rate (70%)",
+    "answer": 90,
+    "error": null
+  },
+  {
+    "experiment_id": "base_rate",
+    "persona": "paralegal_30f",
+    "condition_id": "low_baserate",
+    "condition_name": "Low Base Rate (30%)",
+    "answer": 75,
+    "error": null
+  },
+  {
+    "experiment_id": "base_rate",
+    "persona": "paralegal_30f",
+    "condition_id": "high_baserate",
+    "condition_name": "High Base Rate (70%)",
+    "answer": 90,
+    "error": null
+  },
+  {
+    "experiment_id": "base_rate",
+    "persona": "psychology_major_20f",
+    "condition_id": "low_baserate",
+    "condition_name": "Low Base Rate (30%)",
+    "answer": 85,
+    "error": null
+  },
+  {
+    "experiment_id": "base_rate",
+    "persona": "psychology_major_20f",
+    "condition_id": "high_baserate",
+    "condition_name": "High Base Rate (70%)",
+    "answer": 90,
+    "error": null
+  }
+]

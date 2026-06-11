@@ -1,0 +1,20 @@
+[
+  {
+    "experiment_id": "probability_matching",
+    "persona": "communications_major_20f",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "paralegal_30f",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "probability_matching",
+    "persona": "psychology_major_20f",
+    "answer": null,
+    "error": "no response"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "experiment_id": "outcome_bias",
+    "persona": "communications_major_20f",
+    "condition_id": "good_outcome",
+    "condition_name": "Good Outcome",
+    "answer": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "outcome_bias",
+    "persona": "communications_major_20f",
+    "condition_id": "bad_outcome",
+    "condition_name": "Bad Outcome",
+    "answer": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "outcome_bias",
+    "persona": "paralegal_30f",
+    "condition_id": "good_outcome",
+    "condition_name": "Good Outcome",
+    "answer": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "outcome_bias",
+    "persona": "paralegal_30f",
+    "condition_id": "bad_outcome",
+    "condition_name": "Bad Outcome",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "outcome_bias",
+    "persona": "psychology_major_20f",
+    "condition_id": "good_outcome",
+    "condition_name": "Good Outcome",
+    "answer": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "outcome_bias",
+    "persona": "psychology_major_20f",
+    "condition_id": "bad_outcome",
+    "condition_name": "Bad Outcome",
+    "answer": 5,
+    "error": null
+  }
+]

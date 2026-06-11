@@ -1,0 +1,82 @@
+[
+  {
+    "experiment_id": "framing",
+    "persona": "communications_major_20f",
+    "condition_id": "gain",
+    "condition_name": "Gain Frame",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "framing",
+    "persona": "communications_major_20f",
+    "condition_id": "loss",
+    "condition_name": "Loss Frame",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "framing",
+    "persona": "paralegal_30f",
+    "condition_id": "gain",
+    "condition_name": "Gain Frame",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "framing",
+    "persona": "paralegal_30f",
+    "condition_id": "loss",
+    "condition_name": "Loss Frame",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "framing",
+    "persona": "psychology_major_20f",
+    "condition_id": "gain",
+    "condition_name": "Gain Frame",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "framing",
+    "persona": "psychology_major_20f",
+    "condition_id": "loss",
+    "condition_name": "Loss Frame",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "framing",
+    "persona": "computer_technician_26m",
+    "condition_id": "gain",
+    "condition_name": "Gain Frame",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "framing",
+    "persona": "computer_technician_26m",
+    "condition_id": "loss",
+    "condition_name": "Loss Frame",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "framing",
+    "persona": "delivery_driver_37m",
+    "condition_id": "gain",
+    "condition_name": "Gain Frame",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "framing",
+    "persona": "delivery_driver_37m",
+    "condition_id": "loss",
+    "condition_name": "Loss Frame",
+    "answer": null,
+    "error": "no response"
+  }
+]

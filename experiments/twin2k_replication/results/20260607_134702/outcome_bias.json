@@ -1,0 +1,82 @@
+[
+  {
+    "experiment_id": "outcome_bias",
+    "persona": "communications_major_20f",
+    "condition_id": "good_outcome",
+    "condition_name": "Good Outcome",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "outcome_bias",
+    "persona": "communications_major_20f",
+    "condition_id": "bad_outcome",
+    "condition_name": "Bad Outcome",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "outcome_bias",
+    "persona": "paralegal_30f",
+    "condition_id": "good_outcome",
+    "condition_name": "Good Outcome",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "outcome_bias",
+    "persona": "paralegal_30f",
+    "condition_id": "bad_outcome",
+    "condition_name": "Bad Outcome",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "outcome_bias",
+    "persona": "psychology_major_20f",
+    "condition_id": "good_outcome",
+    "condition_name": "Good Outcome",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "outcome_bias",
+    "persona": "psychology_major_20f",
+    "condition_id": "bad_outcome",
+    "condition_name": "Bad Outcome",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "outcome_bias",
+    "persona": "computer_technician_26m",
+    "condition_id": "good_outcome",
+    "condition_name": "Good Outcome",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "outcome_bias",
+    "persona": "computer_technician_26m",
+    "condition_id": "bad_outcome",
+    "condition_name": "Bad Outcome",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "outcome_bias",
+    "persona": "delivery_driver_37m",
+    "condition_id": "good_outcome",
+    "condition_name": "Good Outcome",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "outcome_bias",
+    "persona": "delivery_driver_37m",
+    "condition_id": "bad_outcome",
+    "condition_name": "Bad Outcome",
+    "answer": null,
+    "error": "no response"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "experiment_id": "less_is_more",
+    "persona": "communications_major_20f",
+    "condition_id": "overfilled",
+    "condition_name": "Overfilled Small Cup (7 oz in 5 oz cup)",
+    "answer": 4.5,
+    "error": null
+  },
+  {
+    "experiment_id": "less_is_more",
+    "persona": "communications_major_20f",
+    "condition_id": "underfilled",
+    "condition_name": "Underfilled Large Cup (8 oz in 10 oz cup)",
+    "answer": 4.0,
+    "error": null
+  },
+  {
+    "experiment_id": "less_is_more",
+    "persona": "paralegal_30f",
+    "condition_id": "overfilled",
+    "condition_name": "Overfilled Small Cup (7 oz in 5 oz cup)",
+    "answer": 6.5,
+    "error": null
+  },
+  {
+    "experiment_id": "less_is_more",
+    "persona": "paralegal_30f",
+    "condition_id": "underfilled",
+    "condition_name": "Underfilled Large Cup (8 oz in 10 oz cup)",
+    "answer": 5.5,
+    "error": null
+  },
+  {
+    "experiment_id": "less_is_more",
+    "persona": "psychology_major_20f",
+    "condition_id": "overfilled",
+    "condition_name": "Overfilled Small Cup (7 oz in 5 oz cup)",
+    "answer": 6.0,
+    "error": null
+  },
+  {
+    "experiment_id": "less_is_more",
+    "persona": "psychology_major_20f",
+    "condition_id": "underfilled",
+    "condition_name": "Underfilled Large Cup (8 oz in 10 oz cup)",
+    "answer": 5.5,
+    "error": null
+  }
+]

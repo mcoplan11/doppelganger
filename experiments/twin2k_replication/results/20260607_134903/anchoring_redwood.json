@@ -1,0 +1,50 @@
+[
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "communications_major_20f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 1300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "communications_major_20f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "paralegal_30f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "paralegal_30f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "psychology_major_20f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 500,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "psychology_major_20f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 350,
+    "error": null
+  }
+]

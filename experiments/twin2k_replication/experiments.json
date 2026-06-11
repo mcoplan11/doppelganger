@@ -1,0 +1,549 @@
+[
+  {
+    "id": "framing",
+    "name": "Framing Problem",
+    "citation": "Tversky & Kahneman (1981)",
+    "type": "between",
+    "paper_result": "replicated",
+    "analysis": {
+      "type": "proportion_comparison",
+      "risky_option": "B",
+      "description": "% choosing risky option should be higher in loss frame",
+      "direction": "condition_loss_higher"
+    },
+    "conditions": [
+      {
+        "id": "gain",
+        "name": "Gain Frame",
+        "scenario": "The United States is preparing for the outbreak of an unusual Asian disease, which is expected to kill 600 people. Two alternative programs to combat the disease have been proposed. Assume that the exact scientific estimates of the consequences of the programs are as follows:",
+        "question": "Which of the two programs do you favor?",
+        "response_type": "choice",
+        "options": [
+          {"id": "A", "text": "Program A: 200 people will be saved."},
+          {"id": "B", "text": "Program B: There is a 1/3 probability that 600 people will be saved and a 2/3 probability that no people will be saved."}
+        ]
+      },
+      {
+        "id": "loss",
+        "name": "Loss Frame",
+        "scenario": "The United States is preparing for the outbreak of an unusual Asian disease, which is expected to kill 600 people. Two alternative programs to combat the disease have been proposed. Assume that the exact scientific estimates of the consequences of the programs are as follows:",
+        "question": "Which of the two programs do you favor?",
+        "response_type": "choice",
+        "options": [
+          {"id": "A", "text": "Program C: 400 people will die."},
+          {"id": "B", "text": "Program D: There is a 1/3 probability that nobody will die and a 2/3 probability that 600 people will die."}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "linda",
+    "name": "Conjunction Problem (Linda)",
+    "citation": "Tversky & Kahneman (1983)",
+    "type": "between",
+    "paper_result": "replicated",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Mean probability rating for conjunction (B) should exceed single event (A)",
+      "direction": "condition_conjunction_higher",
+      "response_range": [1, 6]
+    },
+    "conditions": [
+      {
+        "id": "single",
+        "name": "Single Event",
+        "scenario": "Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations.",
+        "question": "On a scale from 1 (extremely unlikely) to 6 (extremely likely), how likely is it that Linda is a bank teller?",
+        "response_type": "scale",
+        "scale": {"min": 1, "max": 6, "min_label": "Extremely unlikely", "max_label": "Extremely likely"}
+      },
+      {
+        "id": "conjunction",
+        "name": "Conjunction",
+        "scenario": "Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations.",
+        "question": "On a scale from 1 (extremely unlikely) to 6 (extremely likely), how likely is it that Linda is a bank teller and active in the feminist movement?",
+        "response_type": "scale",
+        "scale": {"min": 1, "max": 6, "min_label": "Extremely unlikely", "max_label": "Extremely likely"}
+      }
+    ]
+  } ,
+  {
+    "id": "anchoring_redwood",
+    "name": "Anchoring & Adjustment (Redwood Tree)",
+    "citation": "Tversky & Kahneman (1974)",
+    "type": "between",
+    "paper_result": "replicated",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Mean height estimate should be higher in the high-anchor condition",
+      "direction": "condition_high_anchor_higher"
+    },
+    "conditions": [
+      {
+        "id": "high_anchor",
+        "name": "High Anchor",
+        "scenario": "",
+        "question": "The tallest redwood tree in the world is more than 1,200 feet tall. Setting aside this information, what is your best estimate of the height of the tallest redwood tree in feet?",
+        "response_type": "numeric",
+        "unit": "feet"
+      },
+      {
+        "id": "low_anchor",
+        "name": "Low Anchor",
+        "scenario": "",
+        "question": "The tallest redwood tree in the world is less than 180 feet tall. Setting aside this information, what is your best estimate of the height of the tallest redwood tree in feet?",
+        "response_type": "numeric",
+        "unit": "feet"
+      }
+    ]
+  },
+  {
+    "id": "anchoring_mississippi",
+    "name": "Anchoring & Adjustment (Mississippi River)",
+    "citation": "Tversky & Kahneman (1974)",
+    "type": "between",
+    "paper_result": "not_replicated",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Mean length estimate should be higher in the high-anchor condition",
+      "direction": "condition_high_anchor_higher"
+    },
+    "conditions": [
+      {
+        "id": "high_anchor",
+        "name": "High Anchor",
+        "scenario": "",
+        "question": "The length of the Mississippi River is more than 5,000 miles. Setting aside this information, what is your best estimate of the length of the Mississippi River in miles?",
+        "response_type": "numeric",
+        "unit": "miles"
+      },
+      {
+        "id": "low_anchor",
+        "name": "Low Anchor",
+        "scenario": "",
+        "question": "The length of the Mississippi River is less than 500 miles. Setting aside this information, what is your best estimate of the length of the Mississippi River in miles?",
+        "response_type": "numeric",
+        "unit": "miles"
+      }
+    ]
+  },
+  {
+    "id": "savings",
+    "name": "Absolute vs. Relative Savings",
+    "citation": "Tversky & Kahneman (1981)",
+    "type": "between",
+    "paper_result": "replicated",
+    "analysis": {
+      "type": "proportion_comparison",
+      "risky_option": "yes",
+      "description": "% willing to drive should be higher when savings is larger proportion of price",
+      "direction": "condition_cheap_item_higher"
+    },
+    "conditions": [
+      {
+        "id": "cheap_item",
+        "name": "Saving on Cheap Item ($5 off $15 = 33%)",
+        "scenario": "Imagine that you are about to purchase a jacket for $125 and a calculator for $15. The calculator salesman informs you that the calculator you wish to buy is on sale for $10 at another branch of the store, located 20 minutes drive away.",
+        "question": "Would you make the trip to the other store to save $5?",
+        "response_type": "choice",
+        "options": [
+          {"id": "yes", "text": "Yes, I would make the trip."},
+          {"id": "no", "text": "No, I would not make the trip."}
+        ]
+      },
+      {
+        "id": "expensive_item",
+        "name": "Saving on Expensive Item ($5 off $125 = 4%)",
+        "scenario": "Imagine that you are about to purchase a jacket for $15 and a calculator for $125. The calculator salesman informs you that the calculator you wish to buy is on sale for $120 at another branch of the store, located 20 minutes drive away.",
+        "question": "Would you make the trip to the other store to save $5?",
+        "response_type": "choice",
+        "options": [
+          {"id": "yes", "text": "Yes, I would make the trip."},
+          {"id": "no", "text": "No, I would not make the trip."}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "myside",
+    "name": "Myside Bias",
+    "citation": "Stanovich & West (2008)",
+    "type": "between",
+    "paper_result": "replicated",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with banning should be higher for foreign car condition",
+      "direction": "condition_foreign_higher",
+      "response_range": [1, 6]
+    },
+    "conditions": [
+      {
+        "id": "foreign",
+        "name": "Foreign Manufacturer",
+        "scenario": "",
+        "question": "Should a foreign automobile manufacturer be allowed to sell cars in the United States without being required to meet United States automobile safety standards? Please rate your agreement on a scale from 1 (Definitely yes, they should be allowed) to 6 (Definitely no, they should not be allowed).",
+        "response_type": "scale",
+        "scale": {"min": 1, "max": 6, "min_label": "Definitely yes, they should be allowed", "max_label": "Definitely no, they should not be allowed"}
+      },
+      {
+        "id": "domestic",
+        "name": "Domestic Manufacturer",
+        "scenario": "",
+        "question": "Should a United States automobile manufacturer be allowed to sell cars in a foreign country without being required to meet that country's automobile safety standards? Please rate your agreement on a scale from 1 (Definitely yes, they should be allowed) to 6 (Definitely no, they should not be allowed).",
+        "response_type": "scale",
+        "scale": {"min": 1, "max": 6, "min_label": "Definitely yes, they should be allowed", "max_label": "Definitely no, they should not be allowed"}
+      }
+    ]
+  },
+  {
+    "id": "less_is_more",
+    "name": "Less is More",
+    "citation": "Hsee (1998)",
+    "type": "between",
+    "paper_result": "replicated",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Mean WTP should be higher for overfilled small cup (less ice cream) than underfilled large cup",
+      "direction": "condition_overfilled_higher"
+    },
+    "conditions": [
+      {
+        "id": "overfilled",
+        "name": "Overfilled Small Cup (7 oz in 5 oz cup)",
+        "scenario": "An ice cream vendor is selling a serving of ice cream. The serving weighs 7 ounces and is presented in a 5-ounce cup, so the ice cream is heaped slightly above the rim of the cup.",
+        "question": "How much (in dollars) would you be willing to pay for this serving of ice cream?",
+        "response_type": "numeric",
+        "unit": "dollars"
+      },
+      {
+        "id": "underfilled",
+        "name": "Underfilled Large Cup (8 oz in 10 oz cup)",
+        "scenario": "An ice cream vendor is selling a serving of ice cream. The serving weighs 8 ounces and is presented in a 10-ounce cup, so the cup is about 80% full.",
+        "question": "How much (in dollars) would you be willing to pay for this serving of ice cream?",
+        "response_type": "numeric",
+        "unit": "dollars"
+      }
+    ]
+  },
+  {
+    "id": "wta_wtp",
+    "name": "WTA/WTP (Endowment Effect)",
+    "citation": "Thaler (1980); Stanovich & West (2008)",
+    "type": "between",
+    "paper_result": "replicated",
+    "analysis": {
+      "type": "mean_comparison_three",
+      "description": "WTA-certainty should exceed WTP-certainty which should exceed WTP-noncertainty",
+      "ordering": ["wta_certain", "wtp_certain", "wtp_noncertain"]
+    },
+    "conditions": [
+      {
+        "id": "wta_certain",
+        "name": "WTA Certainty",
+        "scenario": "Imagine you have been given a lottery ticket. This ticket guarantees a win of exactly $30.",
+        "question": "What is the minimum amount of money (in dollars) you would accept in cash to give up this lottery ticket?",
+        "response_type": "numeric",
+        "unit": "dollars"
+      },
+      {
+        "id": "wtp_certain",
+        "name": "WTP Certainty",
+        "scenario": "Imagine a lottery ticket is for sale. This ticket guarantees a win of exactly $30.",
+        "question": "How much money (in dollars) would you be willing to pay for this lottery ticket?",
+        "response_type": "numeric",
+        "unit": "dollars"
+      },
+      {
+        "id": "wtp_noncertain",
+        "name": "WTP Non-Certainty",
+        "scenario": "Imagine a lottery ticket is for sale. This ticket gives an 80% chance of winning $45 and a 20% chance of winning nothing.",
+        "question": "How much money (in dollars) would you be willing to pay for this lottery ticket?",
+        "response_type": "numeric",
+        "unit": "dollars"
+      }
+    ]
+  },
+  {
+    "id": "sunk_cost",
+    "name": "Sunk Cost Fallacy",
+    "citation": "Arkes & Blumer (1985)",
+    "type": "between",
+    "paper_result": "not_replicated",
+    "analysis": {
+      "type": "proportion_comparison",
+      "risky_option": "michigan",
+      "description": "% choosing Michigan trip (worse trip) should be higher when $100 was spent on it",
+      "direction": "condition_paid_higher"
+    },
+    "conditions": [
+      {
+        "id": "paid",
+        "name": "Sunk Cost Present ($100 paid)",
+        "scenario": "Assume you have spent $100 on a ticket for a weekend ski trip to Michigan. Several weeks later you buy a $50 ticket for a ski trip to Wisconsin. You think you will enjoy the Wisconsin ski trip more than the Michigan ski trip. As you are packing your bags, you realize that both trips are for the same weekend. It is too late to sell either ticket or get a refund, and you must use one ticket and not the other.",
+        "question": "Which ski trip will you go on?",
+        "response_type": "choice",
+        "options": [
+          {"id": "michigan", "text": "The $100 ski trip to Michigan."},
+          {"id": "wisconsin", "text": "The $50 ski trip to Wisconsin (which I expect to enjoy more)."}
+        ]
+      },
+      {
+        "id": "free",
+        "name": "No Sunk Cost (Michigan ticket was free)",
+        "scenario": "Assume you received a free ticket for a weekend ski trip to Michigan. Several weeks later you buy a $50 ticket for a ski trip to Wisconsin. You think you will enjoy the Wisconsin ski trip more than the Michigan ski trip. As you are packing your bags, you realize that both trips are for the same weekend. It is too late to sell either ticket or get a refund, and you must use one ticket and not the other.",
+        "question": "Which ski trip will you go on?",
+        "response_type": "choice",
+        "options": [
+          {"id": "michigan", "text": "The free ski trip to Michigan."},
+          {"id": "wisconsin", "text": "The $50 ski trip to Wisconsin (which I expect to enjoy more)."}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "outcome_bias",
+    "name": "Outcome Bias",
+    "citation": "Baron & Hershey (1988)",
+    "type": "between",
+    "paper_result": "not_replicated",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Decision quality rating should be higher when outcome was good",
+      "direction": "condition_good_outcome_higher",
+      "response_range": [1, 7]
+    },
+    "conditions": [
+      {
+        "id": "good_outcome",
+        "name": "Good Outcome",
+        "scenario": "A 55-year-old man had a heart condition. He had to stop his regular exercise program. His doctor gave him the choice of (1) an operation that might cure his heart condition or might kill him, or (2) no operation, which means he would live but be unable to exercise. He decided to have the operation. The operation was a success.",
+        "question": "Evaluate the doctor's decision to recommend the operation on a scale from 1 (very bad decision) to 7 (excellent decision).",
+        "response_type": "scale",
+        "scale": {"min": 1, "max": 7, "min_label": "Very bad decision", "max_label": "Excellent decision"}
+      },
+      {
+        "id": "bad_outcome",
+        "name": "Bad Outcome",
+        "scenario": "A 55-year-old man had a heart condition. He had to stop his regular exercise program. His doctor gave him the choice of (1) an operation that might cure his heart condition or might kill him, or (2) no operation, which means he would live but be unable to exercise. He decided to have the operation. The patient died during the operation.",
+        "question": "Evaluate the doctor's decision to recommend the operation on a scale from 1 (very bad decision) to 7 (excellent decision).",
+        "response_type": "scale",
+        "scale": {"min": 1, "max": 7, "min_label": "Very bad decision", "max_label": "Excellent decision"}
+      }
+    ]
+  },
+  {
+    "id": "allais",
+    "name": "Allais Problem",
+    "citation": "Allais (1953); Stanovich & West (2008)",
+    "type": "between",
+    "paper_result": "not_replicated",
+    "analysis": {
+      "type": "proportion_comparison",
+      "description": "In Problem 1 most should prefer sure $1M (safe). In Problem 2 most should prefer 10% chance of $5M (risky). The conjunction of these choices violates expected utility.",
+      "risky_option": "B",
+      "direction": "condition_problem2_higher_risky"
+    },
+    "conditions": [
+      {
+        "id": "problem1",
+        "name": "Allais Problem 1 (Certainty Effect)",
+        "scenario": "Imagine you are given the choice between two lotteries.",
+        "question": "Which lottery do you prefer?",
+        "response_type": "choice",
+        "options": [
+          {"id": "A", "text": "Lottery A: $1,000,000 for certain."},
+          {"id": "B", "text": "Lottery B: 10% chance of $5,000,000, 89% chance of $1,000,000, and 1% chance of nothing."}
+        ]
+      },
+      {
+        "id": "problem2",
+        "name": "Allais Problem 2 (No Certainty)",
+        "scenario": "Imagine you are given the choice between two lotteries.",
+        "question": "Which lottery do you prefer?",
+        "response_type": "choice",
+        "options": [
+          {"id": "A", "text": "Lottery C: 11% chance of $1,000,000 and 89% chance of nothing."},
+          {"id": "B", "text": "Lottery D: 10% chance of $5,000,000 and 90% chance of nothing."}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "base_rate",
+    "name": "Base Rate Problem",
+    "citation": "Kahneman & Tversky (1973)",
+    "type": "between",
+    "paper_result": "not_replicated",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Probability estimates should track base rate (30% vs 70%) — base rate NEGLECT means estimates converge despite different base rates",
+      "direction": "condition_high_baserate_higher",
+      "note": "Replication of the BIAS means estimates are similar despite different base rates. AI 'not replicating' means it correctly adjusts."
+    },
+    "conditions": [
+      {
+        "id": "low_baserate",
+        "name": "Low Base Rate (30%)",
+        "scenario": "A panel of psychologists interviewed and administered personality tests to 30 engineers and 70 lawyers, all successful professionals. The following description was randomly drawn from the sample:\n\n'Jack is a 45-year-old man. He is married and has four children. He is generally conservative, careful, and ambitious. He shows no interest in political and social issues and spends most of his free time on his many hobbies, which include home carpentry, sailing, and mathematical puzzles.'",
+        "question": "What is the probability (0-100) that Jack is one of the 30 engineers in the sample?",
+        "response_type": "numeric",
+        "unit": "percent"
+      },
+      {
+        "id": "high_baserate",
+        "name": "High Base Rate (70%)",
+        "scenario": "A panel of psychologists interviewed and administered personality tests to 70 engineers and 30 lawyers, all successful professionals. The following description was randomly drawn from the sample:\n\n'Jack is a 45-year-old man. He is married and has four children. He is generally conservative, careful, and ambitious. He shows no interest in political and social issues and spends most of his free time on his many hobbies, which include home carpentry, sailing, and mathematical puzzles.'",
+        "question": "What is the probability (0-100) that Jack is one of the 70 engineers in the sample?",
+        "response_type": "numeric",
+        "unit": "percent"
+      }
+    ]
+  },
+  {
+    "id": "false_consensus",
+    "name": "False Consensus Effect",
+    "citation": "Ross, Greene & House (1977)",
+    "type": "within",
+    "paper_result": "replicated",
+    "analysis": {
+      "type": "false_consensus_correlation",
+      "description": "Personas who agree with a statement should estimate higher public support than those who disagree",
+      "direction": "positive_correlation"
+    },
+    "items": [
+      {
+        "id": "abortion",
+        "statement": "Abortion should be legal in all circumstances.",
+        "own_question": "Do you personally agree or disagree with the following statement? 'Abortion should be legal in all circumstances.' (1=Strongly disagree, 5=Strongly agree)",
+        "public_question": "What percentage (0-100) of US adults do you think agree with the following statement? 'Abortion should be legal in all circumstances.'"
+      },
+      {
+        "id": "gun_control",
+        "statement": "The government should enact stricter gun control laws.",
+        "own_question": "Do you personally agree or disagree with the following statement? 'The government should enact stricter gun control laws.' (1=Strongly disagree, 5=Strongly agree)",
+        "public_question": "What percentage (0-100) of US adults do you think agree with the following statement? 'The government should enact stricter gun control laws.'"
+      },
+      {
+        "id": "immigration",
+        "statement": "Immigration to the United States should be reduced.",
+        "own_question": "Do you personally agree or disagree with the following statement? 'Immigration to the United States should be reduced.' (1=Strongly disagree, 5=Strongly agree)",
+        "public_question": "What percentage (0-100) of US adults do you think agree with the following statement? 'Immigration to the United States should be reduced.'"
+      },
+      {
+        "id": "climate",
+        "statement": "Climate change is primarily caused by human activity.",
+        "own_question": "Do you personally agree or disagree with the following statement? 'Climate change is primarily caused by human activity.' (1=Strongly disagree, 5=Strongly agree)",
+        "public_question": "What percentage (0-100) of US adults do you think agree with the following statement? 'Climate change is primarily caused by human activity.'"
+      }
+    ]
+  },
+  {
+    "id": "risk_benefit",
+    "name": "Risk-Benefit Nonseparability",
+    "citation": "Alhakami & Slovic (1994)",
+    "type": "within",
+    "paper_result": "partial",
+    "analysis": {
+      "type": "within_correlation",
+      "description": "Within each persona, risk and benefit ratings across items should be negatively correlated",
+      "direction": "negative_correlation"
+    },
+    "items": [
+      {"id": "nuclear", "label": "Nuclear power"},
+      {"id": "pesticides", "label": "Pesticides"},
+      {"id": "alcohol", "label": "Alcoholic beverages"},
+      {"id": "cars", "label": "Motor vehicles"},
+      {"id": "cigarettes", "label": "Cigarettes"},
+      {"id": "xrays", "label": "X-rays"}
+    ],
+    "risk_question": "How do you rate the RISK associated with {label}? (1=Very low risk, 7=Very high risk)",
+    "benefit_question": "How do you rate the BENEFIT to society associated with {label}? (1=Very low benefit, 7=Very high benefit)"
+  },
+  {
+    "id": "omission_bias",
+    "name": "Omission Bias",
+    "citation": "Spranca, Minsk & Baron (1991)",
+    "type": "within",
+    "paper_result": "not_replicated",
+    "analysis": {
+      "type": "proportion_comparison",
+      "description": "More people should refuse the vaccine (prefer omission/inaction) than refuse the 'do nothing' option",
+      "direction": "condition_commission_more_refusal"
+    },
+    "conditions": [
+      {
+        "id": "commission",
+        "name": "Action (Vaccination)",
+        "scenario": "A flu epidemic is expected. Without a vaccine, there is a 10 in 10,000 chance that a child will contract the flu. With the vaccine, there is a 5 in 10,000 chance the child will contract the flu from the vaccine itself (same severity). The vaccine prevents all other ways of getting the flu.",
+        "question": "Do you vaccinate your child?",
+        "response_type": "choice",
+        "options": [
+          {"id": "vaccinate", "text": "Yes, I vaccinate my child."},
+          {"id": "skip", "text": "No, I do not vaccinate my child."}
+        ]
+      },
+      {
+        "id": "omission",
+        "name": "Inaction (No Vaccine Available)",
+        "scenario": "A flu epidemic is expected. There is no vaccine available. There is a 5 in 10,000 chance a child will contract the flu this season. There is a different strain of flu for which a vaccine exists; taking that vaccine creates a 10 in 10,000 chance of contracting the original flu (same severity) while protecting against the second strain.",
+        "question": "Do you vaccinate your child against the second strain?",
+        "response_type": "choice",
+        "options": [
+          {"id": "vaccinate", "text": "Yes, I vaccinate my child against the second strain."},
+          {"id": "skip", "text": "No, I do not vaccinate my child against the second strain."}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "probability_matching",
+    "name": "Probability Matching vs. Maximizing",
+    "citation": "Vulkan (2000); Stanovich & West (2008)",
+    "type": "within",
+    "paper_result": "not_replicated",
+    "analysis": {
+      "type": "proportion_matching",
+      "description": "~30% of humans choose the matching strategy; AI digital twins always chose maximizing",
+      "direction": "proportion_choosing_matching"
+    },
+    "conditions": [
+      {
+        "id": "strategy_choice",
+        "name": "Strategy Choice",
+        "scenario": "You are about to play a prediction game. On each of 100 rounds, a light will turn on — either RED (which happens 70% of the time) or GREEN (which happens 30% of the time). Each round is independent. Before each round, you must predict which color will appear. You earn a point for every correct prediction. Your goal is to get as many points as possible.",
+        "question": "Which strategy will you use?",
+        "response_type": "choice",
+        "options": [
+          {"id": "maximize", "text": "Always predict RED (the more frequent color) to maximize correct predictions."},
+          {"id": "match", "text": "Predict RED about 70% of the time and GREEN about 30% of the time, matching the actual frequencies."}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dominator_neglect",
+    "name": "Dominator Neglect",
+    "citation": "Bar-Hillel & Neter (1993); Stanovich & West (2008)",
+    "type": "within",
+    "paper_result": "replicated",
+    "analysis": {
+      "type": "proportion_dominated",
+      "description": "Significant proportion of people should choose the dominated (non-normative) option",
+      "direction": "proportion_choosing_dominated"
+    },
+    "conditions": [
+      {
+        "id": "dominated_choice",
+        "name": "Dominated Choice Problem",
+        "scenario": "You have won a prize and must choose between the following two options.",
+        "question": "Which option do you choose?",
+        "response_type": "choice",
+        "options": [
+          {"id": "dominant", "text": "Option A: A certain gain of $50."},
+          {"id": "dominated", "text": "Option B: A 50% chance of winning $50 OR a 50% chance of winning $25. (Note: with Option B you can never win more than $50.)"}
+        ],
+        "note": "Option A dominates Option B: A gives $50 for certain while B gives at most $50 with some chance of only $25."
+      }
+    ]
+  }
+]

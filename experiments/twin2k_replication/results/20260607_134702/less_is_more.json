@@ -1,0 +1,82 @@
+[
+  {
+    "experiment_id": "less_is_more",
+    "persona": "communications_major_20f",
+    "condition_id": "overfilled",
+    "condition_name": "Overfilled Small Cup (7 oz in 5 oz cup)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "less_is_more",
+    "persona": "communications_major_20f",
+    "condition_id": "underfilled",
+    "condition_name": "Underfilled Large Cup (8 oz in 10 oz cup)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "less_is_more",
+    "persona": "paralegal_30f",
+    "condition_id": "overfilled",
+    "condition_name": "Overfilled Small Cup (7 oz in 5 oz cup)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "less_is_more",
+    "persona": "paralegal_30f",
+    "condition_id": "underfilled",
+    "condition_name": "Underfilled Large Cup (8 oz in 10 oz cup)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "less_is_more",
+    "persona": "psychology_major_20f",
+    "condition_id": "overfilled",
+    "condition_name": "Overfilled Small Cup (7 oz in 5 oz cup)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "less_is_more",
+    "persona": "psychology_major_20f",
+    "condition_id": "underfilled",
+    "condition_name": "Underfilled Large Cup (8 oz in 10 oz cup)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "less_is_more",
+    "persona": "computer_technician_26m",
+    "condition_id": "overfilled",
+    "condition_name": "Overfilled Small Cup (7 oz in 5 oz cup)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "less_is_more",
+    "persona": "computer_technician_26m",
+    "condition_id": "underfilled",
+    "condition_name": "Underfilled Large Cup (8 oz in 10 oz cup)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "less_is_more",
+    "persona": "delivery_driver_37m",
+    "condition_id": "overfilled",
+    "condition_name": "Overfilled Small Cup (7 oz in 5 oz cup)",
+    "answer": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "less_is_more",
+    "persona": "delivery_driver_37m",
+    "condition_id": "underfilled",
+    "condition_name": "Underfilled Large Cup (8 oz in 10 oz cup)",
+    "answer": null,
+    "error": "no response"
+  }
+]

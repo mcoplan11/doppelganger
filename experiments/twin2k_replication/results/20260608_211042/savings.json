@@ -1,0 +1,2402 @@
+[
+  {
+    "experiment_id": "savings",
+    "persona": "communications_major_20f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "communications_major_20f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "paralegal_30f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "paralegal_30f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "psychology_major_20f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "psychology_major_20f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "computer_technician_26m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "computer_technician_26m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "delivery_driver_37m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "delivery_driver_37m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "graphic_designer_34f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "graphic_designer_34f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "real_estate_agent_32m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "real_estate_agent_32m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "part_time_bartender_29m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "part_time_bartender_29m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "remote_support_33f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "remote_support_33f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "freelance_writer_29nb",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "freelance_writer_29nb",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "freelance_copywriter_32nb",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "freelance_copywriter_32nb",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "hotel_receptionist_24f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "hotel_receptionist_24f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "substitute_teacher_29m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "substitute_teacher_29m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "car_detailer_23m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "car_detailer_23m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "content_moderator_27f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "content_moderator_27f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "fast_food_worker_19m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "fast_food_worker_19m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "part_time_tutor_24f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "part_time_tutor_24f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "hr_assistant_27f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "hr_assistant_27f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "freelance_photographer_30m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "freelance_photographer_30m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "pharmacy_tech_28m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "pharmacy_tech_28m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "juice_barista_19f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "juice_barista_19f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "research_assistant_24f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "research_assistant_24f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "office_assistant_51m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "office_assistant_51m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "bus_driver_35m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "bus_driver_35m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "grant_writer_34f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "grant_writer_34f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "private_tutor_27f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "private_tutor_27f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "senior_clerk_55f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "senior_clerk_55f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "online_reseller_29m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "online_reseller_29m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "virtual_assistant_25f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "virtual_assistant_25f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "english_tutor_28f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "english_tutor_28f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "cafe_manager_28f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "cafe_manager_28f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "legal_secretary_44f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "legal_secretary_44f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "retail_cashier_22m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "retail_cashier_22m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "copywriter_28f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "copywriter_28f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "biology_graduate_24nb",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "biology_graduate_24nb",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "unemployed_manager_47m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "unemployed_manager_47m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "pastry_chef_26f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "pastry_chef_26f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "unemployed_chef_33m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "unemployed_chef_33m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "inventory_specialist_27f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "inventory_specialist_27f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "administrative_assistant_52f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "administrative_assistant_52f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "evening_receptionist_22f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "evening_receptionist_22f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "remote_billing_clerk_29m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "remote_billing_clerk_29m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "empty_nester_58f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "empty_nester_58f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "stay_home_dad_32m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "stay_home_dad_32m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "truck_driver_51m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "truck_driver_51m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "customer_service_rep_50f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "customer_service_rep_50f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "stay_home_mom_36f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "stay_home_mom_36f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "nursing_student_22f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "nursing_student_22f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "dry_cleaning_clerk_22f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "dry_cleaning_clerk_22f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "freelance_animator_27f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "freelance_animator_27f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "seo_specialist_33m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "seo_specialist_33m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "retired_accountant_68m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "retired_accountant_68m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "software_dev_28m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "software_dev_28m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "pool_cleaner_21m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "pool_cleaner_21m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "night_shift_nurse_38f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "night_shift_nurse_38f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "local_gov_clerk_48f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "local_gov_clerk_48f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "unemployed_mechanic_33m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "unemployed_mechanic_33m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "theater_major_21f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "theater_major_21f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "physics_student_21f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "physics_student_21f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "occupational_therapist_33f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "occupational_therapist_33f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "insurance_adjuster_43m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "insurance_adjuster_43m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "woodworker_29m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "woodworker_29m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "junior_analyst_24m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "junior_analyst_24m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "office_manager_31f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "office_manager_31f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "dog_trainer_30f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "dog_trainer_30f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "tutor_coordinator_42m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "tutor_coordinator_42m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "chemistry_major_19nb",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "chemistry_major_19nb",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "real_estate_appraiser_54m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "real_estate_appraiser_54m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "night_auditor_27m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "night_auditor_27m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "part_time_florist_45f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "part_time_florist_45f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "medical_transcriptionist_53f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "medical_transcriptionist_53f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "property_manager_31m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "property_manager_31m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "logistics_coordinator_40m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "logistics_coordinator_40m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "retail_store_manager_46m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "retail_store_manager_46m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "marketing_coordinator_26f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "marketing_coordinator_26f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "screen_printer_28m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "screen_printer_28m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "daycare_owner_40f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "daycare_owner_40f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "junior_designer_23f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "junior_designer_23f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "stay_home_dad_39m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "stay_home_dad_39m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "server_37m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "server_37m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "data_entry_clerk_26f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "data_entry_clerk_26f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "virtual_tutor_26f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "virtual_tutor_26f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "stay_home_mother_28f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "stay_home_mother_28f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "technical_writer_32m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "technical_writer_32m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "data_entry_operator_23nb",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "data_entry_operator_23nb",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "dropshipper_24m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "dropshipper_24m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "dental_hygienist_28f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "dental_hygienist_28f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "stay_home_mom_30f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "stay_home_mom_30f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "web_designer_29m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "web_designer_29m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "high_school_substitute_30f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "high_school_substitute_30f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "call_center_agent_28m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "call_center_agent_28m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "freelance_indexer_47f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "freelance_indexer_47f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "travel_agent_33m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "travel_agent_33m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "landscape_laborer_25m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "landscape_laborer_25m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "part_time_consultant_60m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "part_time_consultant_60m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "retired_mechanic_65m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "retired_mechanic_65m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "retail_merchandiser_31f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "retail_merchandiser_31f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "job_seeker_admin_28m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "job_seeker_admin_28m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "undeclared_freshman_18f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "undeclared_freshman_18f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "physical_therapy_aide_23f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "physical_therapy_aide_23f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "it_technician_27m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "it_technician_27m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "music_teacher_32f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "music_teacher_32f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "locksmith_28m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "locksmith_28m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "fitness_instructor_26m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "fitness_instructor_26m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "unemployed_sales_41m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "unemployed_sales_41m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "freelance_programmer_27nb",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "freelance_programmer_27nb",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "math_tutor_22f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "math_tutor_22f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "online_seller_33f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "online_seller_33f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "electrician_43m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "electrician_43m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "audio_engineer_31m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "audio_engineer_31m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "grocery_shopper_26f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "grocery_shopper_26f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "bakery_assistant_20f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "bakery_assistant_20f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "math_graduate_student_26m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "math_graduate_student_26m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "community_college_student_19m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "community_college_student_19m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "warehouse_manager_34m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "warehouse_manager_34m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "floral_designer_28f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "floral_designer_28f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "veterinary_assistant_24f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "veterinary_assistant_24f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "transcriptionist_30nb",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "transcriptionist_30nb",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "barista_trainer_24m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "barista_trainer_24m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "high_school_teacher_49m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "high_school_teacher_49m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "bookkeeper_48f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "bookkeeper_48f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "stay_home_mom_26f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "stay_home_mom_26f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "construction_estimator_36m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "construction_estimator_36m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "pet_sitter_24f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "pet_sitter_24f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "social_media_manager_26f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "social_media_manager_26f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "voice_actor_31m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "voice_actor_31m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "data_analyst_35f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "data_analyst_35f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "accountant_38m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "accountant_38m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "proofreader_35f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "proofreader_35f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "nanny_25f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "nanny_25f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "stay_home_father_28m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "stay_home_father_28m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "film_student_20m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "film_student_20m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "tech_support_agent_22f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "tech_support_agent_22f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "videographer_25m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "videographer_25m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "massage_therapist_41f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "massage_therapist_41f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "flight_attendant_29f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "flight_attendant_29f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "gig_delivery_driver_31m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "gig_delivery_driver_31m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "delivery_rider_22m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "delivery_rider_22m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "event_planner_32f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "event_planner_32f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "freelance_translator_28nb",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "freelance_translator_28nb",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "freelance_editor_44f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "freelance_editor_44f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "library_assistant_24m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "library_assistant_24m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "retired_teacher_64f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "retired_teacher_64f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "house_sitter_23m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "house_sitter_23m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "biology_student_19f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "biology_student_19f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "retail_supervisor_29m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "retail_supervisor_29m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "stay_home_parent_34f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "stay_home_parent_34f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "remote_proofreader_31f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "remote_proofreader_31f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "retired_librarian_62f",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "retired_librarian_62f",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "line_cook_25m",
+    "condition_id": "cheap_item",
+    "condition_name": "Saving on Cheap Item ($5 off $15 = 33%)",
+    "answer": "yes",
+    "error": null
+  },
+  {
+    "experiment_id": "savings",
+    "persona": "line_cook_25m",
+    "condition_id": "expensive_item",
+    "condition_name": "Saving on Expensive Item ($5 off $125 = 4%)",
+    "answer": "no",
+    "error": null
+  }
+]

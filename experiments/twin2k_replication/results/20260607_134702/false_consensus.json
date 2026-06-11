@@ -1,0 +1,162 @@
+[
+  {
+    "experiment_id": "false_consensus",
+    "persona": "communications_major_20f",
+    "item_id": "abortion",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "communications_major_20f",
+    "item_id": "gun_control",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "communications_major_20f",
+    "item_id": "immigration",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "communications_major_20f",
+    "item_id": "climate",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "paralegal_30f",
+    "item_id": "abortion",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "paralegal_30f",
+    "item_id": "gun_control",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "paralegal_30f",
+    "item_id": "immigration",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "paralegal_30f",
+    "item_id": "climate",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "psychology_major_20f",
+    "item_id": "abortion",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "psychology_major_20f",
+    "item_id": "gun_control",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "psychology_major_20f",
+    "item_id": "immigration",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "psychology_major_20f",
+    "item_id": "climate",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "computer_technician_26m",
+    "item_id": "abortion",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "computer_technician_26m",
+    "item_id": "gun_control",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "computer_technician_26m",
+    "item_id": "immigration",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "computer_technician_26m",
+    "item_id": "climate",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "delivery_driver_37m",
+    "item_id": "abortion",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "delivery_driver_37m",
+    "item_id": "gun_control",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "delivery_driver_37m",
+    "item_id": "immigration",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "delivery_driver_37m",
+    "item_id": "climate",
+    "own_view": null,
+    "public_estimate": null,
+    "error": "no response"
+  }
+]

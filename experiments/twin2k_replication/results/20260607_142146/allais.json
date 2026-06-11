@@ -1,0 +1,50 @@
+[
+  {
+    "experiment_id": "allais",
+    "persona": "communications_major_20f",
+    "condition_id": "problem1",
+    "condition_name": "Allais Problem 1 (Certainty Effect)",
+    "answer": "B",
+    "error": null
+  },
+  {
+    "experiment_id": "allais",
+    "persona": "communications_major_20f",
+    "condition_id": "problem2",
+    "condition_name": "Allais Problem 2 (No Certainty)",
+    "answer": "B",
+    "error": null
+  },
+  {
+    "experiment_id": "allais",
+    "persona": "paralegal_30f",
+    "condition_id": "problem1",
+    "condition_name": "Allais Problem 1 (Certainty Effect)",
+    "answer": "B",
+    "error": null
+  },
+  {
+    "experiment_id": "allais",
+    "persona": "paralegal_30f",
+    "condition_id": "problem2",
+    "condition_name": "Allais Problem 2 (No Certainty)",
+    "answer": "B",
+    "error": null
+  },
+  {
+    "experiment_id": "allais",
+    "persona": "psychology_major_20f",
+    "condition_id": "problem1",
+    "condition_name": "Allais Problem 1 (Certainty Effect)",
+    "answer": "A",
+    "error": null
+  },
+  {
+    "experiment_id": "allais",
+    "persona": "psychology_major_20f",
+    "condition_id": "problem2",
+    "condition_name": "Allais Problem 2 (No Certainty)",
+    "answer": "B",
+    "error": null
+  }
+]
