@@ -1,0 +1,5402 @@
+[
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "server_37m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "server_37m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "server_37m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "server_37m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "server_37m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "server_37m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "film_student_20m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "film_student_20m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "film_student_20m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "film_student_20m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "film_student_20m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "film_student_20m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "engineering_student_21m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "engineering_student_21m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 3,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "engineering_student_21m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "engineering_student_21m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "engineering_student_21m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "engineering_student_21m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_florist_45f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_florist_45f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_florist_45f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_florist_45f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_florist_45f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_florist_45f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_bartender_29m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_bartender_29m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_bartender_29m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_bartender_29m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_bartender_29m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_bartender_29m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "seo_specialist_33m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "seo_specialist_33m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "seo_specialist_33m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "seo_specialist_33m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "seo_specialist_33m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "seo_specialist_33m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "paralegal_30f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "paralegal_30f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "paralegal_30f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "paralegal_30f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "paralegal_30f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "paralegal_30f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "theater_major_21f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "theater_major_21f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "theater_major_21f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "theater_major_21f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "theater_major_21f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "theater_major_21f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "gig_worker_24f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "gig_worker_24f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "gig_worker_24f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "gig_worker_24f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "gig_worker_24f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "gig_worker_24f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "administrative_assistant_52f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 6,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "administrative_assistant_52f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 6,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "administrative_assistant_52f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "administrative_assistant_52f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "administrative_assistant_52f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "administrative_assistant_52f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_illustrator_39f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_illustrator_39f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_illustrator_39f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_illustrator_39f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_illustrator_39f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_illustrator_39f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "nursing_student_22f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "nursing_student_22f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "nursing_student_22f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "nursing_student_22f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "nursing_student_22f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "nursing_student_22f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "night_shift_nurse_38f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "night_shift_nurse_38f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "night_shift_nurse_38f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "night_shift_nurse_38f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "night_shift_nurse_38f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "night_shift_nurse_38f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_mom_26f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_mom_26f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_mom_26f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_mom_26f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_mom_26f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_mom_26f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "undeclared_freshman_18f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "undeclared_freshman_18f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "undeclared_freshman_18f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "undeclared_freshman_18f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "undeclared_freshman_18f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "undeclared_freshman_18f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "empty_nester_58f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "empty_nester_58f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "empty_nester_58f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "empty_nester_58f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "empty_nester_58f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "empty_nester_58f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "customer_service_rep_50f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "customer_service_rep_50f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "customer_service_rep_50f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "customer_service_rep_50f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "customer_service_rep_50f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "customer_service_rep_50f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "fitness_instructor_26m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "fitness_instructor_26m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "fitness_instructor_26m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "fitness_instructor_26m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "fitness_instructor_26m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "fitness_instructor_26m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "job_seeker_admin_28m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "job_seeker_admin_28m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "job_seeker_admin_28m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "job_seeker_admin_28m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "job_seeker_admin_28m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "job_seeker_admin_28m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "yoga_teacher_27f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "yoga_teacher_27f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "yoga_teacher_27f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 4,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "yoga_teacher_27f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "yoga_teacher_27f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "yoga_teacher_27f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_dad_39m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_dad_39m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_dad_39m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_dad_39m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_dad_39m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_dad_39m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 1,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "data_analyst_35f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "data_analyst_35f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "data_analyst_35f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "data_analyst_35f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "data_analyst_35f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "data_analyst_35f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "legal_secretary_44f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 6,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "legal_secretary_44f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "legal_secretary_44f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "legal_secretary_44f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "legal_secretary_44f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "legal_secretary_44f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "office_manager_31f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "office_manager_31f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "office_manager_31f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "office_manager_31f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "office_manager_31f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "office_manager_31f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retail_store_manager_46m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retail_store_manager_46m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retail_store_manager_46m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retail_store_manager_46m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retail_store_manager_46m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retail_store_manager_46m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "property_manager_31m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "property_manager_31m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "property_manager_31m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "property_manager_31m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "property_manager_31m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "property_manager_31m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "real_estate_appraiser_54m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 6,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "real_estate_appraiser_54m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "real_estate_appraiser_54m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "real_estate_appraiser_54m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "real_estate_appraiser_54m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "real_estate_appraiser_54m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "real_estate_agent_32m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "real_estate_agent_32m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "real_estate_agent_32m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "real_estate_agent_32m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "real_estate_agent_32m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "real_estate_agent_32m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retired_librarian_62f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retired_librarian_62f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retired_librarian_62f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retired_librarian_62f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retired_librarian_62f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retired_librarian_62f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "biology_student_19f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "biology_student_19f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "biology_student_19f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "biology_student_19f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "biology_student_19f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "biology_student_19f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "software_dev_28m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "software_dev_28m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "software_dev_28m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "software_dev_28m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "software_dev_28m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "software_dev_28m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "medical_transcriptionist_53f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "medical_transcriptionist_53f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "medical_transcriptionist_53f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "medical_transcriptionist_53f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "medical_transcriptionist_53f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "medical_transcriptionist_53f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retail_supervisor_29m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retail_supervisor_29m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retail_supervisor_29m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retail_supervisor_29m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retail_supervisor_29m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retail_supervisor_29m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "construction_estimator_36m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "construction_estimator_36m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "construction_estimator_36m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "construction_estimator_36m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "construction_estimator_36m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "construction_estimator_36m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "tech_support_agent_22f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "tech_support_agent_22f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "tech_support_agent_22f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "tech_support_agent_22f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "tech_support_agent_22f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "tech_support_agent_22f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "daycare_owner_40f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "daycare_owner_40f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "daycare_owner_40f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "daycare_owner_40f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "daycare_owner_40f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "daycare_owner_40f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_mom_36f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_mom_36f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_mom_36f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_mom_36f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_mom_36f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_mom_36f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "psychology_major_20f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "psychology_major_20f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "psychology_major_20f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "psychology_major_20f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "psychology_major_20f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "psychology_major_20f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "delivery_driver_23m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "delivery_driver_23m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "delivery_driver_23m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "delivery_driver_23m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "delivery_driver_23m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "delivery_driver_23m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_dad_32m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_dad_32m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_dad_32m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_dad_32m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_dad_32m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_dad_32m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 1,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "graphic_designer_34f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "graphic_designer_34f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "graphic_designer_34f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "graphic_designer_34f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "graphic_designer_34f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "graphic_designer_34f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "substitute_teacher_29m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "substitute_teacher_29m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "substitute_teacher_29m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "substitute_teacher_29m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "substitute_teacher_29m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "substitute_teacher_29m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "logistics_coordinator_40m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "logistics_coordinator_40m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "logistics_coordinator_40m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "logistics_coordinator_40m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "logistics_coordinator_40m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "logistics_coordinator_40m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "occupational_therapist_33f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "occupational_therapist_33f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "occupational_therapist_33f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "occupational_therapist_33f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "occupational_therapist_33f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "occupational_therapist_33f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "event_planner_32f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "event_planner_32f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "event_planner_32f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "event_planner_32f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "event_planner_32f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "event_planner_32f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "library_assistant_24m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "library_assistant_24m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "library_assistant_24m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "library_assistant_24m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "library_assistant_24m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "library_assistant_24m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "it_technician_27m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "it_technician_27m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "it_technician_27m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "it_technician_27m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "it_technician_27m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "it_technician_27m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "barista_20nb",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "barista_20nb",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "barista_20nb",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "barista_20nb",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "barista_20nb",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "barista_20nb",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "social_media_manager_26f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "social_media_manager_26f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "social_media_manager_26f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "social_media_manager_26f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "social_media_manager_26f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "social_media_manager_26f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retired_mechanic_65m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retired_mechanic_65m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retired_mechanic_65m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retired_mechanic_65m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 4,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retired_mechanic_65m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retired_mechanic_65m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_mom_30f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_mom_30f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_mom_30f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_mom_30f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_mom_30f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "stay_home_mom_30f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_tutor_24f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_tutor_24f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_tutor_24f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_tutor_24f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_tutor_24f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_tutor_24f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "museum_guide_29f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "museum_guide_29f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "museum_guide_29f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "museum_guide_29f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "museum_guide_29f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "museum_guide_29f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "sales_associate_25m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "sales_associate_25m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "sales_associate_25m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "sales_associate_25m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "sales_associate_25m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "sales_associate_25m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "middle_school_teacher_42f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "middle_school_teacher_42f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "middle_school_teacher_42f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "middle_school_teacher_42f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "middle_school_teacher_42f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "middle_school_teacher_42f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "community_college_student_19m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "community_college_student_19m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "community_college_student_19m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "community_college_student_19m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "community_college_student_19m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "community_college_student_19m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "copywriter_28f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 3,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "copywriter_28f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 3,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "copywriter_28f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "copywriter_28f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "copywriter_28f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "copywriter_28f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_chef_33m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_chef_33m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_chef_33m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_chef_33m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_chef_33m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_chef_33m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 1,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "hr_assistant_27f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "hr_assistant_27f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "hr_assistant_27f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "hr_assistant_27f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "hr_assistant_27f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "hr_assistant_27f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "phd_candidate_31f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "phd_candidate_31f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "phd_candidate_31f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "phd_candidate_31f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "phd_candidate_31f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "phd_candidate_31f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "intern_marketing_23m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "intern_marketing_23m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "intern_marketing_23m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "intern_marketing_23m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "intern_marketing_23m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "intern_marketing_23m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "high_school_teacher_49m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "high_school_teacher_49m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "high_school_teacher_49m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "high_school_teacher_49m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "high_school_teacher_49m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "high_school_teacher_49m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "customer_success_29f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "customer_success_29f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "customer_success_29f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "customer_success_29f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 4,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "customer_success_29f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "customer_success_29f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_consultant_60m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_consultant_60m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_consultant_60m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_consultant_60m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_consultant_60m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_consultant_60m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "medical_biller_31f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "medical_biller_31f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "medical_biller_31f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "medical_biller_31f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 4,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "medical_biller_31f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "medical_biller_31f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "insurance_adjuster_43m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "insurance_adjuster_43m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "insurance_adjuster_43m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "insurance_adjuster_43m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "insurance_adjuster_43m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "insurance_adjuster_43m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "audio_engineer_31m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "audio_engineer_31m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "audio_engineer_31m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "audio_engineer_31m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "audio_engineer_31m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "audio_engineer_31m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "pharmacy_tech_28m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "pharmacy_tech_28m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "pharmacy_tech_28m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "pharmacy_tech_28m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "pharmacy_tech_28m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "pharmacy_tech_28m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 1,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "security_guard_32m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "security_guard_32m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "security_guard_32m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 7,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "security_guard_32m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "security_guard_32m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "security_guard_32m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 1,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "fast_food_worker_19m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "fast_food_worker_19m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 3,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "fast_food_worker_19m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "fast_food_worker_19m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 4,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "fast_food_worker_19m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "fast_food_worker_19m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 1,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "warehouse_manager_34m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "warehouse_manager_34m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "warehouse_manager_34m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "warehouse_manager_34m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "warehouse_manager_34m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "warehouse_manager_34m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_manager_47m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_manager_47m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_manager_47m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_manager_47m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_manager_47m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_manager_47m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_writer_29nb",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 6,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_writer_29nb",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 6,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_writer_29nb",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_writer_29nb",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_writer_29nb",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_writer_29nb",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "electrician_43m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "electrician_43m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "electrician_43m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "electrician_43m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "electrician_43m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "electrician_43m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_mechanic_33m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_mechanic_33m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_mechanic_33m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_mechanic_33m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_mechanic_33m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_mechanic_33m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_editor_44f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 6,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_editor_44f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 6,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_editor_44f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_editor_44f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_editor_44f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_editor_44f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retired_accountant_68m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retired_accountant_68m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retired_accountant_68m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retired_accountant_68m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retired_accountant_68m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retired_accountant_68m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "preschool_teacher_27f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "preschool_teacher_27f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "preschool_teacher_27f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "preschool_teacher_27f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 4,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "preschool_teacher_27f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "preschool_teacher_27f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "data_entry_clerk_26f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "data_entry_clerk_26f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "data_entry_clerk_26f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "data_entry_clerk_26f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "data_entry_clerk_26f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "data_entry_clerk_26f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "bank_teller_25f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "bank_teller_25f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "bank_teller_25f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "bank_teller_25f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "bank_teller_25f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "bank_teller_25f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "dog_walker_26m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "dog_walker_26m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "dog_walker_26m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "dog_walker_26m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "dog_walker_26m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "dog_walker_26m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "postal_worker_42m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "postal_worker_42m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "postal_worker_42m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "postal_worker_42m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "postal_worker_42m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "postal_worker_42m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "local_gov_clerk_48f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "local_gov_clerk_48f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "local_gov_clerk_48f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "local_gov_clerk_48f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "local_gov_clerk_48f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "local_gov_clerk_48f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "dental_hygienist_28f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "dental_hygienist_28f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "dental_hygienist_28f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "dental_hygienist_28f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 4,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "dental_hygienist_28f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "dental_hygienist_28f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "uber_driver_30m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "uber_driver_30m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "uber_driver_30m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "uber_driver_30m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "uber_driver_30m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "uber_driver_30m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_sales_41m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_sales_41m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_sales_41m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_sales_41m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_sales_41m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "unemployed_sales_41m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "virtual_assistant_25f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "virtual_assistant_25f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "virtual_assistant_25f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "virtual_assistant_25f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "virtual_assistant_25f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "virtual_assistant_25f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_photographer_30m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_photographer_30m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_photographer_30m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_photographer_30m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_photographer_30m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "freelance_photographer_30m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "warehouse_associate_21m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "warehouse_associate_21m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "warehouse_associate_21m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "warehouse_associate_21m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "warehouse_associate_21m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "warehouse_associate_21m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_bookkeeper_35f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": null,
+    "benefit_rating": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_bookkeeper_35f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": null,
+    "benefit_rating": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_bookkeeper_35f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": null,
+    "benefit_rating": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_bookkeeper_35f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 4,
+    "benefit_rating": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_bookkeeper_35f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": null,
+    "benefit_rating": null,
+    "error": "no response"
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "part_time_bookkeeper_35f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "massage_therapist_41f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "massage_therapist_41f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 1,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "massage_therapist_41f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "massage_therapist_41f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "massage_therapist_41f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "massage_therapist_41f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 1,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "customer_support_23f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "customer_support_23f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "customer_support_23f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "customer_support_23f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "customer_support_23f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "customer_support_23f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "delivery_driver_37m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "delivery_driver_37m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "delivery_driver_37m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "delivery_driver_37m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 4,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "delivery_driver_37m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "delivery_driver_37m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retail_cashier_22m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 6,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retail_cashier_22m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 6,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retail_cashier_22m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retail_cashier_22m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retail_cashier_22m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "retail_cashier_22m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "grant_writer_34f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "grant_writer_34f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "grant_writer_34f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "grant_writer_34f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 5,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "grant_writer_34f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "grant_writer_34f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "accountant_38m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "accountant_38m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "accountant_38m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "accountant_38m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "accountant_38m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "accountant_38m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "junior_designer_23f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "junior_designer_23f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "junior_designer_23f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "junior_designer_23f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "junior_designer_23f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "junior_designer_23f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 4,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "truck_driver_51m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 4,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "truck_driver_51m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "truck_driver_51m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 4,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "truck_driver_51m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 4,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "truck_driver_51m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "truck_driver_51m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 3,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "night_auditor_27m",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 6,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "night_auditor_27m",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 6,
+    "benefit_rating": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "night_auditor_27m",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 6,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "night_auditor_27m",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 6,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "night_auditor_27m",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "night_auditor_27m",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 1,
+    "benefit_rating": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "adjunct_professor_34f",
+    "item_id": "nuclear",
+    "item_label": "Nuclear power",
+    "risk_rating": 3,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "adjunct_professor_34f",
+    "item_id": "pesticides",
+    "item_label": "Pesticides",
+    "risk_rating": 3,
+    "benefit_rating": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "adjunct_professor_34f",
+    "item_id": "alcohol",
+    "item_label": "Alcoholic beverages",
+    "risk_rating": 5,
+    "benefit_rating": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "adjunct_professor_34f",
+    "item_id": "cars",
+    "item_label": "Motor vehicles",
+    "risk_rating": 4,
+    "benefit_rating": 5,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "adjunct_professor_34f",
+    "item_id": "cigarettes",
+    "item_label": "Cigarettes",
+    "risk_rating": 7,
+    "benefit_rating": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "risk_benefit",
+    "persona": "adjunct_professor_34f",
+    "item_id": "xrays",
+    "item_label": "X-rays",
+    "risk_rating": 2,
+    "benefit_rating": 6,
+    "error": null
+  }
+]

@@ -1,0 +1,1602 @@
+[
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "server_37m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "server_37m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "film_student_20m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "film_student_20m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "engineering_student_21m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "engineering_student_21m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "part_time_florist_45f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "part_time_florist_45f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "part_time_bartender_29m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "part_time_bartender_29m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "seo_specialist_33m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "seo_specialist_33m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "paralegal_30f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "michigan",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "paralegal_30f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "theater_major_21f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "theater_major_21f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "gig_worker_24f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "gig_worker_24f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "administrative_assistant_52f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "administrative_assistant_52f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "freelance_illustrator_39f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "freelance_illustrator_39f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "nursing_student_22f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "nursing_student_22f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "night_shift_nurse_38f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "night_shift_nurse_38f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "stay_home_mom_26f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "stay_home_mom_26f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "undeclared_freshman_18f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "undeclared_freshman_18f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "empty_nester_58f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "empty_nester_58f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "customer_service_rep_50f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "customer_service_rep_50f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "fitness_instructor_26m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "fitness_instructor_26m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "job_seeker_admin_28m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "job_seeker_admin_28m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "yoga_teacher_27f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "yoga_teacher_27f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "stay_home_dad_39m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "stay_home_dad_39m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "data_analyst_35f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "data_analyst_35f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "legal_secretary_44f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "legal_secretary_44f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "office_manager_31f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "office_manager_31f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "retail_store_manager_46m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "retail_store_manager_46m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "property_manager_31m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "property_manager_31m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "real_estate_appraiser_54m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "real_estate_appraiser_54m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "real_estate_agent_32m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "real_estate_agent_32m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "retired_librarian_62f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "retired_librarian_62f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "biology_student_19f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "biology_student_19f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "software_dev_28m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "software_dev_28m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "medical_transcriptionist_53f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "michigan",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "medical_transcriptionist_53f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "retail_supervisor_29m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "retail_supervisor_29m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "construction_estimator_36m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "construction_estimator_36m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "tech_support_agent_22f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "tech_support_agent_22f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "daycare_owner_40f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "daycare_owner_40f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "stay_home_mom_36f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "stay_home_mom_36f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "psychology_major_20f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "psychology_major_20f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "delivery_driver_23m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "delivery_driver_23m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "stay_home_dad_32m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "stay_home_dad_32m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "graphic_designer_34f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "graphic_designer_34f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "substitute_teacher_29m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "substitute_teacher_29m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "logistics_coordinator_40m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "logistics_coordinator_40m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "occupational_therapist_33f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "occupational_therapist_33f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "event_planner_32f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "event_planner_32f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "library_assistant_24m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "library_assistant_24m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "it_technician_27m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "it_technician_27m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "barista_20nb",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "barista_20nb",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "social_media_manager_26f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "social_media_manager_26f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "retired_mechanic_65m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "retired_mechanic_65m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "stay_home_mom_30f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "stay_home_mom_30f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "part_time_tutor_24f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "part_time_tutor_24f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "museum_guide_29f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "museum_guide_29f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "sales_associate_25m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "sales_associate_25m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "middle_school_teacher_42f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "middle_school_teacher_42f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "community_college_student_19m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "community_college_student_19m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "copywriter_28f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "copywriter_28f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "unemployed_chef_33m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "unemployed_chef_33m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "hr_assistant_27f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "hr_assistant_27f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "phd_candidate_31f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "phd_candidate_31f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "intern_marketing_23m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "intern_marketing_23m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "high_school_teacher_49m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "high_school_teacher_49m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "customer_success_29f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "customer_success_29f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "part_time_consultant_60m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "part_time_consultant_60m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "medical_biller_31f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "medical_biller_31f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "insurance_adjuster_43m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "insurance_adjuster_43m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "audio_engineer_31m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "audio_engineer_31m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "pharmacy_tech_28m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "pharmacy_tech_28m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "security_guard_32m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "security_guard_32m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "fast_food_worker_19m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "fast_food_worker_19m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "warehouse_manager_34m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "warehouse_manager_34m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "unemployed_manager_47m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "unemployed_manager_47m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "freelance_writer_29nb",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "freelance_writer_29nb",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "electrician_43m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "electrician_43m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "unemployed_mechanic_33m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "unemployed_mechanic_33m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "freelance_editor_44f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "freelance_editor_44f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "retired_accountant_68m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "retired_accountant_68m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "preschool_teacher_27f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "preschool_teacher_27f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "data_entry_clerk_26f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "data_entry_clerk_26f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "bank_teller_25f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "bank_teller_25f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "dog_walker_26m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "dog_walker_26m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "postal_worker_42m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "postal_worker_42m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "local_gov_clerk_48f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "local_gov_clerk_48f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "dental_hygienist_28f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "dental_hygienist_28f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "uber_driver_30m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "uber_driver_30m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "unemployed_sales_41m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "unemployed_sales_41m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "virtual_assistant_25f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "virtual_assistant_25f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "freelance_photographer_30m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "freelance_photographer_30m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "warehouse_associate_21m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "warehouse_associate_21m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "part_time_bookkeeper_35f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "part_time_bookkeeper_35f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "massage_therapist_41f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "massage_therapist_41f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "customer_support_23f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "customer_support_23f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "delivery_driver_37m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "delivery_driver_37m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "retail_cashier_22m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "retail_cashier_22m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "grant_writer_34f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "grant_writer_34f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "accountant_38m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "accountant_38m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "junior_designer_23f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "junior_designer_23f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "truck_driver_51m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "truck_driver_51m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "night_auditor_27m",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "night_auditor_27m",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "adjunct_professor_34f",
+    "condition_id": "paid",
+    "condition_name": "Sunk Cost Present ($100 paid)",
+    "answer": "wisconsin",
+    "error": null
+  },
+  {
+    "experiment_id": "sunk_cost",
+    "persona": "adjunct_professor_34f",
+    "condition_id": "free",
+    "condition_name": "No Sunk Cost (Michigan ticket was free)",
+    "answer": "wisconsin",
+    "error": null
+  }
+]
