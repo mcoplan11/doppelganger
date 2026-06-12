@@ -137,9 +137,13 @@ def main() -> None:
     # Anchor relative output paths to this script's directory, not the CWD —
     # run_job.sh runs from the repo root while 3_eval.py defaults to
     # <script-dir>/checkpoints/final.
+    # On RunPod, redirect to /workspace so checkpoints survive container restarts.
     out_root = Path(train_cfg["output_dir"])
     if not out_root.is_absolute():
-        out_root = Path(__file__).parent / out_root
+        if Path("/workspace").is_dir():
+            out_root = Path("/workspace") / out_root
+        else:
+            out_root = Path(__file__).parent / out_root
 
     import inspect
     sft_kwargs = dict(
