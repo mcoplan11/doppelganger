@@ -12,7 +12,7 @@
 set -e
 
 EXPERIMENT_DIR="experiments/qwen_human_finetuning"
-cd "$(dirname "$0")/../.."   # move to repo root
+cd "$(dirname "$0")/../../.."   # move to repo root
 
 # ── Step 0: Prepare data (cheapest step first, so mapping errors fail fast) ──
 echo "=== Step 0/3: Prepare training data ==="
