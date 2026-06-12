@@ -60,12 +60,25 @@ def main() -> None:
     from datasets import load_dataset as hf_load_dataset
     from trl import SFTTrainer, SFTConfig
 
+    # Resolve local HF cache path so unsloth doesn't re-download.
+    # Unsloth's fast-download ignores HF_HOME env vars; passing the local
+    # snapshot path directly bypasses the download entirely.
+    model_name = model_cfg["base"]
+    hf_home = os.environ.get("HF_HOME", str(Path.home() / ".cache" / "huggingface"))
+    _slug = model_name.replace("/", "--")
+    _snapshots = Path(hf_home) / "hub" / f"models--{_slug}" / "snapshots"
+    if _snapshots.exists():
+        _snaps = sorted(_snapshots.iterdir())
+        if _snaps:
+            model_name = str(_snaps[-1])
+            print(f"  Using cached model: {model_name}")
+
     print(f"Loading base model: {model_cfg['base']}")
     print(f"  4-bit quantization: {model_cfg['load_in_4bit']}")
     print(f"  Max seq length: {model_cfg['max_seq_length']}")
 
     model, tokenizer = FastLanguageModel.from_pretrained(
-        model_name=model_cfg["base"],
+        model_name=model_name,
         max_seq_length=model_cfg["max_seq_length"],
         load_in_4bit=model_cfg["load_in_4bit"],
         dtype=None,  # auto-detect bfloat16 / float16
