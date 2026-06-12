@@ -21,7 +21,9 @@ if [ -z "$HF_TOKEN" ]; then
     echo "ERROR: HF_TOKEN not found in environment or .env"
     exit 1
 fi
-huggingface-cli login --token "$HF_TOKEN"
+# HF_TOKEN in environment is enough — transformers reads it automatically.
+# Try hf auth login if available; ignore failure if CLI is missing/deprecated.
+hf auth login --token "$HF_TOKEN" 2>/dev/null || true
 
 # ── Pre-download model (optional but avoids timeout during eval) ──────────────
 echo ""
