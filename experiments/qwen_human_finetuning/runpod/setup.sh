@@ -13,6 +13,10 @@ pip install --upgrade pip
 # parses `pkg>=1.0` as an output redirection and silently drops the constraint.
 pip install -r "$(dirname "$0")/../requirements_runpod.txt"
 
+# 3. Remove torchao — it requires torch.int1 (torch 2.6+) but we run torch 2.4,
+#    and transformers 5.x imports it unconditionally if present, crashing on load.
+pip uninstall -y torchao 2>/dev/null || true
+
 # 3. Verify GPU access
 python - <<'EOF'
 import torch
