@@ -62,16 +62,20 @@ class LocalQwenClient(LLMClient):
         # Qwen 7B in bf16/fp16 is ~14GB — well within A6000 48GB, no quantization needed.
         # BitsAndBytesConfig 4-bit uses set_submodule() which requires torch >= 2.6.
         dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
+        # transformers 5.x validates repo IDs strictly; local paths need local_files_only.
+        is_local = Path(model_path).is_dir()
         self._model = AutoModelForCausalLM.from_pretrained(
             model_path,
             torch_dtype=dtype,
             device_map="auto",
             trust_remote_code=True,
+            local_files_only=is_local,
         )
         self._model.eval()
         # Qwen2.5-Instruct ships with a ChatML tokenizer that adds no system message
         # by default — matches the training prompt format in 1_prepare_data.py.
-        self._tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
+        self._tokenizer = AutoTokenizer.from_pretrained(
+            model_path, trust_remote_code=True, local_files_only=is_local)
         # Left-padding is required for correct decoder-only batch generation.
         self._tokenizer.padding_side = "left"
         if self._tokenizer.pad_token is None:
@@ -409,11 +413,14 @@ def main() -> None:
     seed         = args.seed        if args.seed        is not None else eval_cfg["seed"]
     bsm          = eval_cfg["between_subject_mode"]
 
-    # Default model path: fine-tuned checkpoint
+    # Default model path: fine-tuned checkpoint.
+    # On RunPod, checkpoints are saved to /workspace/checkpoints (large volume).
     if args.model_path:
         model_path = args.model_path
     else:
-        model_path = str(Path(__file__).parent / "checkpoints" / "final")
+        workspace_ckpt = Path("/workspace/checkpoints/final")
+        local_ckpt = Path(__file__).parent / "checkpoints" / "final"
+        model_path = str(workspace_ckpt if workspace_ckpt.is_dir() else local_ckpt)
 
     if args.experiment:
         all_exps = [e for e in all_exps if e["id"] == args.experiment]
