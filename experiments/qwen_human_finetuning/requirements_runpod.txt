@@ -6,9 +6,7 @@
 # compatible TRL; 2_train.py also has shims for both old and new TRL APIs
 # (tokenizer→processing_class, max_seq_length→max_length). After the first
 # successful run, capture exact versions with `pip freeze` and pin them here.
-# Install from git HEAD to support any torch version (2.4, 2.5, 2.8+).
-# Once you have a working pod, run `pip freeze | grep unsloth` and pin the version.
-unsloth @ git+https://github.com/unslothai/unsloth.git
+unsloth[cu121-torch240]
 trl>=0.8.6
 peft>=0.10.0
 bitsandbytes>=0.43.0
