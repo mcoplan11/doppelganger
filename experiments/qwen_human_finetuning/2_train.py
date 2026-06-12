@@ -12,11 +12,21 @@ to reproduce the persona blocks and survey questions.
 """
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
 import torch
 import yaml
+
+# Redirect HuggingFace downloads to /workspace if available.
+# RunPod container disks are small (~20GB); /workspace has TB of space.
+# Must be set before any HF/unsloth imports touch the cache path.
+if Path("/workspace").is_dir():
+    _hf_cache = "/workspace/hf_cache"
+    os.environ.setdefault("HF_HOME", _hf_cache)
+    os.environ.setdefault("HF_HUB_CACHE", f"{_hf_cache}/hub")
+    os.environ.setdefault("TRANSFORMERS_CACHE", f"{_hf_cache}/hub")
 
 CONFIG_PATH = Path(__file__).parent / "config.yaml"
 
