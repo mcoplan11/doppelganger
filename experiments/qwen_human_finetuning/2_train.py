@@ -19,6 +19,19 @@ from pathlib import Path
 import torch
 import yaml
 
+# Backport torch.nn.Module.set_submodule — added in torch 2.6, required by
+# transformers 5.x bitsandbytes quantizer. Safe to add: it's just setattr
+# navigated through the module tree, identical to the upstream implementation.
+if not hasattr(torch.nn.Module, "set_submodule"):
+    def _set_submodule(self, target: str, module: torch.nn.Module) -> None:
+        atoms = target.split(".")
+        name = atoms.pop()
+        mod = self
+        for atom in atoms:
+            mod = getattr(mod, atom)
+        setattr(mod, name, module)
+    torch.nn.Module.set_submodule = _set_submodule  # type: ignore[attr-defined]
+
 # Redirect HuggingFace downloads to /workspace if available.
 # RunPod container disks are small (~20GB); /workspace has TB of space.
 # Must be set before any HF/unsloth imports touch the cache path.
