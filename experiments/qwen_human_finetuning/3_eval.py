@@ -56,21 +56,23 @@ class LocalQwenClient(LLMClient):
 
     def __init__(self, model_path: str, max_seq_length: int, temperature: float,
                  batch_size: int = 32):
-        from unsloth import FastLanguageModel
-        from unsloth.chat_templates import get_chat_template
+        from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
         print(f"Loading model: {model_path}")
-        self._model, self._tokenizer = FastLanguageModel.from_pretrained(
-            model_name=model_path,
-            max_seq_length=max_seq_length,
+        bnb_config = BitsAndBytesConfig(
             load_in_4bit=True,
+            bnb_4bit_compute_dtype=torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16,
         )
-        # Pin ChatML explicitly. The base model's native template auto-injects a
-        # default Qwen system message when none is given, while training (and the
-        # saved fine-tuned tokenizer) use ChatML with no system message — pinning it
-        # keeps base and fine-tuned evals on identical, training-matched formatting.
-        self._tokenizer = get_chat_template(self._tokenizer, chat_template="chatml")
-        FastLanguageModel.for_inference(self._model)
+        self._model = AutoModelForCausalLM.from_pretrained(
+            model_path,
+            quantization_config=bnb_config,
+            device_map="auto",
+            trust_remote_code=True,
+        )
+        self._model.eval()
+        # Qwen2.5-Instruct ships with a ChatML tokenizer that adds no system message
+        # by default — matches the training prompt format in 1_prepare_data.py.
+        self._tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
         # Left-padding is required for correct decoder-only batch generation.
         self._tokenizer.padding_side = "left"
         if self._tokenizer.pad_token is None:
