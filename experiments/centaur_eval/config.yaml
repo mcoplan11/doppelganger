@@ -1,0 +1,12 @@
+model:
+  id: marcelbinz/Llama-3.1-Centaur-70B
+  load_in_4bit: true
+
+eval:
+  n_personas: 150
+  temperature: 0.7
+  between_subject_mode: within
+  seed: 42
+  # GPU generations per batch. 70B in 4-bit on A100 80GB can handle 8 comfortably.
+  # Lower to 4 if you hit OOM (e.g. on 2x A40 48GB with long prompts).
+  batch_size: 8

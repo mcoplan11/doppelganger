@@ -1,0 +1,15 @@
+# Centaur eval dependencies — inference only (no training stack needed)
+# Tested on Python 3.11, CUDA 12.1, A100 80GB
+
+# Core inference
+transformers>=4.45.0
+bitsandbytes>=0.43.0      # 4-bit quantization (NF4)
+accelerate>=0.30.0         # device_map="auto" multi-GPU support
+
+# HuggingFace utilities
+huggingface_hub>=0.22.0
+
+# Analysis (shared with twin2k_replication)
+scipy>=1.11.0
+numpy>=1.24.0
+pyyaml>=6.0
