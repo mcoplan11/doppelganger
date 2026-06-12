@@ -4,7 +4,11 @@
 
 Run on RunPod (RTX A6000 48GB) after 1_prepare_data.py has created data/train.jsonl.
 
-Typical runtime: ~3-4 hours for 100K examples, 2 epochs on RTX A6000.
+Typical runtime: ~30-60 min for ~22K examples, 2 epochs on RTX A6000.
+
+Loss is computed on the assistant answer only (see train_on_responses_only below) —
+we want to shift the *response distribution* toward human biases, not teach the model
+to reproduce the persona blocks and survey questions.
 """
 from __future__ import annotations
 
@@ -39,7 +43,7 @@ def main() -> None:
 
     # Unsloth must be imported before transformers
     from unsloth import FastLanguageModel
-    from unsloth.chat_templates import get_chat_template
+    from unsloth.chat_templates import get_chat_template, train_on_responses_only
     from datasets import load_dataset as hf_load_dataset
     from trl import SFTTrainer, SFTConfig
 
@@ -91,39 +95,66 @@ def main() -> None:
     use_bf16 = torch.cuda.is_bf16_supported()
     print(f"Mixed precision: {'bf16' if use_bf16 else 'fp16'}")
 
-    trainer = SFTTrainer(
+    # Anchor relative output paths to this script's directory, not the CWD —
+    # run_job.sh runs from the repo root while 3_eval.py defaults to
+    # <script-dir>/checkpoints/final.
+    out_root = Path(train_cfg["output_dir"])
+    if not out_root.is_absolute():
+        out_root = Path(__file__).parent / out_root
+
+    import inspect
+    sft_kwargs = dict(
+        dataset_text_field="text",
+        # packing must stay off: train_on_responses_only masks labels per example,
+        # which packing's sequence concatenation breaks.
+        packing=False,
+        output_dir=str(out_root),
+        num_train_epochs=train_cfg["num_epochs"],
+        per_device_train_batch_size=train_cfg["per_device_train_batch_size"],
+        gradient_accumulation_steps=train_cfg["gradient_accumulation_steps"],
+        learning_rate=train_cfg["learning_rate"],
+        warmup_steps=train_cfg["warmup_steps"],
+        save_steps=train_cfg["save_steps"],
+        logging_steps=train_cfg["logging_steps"],
+        eval_strategy="steps",
+        eval_steps=train_cfg["save_steps"],
+        fp16=not use_bf16,
+        bf16=use_bf16,
+        optim="adamw_8bit",
+        lr_scheduler_type="cosine",
+        seed=42,
+        report_to="none",
+    )
+    # TRL ≥0.13 renamed SFTConfig.max_seq_length → max_length.
+    sft_params = inspect.signature(SFTConfig.__init__).parameters
+    seq_key = "max_seq_length" if "max_seq_length" in sft_params else "max_length"
+    sft_kwargs[seq_key] = model_cfg["max_seq_length"]
+
+    trainer_kwargs = dict(
         model=model,
-        tokenizer=tokenizer,
         train_dataset=train_ds,
         eval_dataset=val_ds,
-        args=SFTConfig(
-            dataset_text_field="text",
-            max_seq_length=model_cfg["max_seq_length"],
-            packing=True,             # pack multiple short examples per sequence — faster
-            output_dir=train_cfg["output_dir"],
-            num_train_epochs=train_cfg["num_epochs"],
-            per_device_train_batch_size=train_cfg["per_device_train_batch_size"],
-            gradient_accumulation_steps=train_cfg["gradient_accumulation_steps"],
-            learning_rate=train_cfg["learning_rate"],
-            warmup_steps=train_cfg["warmup_steps"],
-            save_steps=train_cfg["save_steps"],
-            logging_steps=train_cfg["logging_steps"],
-            eval_strategy="steps",
-            eval_steps=train_cfg["save_steps"],
-            fp16=not use_bf16,
-            bf16=use_bf16,
-            optim="adamw_8bit",
-            lr_scheduler_type="cosine",
-            seed=42,
-            report_to="none",
-        ),
+        args=SFTConfig(**sft_kwargs),
+    )
+    try:
+        trainer = SFTTrainer(tokenizer=tokenizer, **trainer_kwargs)
+    except TypeError:  # TRL ≥0.13 renamed tokenizer → processing_class
+        trainer = SFTTrainer(processing_class=tokenizer, **trainer_kwargs)
+
+    # Mask everything before the assistant turn so loss is computed only on the
+    # {"answer": ...} completion — the human response distribution we want to learn.
+    # Markers match the ChatML template applied above.
+    trainer = train_on_responses_only(
+        trainer,
+        instruction_part="<|im_start|>user\n",
+        response_part="<|im_start|>assistant\n",
     )
 
     print("Training...")
     trainer_stats = trainer.train()
     print(f"\nTraining complete. {trainer_stats.metrics}")
 
-    out_dir = Path(train_cfg["output_dir"]) / "final"
+    out_dir = out_root / "final"
     model.save_pretrained(str(out_dir))
     tokenizer.save_pretrained(str(out_dir))
     print(f"\nSaved fine-tuned model → {out_dir}")

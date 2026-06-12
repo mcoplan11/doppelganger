@@ -7,6 +7,7 @@ from typing import Any
 
 from google import genai
 from google.genai import types
+from google.genai.types import InlinedRequest
 
 from personas import Persona
 from qualtrics_client import Question
@@ -119,6 +120,7 @@ class GeminiClient:
     ) -> dict[str, dict[str, Any] | None]:
         results: dict[str, dict[str, Any] | None] = {}
         inline_requests = [_build_inline_request(inp, self._temperature) for inp in to_send]
+        # inline_requests is now a list[InlinedRequest] compatible with SDK 2.8.0+
 
         last_exc: Exception | None = None
         for attempt in range(4):
@@ -200,19 +202,19 @@ class GeminiClient:
         return results
 
 
-def _build_inline_request(inp: BatchInput, temperature: float) -> dict:
+def _build_inline_request(inp: BatchInput, temperature: float) -> InlinedRequest:
     schema = _build_response_schema(inp.answerable)
     prompt = _build_prompt(
         inp.persona, inp.answerable, inp.prior_answers, inp.read_context, inp.survey_name
     )
-    return {
-        "contents": [{"parts": [{"text": prompt}], "role": "user"}],
-        "config": {
-            "response_mime_type": "application/json",
-            "response_schema": schema,
-            "temperature": temperature,
-        },
-    }
+    return InlinedRequest(
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            response_mime_type="application/json",
+            response_schema=schema,
+            temperature=temperature,
+        ),
+    )
 
 
 def is_answerable(q: Question) -> bool:

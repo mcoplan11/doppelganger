@@ -2,25 +2,35 @@
 """
 1_prepare_data.py — Build SFT training data from Twin-2K-500 behavioral experiments
 
-Maps our 16 bias experiments to their corresponding Twin-2K catalog QIDs, then pairs
+Maps our bias experiments to their corresponding Twin-2K catalog QIDs, then pairs
 each real human's answer (wave4_response_label.csv) with the AI persona that maps to
-that participant (sequential cycling across 100 personas).
+that participant (sequential cycling across the 200 DEFAULT_PERSONAS).
 
 IMPORTANT: Twin-2K uses different scenario versions for some experiments:
   - Sunk cost   → coffee shop (not ski trips)
   - Anchoring   → African countries (not Mississippi River) + Redwood tree
   - Savings     → calculator $30→$20 / jacket $250→$240
   - Myside      → Ford Explorer vs German car (both "8x more deadly")
-  - Less is More → gambles (not ice cream cups)
   - WTA/WTP     → vaccine risk scenarios (not lottery tickets)
 The fine-tuning uses the Twin-2K versions; evaluation uses experiments.json versions.
 This is intentional — we're teaching human-like PATTERNS, not identical scenarios.
 
-Persona mapping (sequential, cycling every 100):
+Format alignment with the eval (see also _warn_scale_mismatch):
+  - framing  → Twin-2K asks a 6-point preference (strongly favor A … strongly favor
+    B); the eval is a binary A/B choice. The human answer is collapsed to the favored
+    program and trained with a binary A/B prompt so option tokens match the eval.
+  - wta_wtp  → Twin-2K stores dollar buckets as MC options ('$10' … '$5,000,000 or
+    more'); the eval asks an open dollar amount. The bucket's dollar value is encoded
+    as a numeric answer so the model learns money magnitudes in the eval's format.
+  - less_is_more is EXCLUDED from training: Twin-2K has 5-point agree/disagree
+    ratings about gambles while the eval asks dollar WTP for ice cream — no format
+    or construct overlap, so those examples would only add noise.
+
+Persona mapping (sequential, cycling every 200):
   pid sorted position 0   → DEFAULT_PERSONAS[0]  (biology_student_19f)
   pid sorted position 1   → DEFAULT_PERSONAS[1]  (retail_cashier_22m)
   ...
-  pid sorted position 100 → DEFAULT_PERSONAS[0]  (wraps)
+  pid sorted position 200 → DEFAULT_PERSONAS[0]  (wraps)
 
 Usage:
   python 1_prepare_data.py --preview           # print mapping + 4 examples, exit
@@ -32,11 +42,13 @@ from __future__ import annotations
 import argparse
 import json
 import random
+import re
 import sys
 from pathlib import Path
 from typing import Any
 
 import pandas as pd
+import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
 TWIN2K_DIR = ROOT / "experiments" / "twin2k_replication"
@@ -54,6 +66,8 @@ WAVE4_LABEL_FILE = "question_catalog_and_human_response_csv/wave4_response_label
 # Complex experiments (false_consensus, risk_benefit, etc.) handled separately below.
 CONDITION_TO_COLUMN: dict[str, str] = {
     # Framing (Asian Disease — gain vs loss frame)
+    # Twin-2K is a 6-point favor-A↔favor-B preference; collapsed to binary A/B
+    # in build_simple_examples to match the eval's two-option format.
     "framing::gain":   "QID157",
     "framing::loss":   "QID158",
 
@@ -75,15 +89,15 @@ CONDITION_TO_COLUMN: dict[str, str] = {
     "myside::domestic": "QID194",
     "myside::foreign":  "QID195",
 
-    # Less is More — Gamble version (no ice cream cups in Twin-2K)
-    # Gamble A: 7/36 win $9 / 29/36 win $0  (less: no downside)
-    # Gamble B: 7/36 win $9 / 29/36 lose $0.05  (more: tiny loss added, but actually rated lower)
-    "less_is_more::overfilled":  "QID171",
-    "less_is_more::underfilled": "QID172",
+    # Less is More — EXCLUDED. Twin-2K (QID171/172) has 5-point agree/disagree
+    # ratings about gambles; the eval asks dollar WTP for ice cream. No format or
+    # construct overlap — training on it would only add noise.
 
     # WTA/WTP — Vaccine risk scenarios (not lottery tickets)
     # WTP certain (1/1000 death): QID189; WTP noncertain (4/1000 death): QID191
     # WTA certain (4/1000 exposure, min$ to participate): QID190
+    # Twin-2K stores these as MC dollar buckets; encoded as numeric dollar values
+    # in build_simple_examples to match the eval's open-numeric format.
     "wta_wtp::wtp_certain":    "QID189",
     "wta_wtp::wta_certain":    "QID190",
     "wta_wtp::wtp_noncertain": "QID191",
@@ -124,22 +138,52 @@ CONDITION_TO_COLUMN: dict[str, str] = {
     # (handled in build_complex_examples)
 }
 
-# Scale labels used in Twin-2K catalog (need integer rank for training)
-# Maps option text → integer rank (1-indexed from left)
-LINDA_SCALE = ["Extremely improbable", "Very improbable", "Somewhat probable",
-               "Moderately probable", "Very probable", "Extremely probable"]
-
-OUTCOME_BIAS_SCALE = [
-    "Incorrect, a very bad decision", "Incorrect, all things considered",
-    "Incorrect, but not unreasonable", "The decision and its opposite are equally good",
-    "Correct, but the opposite would be reasonable too", "Correct, all things considered",
-    "Clearly correct, an excellent decision",
-]
-
+# Scale labels used in Twin-2K catalog (need integer rank for training).
+# Maps option text → integer rank (1-indexed from left).
+# (Matrix/scale questions resolve their labels from the catalog `Columns` at build
+#  time; only the false-consensus own-view scale needs to be hard-coded here.)
 POLICY_SCALE = [  # QID287 false consensus own-view
     "Strongly oppose", "Somewhat oppose", "Neither oppose nor support",
     "Somewhat support", "Strongly support"
 ]
+
+
+def _eval_scale_len(exp_id: str, exp_by_id: dict[str, dict]) -> int | None:
+    """Length of the eval (experiments.json) answer scale for exp_id, or None if
+    the eval question isn't a fixed scale (e.g. numeric / choice)."""
+    exp = exp_by_id.get(exp_id)
+    if not exp:
+        return None
+    for cond in exp.get("conditions", []):
+        scale = cond.get("scale")
+        if scale:
+            return scale["max"] - scale["min"] + 1
+    return None
+
+
+def _warn_scale_mismatch(exp_id: str, qid: str, n_choices: int, qtype: str,
+                         exp_by_id: dict[str, dict]) -> None:
+    """Surface train/eval scale drift for questions the eval scores on a scale.
+
+      1. Length mismatch (WARN) — training ranks run 1..n_choices but the eval
+         scale is 1..eval_len; if they differ the fine-tuned answers land off-range.
+      2. MC-as-scale (NOTE) — an MC question (e.g. myside, outcome_bias) is now
+         encoded as the integer option-rank to match the eval scale. That transfers
+         the human pattern *only if* the Twin-2K option order matches the eval label
+         direction. It does for the current studies (verified by hand: myside's
+         ban↔allow + scale flip cancel; outcome_bias is bad→good in both), but a new
+         mapping should re-check this — hence the reminder.
+    """
+    eval_len = _eval_scale_len(exp_id, exp_by_id)
+    if eval_len is None:
+        return  # eval question is numeric/choice — no scale to match
+    if eval_len != n_choices:
+        print(f"  [WARN] {exp_id} ({qid}): training has {n_choices} {qtype} choices "
+              f"but eval scale is 1..{eval_len} — answers may be off-range")
+    if qtype == "MC":
+        print(f"  [NOTE] {exp_id} ({qid}): MC encoded as integer rank 1..{eval_len} in "
+              f"option order to match the eval scale — assumes option order follows the "
+              f"eval label direction (verified for current studies)")
 
 
 # ── HuggingFace helpers ───────────────────────────────────────────────────────
@@ -228,6 +272,31 @@ def build_mc_prompt(persona, catalog_entry: dict,
     return "\n".join(lines)
 
 
+def build_mc_as_scale_prompt(persona, catalog_entry: dict,
+                             prior_qa: list[tuple[str, str]] | None = None) -> str:
+    """Prompt for an MC question the eval scores on an ordinal integer scale.
+
+    Twin-2K stores myside / outcome_bias as multiple choice, but the eval asks for
+    an integer 1..N. We present the options as a numbered scale and ask for the
+    integer rank (option position), so the trained answer format and direction match
+    the eval. (See _warn_scale_mismatch for the option-order assumption.)
+    """
+    options = catalog_entry.get("Options", [])
+    n = len(options)
+    lines = [_persona_block(persona)]
+    if prior_qa:
+        lines.append(_prior_context_block(prior_qa))
+    lines += [catalog_entry["QuestionText"], "", "SCALE:"]
+    for i, opt in enumerate(options):
+        lines.append(f"  {i + 1}: {opt}")
+    lines.append("")
+    lines.append(
+        f"Return JSON: {{\"answer\": <integer 1–{n} "
+        f"where 1={options[0]!r} and {n}={options[-1]!r}>}}\n"
+    )
+    return "\n".join(lines)
+
+
 def build_scale_prompt(persona, catalog_entry: dict, row_idx: int | None = None,
                        prior_qa: list[tuple[str, str]] | None = None) -> str:
     """Prompt for a matrix row (Likert) or slider (ordinal scale)."""
@@ -310,6 +379,15 @@ def _numeric_answer(raw: str) -> float | None:
         return None
 
 
+def _bucket_dollars(raw: str) -> float | None:
+    """Dollar value of an MC price-bucket label: '$5,000,000 or more' → 5000000.0"""
+    digits = re.sub(r"[^\d.]", "", str(raw))
+    try:
+        return float(digits)
+    except ValueError:
+        return None
+
+
 def _make_example(prompt: str, answer: Any) -> dict:
     return {
         "messages": [
@@ -364,6 +442,22 @@ def build_simple_examples(
 
         qtype = cat_entry.get("QuestionType", "")
         columns = cat_entry.get("Columns", [])
+        options = cat_entry.get("Options", [])
+        # Eval-format special cases (see module docstring):
+        # framing — collapse the 6-point favor-A↔favor-B preference to a binary A/B.
+        # wta_wtp — encode the MC dollar bucket as an open numeric dollar value.
+        framing_binary = exp_id == "framing"
+        wta_dollar = exp_id == "wta_wtp"
+        # When the eval scores this study on an integer scale, encode MC answers as
+        # the integer option-rank (not a letter) so train/eval formats match.
+        eval_scale_len = _eval_scale_len(exp_id, exp_by_id)
+        mc_as_scale = qtype == "MC" and options and eval_scale_len is not None
+        if framing_binary or wta_dollar:
+            pass  # custom encodings above; rank/letter warnings don't apply
+        elif qtype == "Matrix" and columns:
+            _warn_scale_mismatch(exp_id, base_qid, len(columns), qtype, exp_by_id)
+        elif qtype == "MC" and options:
+            _warn_scale_mismatch(exp_id, base_qid, len(options), qtype, exp_by_id)
 
         count_before = len(examples)
         for pid, persona in pid_to_persona.items():
@@ -374,7 +468,19 @@ def build_simple_examples(
                 continue
 
             # Parse answer + build prompt based on question type
-            if csv_col.endswith("_TEXT") or qtype == "TE":
+            if framing_binary:
+                rank = _scale_answer(raw, options)  # 1..6 across the preference scale
+                if rank is None:
+                    continue
+                answer = "A" if rank <= len(options) // 2 else "B"
+                prompt = build_mc_prompt(persona, {
+                    "QuestionText": cat_entry["QuestionText"],
+                    "Options": ["Program A", "Program B"],
+                })
+            elif wta_dollar:
+                answer = _bucket_dollars(raw)
+                prompt = build_numeric_prompt(persona, cat_entry)
+            elif csv_col.endswith("_TEXT") or qtype == "TE":
                 answer = _numeric_answer(raw)
                 prompt = build_numeric_prompt(persona, cat_entry)
             elif qtype == "Matrix" and columns:
@@ -383,6 +489,9 @@ def build_simple_examples(
             elif qtype == "Slider":
                 answer = _numeric_answer(raw)
                 prompt = build_scale_prompt(persona, cat_entry)
+            elif mc_as_scale:
+                answer = _scale_answer(raw, options)  # integer rank, 1..N
+                prompt = build_mc_as_scale_prompt(persona, cat_entry)
             elif qtype == "MC":
                 answer = _mc_answer(raw, cat_entry)
                 prompt = build_mc_prompt(persona, cat_entry)
@@ -419,6 +528,10 @@ def build_linda_examples(
         rows = cat_entry.get("Rows", [])
         cols = cat_entry.get("csv_columns", [])
         columns = cat_entry.get("Columns", [])
+        # Eval (experiments.json) scores linda on a 1..6 probability scale; flag drift.
+        if columns and len(columns) != 6:
+            print(f"  [WARN] linda ({qid}): Twin-2K has {len(columns)} scale columns "
+                  f"but eval scale is 1..6 — answers may be off-range")
 
         for row_idx in range(len(rows)):
             col = cols[row_idx] if row_idx < len(cols) else None
@@ -749,9 +862,11 @@ def print_preview(
     print("  SAMPLE TRAINING RECORDS")
     print("=" * 70)
 
+    # framing/wta_wtp are special-encoded in build_simple_examples, so the demo
+    # cases stick to studies this preview's generic branching renders faithfully.
     demo_cases = [
         ("linda::conjunction",          "QID160_3",  "scale"),
-        ("framing::gain",               "QID157",    "mc"),
+        ("allais::problem1",            "QID192",    "mc"),
         ("anchoring_redwood::low_anchor","QID168_TEXT","numeric"),
         ("sunk_cost::paid",             "QID182_TEXT","numeric"),
     ]
@@ -808,15 +923,22 @@ def print_preview(
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
 def main() -> None:
+    # config.yaml `data:` supplies the defaults; CLI flags override per run.
+    with open(Path(__file__).parent / "config.yaml") as f:
+        data_cfg = yaml.safe_load(f).get("data", {})
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--preview", action="store_true",
                         help="Print mapping + sample records, exit without saving")
-    parser.add_argument("--max-per-persona", type=int, default=2,
-                        help="Max Twin-2K participants mapped to each AI persona (default: 2)")
-    parser.add_argument("--max-examples", type=int, default=None)
-    parser.add_argument("--val-fraction", type=float, default=0.05)
-    parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--out-dir", default="data")
+    parser.add_argument("--max-per-persona", type=int,
+                        default=data_cfg.get("max_per_persona", 2),
+                        help="Max Twin-2K participants mapped to each AI persona")
+    parser.add_argument("--max-examples", type=int,
+                        default=data_cfg.get("max_examples"))
+    parser.add_argument("--val-fraction", type=float,
+                        default=data_cfg.get("val_fraction", 0.05))
+    parser.add_argument("--seed", type=int, default=data_cfg.get("seed", 42))
+    parser.add_argument("--out-dir", default=data_cfg.get("output_dir", "data"))
     args = parser.parse_args()
 
     print("Loading question catalog...")
@@ -845,7 +967,11 @@ def main() -> None:
     )
     print(f"\nTotal: train={len(train):,}, val={len(val):,}")
 
+    # Anchor relative paths to this script's directory, not the CWD — run_job.sh
+    # runs from the repo root while 2_train.py reads <script-dir>/data/train.jsonl.
     out = Path(args.out_dir)
+    if not out.is_absolute():
+        out = Path(__file__).parent / out
     out.mkdir(parents=True, exist_ok=True)
     for name, split in [("train", train), ("val", val)]:
         path = out / f"{name}.jsonl"

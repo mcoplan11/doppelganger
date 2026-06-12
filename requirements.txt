@@ -1,8 +1,9 @@
 # Simulator
 requests>=2.32.0
 python-dotenv>=1.0.1
-google-genai>=0.8.0
+google-genai>=2.8.0
 truststore>=0.10.0
+openai>=1.0.0
 
 # Web backend
 fastapi==0.115.5

@@ -52,3 +52,4 @@ eval:
   temperature: 0.5
   between_subject_mode: within
   seed: 42
+  batch_size: 32   # GPU generations per batch; lower if you hit OOM on the 48GB A6000

@@ -21,11 +21,15 @@ respondents in downstream research.
 ## The Three-Step Pipeline
 
 ```
-Step 0 — Baseline eval    Base Qwen2.5-7B (no fine-tuning)  →  results/base/
-Step 1 — Data prep        Twin-2K-500  →  data/train.jsonl
+Step 0 — Data prep        Twin-2K-500  →  data/train.jsonl   (cheap; fails fast)
+Step 1 — Baseline eval    Base Qwen2.5-7B (no fine-tuning)  →  results/base/
 Step 2 — Fine-tune        QLoRA training                     →  checkpoints/final/
 Step 3 — Fine-tuned eval  Fine-tuned model                   →  results/finetuned/
 ```
+
+All output paths (`data/`, `checkpoints/`, `results/`) are anchored to the
+experiment directory regardless of the current working directory, so the
+one-shot `run_job.sh` and the step-by-step commands write to the same places.
 
 Both evals run the same 16 experiments with 150 AI personas each (within-subject),
 producing a side-by-side table showing which studies "work" before and after fine-tuning.
@@ -106,6 +110,14 @@ What percentage (0–100) of the public do you think supports:
 Return JSON: {"answer": <number>}
 ```
 
+**The eval mirrors this:** for false_consensus and risk_benefit, `3_eval.py` runs
+a two-pass protocol — it asks the first-stage questions (own views / benefit
+ratings) first, then injects each persona's actual answers as the same
+"YOUR ANSWERS SO FAR" block in the second-stage prompts. Without this, the
+conditional the model learns in training (e.g. public estimate given own views)
+could never activate at eval time, and the correlation would have to come purely
+from persona consistency across independent calls.
+
 ### Twin-2K scenario differences
 
 Twin-2K uses different scenario versions for some studies. Training uses the Twin-2K
@@ -116,19 +128,42 @@ teaching the model human-like *response patterns*, not memorizing specific scena
 |---|---|---|
 | Sunk cost | Coffee shop ($50 loyalty card) | Ski trip ($100 ticket) |
 | Anchoring | African countries / Redwood tree | Mississippi River / Redwood tree |
-| Less is more | Gambles (win $9 / lose $0.05) | Ice cream cup sizes |
 | WTA/WTP | Vaccine risk scenarios | Lottery tickets |
 
-### Estimated dataset size (~22–25K examples)
+**`less_is_more` is excluded from training:** Twin-2K stores it as 5-point
+agree/disagree ratings about gambles while the eval asks dollar WTP for ice
+cream — no format or construct overlap, so those examples would only add noise.
+Its eval result is effectively a no-training control.
+
+### Answer-format alignment (training format must match the eval)
+
+Several studies are stored in a different response format in Twin-2K than the
+eval asks for. Training re-encodes them so the trained format and direction match
+the eval. `1_prepare_data.py` prints a `[NOTE]` for each MC-as-scale case and a
+`[WARN]` if the option count and eval-scale length ever diverge.
+
+| Study | Twin-2K | Eval | Training encoding |
+|---|---|---|---|
+| outcome_bias | 7-option MC (bad→good) | 1–7 scale (bad→good) | integer option-rank, aligned directly |
+| myside | 6-option MC, "should it be **banned**?" (no→yes) | 1–6, "should it be **allowed**?" (yes→no) | integer option-rank — ban↔allow + scale flip cancel |
+| framing | 6-point favor-A↔favor-B preference | binary A/B choice | collapsed to the favored program, binary A/B prompt |
+| wta_wtp | MC dollar buckets ($10 … $5,000,000 or more) | open dollar amount | bucket's dollar value as a numeric answer |
+
+As a final guard, the eval client validates every parsed answer against the
+question's schema: stray option letters are mapped to option ids by position,
+and out-of-range or unparseable answers are counted as errors rather than
+silently scored as the non-risky option.
+
+### Dataset size (~20.8K examples, measured)
 
 | Study | Type | Examples |
 |---|---|---|
-| Framing, anchoring, savings, allais, sunk cost, etc. | Simple between/within | ~8,000 |
 | false_consensus (10 policies × own + public) | Complex | ~8,000 |
-| probability_matching (10 shuffles + 6 rolls) | Complex | ~6,400 |
+| probability_matching (10 shuffles + 6 rolls) | Complex | ~3,200 |
 | risk_benefit (4 items × benefit + risk) | Complex | ~3,200 |
 | linda (3 rows × 2 conditions) | Complex | ~1,200 |
-| dominator_neglect (6 variants) | Complex | ~400 |
+| dominator_neglect (6 variants) | Complex | ~800 |
+| Framing, anchoring, savings, allais, sunk cost, etc. | Simple between/within | ~4,400 |
 
 ---
 
@@ -149,7 +184,7 @@ cd doppelganger
 # 2. Install dependencies (~5 min)
 bash experiments/qwen_human_finetuning/runpod/setup.sh
 
-# 3. Run full pipeline (~5 hours)
+# 3. Run full pipeline (~1.5–2 hours)
 bash experiments/qwen_human_finetuning/runpod/run_job.sh
 ```
 
@@ -204,19 +239,25 @@ python 3_eval.py --compare
 | `training.num_epochs` | `2` | More epochs risks overfitting on ~22K examples |
 | `eval.n_personas` | `150` | Personas per study (within-subject, matches twin2k_replication) |
 | `eval.between_subject_mode` | `within` | Every persona sees every condition |
+| `eval.batch_size` | `32` | GPU generations per batch during eval; lower if OOM |
 | `hub.push_to_hub` | `false` | Set to `true` + add `repo_id` to publish the model |
 
 ---
 
 ## Estimated cost (RTX A6000, $0.49/hr)
 
+Each eval is ~8,000 generations (within-subject: every persona × every condition;
+false_consensus alone is 150 × 10 × 2 = 3,000). `LocalQwenClient` batches these on the
+GPU (`eval.batch_size`, default 32), so a run is ~15–25 min rather than the ~2–3 hr a
+one-at-a-time loop would take. Times below assume batched inference.
+
 | Step | Time | Cost |
 |---|---|---|
-| Step 0 — Baseline eval (150 personas × 16 studies) | ~30 min | ~$0.25 |
-| Step 1 — Data prep (~22K examples) | ~5 min | ~$0.04 |
-| Step 2 — Fine-tuning (2 epochs, ~22K examples) | ~30–45 min | ~$0.30 |
-| Step 3 — Fine-tuned eval | ~30 min | ~$0.25 |
-| **Total** | **~1.5–2 hr** | **~$0.85** |
+| Step 0 — Data prep (~21K examples) | ~5 min | ~$0.04 |
+| Step 1 — Baseline eval (150 personas × 16 studies, ~8K gens) | ~20 min | ~$0.16 |
+| Step 2 — Fine-tuning (2 epochs, ~21K examples, completion-only loss) | ~30–60 min | ~$0.40 |
+| Step 3 — Fine-tuned eval | ~20 min | ~$0.16 |
+| **Total** | **~1.5–2 hr** | **~$0.80** |
 
 ---
 
@@ -226,6 +267,11 @@ The eval output is a table of effect sizes and p-values for each of the 16 studi
 identical in format to `twin2k_replication/`. A study "works" if the expected directional
 effect is significant (e.g., more participants choose the risky option in the loss frame
 than the gain frame for framing; conjunction rated more probable than single for linda).
+
+**Caveat — `omission_bias`:** Twin-2K only fields the commission condition (QID291), so
+training contains just that half of the contrast. The eval is a 2-condition within-subject
+comparison, so the omission/commission *effect* can't be learned from this data — read its
+fine-tuned result as noise, not signal.
 
 A successful fine-tuning run should show more studies reaching significance in the
 fine-tuned column than the base column. If the improvement is small, the next steps are:
