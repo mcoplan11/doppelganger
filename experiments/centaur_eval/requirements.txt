@@ -1,5 +1,6 @@
 # Centaur eval dependencies — inference only (no training stack needed)
-# Tested on Python 3.11, CUDA 12.1, A100 80GB
+# Tested on Python 3.11, CUDA 12.4, A100 80GB
+# Image: runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04
 
 # Core inference
 transformers>=4.45.0

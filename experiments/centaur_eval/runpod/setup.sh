@@ -1,6 +1,7 @@
 #!/bin/bash
 # setup.sh — Run once on a fresh RunPod pod to install all dependencies
-# Target: A100 80GB (PCIe or SXM), CUDA 12.1, Python 3.11
+# Target: A100 80GB (PCIe or SXM), CUDA 12.4, Python 3.11
+# Image:  runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04
 set -e
 
 echo "=== RunPod setup for Centaur eval ==="
