@@ -3,7 +3,7 @@
 # Image: runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04
 
 # Core inference
-transformers>=4.45.0
+transformers>=4.45.0,<5.0  # transformers 5.x breaks bitsandbytes on torch 2.4
 bitsandbytes>=0.43.0      # 4-bit quantization (NF4)
 accelerate>=0.30.0         # device_map="auto" multi-GPU support
 
