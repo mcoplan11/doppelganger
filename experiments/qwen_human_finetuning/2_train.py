@@ -41,6 +41,9 @@ def main() -> None:
         print(f"ERROR: {train_path} not found. Run 1_prepare_data.py first.")
         sys.exit(1)
 
+    # Force-load torch._inductor.config so unsloth_zoo can inspect it.
+    # The submodule exists in torch 2.4 but isn't auto-loaded as an attribute.
+    import torch._inductor.config  # noqa: F401
     # Unsloth must be imported before transformers
     from unsloth import FastLanguageModel
     from unsloth.chat_templates import get_chat_template, train_on_responses_only
