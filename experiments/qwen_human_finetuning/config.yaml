@@ -40,7 +40,7 @@ training:
   gradient_accumulation_steps: 4   # effective batch = 16
   learning_rate: 2.0e-4
   warmup_steps: 100
-  save_steps: 500
+  save_steps: 150
   logging_steps: 50
 
 hub:
