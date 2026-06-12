@@ -56,16 +56,15 @@ class LocalQwenClient(LLMClient):
 
     def __init__(self, model_path: str, max_seq_length: int, temperature: float,
                  batch_size: int = 32):
-        from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+        from transformers import AutoModelForCausalLM, AutoTokenizer
 
         print(f"Loading model: {model_path}")
-        bnb_config = BitsAndBytesConfig(
-            load_in_4bit=True,
-            bnb_4bit_compute_dtype=torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16,
-        )
+        # Qwen 7B in bf16/fp16 is ~14GB — well within A6000 48GB, no quantization needed.
+        # BitsAndBytesConfig 4-bit uses set_submodule() which requires torch >= 2.6.
+        dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
         self._model = AutoModelForCausalLM.from_pretrained(
             model_path,
-            quantization_config=bnb_config,
+            torch_dtype=dtype,
             device_map="auto",
             trust_remote_code=True,
         )
