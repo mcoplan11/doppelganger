@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -59,23 +60,47 @@ class LocalQwenClient(LLMClient):
         from transformers import AutoModelForCausalLM, AutoTokenizer
 
         print(f"Loading model: {model_path}")
-        # Qwen 7B in bf16/fp16 is ~14GB — well within A6000 48GB, no quantization needed.
-        # BitsAndBytesConfig 4-bit uses set_submodule() which requires torch >= 2.6.
         dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
-        # transformers 5.x validates repo IDs strictly; local paths need local_files_only.
-        is_local = Path(model_path).is_dir()
-        self._model = AutoModelForCausalLM.from_pretrained(
-            model_path,
-            torch_dtype=dtype,
-            device_map="auto",
-            trust_remote_code=True,
-            local_files_only=is_local,
-        )
+
+        def _load_base(name: str) -> "AutoModelForCausalLM":
+            local = Path(name).is_dir()
+            return AutoModelForCausalLM.from_pretrained(
+                name, torch_dtype=dtype, device_map="auto",
+                trust_remote_code=True, local_files_only=local,
+            )
+
+        def _resolve_hf_cache(model_id: str) -> str:
+            hf_home = os.environ.get("HF_HOME", str(Path.home() / ".cache" / "huggingface"))
+            slug = model_id.replace("/", "--")
+            snaps = Path(hf_home) / "hub" / f"models--{slug}" / "snapshots"
+            if snaps.exists():
+                candidates = sorted(snaps.iterdir())
+                if candidates:
+                    return str(candidates[-1])
+            return model_id
+
+        adapter_cfg_path = Path(model_path) / "adapter_config.json"
+        if Path(model_path).is_dir() and adapter_cfg_path.exists():
+            # LoRA adapter checkpoint — load base model then merge adapter.
+            with open(adapter_cfg_path) as f:
+                adapter_cfg = json.load(f)
+            base_id = adapter_cfg.get("base_model_name_or_path", "Qwen/Qwen2.5-7B-Instruct")
+            base_id = _resolve_hf_cache(base_id)
+            from peft import PeftModel
+            print(f"  Base: {base_id}")
+            print(f"  Adapter: {model_path}")
+            base = _load_base(base_id)
+            self._model = PeftModel.from_pretrained(base, model_path)
+            self._model = self._model.merge_and_unload()
+            tokenizer_src = base_id
+        else:
+            self._model = _load_base(model_path)
+            tokenizer_src = model_path
+
         self._model.eval()
-        # Qwen2.5-Instruct ships with a ChatML tokenizer that adds no system message
-        # by default — matches the training prompt format in 1_prepare_data.py.
+        tok_local = Path(tokenizer_src).is_dir()
         self._tokenizer = AutoTokenizer.from_pretrained(
-            model_path, trust_remote_code=True, local_files_only=is_local)
+            tokenizer_src, trust_remote_code=True, local_files_only=tok_local)
         # Left-padding is required for correct decoder-only batch generation.
         self._tokenizer.padding_side = "left"
         if self._tokenizer.pad_token is None:
