@@ -1,10 +1,18 @@
 model:
-  # Qwen3-30B-A3B: MoE with ~3B active params, ~15GB in 4-bit — fits A100 80GB
-  # comfortably. Verify Unsloth supports MoE QLoRA before running; if not,
-  # fall back to Qwen3-14B (dense) for method iteration.
+  # PRIMARY (Runs 0 / A): Qwen3-30B-A3B — MoE, ~3B active params.
+  # Unsloth supports it BUT 4-bit QLoRA is NOT recommended for MoE: known
+  # quantization errors (github.com/unslothai/unsloth issues #2582, #3422).
+  # Use bf16 LoRA instead (load_in_4bit: false) → ~60GB VRAM on A100 80GB.
+  # Reduce per_device_train_batch_size to 1 if OOM; lower eval.batch_size too.
+  #
+  # FALLBACK (if A100 80GB can't fit bf16 30B): switch to dense Qwen3-14B
+  # and re-enable 4-bit.  ~7GB VRAM; loses the MoE-rehearsal goal but method
+  # questions (does grounding help?) are unaffected by model size.
+  #   base: Qwen/Qwen3-14B
+  #   load_in_4bit: true
   base: Qwen/Qwen3-30B-A3B
   max_seq_length: 2048
-  load_in_4bit: true
+  load_in_4bit: false   # bf16 LoRA — avoid MoE quantization errors
 
 lora:
   r: 16
@@ -39,8 +47,10 @@ data:
 training:
   output_dir: checkpoints/
   num_epochs: 2
-  per_device_train_batch_size: 4
-  gradient_accumulation_steps: 4   # effective batch = 16
+  # bf16 30B MoE needs smaller batch than 4-bit would.  Start at 1+16=16
+  # effective; if OOM try gradient_accumulation_steps: 32.
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 16   # effective batch = 16
   learning_rate: 2.0e-4
   warmup_steps: 100
   save_steps: 150
@@ -55,4 +65,4 @@ eval:
   temperature: 0.5
   between_subject_mode: within
   seed: 42
-  batch_size: 32   # GPU generations per batch; lower if you hit OOM on the 48GB A6000
+  batch_size: 8    # bf16 30B MoE: start at 8, lower to 4 if OOM
