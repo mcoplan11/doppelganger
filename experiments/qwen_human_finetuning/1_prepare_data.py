@@ -4,7 +4,17 @@
 
 Maps our bias experiments to their corresponding Twin-2K catalog QIDs, then pairs
 each real human's answer (wave4_response_label.csv) with the AI persona that maps to
-that participant (sequential cycling across the 200 DEFAULT_PERSONAS).
+that participant.
+
+Persona mapping modes (controlled by --grounded / --no-grounded):
+  --grounded (default when data/pid_to_persona.json exists):
+      Each participant is assigned to a demographically-grounded cluster persona
+      built by personas_from_twin2k.py. Uses ALL 2,058 participants. The persona
+      for each pid is loaded from data/pid_to_persona.json + data/personas_generated.json.
+  --no-grounded (fallback / Run 0 baseline):
+      Sequential cycling over DEFAULT_PERSONAS (sorted-pid position mod 200),
+      capped at max_per_persona participants per persona. This is the original
+      fictional mapping used before the grounding fix.
 
 IMPORTANT: Twin-2K uses different scenario versions for some experiments:
   - Sunk cost   → coffee shop (not ski trips)
@@ -26,15 +36,10 @@ Format alignment with the eval (see also _warn_scale_mismatch):
     ratings about gambles while the eval asks dollar WTP for ice cream — no format
     or construct overlap, so those examples would only add noise.
 
-Persona mapping (sequential, cycling every 200):
-  pid sorted position 0   → DEFAULT_PERSONAS[0]  (biology_student_19f)
-  pid sorted position 1   → DEFAULT_PERSONAS[1]  (retail_cashier_22m)
-  ...
-  pid sorted position 200 → DEFAULT_PERSONAS[0]  (wraps)
-
 Usage:
   python 1_prepare_data.py --preview           # print mapping + 4 examples, exit
-  python 1_prepare_data.py                     # build full dataset
+  python 1_prepare_data.py                     # build full dataset (grounded if available)
+  python 1_prepare_data.py --no-grounded       # force fictional persona map (Run 0)
   python 1_prepare_data.py --max-examples 100000
 """
 from __future__ import annotations
@@ -232,6 +237,10 @@ def build_pid_to_persona(pids: list[str], max_per_persona: int = 2) -> dict[str,
     With 200 personas and max_per_persona=2 we use 400 participants total,
     giving each persona exactly 2 real-human training examples — appropriate
     for LoRA which needs far fewer examples than full fine-tuning.
+
+    NOTE: This is the FICTIONAL mapping (Run 0 baseline). For the grounded
+    mapping that actually aligns personas with demographics, use
+    load_grounded_pid_to_persona() instead.
     """
     n = len(DEFAULT_PERSONAS)
     cutoff = n * max_per_persona   # first N*max pids only
@@ -240,6 +249,65 @@ def build_pid_to_persona(pids: list[str], max_per_persona: int = 2) -> dict[str,
         for i, pid in enumerate(pids)
         if i < cutoff
     }
+
+
+def load_grounded_pid_to_persona(data_dir: Path | None = None) -> dict[str, Any]:
+    """Load grounded pid→Persona mapping built by personas_from_twin2k.py.
+
+    Reads data/pid_to_persona.json (which pid maps to which cluster persona)
+    and data/personas_generated.json (the persona name + description for each cluster).
+    Uses ALL 2,058 participants — no max_per_persona cap.
+
+    Raises FileNotFoundError if the artifacts don't exist yet (run
+    personas_from_twin2k.py --k <K> first).
+    """
+    from personas import Persona as PersonaCls  # avoid name collision
+
+    if data_dir is None:
+        data_dir = Path(__file__).parent / "data"
+
+    pid_map_path = data_dir / "pid_to_persona.json"
+    personas_path = data_dir / "personas_generated.json"
+
+    if not pid_map_path.exists():
+        raise FileNotFoundError(
+            f"{pid_map_path} not found. Run:\n"
+            "  python personas_from_twin2k.py --k 200\n"
+            "to generate grounded personas first."
+        )
+    if not personas_path.exists():
+        raise FileNotFoundError(
+            f"{personas_path} not found. Run:\n"
+            "  python personas_from_twin2k.py --k 200\n"
+            "to generate grounded personas first."
+        )
+
+    with open(personas_path) as f:
+        persona_list = json.load(f)
+    name_to_persona: dict[str, Any] = {
+        p["name"]: PersonaCls(name=p["name"], description=p["description"])
+        for p in persona_list
+    }
+
+    with open(pid_map_path) as f:
+        pid_map = json.load(f)
+
+    result: dict[str, Any] = {}
+    missing_names: set[str] = set()
+    for pid, entry in pid_map.items():
+        persona_name = entry["persona_name"]
+        persona = name_to_persona.get(persona_name)
+        if persona is None:
+            missing_names.add(persona_name)
+            continue
+        result[pid] = persona
+
+    if missing_names:
+        print(f"  [WARN] {len(missing_names)} persona names in pid_to_persona.json "
+              f"not found in personas_generated.json (stale artifacts?): "
+              f"{list(missing_names)[:5]}")
+
+    return result
 
 
 # ── Prompt / answer builders ──────────────────────────────────────────────────
@@ -930,9 +998,19 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--preview", action="store_true",
                         help="Print mapping + sample records, exit without saving")
+
+    grounded_group = parser.add_mutually_exclusive_group()
+    grounded_group.add_argument(
+        "--grounded", action="store_true", default=None,
+        help="Use demographically-grounded cluster personas from personas_from_twin2k.py "
+             "(default: auto-detect from data/pid_to_persona.json)")
+    grounded_group.add_argument(
+        "--no-grounded", action="store_true",
+        help="Force the original fictional sequential persona mapping (Run 0 baseline)")
+
     parser.add_argument("--max-per-persona", type=int,
                         default=data_cfg.get("max_per_persona", 2),
-                        help="Max Twin-2K participants mapped to each AI persona")
+                        help="Max participants per persona (only used with --no-grounded)")
     parser.add_argument("--max-examples", type=int,
                         default=data_cfg.get("max_examples"))
     parser.add_argument("--val-fraction", type=float,
@@ -940,6 +1018,19 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=data_cfg.get("seed", 42))
     parser.add_argument("--out-dir", default=data_cfg.get("output_dir", "data"))
     args = parser.parse_args()
+
+    # Resolve output dir early so we can check for persona artifacts
+    out = Path(args.out_dir)
+    if not out.is_absolute():
+        out = Path(__file__).parent / out
+
+    # Determine grounding mode
+    grounded_artifacts_exist = (out / "pid_to_persona.json").exists()
+    use_grounded = (
+        True if args.grounded
+        else False if args.no_grounded
+        else grounded_artifacts_exist  # auto-detect
+    )
 
     print("Loading question catalog...")
     catalog = load_question_catalog()
@@ -950,9 +1041,22 @@ def main() -> None:
     print(f"  {len(df)} participants × {len(df.columns)} columns")
 
     pids = load_pids_sorted(df)
-    pid_to_persona = build_pid_to_persona(pids, max_per_persona=args.max_per_persona)
-    n_used = len(pid_to_persona)
-    print(f"  {n_used} participants used ({args.max_per_persona}×{len(DEFAULT_PERSONAS)} personas)")
+
+    if use_grounded:
+        print("Loading grounded pid→persona mapping (data/pid_to_persona.json)...")
+        try:
+            pid_to_persona = load_grounded_pid_to_persona(out)
+            n_used = len(pid_to_persona)
+            n_personas_unique = len(set(p.name for p in pid_to_persona.values()))
+            print(f"  {n_used} participants mapped across {n_personas_unique} grounded personas")
+        except FileNotFoundError as e:
+            print(f"  [ERROR] {e}")
+            sys.exit(1)
+    else:
+        pid_to_persona = build_pid_to_persona(pids, max_per_persona=args.max_per_persona)
+        n_used = len(pid_to_persona)
+        print(f"  {n_used} participants used ({args.max_per_persona}×{len(DEFAULT_PERSONAS)} personas) "
+              f"[fictional map — Run 0 baseline]")
 
     if args.preview:
         print_preview(catalog, df, pid_to_persona)
@@ -967,11 +1071,7 @@ def main() -> None:
     )
     print(f"\nTotal: train={len(train):,}, val={len(val):,}")
 
-    # Anchor relative paths to this script's directory, not the CWD — run_job.sh
-    # runs from the repo root while 2_train.py reads <script-dir>/data/train.jsonl.
-    out = Path(args.out_dir)
-    if not out.is_absolute():
-        out = Path(__file__).parent / out
+    # `out` was resolved at the top of main() — just ensure it exists.
     out.mkdir(parents=True, exist_ok=True)
     for name, split in [("train", train), ("val", val)]:
         path = out / f"{name}.jsonl"

@@ -1,5 +1,8 @@
 model:
-  base: Qwen/Qwen2.5-7B-Instruct
+  # Qwen3-30B-A3B: MoE with ~3B active params, ~15GB in 4-bit — fits A100 80GB
+  # comfortably. Verify Unsloth supports MoE QLoRA before running; if not,
+  # fall back to Qwen3-14B (dense) for method iteration.
+  base: Qwen/Qwen3-30B-A3B
   max_seq_length: 2048
   load_in_4bit: true
 

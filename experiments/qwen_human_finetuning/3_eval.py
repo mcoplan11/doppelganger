@@ -38,6 +38,42 @@ sys.path.insert(0, str(TWIN2K))
 from runner import run_experiment, select_personas, _req_scale, _req_numeric, _extract
 from analysis import analyze_experiment, print_comparison_table
 from llm_client import LLMClient
+from personas import Persona
+
+
+# ── Grounded eval-persona roster ──────────────────────────────────────────────
+
+def load_grounded_eval_personas(n: int, seed: int,
+                                data_dir: Path | None = None) -> list[Persona]:
+    """Build eval roster of n personas from personas_generated.json.
+
+    Sorted by prolific_share descending so the most Prolific-like clusters
+    come first. If more than n personas are available, takes the top n;
+    if fewer, uses all (with a warning).
+
+    Falls back to select_personas() if the artifact doesn't exist.
+    """
+    if data_dir is None:
+        data_dir = Path(__file__).parent / "data"
+    personas_path = data_dir / "personas_generated.json"
+    if not personas_path.exists():
+        return []  # caller should fall back
+
+    with open(personas_path) as f:
+        persona_list = json.load(f)
+
+    # Sort by prolific_share descending
+    persona_list = sorted(persona_list, key=lambda p: p.get("prolific_share", 0.0), reverse=True)
+
+    if len(persona_list) < n:
+        print(f"  [WARN] Only {len(persona_list)} grounded personas available, "
+              f"requested {n} — using all")
+
+    roster = [
+        Persona(name=p["name"], description=p["description"])
+        for p in persona_list[:n]
+    ]
+    return roster
 
 
 # ── Local model client ────────────────────────────────────────────────────────
@@ -460,7 +496,15 @@ def main() -> None:
         batch_size=eval_cfg.get("batch_size", 32),
     )
 
-    personas = select_personas(n_personas, seed)
+    # Use grounded eval roster if artifacts exist, else fall back to DEFAULT_PERSONAS
+    grounded = load_grounded_eval_personas(n_personas, seed)
+    if grounded:
+        personas = grounded
+        print(f"  [grounded] Using {len(personas)} prolific-prioritised personas "
+              f"from personas_generated.json")
+    else:
+        personas = select_personas(n_personas, seed)
+        print(f"  [default] Using {len(personas)} personas from DEFAULT_PERSONAS")
     print(f"Model:      {model_path}")
     print(f"Out label:  {args.out_label}")
     print(f"Personas:   {len(personas)}  |  mode: {bsm}  |  seed: {seed}")

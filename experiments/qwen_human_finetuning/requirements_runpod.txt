@@ -18,6 +18,9 @@ datasets>=2.19.0
 huggingface_hub>=0.22.0
 pandas>=2.0.0
 
+# Persona clustering (Stage 1 — runs locally, not needed on RunPod)
+kmodes>=0.12.2
+
 # Analysis (shared with twin2k_replication)
 scipy>=1.12.0
 pyyaml>=6.0
