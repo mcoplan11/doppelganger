@@ -1,44 +1,17 @@
 #!/bin/bash
-# run_job.sh — Full fine-tuning pipeline on RunPod
+# run_job.sh — DEPRECATED. Use run_phase1.sh.
 #
-# Steps:
-#   0. Data prep      — build SFT training JSONL from Twin-2K-500 (cheap; fails fast)
-#   1. Baseline eval  — base Qwen2.5-7B-Instruct, no fine-tuning
-#   2. Fine-tune      — QLoRA training (~30-60 min on RTX A6000)
-#   3. Fine-tuned eval — same experiments, fine-tuned checkpoint
+# The original 3-step flow here baselined Qwen2.5-7B-Instruct while 2_train.py
+# fine-tuned the config base (now Qwen3-30B-A3B). That compared two DIFFERENT
+# models, so the "base vs fine-tuned" delta was dominated by model size, not
+# fine-tuning. It also built data with no grounding flag (auto-detects grounded
+# → the intended Run-0 baseline silently became Run-A data) and never preserved
+# the Run-0 checkpoint before Run-A overwrote it.
 #
-# Run from the repo root:
-#   bash experiments/qwen_human_finetuning/runpod/run_job.sh
-set -e
+# run_phase1.sh implements the correct Phase-1 matrix (GROUNDED_PERSONAS_PLAN
+# §Stage 3): base_30b → run0_fictional → runA_grounded, one variable per step.
+set -euo pipefail
 
-EXPERIMENT_DIR="experiments/qwen_human_finetuning"
-cd "$(dirname "$0")/../../.."   # move to repo root
-
-# ── Step 0: Prepare data (cheapest step first, so mapping errors fail fast) ──
-echo "=== Step 0/3: Prepare training data ==="
-python "$EXPERIMENT_DIR/1_prepare_data.py"   # defaults come from config.yaml data:
-
-# ── Step 1: Baseline ─────────────────────────────────────────────────────────
-echo ""
-echo "=== Step 1/3: Baseline eval (base Qwen2.5-7B-Instruct) ==="
-echo "    Results → $EXPERIMENT_DIR/results/base/"
-python "$EXPERIMENT_DIR/3_eval.py" \
-    --model-path Qwen/Qwen2.5-7B-Instruct \
-    --out-label base
-
-# ── Step 2: Fine-tune ─────────────────────────────────────────────────────────
-echo ""
-echo "=== Step 2/3: Fine-tune Qwen2.5-7B-Instruct ==="
-python "$EXPERIMENT_DIR/2_train.py"
-
-# ── Step 3: Fine-tuned eval ───────────────────────────────────────────────────
-echo ""
-echo "=== Step 3/3: Fine-tuned eval ==="
-echo "    Results → $EXPERIMENT_DIR/results/finetuned/"
-python "$EXPERIMENT_DIR/3_eval.py" \
-    --out-label finetuned
-
-# ── Summary ───────────────────────────────────────────────────────────────────
-echo ""
-echo "=== All done! Printing base vs fine-tuned comparison ==="
-python "$EXPERIMENT_DIR/3_eval.py" --compare
+echo "run_job.sh is deprecated — delegating to run_phase1.sh"
+echo "(see the header of this file for why; it compared two different models)"
+exec bash "$(dirname "$0")/run_phase1.sh" "$@"

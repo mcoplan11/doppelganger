@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """
-2_train.py — QLoRA fine-tune Qwen2.5-7B-Instruct on Twin-2K-500 survey responses
+2_train.py — bf16 LoRA fine-tune the config base model on Twin-2K-500 responses
 
-Run on RunPod (RTX A6000 48GB) after 1_prepare_data.py has created data/train.jsonl.
+Base model is read from config.yaml (model.base = Qwen/Qwen3-30B-A3B; bf16 LoRA,
+load_in_4bit=false — 4-bit QLoRA is unreliable on this MoE). Run on RunPod
+(A100 80GB) after 1_prepare_data.py has created data/train.jsonl.
 
-Typical runtime: ~30-60 min for ~22K examples, 2 epochs on RTX A6000.
+Typical runtime: ~30-60 min on A100 80GB (depends on cap_per_study: ~15K capped
+examples vs ~100K uncapped), 2 epochs.
 
 Loss is computed on the assistant answer only (see train_on_responses_only below) —
 we want to shift the *response distribution* toward human biases, not teach the model

@@ -1,9 +1,150 @@
 # Grounded-Persona Fine-Tuning Plan (v2)
 
-> **Status:** planning document for review. Once finalized, this is the build spec to hand to
-> an implementing model (e.g. Claude Sonnet). It captures **what we are doing, why, and in what
-> order** — including the reasoning behind each decision so the builder doesn't re-derive or
-> reverse them.
+> **Status (2026-06-15):** Stages 1 and 2 are **complete**. Artifacts exist at
+> `data/personas_generated.json` (200 clusters, K=200) and `data/pid_to_persona.json`
+> (all 2,058 PIDs mapped). Training data built (`data/train.jsonl`, `data/val.jsonl`).
+> `3_eval.py` updated to use the 200 hand-crafted Prolific-worker personas from
+> `personas.py` / `responses/generated_v3.json` instead of `personas_generated.json`.
+> **Next step: Stage 3 GPU runs on RunPod (Run 0 baseline FT, then Run A grounded FT).**
+>
+> **⚠ Pre-flight audit (2026-06-15) — read §2.1 before any GPU spend.** Three issues
+> were found and two fixed: (1) `train.jsonl` on disk was a **500-row smoke test**, not
+> the real dataset — rebuilt to **107,028 examples** (all 2,058 participants); (2) a new
+> per-study data-quality report + a `persona_signal_check.py` ICC diagnostic were added;
+> (3) the **persona-signal ICC is ~0.02** (demographics barely predict these biases),
+> which means grounded FT may not beat the fictional-map baseline on most studies, and
+> the Phase-1 gate was rewritten to be winnable (§8). These don't block the run, but they
+> reset expectations: see §2.1.
+>
+> **⚠ Pre-flight audit round 2 (2026-06-16) — read §2.2 before any GPU spend.** A
+> code-level review found one **genuine bug, now FIXED**: a train/eval chat-template +
+> thinking-mode mismatch in `3_eval.py` that would have collapsed *every* fine-tuned eval
+> regardless of whether grounding works. A new GPU-free `prompt_parity_check.py` also
+> showed that **4–5 studies (incl. the current gate `dominator_neglect`) are TRANSFER-ONLY**:
+> training and eval use different *answer spaces*/elicitations, so SFT on them adds no
+> *in-sample* signal toward their eval. This is an **interpretation fact, not a blocker**
+> — scenario paraphrasing is by-design across the whole benchmark, and at eval the model
+> reads the eval prompt, so nothing mechanically breaks. Implication: don't expect grounding
+> to move those in-sample, and prefer a matched study for the gate's mechanism test. Three
+> smaller fixes also landed (val-split leakage, signal diagnostic, render budget). See §2.2.
+
+---
+
+## 2.1 Pre-flight audit findings (2026-06-15) — reset expectations before Stage 3
+
+A pre-GPU audit of the on-disk artifacts surfaced three things. All tooling lives in
+`1_prepare_data.py` (report) and `persona_signal_check.py` (ICC); rerun both after any
+data change.
+
+1. **`train.jsonl` was a 500-row smoke test, now rebuilt to 107,028 examples.** The file
+   committed as "Stage 2 done" had exactly 475 train + 25 val = 500 rows (the signature
+   of a stray `--max-examples 500`). The real grounded build over all 2,058 participants
+   yields **101,676 train / 5,352 val**. Training Stage 3 on the old file would have
+   produced the answer-format collapse the decision log warns about and been misread as
+   "grounding didn't help." `1_prepare_data.py` now prints a loud warning whenever
+   `--max-examples` is set. **Always confirm the build prints ~100K examples and the
+   "Loading grounded pid→persona mapping … 2058 participants" line before training.**
+
+2. **Severe class imbalance.** Three multi-row matrix studies (`false_consensus` 41,160,
+   `risk_benefit` 16,464, `probability_matching` 16,476) are **~69%** of the data, while
+   the trainable gate studies (`wta_wtp` 2,058, `dominator_neglect` 4,116) are **~6%**.
+   SFT will optimise the big studies and barely move the small ones. New lever:
+   `--cap-per-study N` (recommend ~3000) downsamples each study before the split. The
+   pre-flight report flags any >10× largest/smallest ratio. Decide whether Run A uses the
+   cap (cleaner per-study gradient share) or the full set (faithful to "all 2,058").
+
+3. **Persona signal is weak — the binding finding.** `persona_signal_check.py` computes,
+   per study, the ICC(1) of condition-residualised human answers grouped by persona — i.e.
+   how much of the answer variance persona membership explains, net of the manipulation.
+   **Mean ICC ≈ 0.020.** Most studies are ~0; only `dominator_neglect` (0.063),
+   `omission_bias` (0.060), `myside` (0.058), `savings` (0.046) carry any signal. This is
+   the §3.1 caveat firing and corroborates the Mega-Study result quoted in §2 ("no higher
+   than generic demographics-only personas"). **Implication:** fixing the i%n map (Run A)
+   can only help where demographics actually separate behaviour — which is almost nowhere
+   in this benchmark. Expect Run A ≈ Run 0 on most studies; the honest pre-registered
+   prediction is that grounding moves at most `dominator_neglect` and maybe `myside`/
+   `savings`. If Run A confirms this, the finding is "demographics don't predict these
+   JDM biases" (publishable, per §6 Stage-1 note), not "the pipeline is broken." Base
+   model capability (§2: 30B-A3B already 11/17) remains the dominant lever.
+
+---
+
+## 2.2 Pre-GPU audit round 2 (2026-06-16) — code review + stimulus parity
+
+A code-level review of the train→eval path (not just the on-disk data) found one
+breaking bug, one structural finding, and three smaller fixes. The four code fixes
+are done; the structural finding needs a design decision (below).
+
+### FIXED — train/eval chat-template + thinking-mode mismatch (`3_eval.py`)
+Training (`2_train.py`) SFTs on **plain ChatML** (`get_chat_template(…, "chatml")`)
+with the answer JSON emitted directly after the assistant tag. But `3_eval.py`'s
+`_render` was applying the **base model's native Qwen3 template** (the LoRA-checkpoint
+path loads the tokenizer from `base_id`, not the checkpoint) with `add_generation_prompt=True`
+and **no `enable_thinking=False`**. Two consequences: (1) Qwen3 defaults to thinking ON,
+so with `max_new_tokens=64` the model burns its budget in a `<think>` block and never
+emits the JSON → **answer-format collapse**, which §10 says to read as "not replicated";
+(2) the FT model was graded on a prompt surface it never trained on. This would have made
+**every** FT run look broken — the exact "grounding didn't help" false negative the plan
+is built to avoid. **Fix:** `_render` now reproduces plain ChatML byte-for-byte for FT
+checkpoints (matching training) and forces `enable_thinking=False` on the base reference;
+`max_new_tokens` raised to 128 for headroom. This is the §6 "thinking-mode mismatch
+silently changes behavior" warning, made real and closed.
+
+### STRUCTURAL FINDING — 4–5 studies are TRANSFER-ONLY (not a mechanical break)
+New tool `prompt_parity_check.py` (GPU-free) compares the **answer space** the SFT data
+teaches against the space `runner.py` grades on, per study (scenario wording is ignored —
+see below). Result: the scale studies are **in-sample-compatible** (cosmetic gloss-text
+differences only), `savings` is an order-dependent letter↔semantic enum (bridged by
+`_coerce` if option order holds), and these are **transfer-only**, because training and
+eval use different *answer spaces* / elicitations:
+
+| Study | TRAIN (Twin-2K QID) | EVAL (`experiments.json`) | Difference |
+|---|---|---|---|
+| **dominator_neglect** (current GATE) | QID174–179 fire-extinguisher/seatbelt lives-saved, **5–6 options** | constructed "certain $50 vs 50% $50/$25" gamble, **2 options** | different elicitation + cardinality; possibly *proportion* vs *stochastic* dominance — verify the construct matches |
+| omission_bias | QID, **4 options** | constructed flu vaccinate/skip, **2 options** | different elicitation + cardinality |
+| probability_matching | per-round red/green predictions, **integer 1–2** | meta "maximize vs match" strategy, **enum** | different elicitation + type |
+| sunk_cost | QID181/182_TEXT coffee-shop, **numeric** | classic Michigan/Wisconsin ski, **enum** | different elicitation + type |
+| less_is_more | (no train examples — excluded from SFT) | scale | transfer-only by exclusion |
+
+**Why this is NOT a blocker (corrected 2026-06-17 after review):** scenario paraphrasing
+is the *existing, deliberate* design across the whole benchmark, not unique to these
+studies — e.g. `framing` trains on "unusual disease" and evals on "unusual *Asian*
+disease"; `anchoring_redwood` trains on the no-anchor wording and evals with the anchor
+injected. Training on the survey wording and testing on a cleaner paraphrase is what makes
+the eval a *generalization* test rather than a memorisation check — desirable. And at eval
+the model is conditioned on the **eval** prompt (built fresh from `experiments.json`), so it
+reads the eval's answer space directly and produces parseable output as long as it follows
+instructions. The answer-space difference therefore does **not** mechanically break the eval.
+
+**What actually follows:** for these studies the SFT teaches a *different task* than the
+eval grades, so grounding adds **no in-sample signal** toward them — they are **transfer**
+results, full stop. Two consequences: (1) don't read a flat Run-A result on them as "grounding
+failed" — it was never an in-sample test; (2) the gate's rule (b) ("grounding *moved* study X")
+should use an **in-sample, signal-bearing** study so it isolates the mechanism — the current
+gate `dominator_neglect` reads as a transfer/construct test, so `myside` (scale-matched, ICC
+0.058) is the cleaner mechanism gate (keep `dominator_neglect` as a reported transfer result).
+Separately, **output collapse** (model emits a memorised token instead of following the eval
+prompt; the 7B `savings` p=1.000) is a real but *distinct* SFT-overfitting risk — monitor it
+via the eval's per-study no-response rate and the degenerate-label flag; it is, if anything,
+likelier on the *matched* studies. Run `python prompt_parity_check.py` (always exits 0,
+informational) to see the per-study in-sample/transfer split.
+
+### FIXED — val-split persona leakage (`1_prepare_data.py:build_all_examples`)
+The split was a random row slice, so the same persona (and persona×study pair) appeared in
+both train and val — `val_loss` measured in-distribution fit and could never warn about
+persona overfitting. Now a **group split by persona** (verified: 190 train / 10 val
+personas, **0 overlap**), so `val_loss` is a real "generalizes to unseen personas" signal —
+matching the inference condition (eval uses a disjoint Prolific roster). Rebuild is
+100,498 train / 6,530 val.
+
+### FIXED — signal diagnostic over-claimed; ICC has a single-item floor (`persona_signal_check.py`)
+ICC(1) on single dichotomous/few-category items is downward-biased with a low ceiling, so
+reading "mean ICC ≈ 0.02" as "demographics are irrelevant" overshoots. The tool now also
+prints **`btwn_sd`** (between-persona SD of condition-residualised means, in answer units —
+interpretable regardless of item reliability), a **gate-study callout** (`dominator_neglect`
+ICC=0.063, *has* trainable signal), and a caveat that the product goal is **aggregate effect
+replication, not per-respondent prediction**. Conclusion is unchanged (signal is weak) but
+no longer overstated.
 
 ---
 
@@ -70,24 +211,94 @@ for us: (a) it reinforces rejecting verbatim twins in favor of aggregate effect 
 the K-sweep divergence check in §6).
 
 ### Current model results (zero-shot, reasoning off, within-subjects, N=150)
-| Model | Effects replicated |
-|---|---|
-| Centaur-70B | 3/17 (mostly degenerate numeric output) |
-| qwen3-235b-a22b | 12/17 |
-| qwen3.7-max | 13/17 |
+| Model | Effects replicated | Notes |
+|---|---|---|
+| Centaur-70B | 3/17 | mostly degenerate numeric output |
+| qwen3-14b | 10/17 | dense; fails savings/base_rate/sunk_cost (capability gaps) + 4 "too rational" |
+| qwen3-30b-a3b | 11/17 | MoE; fails anchoring_redwood + the canonical 5 "too rational" |
+| qwen3-235b-a22b | 12/17 | MoE; canonical 5 "too rational" failures only |
+| qwen3.7-max | 13/17 | |
 
 The 4–5 consistent **failures** across the good models are all "**too rational**" cases —
 the LLM doesn't fall for the bias because it reasons normatively:
 `less_is_more`, `wta_wtp` (endowment), `omission_bias`, `dominator_neglect`
 (+ `probability_matching` for 235b).
 
+**Why 30B-A3B is the right fine-tuning proxy for 235B** (not 14B): (1) same MoE architecture
+family — fine-tuning quirks (router stability, target modules) transfer directly; (2) failure
+profile matches 235B almost exactly — 30B-A3B shares all 5 canonical "too rational" failures
+with 235B, whereas 14B additionally fails on capability-limited studies (savings, base_rate,
+sunk_cost) that 235B handles fine, meaning 14B fine-tuning would target the wrong deficits.
+
 ### Existing fine-tuning experiment (`experiments/qwen_human_finetuning/`)
-QLoRA on Qwen2.5-7B using Twin-2K human answers, then re-run the 16 studies base-vs-finetuned.
+QLoRA on Qwen2.5-7B using Twin-2K human answers, then re-run the 17 studies base-vs-finetuned.
 **The core bug we are fixing:** `1_prepare_data.py:build_pid_to_persona` maps participants to
 personas by **sorted-pid position mod 100** (`DEFAULT_PERSONAS[i % n]`). The persona text
 ("19-year-old construction worker…") is therefore **statistically independent** of the human
 answers it's trained on. The model can only learn the *population marginal*, never
 demographic→behavior. It also caps at 2 participants/persona = only 400 of 2,058 used.
+
+**Results from this pilot (Qwen2.5-7B, N=150, within-subjects, 100 fictional Prolific-style personas):**
+
+| Study | Paper | Base 7B | FT 7B (broken map) |
+|---|---|---|---|
+| Framing | ✓ | ✓ | ✓ |
+| Linda | ✓ | ✓ | ✓ |
+| Anchoring (Redwood) | ✓ | ✓ | ✓ |
+| Anchoring (Mississippi) | ✗ | ✓ | ✓ |
+| Savings | ✓ | ✗ | ✗ (p=1.000 — answer-format collapse) |
+| Myside | ✓ | ✗ (p=0.086) | ✗ (p=0.571 — fine-tune made it worse) |
+| Less is More | ✓ | ✗ | ✗ |
+| WTA/WTP | ✓ | ✗ | ✗ |
+| Sunk Cost | ✗ | ✗ | ✓ (p=0.027 — emerged from FT) |
+| Outcome Bias | ✗ | ✓ | ✓ |
+| Allais | ✗ | ✗ | ✗ |
+| Base Rate | ✗ | ✓ | ✓ |
+| False Consensus | ✓ | ✓ | ✓ |
+| Risk-Benefit | ~ | ✓ | ✓ |
+| Omission Bias | ✗ | ✗ | ✗ |
+| Probability Matching | ✗ | ✗ | ✗ |
+| Dominator Neglect | ✓ | ✗ | ✗ |
+| **Total effects shown** | | **8/17** | **9/17** |
+
+**Net gain from fine-tuning with broken map: +1 study (sunk_cost).** The 5 "too rational"
+failures didn't move at all. This confirms the diagnosis: the persona-answer independence
+bug is the binding constraint, not the fine-tuning approach itself.
+
+**Lessons for Run 0 / Run A (see §10 for rationale):**
+1. **+1 from broken FT vs. +3 from model size** — base capability is the dominant driver.
+   30B-A3B base (11/17) already outperforms 7B fine-tuned (9/17) without any training.
+   Run 0 (30B-A3B with broken map) should be the new baseline to beat, not the 7B results.
+2. **Answer-format collapse is a real risk** — savings p=1.000 in fine-tuned 7B means the
+   model learned to always output the same token regardless of condition. Flag any study with
+   p≈1.000 in Run A as potential collapse (not a "replicated" effect).
+3. **Fine-tuning can regress borderline effects** — myside went from p=0.086 to p=0.571
+   after fine-tuning. Monitor which studies degrade in Run A vs `base_30b`.
+4. **Sunk_cost is potentially learnable** — it emerged at p=0.027 post-FT even on the
+   broken map. The grounded map (Run A) with 5× more data may surface other latent effects.
+
+### Completed: Stage 1 + 2 (2026-06-14)
+
+**K-sweep results** (PAM k-medoids on Gower distance, n_init=3):
+
+| K | Divergence | ≥5 members | Prolific-majority clusters | Notes |
+|---|---|---|---|---|
+| 150 | 0.314 | 91.3% | 26 | |
+| **200** | **0.352** | **84.0%** | **41** | **chosen** |
+| 250 | 0.374 | 72.8% | 44 | |
+| 300 | 0.387 | 64.7% | 50 | |
+| 350 | 0.404 | 56.0% | 64 | |
+| 400 | 0.412 | 47.0% | 69 | |
+
+**K=200 chosen** — best cluster-size floor (84% ≥5 members); divergence gains above 200 are
+marginal (0.035 across the full remaining range). Prolific-majority cluster count never reaches
+200 at any K, so raising K does not solve the eval-roster problem (see §3.3 resolution below).
+
+**Artifacts on disk:**
+- `data/personas_generated.json` — 200 personas, deterministic template (no Gemini),
+  cluster sizes min=1 / median=9 / max=31; 32 clusters below the ≥5 floor
+- `data/pid_to_persona.json` — all 2,058 PIDs mapped; 539 flagged `prolific_like` (26.2%)
+- `data/train.jsonl` / `data/val.jsonl` — SFT data built from all 2,058 participants
 
 ---
 
@@ -138,21 +349,26 @@ instantiating multiple respondents per Prolific persona, or (b) raising K to cre
 Prolific clusters — which trades against the ≥5-members-per-cluster floor. Decide during the
 K-sweep.
 
-### 3.3 Train broad, query narrow (the "Prolific" flag)
-- **Train** on all 2,058 (representative US panel) so the model learns the full
-  demographic→behavior function.
-- **Flag ~25% (~515)** of participants as **`prolific_like`** — those closest to a Prolific
-  survey-worker prototype (skew: age 18–40, college+, employed/student; secondary
-  Democrat/liberal lean).
-- **"Run studies" (inference) roster ≈ 200 personas, prioritizing the `prolific_like` slice**,
-  because that matches the product's real respondent population and the Selin/Ed calibration
-  target.
+### 3.3 Train broad, query narrow (the "Prolific" flag) — **RESOLVED 2026-06-15**
 
-This resolves a real validity conflict: Twin-2K is representative-US, but `personas.py` was
-deliberately rebuilt on 2026-05-20 as Prolific workers *after a representative-American roster
-failed to predict the Selin/Ed results*. That failure was **base-model prompting**; here the
-representative personas are **fine-tuned training targets**, so they carry learned grounding.
-Training broad + querying narrow keeps the data asset and the product population aligned.
+- **Train** on all 2,058 (representative US panel) so the model learns the full
+  demographic→behavior function. ✅ Done — `train.jsonl` uses all 2,058.
+- **Eval roster = 200 hand-crafted Prolific-worker personas** from `personas.py` +
+  `responses/generated_v3.json`. ✅ Done — `3_eval.py` updated to load `DEFAULT_PERSONAS`
+  directly instead of `personas_generated.json`.
+
+**Why not use prolific-majority clusters from `personas_generated.json` for eval?**
+The K-sweep showed that at K=200 only 41 clusters are prolific-majority (share >0.5), and
+raising K to 400 only gets to 69 — never close to 200. This is because only ~26% of Twin-2K
+participants are prolific-like, so prolific-heavy clusters are always a minority at any sensible K.
+The cleaner solution: keep `personas_generated.json` as training cluster labels only, and use the
+separately hand-crafted prolific roster (`personas.py`) for inference. The fine-tuned model has
+learned the demographic→behavior mapping from prolific-like participants in training; at
+inference, any prolific-style persona description activates that learned pattern.
+
+**Roster size:** `personas.py` has 100 inline personas + 100 loaded from
+`responses/generated_v3.json` = **200 total**, all Prolific/MTurk-worker style. If
+`--n-personas` < 200, `3_eval.py` samples randomly with the configured seed.
 
 ### 3.4 Raw-data deliverable → effect-size, not binary
 The tool emits per-respondent rows; the user runs their own stats. Internally we still report
@@ -241,9 +457,9 @@ Both are **Phase 2** — only after Phase 1 replicates the 17 in-sample.
 
 ## 6. Implementation plan
 
-### Stage 1 — Persona builder (pure CPU, ~$0, fully reviewable BEFORE any GPU)
+### Stage 1 — Persona builder ✅ COMPLETE (2026-06-14)
 
-New module: `experiments/qwen_human_finetuning/personas_from_twin2k.py`
+Module: `experiments/qwen_human_finetuning/personas_from_twin2k.py`
 
 Functions:
 1. `load_demographics()` → DataFrame[pid × 14 fields] from `wave1_3_response_label.csv`,
@@ -282,16 +498,25 @@ Functions:
      actually separate behavior; if every cluster ≈ average, K too low / features too weak)
 
 **Gate:** review the generated personas + Prolific subset + divergence diagnostic before Stage 2.
+K=200 chosen from sweep; artifacts reviewed; proceeding to Stage 2. ✅
 
-### Stage 2 — Wire artifacts into training + eval (CPU)
-- `1_prepare_data.py`: replace `build_pid_to_persona` with a loader for `pid_to_persona.json`;
-  drop the `max_per_persona=2` cap; use all 2,058. Keep all existing format-alignment logic
-  (framing→binary A/B, wta_wtp numeric, MC-as-scale rank encoding, two-pass context for
-  false_consensus/risk_benefit, `less_is_more` excluded from training, omission_bias caveat).
-- Train on **all 17** studies (no held-out subset — generalization is tested externally on the
-  Mega-Study in Phase 2, §4.1). Keep `less_is_more` excluded from training as before.
-- `3_eval.py`: build the eval roster (~200) from `personas_generated.json`, **prioritizing
-  `prolific_like`** personas; top up to 200 with the next-most-Prolific-like if needed.
+### Stage 2 — Wire artifacts into training + eval ✅ COMPLETE (2026-06-14 / 2026-06-15)
+- `1_prepare_data.py`: replaced `build_pid_to_persona` with loader for `pid_to_persona.json`;
+  dropped `max_per_persona=2` cap; all 2,058 participants used. ✅
+- `3_eval.py`: eval roster now uses `DEFAULT_PERSONAS` (200 hand-crafted Prolific-worker
+  personas from `personas.py` + `responses/generated_v3.json`) — see §3.3. ✅
+- `data/train.jsonl` and `data/val.jsonl` built. ✅ **Rebuilt 2026-06-16** to 100,498
+  train / 6,530 val after the §2.2 **persona-grouped val split** (was 107,028 with a leaky
+  random split). `1_prepare_data.py` prints a per-study data-quality report on every build
+  and warns on `--max-examples`. New `--cap-per-study` lever for imbalance.
+- `3_eval.py`: **`_render` fixed (§2.2)** — plain ChatML for FT checkpoints (matches
+  training), `enable_thinking=False` on the base reference, `max_new_tokens=128`. ✅
+- `persona_signal_check.py`: per-study persona-ICC diagnostic, now with `btwn_sd`, a
+  gate-study callout, and a single-item-floor caveat (§2.2). ✅
+- `prompt_parity_check.py` (new, §2.2): GPU-free in-sample-vs-transfer check. Flags 4–5
+  **transfer-only** studies (incl. the current gate) where SFT teaches a different answer
+  space than the eval — informational (exit 0), not a blocker; use it to pick a matched
+  gate study. ✅
 
 ### Stage 3 — GPU runs (RunPod)
 
@@ -322,6 +547,19 @@ effect.
   MoE** QLoRA before committing. Unsloth is dense/single-GPU-focused; if MoE QLoRA isn't
   supported, **fall back to dense `Qwen3-14B`** for method iteration and accept that MoE-specific
   rehearsal happens only at the 235B confirmation run. Note which path was used.
+- **Pre-flight (run once, no GPU, before launching the pod):**
+  - `python 1_prepare_data.py` → confirm it prints **~100K examples**, the
+    "Loading grounded pid→persona mapping … 2058 participants" line (not the 500-row
+    smoke test, not the fictional fallback), and the **`Val split: N/M personas held
+    out`** line (group split, §2.2). Review the data-quality FLAGS.
+  - `python prompt_parity_check.py` → informational (always exit 0). Note the
+    **transfer-only** studies (`dominator_neglect`, `omission_bias`, `probability_matching`,
+    `sunk_cost`, `less_is_more`, §2.2): grounding adds no in-sample signal there, so judge
+    them as transfer and keep the in-sample gate on a matched study (`myside`). Not a
+    blocker — at eval the model reads the eval prompt.
+  - `python persona_signal_check.py` → note which studies have ICC ≥ 0.05 (and the new
+    `btwn_sd` column); these are the only ones grounding can plausibly move (§2.1/§2.2).
+    Set expectations for Run A from this. Gate study `dominator_neglect` ICC=0.063.
 - **Base reference (run once):** before any fine-tune, eval the untrained model so we know the
   starting point:
   `python 3_eval.py --model-path Qwen/Qwen3-30B-A3B --out-label base_30b`
@@ -336,12 +574,13 @@ effect.
 - **Compare:** `python 3_eval.py --compare` across `base_30b`, `run0_fictional`, `runA_grounded`.
   Run 0 vs base shows what the *old* fine-tune bought; Run A vs Run 0 isolates the **grounding**
   effect (the only thing that changed).
-- **Phase-1 GATE (decision rule):** proceed to Phase 2 only if Run A
-  (a) replicates **clearly more** of the 17 than Run 0, **and**
-  (b) recovers at least some of the 4–5 "too-rational" failures (`less_is_more`, `wta_wtp`,
-  `omission_bias`, `dominator_neglect`, `probability_matching`).
-  If not: tune before spending more — first the **K-sweep / persona granularity** (§3.2), then
-  LoRA capacity (`r`), then `num_epochs`. Do **not** advance a weak Run A to Phase 2.
+- **Phase-1 GATE (decision rule) — REVISED 2026-06-15, see §8 for the tiered rationale:**
+  proceed to Phase 2 if **either** (a) Run A replicates **clearly more** of the 17 than Run 0,
+  **or** (b) Run A moves **`dominator_neglect`** (the only trainable, signal-bearing
+  "too-rational" study; the others are excluded or signal-poor per §2.1) in the human direction
+  without regressing studies Run 0 already passes. If neither holds, the cause is most likely
+  the weak persona-signal ICC (§2.1), **not** under-tuning — do **not** spend budget on
+  K-sweeps / `r` / `num_epochs` chasing it. Advance to Phase 2 only on (a) or (b).
 
 #### Phase 2 — generalization + specificity (only if the Phase-1 gate passes)
 
@@ -390,10 +629,38 @@ Iterate at small scale; spend the $40 only after the recipe is locked.
 
 ## 8. Success criteria
 
-**Phase-1 gate (must pass first):** the grounded fine-tune (Run A) replicates clearly more of
-the **17** in-sample studies than the base model / Run 0 — especially the 4–5 "too-rational"
-failures (`less_is_more`, `wta_wtp`, `omission_bias`, `dominator_neglect`,
-`probability_matching`). No Phase 2 until this holds.
+**Phase-1 gate (must pass first) — REVISED 2026-06-15 to be winnable.** The original gate
+required Run A to recover all 5 "too-rational" failures (`less_is_more`, `wta_wtp`,
+`omission_bias`, `dominator_neglect`, `probability_matching`). Two of those are not directly
+trainable, and two more carry ~no persona signal (§2.1), so the original gate was unachievable
+by construction. The studies tier as follows:
+
+| Tier | Studies | Trainable? | Persona ICC | Gate role |
+|---|---|---|---|---|
+| **Trainable + signal** | `dominator_neglect` | yes (6 conditions) | 0.063 | **Required** — the one fair test of grounding |
+| **Trainable, weak signal** | `wta_wtp`, `probability_matching` | yes | 0.009 / 0.022 | Stretch — movement is a bonus, not required |
+| **Not directly trainable** | `less_is_more` (EXCLUDED from training — no format overlap), `omission_bias` (only one condition mapped, no contrast) | no | — / 0.060 | **Excluded from gate** — transfer-only stretch goals |
+
+**⚠ Gate-study caveat (§2.2):** `dominator_neglect` is **transfer-only**, not in-sample —
+its training data (Twin-2K fire-extinguisher/seatbelt items) and its eval (`experiments.json`
+constructed $50 gamble) use different answer spaces/elicitations (and possibly different
+constructs: *proportion* vs *stochastic* dominance — verify). Grounding therefore can't move
+it *in-sample*, so it's not a clean test of the grounding mechanism. This is not a bug and
+not a blocker — judge it as a transfer result. For rule (b) below, prefer an **in-sample,
+signal-bearing** study (`myside`, scale-matched, ICC 0.058) so the gate isolates the mechanism;
+keep `dominator_neglect` as a reported transfer outcome. `prompt_parity_check.py` lists the
+in-sample-compatible studies.
+
+**Revised decision rule — proceed to Phase 2 if EITHER:**
+- (a) Run A replicates **clearly more** of the 17 than Run 0 overall, **or**
+- (b) Run A moves an **in-sample, signal-bearing gate study** (`myside`; `dominator_neglect`
+  only if its construct/answer-space is first matched to the eval) in the human direction
+  without regressing studies `base_30b`/Run 0 already pass.
+
+If neither holds, the likely cause is the weak persona signal in §2.1, not a tuning miss —
+**do not** burn budget chasing it with K-sweeps/`r`/epochs. The correct readout is then
+"demographics don't predict these JDM biases" (a finding), and the lever shifts to base-model
+capability and the 235B confirmation run. No Phase 2 until (a) or (b) holds.
 
 **Phase-2 key artifact:** plot synthetic Cohen's *d* (y-axis) vs human *d* (x-axis) across the
 **19 Mega-Study effects + the NULL set** (the true held-out test).
@@ -410,17 +677,44 @@ Secondary:
 
 ## 9. Open questions / to decide
 
-- [ ] Final **K** — pick from the Stage-1 K-sweep (start box ~200–400), balancing
-      cluster divergence, stability, the ≥5 size floor, and the Prolific-cluster count.
-- [ ] **Prolific-likeness** definition — confirm weights/threshold after seeing the flagged
-      subset's demographics.
-- [ ] Persona generation: **Gemini vs deterministic template**.
+- [x] Final **K** — **K=200** chosen from sweep (2026-06-15). Best cluster-size floor;
+      marginal divergence gains above 200.
+- [x] **Prolific-likeness** definition — resolved by using `DEFAULT_PERSONAS` for eval
+      instead of prolific-share filtering on clusters (2026-06-15).
+- [x] Persona generation: **deterministic template** used (no Gemini).
+- [x] Clustering algo: **Gower + PAM k-medoids** (`personas_from_twin2k.py`).
 - [ ] **Phase 2:** author the **19 Mega-Study** experiment definitions + analyses
       (arXiv:2509.19088v3), seeded from its published materials/data — the bulk of Phase-2 work.
 - [ ] Sourcing the **NULL set** for specificity (Ed calibration null + JDM registered-report
       nulls + constructed placebos; 5–8 to start).
-- [ ] Clustering algo: **k-prototypes vs Gower + k-medoids**.
 - [ ] Deployment target (self-hosted Qwen vs Gemini-prompting research) — doesn't block build.
+- [x] **Run A data: capped or full?** — **CAPPED at 3000/study (2026-06-19).** Run A's job is
+      the in-sample `myside` gate test; uncapped, `myside` gets ~2% of gradient updates (matrix
+      studies ~69%), so a flat result would be uninterpretable (gradient starvation vs no signal).
+      Cap applied IDENTICALLY to Run 0 and Run A (`runpod/run_phase1.sh`, `CAP=3000`) so the cap
+      isn't a second changed variable. `CAP=0` for the full ~100K. Cost: weakens the
+      `false_consensus`/`risk_benefit` correlational studies in this run — acceptable, gate is the priority.
+- [ ] **Given the weak persona ICC (§2.1), is grounded FT still worth the Run A spend,**
+      or do we go straight to base-model/235B capability work? Run A is cheap (~$4) and is
+      the clean test of the §2 independence-bug hypothesis, so it's still worth one run — but
+      enter it expecting Run A ≈ Run 0 on most studies.
+- [x] **(§2.2) Move the in-sample gate to a matched study** — the 4–5 transfer-only studies
+      (`dominator_neglect`, `omission_bias`, `probability_matching`, `sunk_cost`, `less_is_more`)
+      can't test grounding in-sample. Gate rule (b) now uses `myside` (scale-matched, ICC 0.058);
+      transfer-only studies are reported as transfer (2026-06-17). Optional later: re-author the
+      eval `experiments.json` entries to the Twin-2K answer space to make them in-sample too.
+- [ ] **(§2.2) Verify the `dominator_neglect` construct** — training is *proportion* dominance
+      (lives-saved framing); the eval gamble is *stochastic* dominance. Confirm these are the
+      same bias before relying on it even as a transfer result.
+- [x] **(§2.2) Verify scale/MC label DIRECTION for the encoded studies** — done 2026-06-17.
+      `myside` (train "should ban?" 6=yes-ban vs eval "should be allowed?" 6=no-not-allowed:
+      eval labels reversed to compensate → high=pro-ban in both, consistent), `outcome_bias`
+      (7=excellent both), and `savings` (catalog `1:Yes,2:No`→A/B→eval `['yes','no']` by
+      position, aligned) all check out. No direction flip; `myside` is safe as the in-sample
+      gate. NOTE: the encoder assumes the Twin-2K catalog lists options in the eval's
+      direction — re-verify if any NEW study is added (a reversed catalog flips every label).
+- [ ] **(§2.2) Monitor output-collapse in Run A** — separate from transfer: watch the eval's
+      per-study no-response rate + degenerate-label flag (the 7B `savings` p=1.000 mode).
 
 ---
 
@@ -447,3 +741,57 @@ Secondary:
 - **Generalization tested on the external Mega-Study (19 studies), not a held-out subset of the
   17** — fully independent constructs are a stronger anti-overfitting test than reworded
   in-benchmark holdouts. **Plus a NULL set** so specificity is measured, not assumed.
+- **K=200 chosen from sweep (2026-06-15)** — K-sweep run across {150,200,250,300,350,400}.
+  K=200 has the best cluster-size floor (84% ≥5 members) and divergence gains above it are
+  marginal. Prolific-majority cluster count never reaches 200 at any K (tops at 69 at K=400),
+  so raising K is not the right lever for the eval roster problem.
+- **Broken-map FT (7B pilot) showed fine-tuning works, grounding was the bottleneck** —
+  Qwen2.5-7B base→fine-tuned gained only +1 study (sunk_cost) despite QLoRA on real human
+  answers. The 5 "too rational" failures didn't move. This validates that the i%n independence
+  bug was the binding constraint, not the SFT recipe itself. Run A tests whether fixing the
+  persona-answer coupling (with 5× more data) actually moves those failures.
+- **Base capability dominates fine-tuning gain at small scale** — 30B-A3B base (11/17) already
+  beats 7B fine-tuned (9/17). Run 0 (30B-A3B + broken map) is the meaningful baseline for
+  Run A, not the 7B results; any Run A improvement has to clear the higher bar.
+- **Watch for answer-format collapse post-FT** — savings showed p=1.000 in fine-tuned 7B
+  (model always output same token regardless of condition). Flag p≈1.000 in any Run A study
+  as collapse, not replication.
+- **Fine-tuning can regress borderline effects** — myside went from p=0.086 (near-significant)
+  to p=0.571 after 7B fine-tuning. After Run A, check whether any study that `base_30b`
+  nearly replicates degrades under fine-tuning before claiming a net improvement.
+- **Eval roster uses `DEFAULT_PERSONAS`, not `personas_generated.json` (2026-06-15)** —
+  `personas_generated.json` clusters are representative-US by construction (derived from
+  Twin-2K centroids). The 200 hand-crafted Prolific-worker personas in `personas.py` +
+  `responses/generated_v3.json` are the correct eval population. The fine-tuned model
+  activates the prolific-learned pattern from the description text; it does not need to have
+  seen the exact persona name during training. This is the concrete implementation of
+  train-broad/query-narrow (§3.3).
+- **Pre-GPU audit round 2 (2026-06-16/17): chat-template bug (fixed) + transfer-only studies**
+  — see §2.2. Four code fixes landed (eval ChatML/thinking parity in `3_eval.py`; persona-grouped
+  val split; ICC over-claim corrected with `btwn_sd`; render token headroom). The chat-template
+  bug was the one genuine bug — it would have collapsed *every* FT eval (false "grounding didn't
+  help"), now fixed. A new `prompt_parity_check.py` showed **4–5 studies (incl. the current gate
+  `dominator_neglect`) are transfer-only**: training and eval use different answer spaces, so SFT
+  adds no in-sample signal toward them.
+- **Transfer-only is an interpretation fact, NOT a blocker (corrected 2026-06-17)** — an initial
+  framing called the answer-space differences a "breaking blocker." That was wrong on two counts,
+  caught on review: (1) scenario paraphrasing between train and eval is the *existing, deliberate*
+  design across the whole benchmark (e.g. framing "disease" vs "Asian disease"), which is what
+  makes the eval a generalization test rather than a memorisation check — good, not broken;
+  (2) at eval the model is conditioned on the **eval** prompt, so it reads the eval's answer space
+  and produces parseable output — the training answer space never reaches it. The real, smaller
+  consequence: those studies are *transfer* tests (no in-sample grounding signal), so the gate's
+  mechanism test (rule b) moved to an in-sample matched study (`myside`); transfer studies are
+  reported as transfer. Output collapse remains a *separate* SFT-overfitting risk, monitored via
+  no-response rate. `prompt_parity_check.py` is informational (exit 0).
+- **Pre-flight audit (2026-06-15): stale data, imbalance, and weak signal** — see §2.1.
+  The committed `train.jsonl` was a 500-row smoke test (rebuilt to 107K); a per-study
+  data-quality report and collapse/imbalance flags were added to `1_prepare_data.py`; and a
+  new `persona_signal_check.py` showed the per-study persona ICC is ~0.02. The Stage-1
+  "divergence 0.352" metric was overoptimistic relative to this properly-residualised ICC —
+  the divergence number conflates condition effects and cluster-size artifacts, whereas the
+  ICC isolates stable persona variance and finds almost none. This reframes the §2 hypothesis:
+  the i%n map being broken was *a* bug, but even a perfect map carries little demographic→
+  behavior signal for these JDM biases, so Run A is unlikely to beat Run 0 broadly. The
+  Phase-1 gate (§8) was rewritten around the one trainable, signal-bearing study
+  (`dominator_neglect`) accordingly.

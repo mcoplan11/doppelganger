@@ -456,12 +456,21 @@ def _bucket_dollars(raw: str) -> float | None:
         return None
 
 
-def _make_example(prompt: str, answer: Any) -> dict:
+def _make_example(prompt: str, answer: Any,
+                  study: str | None = None, condition: str | None = None) -> dict:
+    """Build one SFT record.
+
+    `study`/`condition` are stashed under a non-`messages` `_meta` key so the
+    pre-flight data-quality report (data_quality_report) can group examples.
+    main() strips `_meta` before writing the JSONL, so the training file format
+    is unchanged.
+    """
     return {
         "messages": [
             {"role": "user", "content": prompt},
             {"role": "assistant", "content": json.dumps({"answer": answer})},
-        ]
+        ],
+        "_meta": {"study": study, "condition": condition, "answer": answer},
     }
 
 
@@ -568,7 +577,7 @@ def build_simple_examples(
 
             if answer is None:
                 continue
-            examples.append(_make_example(prompt, answer))
+            examples.append(_make_example(prompt, answer, study=exp_id, condition=cond_id))
 
         added = len(examples) - count_before
         print(f"  [{key}] ({csv_col}) → {added:,} examples")
@@ -627,7 +636,8 @@ def build_linda_examples(
                     persona, cat_entry, row_idx,
                     prior_qa=prior_qa if prior_qa else None,
                 )
-                examples.append(_make_example(prompt, answer))
+                examples.append(_make_example(
+                    prompt, answer, study="linda", condition=f"{qid}_row{row_idx}"))
 
     print(f"  [linda] → {len(examples):,} examples")
     return examples
@@ -677,7 +687,8 @@ def build_false_consensus_examples(
         # Own-view training examples — no prior context (single simultaneous Matrix page)
         for row_idx, row_text, own_idx, _ in own_answers:
             prompt = build_scale_prompt(persona, own_cat, row_idx)
-            examples.append(_make_example(prompt, own_idx))
+            examples.append(_make_example(
+                prompt, own_idx, study="false_consensus", condition="own_view"))
 
         # Public-estimate training examples — all 10 own-view answers as prior context
         all_own_prior: list[tuple[str, str]] = [
@@ -705,7 +716,8 @@ def build_false_consensus_examples(
                 persona, pub_entry,
                 prior_qa=all_own_prior if all_own_prior else None,
             )
-            examples.append(_make_example(prompt, pub_answer))
+            examples.append(_make_example(
+                prompt, pub_answer, study="false_consensus", condition="public_estimate"))
 
     print(f"  [false_consensus] → {len(examples):,} examples")
     return examples
@@ -751,7 +763,8 @@ def build_risk_benefit_examples(
             if answer is None:
                 continue
             prompt = build_scale_prompt(persona, benefit_cat, row_idx)
-            examples.append(_make_example(prompt, answer))
+            examples.append(_make_example(
+                prompt, answer, study="risk_benefit", condition="benefit"))
 
     # Risk ratings — include benefit rating for the same item as prior context
     for row_idx, item_label in enumerate(risk_rows):
@@ -778,7 +791,8 @@ def build_risk_benefit_examples(
                     )]
 
             prompt = build_scale_prompt(persona, risk_cat, row_idx, prior_qa=prior_qa)
-            examples.append(_make_example(prompt, risk_answer))
+            examples.append(_make_example(
+                prompt, risk_answer, study="risk_benefit", condition="risk"))
 
     print(f"  [risk_benefit] → {len(examples):,} examples")
     return examples
@@ -833,7 +847,9 @@ def build_probability_matching_examples(
                     persona, cat_entry, row_idx,
                     prior_qa=prior_qa if prior_qa else None,
                 )
-                examples.append(_make_example(prompt, answer))
+                examples.append(_make_example(
+                    prompt, answer, study="probability_matching",
+                    condition=f"{qid}_row{row_idx}"))
 
     print(f"  [probability_matching] → {len(examples):,} examples")
     return examples
@@ -865,10 +881,138 @@ def build_proportion_dominance_examples(
             if answer is None:
                 continue
             prompt = build_mc_prompt(persona, cat_entry)
-            examples.append(_make_example(prompt, answer))
+            examples.append(_make_example(
+                prompt, answer, study="dominator_neglect", condition=qid))
 
     print(f"  [dominator_neglect] → {len(examples):,} examples")
     return examples
+
+
+# ── Pre-flight data-quality report ──────────────────────────────────────────────
+# Catches the failure modes the plan's decision log warns about (answer-format
+# collapse, thin per-study coverage) BEFORE a GPU run is spent on the data —
+# rather than discovering them by reading a degenerate eval afterwards.
+
+# How many examples we want per study before trusting that fine-tuning can move
+# the effect.  Below this, a "non-replication" in Run A is uninterpretable (could
+# be data starvation, not the method).  Tunable; 50 is a deliberately low floor.
+MIN_EXAMPLES_PER_STUDY = 50
+# Share of one answer value above which the per-study label distribution is
+# effectively constant — the model can satisfy the loss by emitting that token
+# regardless of condition (the savings p=1.000 collapse from the 7B pilot).
+DEGENERATE_LABEL_SHARE = 0.95
+
+
+def _coerce_numeric(val: Any) -> float | None:
+    """Best-effort numeric read of an answer value (int rank, '$1,200', 'A')."""
+    if isinstance(val, (int, float)):
+        return float(val)
+    if isinstance(val, str):
+        s = val.replace("$", "").replace(",", "").strip()
+        try:
+            return float(s)
+        except ValueError:
+            return None
+    return None
+
+
+def data_quality_report(examples: list[dict]) -> list[str]:
+    """Print per-study coverage + label distribution and return a list of FLAG strings.
+
+    Reads the `_meta` tag attached by `_make_example`. Surfaces three failure
+    modes before training:
+      • LOW_DATA          — fewer than MIN_EXAMPLES_PER_STUDY examples
+      • SINGLE_CONDITION  — only one condition present (no contrast to learn the
+                            effect from; e.g. omission_bias maps one Twin-2K item)
+      • DEGENERATE_LABELS — one answer value dominates (>DEGENERATE_LABEL_SHARE),
+                            i.e. answer-format-collapse risk
+    Also reports, per condition, the mean of numeric answers so you can eyeball
+    whether the human training data even *contains* the effect (means differ
+    across conditions) before expecting the model to reproduce it.
+    """
+    from collections import Counter, defaultdict
+
+    by_study: dict[str, list[dict]] = defaultdict(list)
+    untagged = 0
+    for ex in examples:
+        meta = ex.get("_meta") or {}
+        study = meta.get("study")
+        if study is None:
+            untagged += 1
+            continue
+        by_study[study].append(meta)
+
+    print("\n" + "=" * 78)
+    print("  PRE-FLIGHT DATA-QUALITY REPORT")
+    print("=" * 78)
+    print(f"  {len(examples):,} total examples across {len(by_study)} tagged studies"
+          + (f"  ({untagged:,} untagged)" if untagged else ""))
+
+    flags: list[str] = []
+    for study in sorted(by_study):
+        metas = by_study[study]
+        n = len(metas)
+        cond_counts = Counter(m.get("condition") for m in metas)
+        answers = [m.get("answer") for m in metas]
+        ans_counts = Counter(str(a) for a in answers)
+        top_ans, top_n = ans_counts.most_common(1)[0]
+        top_share = top_n / n if n else 0.0
+
+        study_flags: list[str] = []
+        if n < MIN_EXAMPLES_PER_STUDY:
+            study_flags.append(f"LOW_DATA(n={n})")
+        if len(cond_counts) <= 1:
+            study_flags.append("SINGLE_CONDITION")
+        if top_share > DEGENERATE_LABEL_SHARE:
+            study_flags.append(f"DEGENERATE_LABELS({top_ans}={top_share:.0%})")
+
+        marker = "  ⚠ " if study_flags else "    "
+        print(f"\n{marker}{study}: n={n:,}, conditions={len(cond_counts)}, "
+              f"distinct_answers={len(ans_counts)}, top_answer={top_ans}({top_share:.0%})")
+
+        # Per-condition mean of numeric answers — does the effect exist in the
+        # human data? (means should differ across conditions for a real effect).
+        for cond in sorted(cond_counts, key=lambda c: (c is None, str(c))):
+            cond_answers = [m.get("answer") for m in metas if m.get("condition") == cond]
+            nums = [v for v in (_coerce_numeric(a) for a in cond_answers) if v is not None]
+            if nums:
+                mean = sum(nums) / len(nums)
+                print(f"        {cond}: n={len(cond_answers):,}  mean(answer)={mean:.2f}")
+            else:
+                print(f"        {cond}: n={len(cond_answers):,}")
+
+        if study_flags:
+            flags.append(f"{study}: {', '.join(study_flags)}")
+
+    # Class-balance summary: a few multi-row matrix studies can swamp the
+    # gradient. If the largest study is >10× the smallest, recommend --cap-per-study.
+    total = sum(len(v) for v in by_study.values())
+    sizes = {s: len(v) for s, v in by_study.items()}
+    if sizes:
+        biggest = max(sizes, key=sizes.get)
+        smallest = min(sizes, key=sizes.get)
+        ratio = sizes[biggest] / max(1, sizes[smallest])
+        print("\n  Class balance:")
+        print(f"      largest  {biggest}: {sizes[biggest]:,} ({sizes[biggest]/total:.0%} of data)")
+        print(f"      smallest {smallest}: {sizes[smallest]:,} ({sizes[smallest]/total:.0%} of data)")
+        if ratio >= 10:
+            msg = (f"IMBALANCE: largest study is {ratio:.0f}× the smallest "
+                   f"({biggest} swamps {smallest})")
+            flags.append(msg)
+            print(f"      ⚠ {msg} — consider --cap-per-study ~3000")
+
+    print("\n" + "-" * 78)
+    if flags:
+        print("  ⚠ FLAGS — review before launching a GPU run:")
+        for fl in flags:
+            print(f"      • {fl}")
+        print("\n  These do not block the build, but a 'non-replication' in any flagged")
+        print("  study is uninterpretable (data starvation / collapse / imbalance,")
+        print("  not the method).")
+    else:
+        print("  ✓ No data-quality flags. Coverage and label spread look trainable.")
+    print("=" * 78 + "\n")
+    return flags
 
 
 # ── Main builder ──────────────────────────────────────────────────────────────
@@ -880,6 +1024,7 @@ def build_all_examples(
     max_examples: int | None,
     val_fraction: float,
     seed: int,
+    cap_per_study: int | None = None,
 ) -> tuple[list[dict], list[dict]]:
     print("  Building simple condition→column examples...")
     all_ex = build_simple_examples(catalog, df, pid_to_persona)
@@ -895,12 +1040,55 @@ def build_all_examples(
     all_ex += build_proportion_dominance_examples(catalog, df, pid_to_persona)
 
     rng = random.Random(seed)
+
+    # Optional per-study downsample to fight class imbalance. Without it the
+    # multi-row matrix studies (false_consensus / risk_benefit / probability_
+    # matching) make up ~70% of examples while the gate-critical "too rational"
+    # studies (wta_wtp, dominator_neglect) are ~6% — SFT would optimize the
+    # former and barely move the latter. A cap roughly equalizes each study's
+    # gradient share while keeping condition balance within a study.
+    if cap_per_study is not None:
+        from collections import defaultdict
+        buckets: dict[str, list[dict]] = defaultdict(list)
+        for ex in all_ex:
+            buckets[(ex.get("_meta") or {}).get("study")].append(ex)
+        capped: list[dict] = []
+        for study, exs in buckets.items():
+            if len(exs) > cap_per_study:
+                rng.shuffle(exs)
+                exs = exs[:cap_per_study]
+                print(f"  [cap] {study}: downsampled to {cap_per_study:,}")
+            capped.extend(exs)
+        all_ex = capped
+
     rng.shuffle(all_ex)
     if max_examples is not None:
         all_ex = all_ex[:max_examples]
 
-    split = int(len(all_ex) * (1 - val_fraction))
-    return all_ex[:split], all_ex[split:]
+    if val_fraction <= 0:
+        return all_ex, []
+
+    # Group split by persona, NOT a random row split. A random split leaks the
+    # same persona (and even the same persona×study pair) into both sides, so
+    # val_loss would measure in-distribution fit and never warn about persona
+    # overfitting. Holding out whole personas makes val_loss a real "generalizes
+    # to unseen personas" signal — which is exactly the inference condition
+    # (eval uses a disjoint Prolific roster, §3.3).
+    _persona_re = re.compile(r"^PERSONA:\s*(.+)$", re.MULTILINE)
+
+    def _persona_of(ex: dict) -> str:
+        m = _persona_re.search(ex["messages"][0]["content"])
+        return m.group(1).strip() if m else ""
+
+    personas = sorted({_persona_of(ex) for ex in all_ex})
+    rng.shuffle(personas)
+    n_val = max(1, round(len(personas) * val_fraction))
+    val_personas = set(personas[:n_val])
+    train_ex = [ex for ex in all_ex if _persona_of(ex) not in val_personas]
+    val_ex = [ex for ex in all_ex if _persona_of(ex) in val_personas]
+    print(f"  Val split: {n_val}/{len(personas)} personas held out "
+          f"({len(val_ex):,} val / {len(train_ex):,} train examples)")
+    return train_ex, val_ex
 
 
 # ── Preview printer ───────────────────────────────────────────────────────────
@@ -1013,6 +1201,11 @@ def main() -> None:
                         help="Max participants per persona (only used with --no-grounded)")
     parser.add_argument("--max-examples", type=int,
                         default=data_cfg.get("max_examples"))
+    parser.add_argument("--cap-per-study", type=int,
+                        default=data_cfg.get("cap_per_study"),
+                        help="Downsample each study to at most N examples to fight "
+                             "class imbalance (matrix studies otherwise dominate). "
+                             "Recommended ~3000; default null = no cap.")
     parser.add_argument("--val-fraction", type=float,
                         default=data_cfg.get("val_fraction", 0.05))
     parser.add_argument("--seed", type=int, default=data_cfg.get("seed", 42))
@@ -1026,11 +1219,22 @@ def main() -> None:
 
     # Determine grounding mode
     grounded_artifacts_exist = (out / "pid_to_persona.json").exists()
+    explicit = args.grounded or args.no_grounded
     use_grounded = (
         True if args.grounded
         else False if args.no_grounded
         else grounded_artifacts_exist  # auto-detect
     )
+    # The Run-0 baseline (fictional i%n map) requires --no-grounded. Because the
+    # grounded artifacts exist on disk, an unflagged run AUTO-DETECTS grounded —
+    # so a Run-0 build with no flag would silently produce Run-A data and collapse
+    # the comparison. Make the resolved mode loud when it wasn't chosen explicitly.
+    if not explicit and grounded_artifacts_exist:
+        print("\n" + "!" * 78)
+        print("  NOTE: no --grounded/--no-grounded flag given; AUTO-DETECTED grounded")
+        print("  mode because data/pid_to_persona.json exists. This is Run A data.")
+        print("  For the Run 0 fictional-map baseline, re-run with --no-grounded.")
+        print("!" * 78)
 
     print("Loading question catalog...")
     catalog = load_question_catalog()
@@ -1062,22 +1266,35 @@ def main() -> None:
         print_preview(catalog, df, pid_to_persona)
         return
 
+    if args.max_examples is not None:
+        print("\n" + "!" * 78)
+        print(f"  WARNING: --max-examples={args.max_examples:,} is set. This CAPS the dataset"
+              f"\n  to a subset and is intended only for smoke tests. A full grounded build"
+              f"\n  produces tens of thousands of examples; leave max_examples=null in"
+              f"\n  config.yaml (and omit --max-examples) for the real Run 0 / Run A data.")
+        print("!" * 78)
+
     print("\nBuilding training examples...")
     train, val = build_all_examples(
         catalog, df, pid_to_persona,
         max_examples=args.max_examples,
         val_fraction=args.val_fraction,
         seed=args.seed,
+        cap_per_study=args.cap_per_study,
     )
     print(f"\nTotal: train={len(train):,}, val={len(val):,}")
 
+    # Pre-flight data-quality report (reads the `_meta` tags) before we write.
+    data_quality_report(train + val)
+
     # `out` was resolved at the top of main() — just ensure it exists.
+    # Strip `_meta` (report-only) so the JSONL keeps the bare {"messages": [...]} shape.
     out.mkdir(parents=True, exist_ok=True)
     for name, split in [("train", train), ("val", val)]:
         path = out / f"{name}.jsonl"
         with open(path, "w") as f:
             for ex in split:
-                f.write(json.dumps(ex) + "\n")
+                f.write(json.dumps({"messages": ex["messages"]}) + "\n")
         print(f"Saved {len(split):,} examples → {path}")
 
     print("\nNext step: python 2_train.py")
