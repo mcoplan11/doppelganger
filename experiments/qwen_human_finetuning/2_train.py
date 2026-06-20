@@ -158,6 +158,12 @@ def main() -> None:
         # packing must stay off: train_on_responses_only masks labels per example,
         # which packing's sequence concatenation breaks.
         packing=False,
+        # TRL 1.x defaults padding_free=True, whose validator rejects
+        # (padding_free + no packing + finite max_length) because it can't
+        # enforce truncation. We need packing off (above), so turn padding_free
+        # off too — restores standard padded batches + max_length truncation.
+        # See PLAN §2.3 (RunPod stack lessons).
+        padding_free=False,
         output_dir=str(out_root),
         num_train_epochs=train_cfg["num_epochs"],
         per_device_train_batch_size=train_cfg["per_device_train_batch_size"],
