@@ -25,7 +25,9 @@ lora:
     - gate_proj
     - up_proj
     - down_proj
-  lora_dropout: 0.05
+  # MUST be 0.0 for Qwen3 MoE: the expert-LoRA ParamWrapper path rejects nonzero dropout
+  # ("lora.ParamWrapper does not work with lora_dropout != 0"). See PLAN §2.3.
+  lora_dropout: 0.0
 
 data:
   dataset_id: LLM-Digital-Twin/Twin-2K-500

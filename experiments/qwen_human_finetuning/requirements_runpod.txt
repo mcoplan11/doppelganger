@@ -1,5 +1,11 @@
 # Fine-tuning dependencies — install with: pip install -r requirements_runpod.txt
 # Tested on Python 3.11, CUDA 12.1, RTX A6000 48GB
+#
+# ⚠ DO NOT use this file for Qwen3-30B-A3B MoE (Stage 3). The `unsloth[cu121-torch240]`
+# spec below pins Torch 2.4 → Triton 3.0, but Unsloth's MoE kernel needs Triton ≥3.3
+# (`make_tensor_descriptor`). On a 30B MoE pod, use a PyTorch 2.8+/2.9 template and the
+# §2.3 install (pip install --upgrade unsloth unsloth_zoo ; no torch re-pin). See PLAN §2.3.
+# This file is the dense-model (7B/14B) fallback stack only.
 
 # Core training stack
 # PyPI release rather than git HEAD for reproducibility. Unsloth pulls a

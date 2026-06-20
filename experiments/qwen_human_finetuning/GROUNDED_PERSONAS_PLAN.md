@@ -6,6 +6,10 @@
 > `3_eval.py` updated to use the 200 hand-crafted Prolific-worker personas from
 > `personas.py` / `responses/generated_v3.json` instead of `personas_generated.json`.
 > **Next step: Stage 3 GPU runs on RunPod (Run 0 baseline FT, then Run A grounded FT).**
+> **⚠ Before relaunching, read §2.3 — the first GPU attempt (2026-06-19/20) hit a chain of
+> RunPod stack gotchas (volume too small, `lora_dropout` must be 0, and the binding one:
+> Unsloth MoE needs Triton ≥3.3 so the pod must run PyTorch 2.8+). §2.3 has the known-good
+> resume runbook. The experiment code/data/LoRA config are all correct — only the stack changed.**
 >
 > **⚠ Pre-flight audit (2026-06-15) — read §2.1 before any GPU spend.** Three issues
 > were found and two fixed: (1) `train.jsonl` on disk was a **500-row smoke test**, not
@@ -145,6 +149,83 @@ interpretable regardless of item reliability), a **gate-study callout** (`domina
 ICC=0.063, *has* trainable signal), and a caveat that the product goal is **aggregate effect
 replication, not per-respondent prediction**. Conclusion is unchanged (signal is weak) but
 no longer overstated.
+
+---
+
+## 2.3 Stage-3 GPU launch log (2026-06-19/20) — RunPod environment gotchas, RESOLVED
+
+First live attempt to run the Phase-1 matrix (`runpod/run_phase1.sh`) on RunPod surfaced a
+chain of **environment/stack** problems — none in the experiment code itself. The data, the
+LoRA config, and the model all proved correct (training reached the loop and produced the
+right tokenized persona examples). Recorded here so the next session doesn't re-derive them.
+
+**Order of failures hit, and the fix for each:**
+
+1. **Disk-quota OOM during base-model download (`OSError: [Errno 122]`).** The HF-cache
+   redirect to `/workspace` (in `run_phase1.sh`) works correctly, but the **network volume
+   was too small** (~35GB) for the 30B-A3B bf16 base (~57GB across 16 shards). `df -h` is
+   misleading on RunPod — `/workspace` shows the whole MooseFS cluster (`2.1P`), not your
+   per-volume quota, so quota exhaustion only shows up as `EDQUOT` mid-download.
+   **FIX: provision the `/workspace` network volume at ≥120GB** (base ~57GB + both LoRA
+   checkpoints + dataset + headroom). Container disk 30GB is fine. The volume is persistent,
+   so the cached base survives stop/start and pod redeploys — reattach it and nothing
+   re-downloads.
+
+2. **`lora_dropout != 0` rejected on MoE expert LoRA (`ValueError: lora.ParamWrapper does
+   not work with lora_dropout != 0`).** The MoE-expert LoRA path (`ParamWrapper`, applied to
+   `mlp.experts.gate_up_proj`/`down_proj`) forbids dropout. **FIX: `lora_dropout: 0.0` in
+   `config.yaml`** (committed). This is independent of the Triton issue below — it applies on
+   any stack.
+
+3. **THE BINDING ONE — Unsloth MoE kernel needs Triton ≥3.3, the pod had 3.0
+   (`AttributeError: module 'triton.language' has no attribute 'make_tensor_descriptor'`).**
+   The default RunPod template was **Torch 2.4.0 + Triton 3.0.0**. Unsloth 2026.6.8's fused
+   MoE grouped-GEMM kernel calls `tl.make_tensor_descriptor` (TMA API, added in Triton 3.3).
+   `requirements_runpod.txt` pins `unsloth[cu121-torch240]`, whose extra controls only the
+   torch/CUDA deps, **not** the Unsloth version — so pip pulled latest Unsloth onto an
+   incompatible Triton.
+   - The `UNSLOTH_MOE_BACKEND=native_torch` env var does **not** rescue it: the backend
+     selector only governs the *base* expert forward, but the **LoRA `ParamWrapper` on the
+     experts calls `forward_triton_grouped_gemm` unconditionally**. So as long as LoRA is on
+     the MoE experts (which we want), the Triton kernel is forced regardless of the backend.
+   - `native_torch` *does* eventually train if you drop expert LoRA, but the loop fallback ran
+     at **~154 s/step → ~47 h / ~$70 for one run** on an A100 80GB. Unusable.
+   - **FIX (the supported path): redeploy on a PyTorch 2.8+/2.9 template (Triton ≥3.4/3.5),
+     reattach the same `/workspace` volume, and reinstall Unsloth WITHOUT re-pinning torch.**
+     This is Unsloth's own documented MoE combo (Torch 2.9.1 / Triton 3.5.1 / transformers 5.x,
+     **bf16 LoRA — not 4-bit**, which `config.yaml` already does). With the real kernel, expect
+     seconds/step, not minutes.
+
+**Known-good resume runbook (start here next session):**
+
+```bash
+# Pod: A100 80GB SXM, PyTorch 2.8+ template (Triton >=3.4), /workspace volume >=120GB
+#      reattached (35GB+ base model cache already on it).
+
+# 1. Install — do NOT run setup.sh (it pins torch 2.4 via unsloth[cu121-torch240]).
+cd /workspace/doppelganger
+pip install --upgrade unsloth unsloth_zoo
+pip install --upgrade peft trl transformers accelerate bitsandbytes datasets scipy pyyaml pandas huggingface_hub
+
+# 2. Free CPU check — confirm the root cause is gone BEFORE spending on GPU.
+python -c "import triton, torch, triton.language as tl; \
+print('torch', torch.__version__, '| triton', triton.__version__, \
+'| has make_tensor_descriptor:', hasattr(tl, 'make_tensor_descriptor'))"   # need True
+
+# 3. Confirm carried-over settings.
+grep lora_dropout experiments/qwen_human_finetuning/config.yaml   # must be 0.0
+unset UNSLOTH_MOE_BACKEND   # use the fast default Triton path
+
+# 4. Full Phase-1 matrix in tmux (survives disconnect; CAP=3000 baked in).
+tmux new -s phase1
+bash experiments/qwen_human_finetuning/runpod/run_phase1.sh 2>&1 | tee /workspace/phase1.log
+#   detach: Ctrl-b then d   |   reattach: tmux attach -t phase1
+```
+
+**TODO once a fast run succeeds:** `pip freeze > experiments/qwen_human_finetuning/requirements_runpod.lock.txt`
+to pin the working stack so the **235B confirmation run** (also MoE) doesn't repeat this. Also
+update `requirements_runpod.txt` to a torch-2.8+ / Triton-3.4+ base and drop the
+`[cu121-torch240]` extra. The MoE-stack lesson transfers directly to 235B-A22B (§3.6).
 
 ---
 
