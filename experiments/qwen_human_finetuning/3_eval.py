@@ -27,6 +27,16 @@ import sys
 from pathlib import Path
 from typing import Any
 
+# Redirect HuggingFace downloads to /workspace if present, BEFORE importing torch
+# or any HF library (env vars are read at import time). RunPod container disks are
+# tiny (~20GB); the 30B base model (~60GB) overflows them → "Disk quota exceeded".
+# 2_train.py does the same; eval must match or base_30b fails first. (no-op locally)
+if Path("/workspace").is_dir():
+    _hf_cache = "/workspace/hf_cache"
+    os.environ.setdefault("HF_HOME", _hf_cache)
+    os.environ.setdefault("HF_HUB_CACHE", f"{_hf_cache}/hub")
+    os.environ.setdefault("TRANSFORMERS_CACHE", f"{_hf_cache}/hub")
+
 import torch
 import yaml
 

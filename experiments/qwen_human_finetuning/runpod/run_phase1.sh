@@ -20,6 +20,14 @@ set -euo pipefail
 EXPERIMENT_DIR="experiments/qwen_human_finetuning"
 cd "$(dirname "$0")/../../.."   # repo root
 
+# Put ALL HuggingFace downloads (30B base ~60GB, datasets) on the big /workspace
+# volume — the container root disk is tiny and overflows ("Disk quota exceeded").
+if [ -d /workspace ]; then
+  export HF_HOME=/workspace/hf_cache
+  export HF_HUB_CACHE=/workspace/hf_cache/hub
+  export TRANSFORMERS_CACHE=/workspace/hf_cache/hub
+fi
+
 # Base model MUST equal the fine-tune base (config.yaml model.base), or the
 # base-vs-FT comparison confounds model size with fine-tuning.
 BASE_MODEL="${BASE_MODEL:-Qwen/Qwen3-30B-A3B}"
