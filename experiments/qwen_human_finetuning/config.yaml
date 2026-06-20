@@ -54,10 +54,14 @@ data:
 training:
   output_dir: checkpoints/
   num_epochs: 2
-  # bf16 30B MoE needs smaller batch than 4-bit would.  Start at 1+16=16
-  # effective; if OOM try gradient_accumulation_steps: 32.
-  per_device_train_batch_size: 1
-  gradient_accumulation_steps: 16   # effective batch = 16
+  # Effective batch = 16, reached with a LARGER micro-batch and LESS accumulation.
+  # batch_size=1 starves the MoE: ~267-token examples spread over 128 experts give
+  # ~2 tokens/expert → launch-bound grouped-GEMM, and the per-step gradient-offload
+  # overhead is paid 16× over tiny forwards (→ ~42 s/step). Examples are short
+  # (max ~600 tok), so 4×seq fits easily in bf16 alongside the 60GB weights.
+  # If OOM, drop to 2 + accum 8 (still effective 16). See PLAN §2.3.
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4   # effective batch = 16
   learning_rate: 2.0e-4
   warmup_steps: 100
   save_steps: 150
