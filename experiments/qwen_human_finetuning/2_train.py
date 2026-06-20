@@ -171,6 +171,11 @@ def main() -> None:
         learning_rate=train_cfg["learning_rate"],
         warmup_steps=train_cfg["warmup_steps"],
         save_steps=train_cfg["save_steps"],
+        # Keep only the most recent checkpoint. Without this, every save_steps
+        # checkpoint (adapter + optimizer state) accumulates on /workspace on top
+        # of the ~57GB base and exhausts the volume quota mid-write
+        # ("Disk quota exceeded (os error 122)"). See PLAN §2.3 #1.
+        save_total_limit=1,
         logging_steps=train_cfg["logging_steps"],
         eval_strategy="steps",
         eval_steps=train_cfg["save_steps"],
