@@ -26,6 +26,11 @@ if [ -d /workspace ]; then
   export HF_HOME=/workspace/hf_cache
   export HF_HUB_CACHE=/workspace/hf_cache/hub
   export TRANSFORMERS_CACHE=/workspace/hf_cache/hub
+  # The xet transfer protocol's chunk cache ignores HF_HOME and writes to the
+  # tiny container disk → "Disk quota exceeded". Disable it so downloads use the
+  # normal HTTPS path into HF_HUB_CACHE above. (Also pin HF_XET_CACHE as backup.)
+  export HF_HUB_DISABLE_XET=1
+  export HF_XET_CACHE=/workspace/hf_cache/xet
 fi
 
 # Base model MUST equal the fine-tune base (config.yaml model.base), or the

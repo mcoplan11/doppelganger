@@ -43,6 +43,10 @@ if Path("/workspace").is_dir():
     os.environ.setdefault("HF_HOME", _hf_cache)
     os.environ.setdefault("HF_HUB_CACHE", f"{_hf_cache}/hub")
     os.environ.setdefault("TRANSFORMERS_CACHE", f"{_hf_cache}/hub")
+    # xet caches chunks on the tiny container disk regardless of HF_HOME →
+    # "Disk quota exceeded"; disable it so downloads use the HTTPS path.
+    os.environ.setdefault("HF_HUB_DISABLE_XET", "1")
+    os.environ.setdefault("HF_XET_CACHE", f"{_hf_cache}/xet")
 
 CONFIG_PATH = Path(__file__).parent / "config.yaml"
 
