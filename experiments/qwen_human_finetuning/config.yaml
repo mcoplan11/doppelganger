@@ -39,7 +39,12 @@ data:
   # Increase if you want more distributional signal; decrease for faster iteration.
   max_per_persona: 2
   # null = use all examples from the mapped participants (recommended with max_per_persona).
+  # NOTE: max_examples caps the TOTAL dataset — leave null for real runs. A small value
+  # here (or --max-examples) produces a smoke-test file; 1_prepare_data.py warns if set.
   max_examples: null
+  # Per-study downsample cap to fight class imbalance (matrix studies = ~69% of data
+  # otherwise; see §2.1). null = no cap; ~3000 roughly equalises each study's gradient share.
+  cap_per_study: null
   val_fraction: 0.05
   seed: 42
   output_dir: data/

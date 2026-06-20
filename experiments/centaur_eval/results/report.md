@@ -14,7 +14,7 @@
     "loss": 100
   },
   "chi2_stat": 8.953373015873016,
-  "p_value": 0.0027695773618182096,
+  "p_value": 0.0027695773618182087,
   "significant": true,
   "correct_direction": false,
   "replicated": false
@@ -54,7 +54,7 @@
     "low_anchor": 32
   },
   "t_stat": 1.0002548590229012,
-  "p_value": 0.3275951179579212,
+  "p_value": 0.3275951179579213,
   "significant": false,
   "correct_direction": true,
   "replicated": false
@@ -74,7 +74,7 @@
     "low_anchor": 27
   },
   "t_stat": -1.0000000000000129,
-  "p_value": 0.32652702226060937,
+  "p_value": 0.3265270222606097,
   "significant": false,
   "correct_direction": false,
   "replicated": false
@@ -134,7 +134,7 @@
     "underfilled": 71
   },
   "t_stat": -1.700353657960839,
-  "p_value": 0.09150345425285404,
+  "p_value": 0.09150345425285407,
   "significant": false,
   "correct_direction": false,
   "replicated": false
@@ -238,7 +238,7 @@
     "high_baserate": 25
   },
   "t_stat": 0.9999901513406803,
-  "p_value": 0.3305695680953241,
+  "p_value": 0.3305695680953239,
   "significant": false,
   "correct_direction": false,
   "replicated": false
@@ -251,7 +251,7 @@
 - Stats: {
   "n_pairs": 199,
   "pearson_r": 0.17472951120882596,
-  "p_value": 0.013573605675127628,
+  "p_value": 0.013573605675127675,
   "correct_direction": "True",
   "replicated": "True"
 }
@@ -264,32 +264,32 @@
   "items": {
     "nuclear": {
       "r": 0.20701012473521574,
-      "p": 0.038779762227883936,
+      "p": 0.038779762227883915,
       "replicated": "False"
     },
     "pesticides": {
-      "r": 0.1519644530416614,
-      "p": 0.13121721018539842,
+      "r": 0.15196445304166142,
+      "p": 0.1312172101853985,
       "replicated": "False"
     },
     "alcohol": {
-      "r": 0.27135338478703513,
-      "p": 0.006317010514675429,
+      "r": 0.2713533847870351,
+      "p": 0.006317010514675341,
       "replicated": "False"
     },
     "cars": {
       "r": 0.29701865533369143,
-      "p": 0.0026920579409475376,
+      "p": 0.0026920579409475498,
       "replicated": "False"
     },
     "cigarettes": {
       "r": 0.2269162853570516,
-      "p": 0.023187220386928626,
+      "p": 0.023187220386928567,
       "replicated": "False"
     },
     "xrays": {
-      "r": 0.08775414290561445,
-      "p": 0.3852930328396552,
+      "r": 0.08775414290561442,
+      "p": 0.38529303283965505,
       "replicated": "False"
     }
   },
@@ -304,17 +304,12 @@
 - Paper result: not_replicated
 - Our result: NOT REPLICATED
 - Stats: {
-  "proportions_pct": {
-    "commission": 0.0,
-    "omission": 0.0
-  },
+  "commission_pct_skip": 7.954545454545454,
+  "omission_pct_skip": 28.07017543859649,
   "n_per_condition": {
     "commission": 88,
     "omission": 57
   },
-  "chi2_stat": NaN,
-  "p_value": NaN,
-  "significant": false,
   "correct_direction": false,
   "replicated": false
 }

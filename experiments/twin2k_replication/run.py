@@ -75,6 +75,8 @@ def main() -> None:
     parser.add_argument("--experiment", help="Run only this experiment ID")
     parser.add_argument("--analyze", metavar="RESULTS_DIR", help="Analyze an existing results directory")
     parser.add_argument("--list", action="store_true", help="List all experiment IDs and exit")
+    parser.add_argument("--dry-run", type=int, metavar="N", dest="dry_run",
+                        help="Sample N personas on the framing experiment, print token usage, and exit")
     args = parser.parse_args()
 
     experiments = load_experiments(HERE / "experiments.json")
@@ -92,6 +94,32 @@ def main() -> None:
         return
 
     cfg = load_config(Path(args.config))
+
+    # Dry-run: sample N personas on framing only, report token usage, exit
+    if args.dry_run:
+        llm_cfg = cfg["llm"]
+        api_key = resolve_api_key(llm_cfg["provider"])
+        llm = build_client(
+            provider=llm_cfg["provider"],
+            model=llm_cfg["model"],
+            temperature=float(llm_cfg.get("temperature", 0.7)),
+            api_key=api_key,
+            disable_reasoning=bool(llm_cfg.get("disable_reasoning", False)),
+        )
+        personas = select_personas(n=args.dry_run, seed=int(cfg["experiment"].get("seed", 42)))
+        framing = next(e for e in experiments if e["id"] == "framing")
+        print(f"Dry-run: {args.dry_run} personas × framing (2 conditions) = {args.dry_run * 2} calls")
+        print(f"Model: {llm_cfg['model']}\n")
+        run_experiment(framing, personas, llm, between_subject_mode="within",
+                       seed=int(cfg["experiment"].get("seed", 42)))
+        # Total full-run calls: 4,950 (101 personas, all experiments)
+        total_personas = len(select_personas(n=cfg["experiment"].get("n_personas", "all"),
+                                             seed=int(cfg["experiment"].get("seed", 42))))
+        # Rough total calls based on experiment structure
+        FULL_RUN_CALLS = total_personas * 49  # ~4,950 / 101
+        if hasattr(llm, "print_usage_summary"):
+            llm.print_usage_summary(n_total_calls=FULL_RUN_CALLS)
+        return
 
     # Filter experiments
     if args.experiment:
@@ -111,6 +139,7 @@ def main() -> None:
         model=llm_cfg["model"],
         temperature=float(llm_cfg.get("temperature", 0.7)),
         api_key=api_key,
+        disable_reasoning=bool(llm_cfg.get("disable_reasoning", False)),
     )
 
     # Select personas

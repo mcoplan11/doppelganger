@@ -34,8 +34,13 @@ def _chi2_test(a_yes: int, a_no: int, b_yes: int, b_no: int) -> tuple[float, flo
     if not _HAS_SCIPY:
         return float("nan"), float("nan")
     table = [[a_yes, a_no], [b_yes, b_no]]
-    chi2, p, _, _ = stats.chi2_contingency(table)
-    return float(chi2), float(p)
+    try:
+        chi2, p, _, _ = stats.chi2_contingency(table)
+        return float(chi2), float(p)
+    except ValueError:
+        # Zero cell (e.g. unanimous responses) — fall back to Fisher's exact test
+        _, p = stats.fisher_exact(table)
+        return float("nan"), float(p)
 
 
 def _mean(vals: list[float]) -> float:
@@ -321,13 +326,13 @@ def analyze_experiment(exp: dict, rows: list[dict]) -> dict:
     if analysis_type == "proportion_comparison":
         if exp["id"] == "allais":
             return _analyze_allais(exp, rows)
+        if exp["id"] == "omission_bias":
+            return _analyze_omission_bias(exp, rows)
         return _analyze_proportion_comparison(exp, rows)
     if analysis_type == "false_consensus_correlation":
         return _analyze_false_consensus(exp, rows)
     if analysis_type == "within_correlation":
         return _analyze_risk_benefit(exp, rows)
-    if exp["id"] == "omission_bias":
-        return _analyze_omission_bias(exp, rows)
     if analysis_type == "proportion_matching":
         return _analyze_probability_matching(exp, rows)
     if analysis_type == "proportion_dominated":

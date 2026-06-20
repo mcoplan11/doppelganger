@@ -242,7 +242,7 @@ class AnthropicClient(LLMClient):
 class OpenRouterClient(LLMClient):
     BASE_URL = "https://openrouter.ai/api/v1"
 
-    def __init__(self, model: str, temperature: float, api_key: str):
+    def __init__(self, model: str, temperature: float, api_key: str, disable_reasoning: bool = False):
         import ssl
         import httpx
         import openai
@@ -256,6 +256,8 @@ class OpenRouterClient(LLMClient):
         )
         self._model = model
         self._temperature = temperature
+        self._disable_reasoning = disable_reasoning
+        self._usage_log: list[dict] = []
 
     def complete(self, prompt: str, schema: dict[str, Any]) -> dict[str, Any]:
         schema_hint = json.dumps(schema, indent=2)
@@ -264,11 +266,15 @@ class OpenRouterClient(LLMClient):
             f"/no_think\n\n{prompt}\n\nReturn ONLY valid JSON matching this schema:\n{schema_hint}"
         )
         for attempt in range(5):
+            kwargs = {}
+            if self._disable_reasoning:
+                kwargs["extra_body"] = {"reasoning": {"effort": "none"}}
             try:
                 resp = self._client.chat.completions.create(
                     model=self._model,
                     messages=[{"role": "user", "content": full_prompt}],
                     temperature=self._temperature,
+                    **kwargs,
                 )
             except Exception as exc:
                 wait = self._retry_wait(exc, attempt)
@@ -277,6 +283,15 @@ class OpenRouterClient(LLMClient):
                 print(f"  429 rate limit, retrying in {wait}s (attempt {attempt + 1}/5)...", flush=True)
                 time.sleep(wait)
                 continue
+            if resp.usage:
+                usage_entry = {
+                    "input": resp.usage.prompt_tokens,
+                    "output": resp.usage.completion_tokens,
+                }
+                details = getattr(resp.usage, "completion_tokens_details", None)
+                if details:
+                    usage_entry["reasoning"] = getattr(details, "reasoning_tokens", 0) or 0
+                self._usage_log.append(usage_entry)
             text = resp.choices[0].message.content
             if text is None:
                 raise ValueError("OpenRouter returned empty content")
@@ -287,6 +302,34 @@ class OpenRouterClient(LLMClient):
                     text = text[4:]
             return json.loads(text.strip())
         raise RuntimeError("OpenRouter: exceeded max retries on rate limit")
+
+    def print_usage_summary(self, n_total_calls: int, input_price: float = 1.25, output_price: float = 3.75) -> None:
+        """Print token usage stats and projected cost for a full run."""
+        if not self._usage_log:
+            print("  No usage data recorded.")
+            return
+        n = len(self._usage_log)
+        avg_in = sum(u["input"] for u in self._usage_log) / n
+        avg_out = sum(u["output"] for u in self._usage_log) / n
+        avg_reasoning = sum(u.get("reasoning", 0) for u in self._usage_log) / n
+        proj_in = avg_in * n_total_calls / 1_000_000
+        proj_out = avg_out * n_total_calls / 1_000_000
+        cost = proj_in * input_price + proj_out * output_price
+        print(f"\n{'─'*50}")
+        print(f"  DRY-RUN TOKEN USAGE ({n} sampled calls)")
+        print(f"{'─'*50}")
+        print(f"  Avg input tokens/call:     {avg_in:.0f}")
+        print(f"  Avg output tokens/call:    {avg_out:.0f}")
+        if avg_reasoning > 0:
+            print(f"  Avg reasoning tokens/call: {avg_reasoning:.0f}  ← thinking is ON")
+        else:
+            print(f"  Reasoning tokens/call:     0  ← /no_think working")
+        print(f"")
+        print(f"  Projected full run ({n_total_calls} calls):")
+        print(f"    Input:  {proj_in:.2f}M tokens  →  ${proj_in * input_price:.2f}")
+        print(f"    Output: {proj_out:.2f}M tokens  →  ${proj_out * output_price:.2f}")
+        print(f"    TOTAL ESTIMATED COST:      ${cost:.2f}")
+        print(f"{'─'*50}\n")
 
     @staticmethod
     def _retry_wait(exc: Exception, attempt: int) -> int | None:
@@ -301,7 +344,7 @@ class OpenRouterClient(LLMClient):
         return min(120, 30 * 2 ** attempt)
 
 
-def build_client(provider: str, model: str, temperature: float, api_key: str) -> LLMClient:
+def build_client(provider: str, model: str, temperature: float, api_key: str, disable_reasoning: bool = False) -> LLMClient:
     if provider == "gemini":
         return GeminiClient(model, temperature, api_key)
     if provider == "openai":
@@ -309,5 +352,5 @@ def build_client(provider: str, model: str, temperature: float, api_key: str) ->
     if provider == "anthropic":
         return AnthropicClient(model, temperature, api_key)
     if provider == "openrouter":
-        return OpenRouterClient(model, temperature, api_key)
+        return OpenRouterClient(model, temperature, api_key, disable_reasoning=disable_reasoning)
     raise ValueError(f"Unknown LLM provider: {provider!r}. Use gemini, openai, anthropic, or openrouter.")

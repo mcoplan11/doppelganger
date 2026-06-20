@@ -1,7 +1,8 @@
 llm:
   provider: openrouter      # gemini | openai | anthropic | openrouter
-  model: qwen/qwen3-30b-a3b-instruct-2507
+  model: qwen/qwen3-14b
   temperature: 0.5
+  disable_reasoning: true
 
 experiment:
   # Which experiments to run. "all" or a list of IDs, e.g. [framing, linda, anchoring]
