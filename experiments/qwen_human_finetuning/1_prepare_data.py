@@ -1199,6 +1199,13 @@ def main() -> None:
     parser.add_argument("--max-per-persona", type=int,
                         default=data_cfg.get("max_per_persona", 2),
                         help="Max participants per persona (only used with --no-grounded)")
+    parser.add_argument("--match-grounded-pids", action="store_true",
+                        help="With --no-grounded: build the fictional map over the EXACT "
+                             "participant set used by the grounded run (data/pid_to_persona.json) "
+                             "instead of the first N*max_per_persona pids. Makes Run 0 vs Run A a "
+                             "clean ablation — same participants/answers, only the persona text "
+                             "differs (fictional roster vs grounded clusters). Ignores "
+                             "--max-per-persona.")
     parser.add_argument("--max-examples", type=int,
                         default=data_cfg.get("max_examples"))
     parser.add_argument("--cap-per-study", type=int,
@@ -1256,6 +1263,22 @@ def main() -> None:
         except FileNotFoundError as e:
             print(f"  [ERROR] {e}")
             sys.exit(1)
+    elif args.match_grounded_pids:
+        # Clean ablation: reuse the EXACT grounded participant set, but attach
+        # fictional roster personas (cycling DEFAULT_PERSONAS) instead of the
+        # grounded cluster personas. Same pids → same answers → the only thing
+        # that differs between Run 0 and Run A is the persona text. Requires the
+        # grounded artifacts so the two runs share participants.
+        grounded_map = load_grounded_pid_to_persona(out)
+        grounded_pids = list(grounded_map.keys())
+        n_roster = len(DEFAULT_PERSONAS)
+        pid_to_persona = {
+            pid: DEFAULT_PERSONAS[i % n_roster]
+            for i, pid in enumerate(grounded_pids)
+        }
+        n_used = len(pid_to_persona)
+        print(f"  {n_used} participants used (fictional roster of {n_roster} personas "
+              f"over the grounded pid set) [fictional map — Run 0, grounded-matched]")
     else:
         pid_to_persona = build_pid_to_persona(pids, max_per_persona=args.max_per_persona)
         n_used = len(pid_to_persona)
