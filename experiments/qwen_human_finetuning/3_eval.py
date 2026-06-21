@@ -129,26 +129,34 @@ class LocalQwenClient(LLMClient):
         # turn that starves the answer under a small token budget (collapse).
         self._is_finetuned = Path(model_path).is_dir() and adapter_cfg_path.exists()
         if self._is_finetuned:
-            # LoRA adapter checkpoint — load base model then merge adapter.
-            with open(adapter_cfg_path) as f:
-                adapter_cfg = json.load(f)
-            base_id = adapter_cfg.get("base_model_name_or_path", "Qwen/Qwen2.5-7B-Instruct")
-            base_id = _resolve_hf_cache(base_id)
-            from peft import PeftModel
-            print(f"  Base: {base_id}")
-            print(f"  Adapter: {model_path}")
-            base = _load_base(base_id)
-            self._model = PeftModel.from_pretrained(base, model_path)
-            self._model = self._model.merge_and_unload()
-            tokenizer_src = base_id
+            # LoRA adapter checkpoint. Training applied LoRA to the FUSED MoE expert
+            # tensors (mlp.experts.gate_up_proj / down_proj) via Unsloth — those are
+            # custom fused params, NOT nn.Linear, so vanilla PeftModel.from_pretrained
+            # cannot inject the adapter and dies walking the Qwen3-MoE block
+            # ("...Qwen3MoeRMSNorm... is not supported"). Load through Unsloth instead,
+            # mirroring 2_train.py: it resolves the base from adapter_config, applies
+            # the MoE-expert adapter, and returns the matching tokenizer. Do NOT merge
+            # — merging fused MoE experts is unsupported and unneeded for inference.
+            # See GROUNDED_PERSONAS_PLAN §2.3.
+            from unsloth import FastLanguageModel
+            print(f"  Loading FT checkpoint via Unsloth: {model_path}")
+            self._model, self._tokenizer = FastLanguageModel.from_pretrained(
+                model_name=model_path,
+                max_seq_length=max_seq_length,
+                dtype=dtype,
+                load_in_4bit=False,
+            )
+            FastLanguageModel.for_inference(self._model)
+            tokenizer_src = None  # tokenizer already returned by Unsloth
         else:
             self._model = _load_base(model_path)
             tokenizer_src = model_path
 
         self._model.eval()
-        tok_local = Path(tokenizer_src).is_dir()
-        self._tokenizer = AutoTokenizer.from_pretrained(
-            tokenizer_src, trust_remote_code=True, local_files_only=tok_local)
+        if tokenizer_src is not None:
+            tok_local = Path(tokenizer_src).is_dir()
+            self._tokenizer = AutoTokenizer.from_pretrained(
+                tokenizer_src, trust_remote_code=True, local_files_only=tok_local)
         # Left-padding is required for correct decoder-only batch generation.
         self._tokenizer.padding_side = "left"
         if self._tokenizer.pad_token is None:
