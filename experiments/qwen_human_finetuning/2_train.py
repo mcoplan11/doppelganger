@@ -166,6 +166,10 @@ def main() -> None:
         padding_free=False,
         output_dir=str(out_root),
         num_train_epochs=train_cfg["num_epochs"],
+        # max_steps > 0 overrides num_train_epochs (HF/TRL semantics). The task
+        # plateaus by ~step 150, so we cap well short of the full 2 epochs to avoid
+        # ~13h of no-op compute. -1 = use epochs. See PLAN §2.3 / config.yaml.
+        max_steps=train_cfg.get("max_steps", -1),
         per_device_train_batch_size=train_cfg["per_device_train_batch_size"],
         gradient_accumulation_steps=train_cfg["gradient_accumulation_steps"],
         learning_rate=train_cfg["learning_rate"],

@@ -54,6 +54,13 @@ data:
 training:
   output_dir: checkpoints/
   num_epochs: 2
+  # Hard cap on optimizer steps (overrides num_epochs when > 0). The task converges
+  # almost immediately — loss hits ~0.20 by step ~30 and is flat (train AND val)
+  # from step 150 onward — so the full 2-epoch / 4,492-step grounded run is ~30×
+  # more compute than needed (~13h/$22 wasted). 600 is 4× past the observed plateau
+  # for safety. Applies identically to Run 0 and Run A, so the ablation stays clean.
+  # Set to -1 to fall back to num_epochs. See PLAN §2.3.
+  max_steps: 600
   # Effective batch = 16, reached with a LARGER micro-batch and LESS accumulation.
   # batch_size=1 starves the MoE: ~267-token examples spread over 128 experts give
   # ~2 tokens/expert → launch-bound grouped-GEMM, and the per-step gradient-offload
