@@ -346,45 +346,45 @@ _RESULT_ICON = {"replicated": "✓", "not_replicated": "✗", "partial": "~"}
 
 
 def print_comparison_table(experiments: list[dict], results_dir: Path) -> None:
+    # We don't compare against the Twin-2K paper anymore. Every experiment is a
+    # known bias and should produce a significant effect in the expected direction,
+    # so the only question is how many our model actually reproduces. "Effect?" = ✓
+    # when our data shows the bias (significant + correct direction, or the
+    # threshold the analyzer uses for the n/a-p-value designs).
     print("\n" + "=" * 80)
-    print("TABLE 3 REPLICATION — DOPPELGANGER vs. TWIN-2K-500 PAPER")
+    print("BIAS REPLICATION — SIGNIFICANT EFFECT DETECTED")
     print("=" * 80)
-    header = f"{'Experiment':<35} {'Paper':^10} {'Our Result':^12} {'p-value':^10} {'Match?':^8}"
+    header = f"{'Experiment':<40} {'Effect?':^10} {'p-value':^10}"
     print(header)
     print("-" * 80)
 
     total = 0
-    matched = 0
+    replicated_n = 0
 
     for exp in experiments:
         rows = _load_rows(results_dir, exp["id"])
         if not rows:
-            print(f"  {'[no data]':<35} {exp['id']}")
+            print(f"  {'[no data]':<40} {exp['id']}")
             continue
 
         stats_out = analyze_experiment(exp, rows)
-        paper = exp.get("paper_result", "?")
-        our_rep = "replicated" if stats_out.get("replicated") else "not_replicated"
+        is_rep = bool(stats_out.get("replicated"))
         p_val = stats_out.get("p_value", stats_out.get("pairwise_tests", {}).get(
             list(stats_out.get("pairwise_tests", {}).keys())[0], {}).get("p")
             if stats_out.get("pairwise_tests") else float("nan"))
 
         p_str = f"{p_val:.3f}" if isinstance(p_val, float) and not (p_val != p_val) else "n/a"
-        paper_icon = _RESULT_ICON.get(paper, "?")
-        our_icon = "✓" if stats_out.get("replicated") else "✗"
-        match = paper == our_rep or (paper == "partial" and our_rep == "replicated")
-        match_str = "✓" if match else "✗"
+        icon = "✓" if is_rep else "✗"
 
-        name = exp["name"][:34]
-        print(f"  {name:<35} {paper_icon:^10} {our_icon:^12} {p_str:^10} {match_str:^8}")
+        name = exp["name"][:39]
+        print(f"  {name:<40} {icon:^10} {p_str:^10}")
 
         total += 1
-        if match:
-            matched += 1
+        if is_rep:
+            replicated_n += 1
 
     print("-" * 80)
-    print(f"\n  Effects matching paper: {matched}/{total}")
-    print(f"  Paper (Twin-2K-500) matched: ~7/15 known effects")
+    print(f"\n  Effects replicated: {replicated_n}/{total}")
     print("=" * 80)
 
 

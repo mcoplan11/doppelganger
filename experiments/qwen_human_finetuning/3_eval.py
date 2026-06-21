@@ -580,7 +580,7 @@ def main() -> None:
 
     print(f"\nResults saved to {out_dir}")
     print("\n" + "=" * 70)
-    print(f"{'BASE' if args.out_label == 'base' else 'FINE-TUNED'} MODEL — 16 BIAS EXPERIMENTS")
+    print(f"{'BASE' if args.out_label == 'base' else 'FINE-TUNED'} MODEL — {len(all_exps)} BIAS EXPERIMENTS")
     print("=" * 70)
     print_comparison_table(all_exps, out_dir)
 
