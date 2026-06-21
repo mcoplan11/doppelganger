@@ -71,7 +71,11 @@ training:
   gradient_accumulation_steps: 4   # effective batch = 16
   learning_rate: 2.0e-4
   warmup_steps: 100
-  save_steps: 150
+  # Drives both checkpointing AND in-loop eval (eval_steps = save_steps). The val
+  # eval is ~12 min on the 1.7k-example set, so at max_steps=600 this gives 2 evals
+  # (steps 300, 600) instead of 4 — the step-150 eval already confirmed convergence,
+  # so the extra passes were pure overhead (~24 min/run).
+  save_steps: 300
   logging_steps: 50
 
 hub:
