@@ -43,6 +43,16 @@ def _chi2_test(a_yes: int, a_no: int, b_yes: int, b_no: int) -> tuple[float, flo
         return float("nan"), float(p)
 
 
+def _binom_greater(k: int, n: int, p0: float) -> float:
+    """One-sided exact binomial test p-value for H1: true rate > p0."""
+    if not _HAS_SCIPY or n == 0:
+        return float("nan")
+    try:
+        return float(stats.binomtest(k, n, p0, alternative="greater").pvalue)
+    except AttributeError:  # scipy < 1.7
+        return float(stats.binom_test(k, n, p0, alternative="greater"))
+
+
 def _mean(vals: list[float]) -> float:
     return sum(vals) / len(vals) if vals else float("nan")
 
@@ -195,17 +205,30 @@ def _analyze_allais(exp: dict, rows: list[dict]) -> dict:
         if r.get("answer") is not None and r.get("error") is None:
             by_cond[r["condition_id"]].append(str(r["answer"]))
 
-    # Expected: problem1 → mostly A (safe), problem2 → mostly B (risky)
-    p1_pct_safe = _pct(by_cond.get("problem1", []), "A")
-    p2_pct_risky = _pct(by_cond.get("problem2", []), "B")
-    # Allais pattern requires: mostly A in p1 AND mostly B in p2
-    correct = p1_pct_safe > 50 and p2_pct_risky > 50
+    p1, p2 = by_cond.get("problem1", []), by_cond.get("problem2", [])
+    # Certainty effect: people are more risk-averse when an option is certain
+    # (problem1 → safe A) and shift toward the risky option when neither is
+    # certain (problem2 → risky B). Between-subjects, so test the shift in the
+    # share choosing risky (B) across the two problems with a chi-square — not
+    # bare majority thresholds.
+    p1_pct_safe = _pct(p1, "A")
+    p1_pct_risky = _pct(p1, "B")
+    p2_pct_risky = _pct(p2, "B")
+    p1_risky = sum(1 for v in p1 if v == "B")
+    p2_risky = sum(1 for v in p2 if v == "B")
+    chi2, p = _chi2_test(p2_risky, len(p2) - p2_risky, p1_risky, len(p1) - p1_risky)
+    sig = p < 0.05 if not (p != p) else False
+    # Expected direction: a larger share choose risky B in problem2 than problem1.
+    correct = p2_pct_risky > p1_pct_risky
     return {
         "problem1_pct_safe_A": p1_pct_safe,
         "problem2_pct_risky_B": p2_pct_risky,
         "n_per_condition": {cid: len(v) for cid, v in by_cond.items()},
+        "chi2_stat": chi2,
+        "p_value": p,
+        "significant": sig,
         "correct_direction": correct,
-        "replicated": correct,
+        "replicated": correct and sig,
     }
 
 
@@ -243,6 +266,7 @@ def _analyze_risk_benefit(exp: dict, rows: list[dict]) -> dict:
             by_item[r["item_id"]][1].append(float(r["benefit_rating"]))
 
     item_results = {}
+    item_rs: list[float] = []
     replicated_count = 0
     for item_id, (risks, benefits) in by_item.items():
         if len(risks) < 3:
@@ -253,16 +277,36 @@ def _analyze_risk_benefit(exp: dict, rows: list[dict]) -> dict:
             r_val, p_val = float("nan"), float("nan")
         item_rep = (r_val < 0) and (p_val < 0.05)
         item_results[item_id] = {"r": r_val, "p": p_val, "replicated": item_rep}
+        if not (r_val != r_val):  # collect non-nan r's for the aggregate test
+            item_rs.append(r_val)
         if item_rep:
             replicated_count += 1
 
     total = len(item_results)
+    # Aggregate verdict: the effect predicts a NEGATIVE mean risk-benefit
+    # correlation across items. One-sample t-test of the per-item r's against 0
+    # gives one clean p; "replicated" = mean r < 0 and significant.
+    if _HAS_SCIPY and len(item_rs) >= 2:
+        mean_r = sum(item_rs) / len(item_rs)
+        p_val = float(stats.ttest_1samp(item_rs, 0.0).pvalue)
+    else:
+        mean_r = sum(item_rs) / len(item_rs) if item_rs else float("nan")
+        p_val = float("nan")
+    sig = p_val < 0.05 if not (p_val != p_val) else False
+    correct = mean_r < 0 if not (mean_r != mean_r) else False
     return {
         "items": item_results,
         "replicated_count": replicated_count,
         "total_items": total,
-        "replicated": replicated_count > 0,
-        "summary": f"{replicated_count}/{total} items show negative risk-benefit correlation",
+        "mean_item_r": mean_r,
+        "p_value": p_val,
+        "significant": sig,
+        "correct_direction": correct,
+        "replicated": correct and sig,
+        "summary": (
+            f"{replicated_count}/{total} items individually significant-negative; "
+            f"mean r={mean_r:.3f}"
+        ),
     }
 
 
@@ -272,45 +316,70 @@ def _analyze_omission_bias(exp: dict, rows: list[dict]) -> dict:
         if r.get("answer") is not None and r.get("error") is None:
             by_cond[r["condition_id"]].append(r["answer"])
 
-    # Expected: more refuse vaccine in commission condition (action causes harm)
-    commission_skip = _pct(by_cond.get("commission", []), "skip")
-    omission_skip = _pct(by_cond.get("omission", []), "skip")
-
+    # Effect: more people refuse the vaccine ("skip") in the commission condition
+    # (action causes harm) than in the omission condition. This is a 2-condition
+    # binary proportion — test it with the same chi-square the other proportion
+    # experiments use, not a bare percentage comparison.
+    comm, omis = by_cond.get("commission", []), by_cond.get("omission", [])
+    commission_skip = _pct(comm, "skip")
+    omission_skip = _pct(omis, "skip")
+    c_yes = sum(1 for v in comm if v == "skip")
+    o_yes = sum(1 for v in omis if v == "skip")
+    chi2, p = _chi2_test(c_yes, len(comm) - c_yes, o_yes, len(omis) - o_yes)
+    sig = p < 0.05 if not (p != p) else False
     correct = commission_skip > omission_skip
     return {
         "commission_pct_skip": commission_skip,
         "omission_pct_skip": omission_skip,
         "n_per_condition": {k: len(v) for k, v in by_cond.items()},
+        "chi2_stat": chi2,
+        "p_value": p,
+        "significant": sig,
         "correct_direction": correct,
-        "replicated": correct,
+        "replicated": correct and sig,
     }
 
 
 def _analyze_probability_matching(exp: dict, rows: list[dict]) -> dict:
     answers = [r["answer"] for r in rows if r.get("answer") and not r.get("error")]
+    n = len(answers)
     pct_matching = _pct(answers, "match")
     pct_maximizing = _pct(answers, "maximize")
-    # Replication = non-trivial fraction (>10%) choosing the suboptimal matching strategy
-    replicated = pct_matching > 10
+    # Rational agents always maximize, so the matching rate should be ~0. Test
+    # whether it significantly exceeds a 5% response-noise floor (one-sided exact
+    # binomial); "replicated" = a real, above-noise matching tendency.
+    k = sum(1 for a in answers if a == "match")
+    p = _binom_greater(k, n, 0.05)
+    sig = p < 0.05 if not (p != p) else False
+    replicated = (pct_matching > 5) and sig
     return {
-        "n": len(answers),
+        "n": n,
         "pct_matching": pct_matching,
         "pct_maximizing": pct_maximizing,
         "human_benchmark_pct_matching": 30.0,
-        "correct_direction": replicated,
+        "p_value": p,
+        "significant": sig,
+        "correct_direction": pct_matching > 5,
         "replicated": replicated,
     }
 
 
 def _analyze_dominator_neglect(exp: dict, rows: list[dict]) -> dict:
     answers = [r["answer"] for r in rows if r.get("answer") and not r.get("error")]
+    n = len(answers)
     pct_dominated = _pct(answers, "dominated")
-    # Replication = non-trivial fraction (>10%) choosing the dominated option
-    replicated = pct_dominated > 10
+    # A dominated option is never rational, so the rate should be ~0. Test whether
+    # it significantly exceeds a 5% response-noise floor (one-sided exact binomial).
+    k = sum(1 for a in answers if a == "dominated")
+    p = _binom_greater(k, n, 0.05)
+    sig = p < 0.05 if not (p != p) else False
+    replicated = (pct_dominated > 5) and sig
     return {
-        "n": len(answers),
+        "n": n,
         "pct_dominated": pct_dominated,
-        "correct_direction": replicated,
+        "p_value": p,
+        "significant": sig,
+        "correct_direction": pct_dominated > 5,
         "replicated": replicated,
     }
 
