@@ -196,31 +196,58 @@ right tokenized persona examples). Recorded here so the next session doesn't re-
      **bf16 LoRA — not 4-bit**, which `config.yaml` already does). With the real kernel, expect
      seconds/step, not minutes.
 
-**Known-good resume runbook (start here next session):**
+**More gotchas hit during the 2026-06-20/21 runs (also RESOLVED):**
+
+4. **Fresh container wipes all pip installs.** pip installs land on the **container disk**, not
+   the `/workspace` network volume. A pod stop/start, redeploy, or brand-new pod loses every
+   dep — even though the repo, data, and base-model cache survive on the volume. **FIX: re-run
+   the installer on every fresh pod** (now one command: `runpod/setup_moe.sh`).
+5. **`torchaudio`/`torchvision` ABI crash after the torch bump (`Could not load
+   libtorchaudio.so`).** `--upgrade unsloth` pulls torch ~2.10, but torchaudio stays pinned to
+   the template's torch 2.8; transformers 5.x imports torchaudio transitively (Parakeet RNNT
+   loss) and dies on load. **FIX: `pip uninstall -y torchaudio torchvision`** — we use neither.
+   (Folded into `setup_moe.sh`.)
+6. **Eval couldn't load the MoE LoRA (`...Qwen3MoeRMSNorm... is not supported`).** `3_eval.py`
+   loaded checkpoints with vanilla `PeftModel.from_pretrained`, which can't inject LoRA into the
+   fused expert tensors. **FIX: load FT checkpoints via `FastLanguageModel.from_pretrained`**
+   (mirrors training; committed in `3_eval.py`).
+7. **Checkpoint pileup re-hit the disk quota (`os error 122`) at ~step 1050.** No
+   `save_total_limit`, so every `save_steps` checkpoint accumulated. **FIX: `save_total_limit=1`**
+   in `2_train.py` (committed).
+
+**Cost lever (don't skip):** the task converges almost instantly — loss (train AND val) is flat
+at ~0.20 by **step 150**. The full 2-epoch grounded run is 4,492 steps → ~13h/$22 of no-op
+compute. `config.yaml` now caps `max_steps: 600` (4× past plateau) and `save_steps: 300`
+(2 in-loop evals, each ~12 min on the 1.7k val set). Per run ≈ ~2h instead of ~13h. The cap is
+identical for both arms, so the ablation stays clean. Set `max_steps: -1` to use full epochs.
+
+**Known-good resume runbook (start here next session) — now ~2 commands:**
 
 ```bash
 # Pod: A100 80GB SXM, PyTorch 2.8+ template (Triton >=3.4), /workspace volume >=120GB
-#      reattached (35GB+ base model cache already on it).
+#      reattached (base-model cache already on it). NEW POD = deps wiped, see #4.
+cd /workspace/doppelganger && git pull
 
-# 1. Install — do NOT run setup.sh (it pins torch 2.4 via unsloth[cu121-torch240]).
-cd /workspace/doppelganger
-pip install --upgrade unsloth unsloth_zoo
-pip install --upgrade peft trl transformers accelerate bitsandbytes datasets scipy pyyaml pandas huggingface_hub
+# 1. Install the correct MoE stack + gate check (NOT setup.sh — see #3). Re-run on every
+#    fresh pod. Asserts Triton has make_tensor_descriptor before you spend GPU.
+bash experiments/qwen_human_finetuning/runpod/setup_moe.sh
 
-# 2. Free CPU check — confirm the root cause is gone BEFORE spending on GPU.
-python -c "import triton, torch, triton.language as tl; \
-print('torch', torch.__version__, '| triton', triton.__version__, \
-'| has make_tensor_descriptor:', hasattr(tl, 'make_tensor_descriptor'))"   # need True
-
-# 3. Confirm carried-over settings.
-grep lora_dropout experiments/qwen_human_finetuning/config.yaml   # must be 0.0
-unset UNSLOTH_MOE_BACKEND   # use the fast default Triton path
-
-# 4. Full Phase-1 matrix in tmux (survives disconnect; CAP=3000 baked in).
+# 2. Full Phase-1 matrix in tmux (survives web-terminal disconnect).
+#    run_phase1.sh now: skips base_30b if results/base_30b exists (committed to git),
+#    builds Run 0 with --match-grounded-pids (clean 2,058-participant ablation), and
+#    trains both arms capped at max_steps=600. CAP=3000 baked in.
 tmux new -s phase1
 bash experiments/qwen_human_finetuning/runpod/run_phase1.sh 2>&1 | tee /workspace/phase1.log
 #   detach: Ctrl-b then d   |   reattach: tmux attach -t phase1
 ```
+
+**Stage-3 results so far (2026-06-21):**
+- `base_30b` (untrained reference) eval **DONE and committed to git** (`results/base_30b/`):
+  **10/17 effects replicated** under the corrected significance-tested analyzers (see §10 /
+  `analysis.py`). This is the bar the fine-tunes must beat.
+- `run0_fictional` (matched, 2,058) and `runA_grounded` — **still to run** (one `run_phase1.sh`
+  invocation does both, capped, then the 3-way compare). The old 400-participant Run 0 is
+  superseded by the matched build.
 
 **TODO once a fast run succeeds:** `pip freeze > experiments/qwen_human_finetuning/requirements_runpod.lock.txt`
 to pin the working stack so the **235B confirmation run** (also MoE) doesn't repeat this. Also

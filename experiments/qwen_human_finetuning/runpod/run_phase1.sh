@@ -56,12 +56,22 @@ echo "Phase 1 — base=$BASE_MODEL  cap_per_study=$CAP  checkpoints=$CKPT_ROOT"
 # python "$EXPERIMENT_DIR/persona_signal_check.py"  # per-study persona ICC
 
 # ── base_30b: untrained reference ────────────────────────────────────────────
-echo ""; echo "=== base_30b: untrained $BASE_MODEL (no fine-tuning) ==="
-python "$EXPERIMENT_DIR/3_eval.py" --model-path "$BASE_MODEL" --out-label base_30b
+# base_30b is deterministic and its results are committed to git, so skip the
+# ~30-min re-eval when they're already present. rm -rf results/base_30b to force.
+if [ -d "$EXPERIMENT_DIR/results/base_30b" ] && [ -n "$(ls -A "$EXPERIMENT_DIR/results/base_30b" 2>/dev/null)" ]; then
+  echo ""; echo "=== base_30b: results already present — skipping eval (rm -rf results/base_30b to force) ==="
+else
+  echo ""; echo "=== base_30b: untrained $BASE_MODEL (no fine-tuning) ==="
+  python "$EXPERIMENT_DIR/3_eval.py" --model-path "$BASE_MODEL" --out-label base_30b
+fi
 
-# ── Run 0: fictional i%n map (baseline to beat) ──────────────────────────────
-echo ""; echo "=== Run 0: build fictional-map data (--no-grounded) ==="
-python "$EXPERIMENT_DIR/1_prepare_data.py" --no-grounded $(cap_flag)
+# ── Run 0: fictional persona map (baseline to beat) ──────────────────────────
+# --match-grounded-pids: build over the EXACT 2,058 grounded participants with
+# fictional roster personas, so Run 0 and Run A differ ONLY in persona text — not
+# in dataset size. Without it, --no-grounded uses just 200×2=400 participants,
+# confounding grounding with a 5× larger training set. See §2.3 / §3.3.
+echo ""; echo "=== Run 0: build fictional-map data (--no-grounded --match-grounded-pids) ==="
+python "$EXPERIMENT_DIR/1_prepare_data.py" --no-grounded --match-grounded-pids $(cap_flag)
 echo "=== Run 0: fine-tune ==="
 python "$EXPERIMENT_DIR/2_train.py"
 echo "=== Run 0: eval (BEFORE the checkpoint is overwritten by Run A) ==="
