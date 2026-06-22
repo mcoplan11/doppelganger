@@ -1,0 +1,1602 @@
+[
+  {
+    "experiment_id": "myside",
+    "persona": "biology_student_19f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "biology_student_19f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "retail_cashier_22m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "retail_cashier_22m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "barista_20nb",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "barista_20nb",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "engineering_student_21m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "engineering_student_21m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "undeclared_freshman_18f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "undeclared_freshman_18f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "delivery_driver_23m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "delivery_driver_23m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "psychology_major_20f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "psychology_major_20f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "part_time_tutor_24f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "part_time_tutor_24f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "fast_food_worker_19m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "fast_food_worker_19m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "junior_designer_23f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "junior_designer_23f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "warehouse_associate_21m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "warehouse_associate_21m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "nursing_student_22f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "nursing_student_22f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "intern_marketing_23m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "intern_marketing_23m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "gig_worker_24f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "gig_worker_24f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "film_student_20m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "film_student_20m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "customer_support_23f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "customer_support_23f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "library_assistant_24m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "library_assistant_24m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "theater_major_21f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "theater_major_21f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "community_college_student_19m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "community_college_student_19m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "tech_support_agent_22f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "tech_support_agent_22f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "software_dev_28m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "software_dev_28m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "data_entry_clerk_26f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "data_entry_clerk_26f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "substitute_teacher_29m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "substitute_teacher_29m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "hr_assistant_27f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "hr_assistant_27f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "stay_home_dad_32m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "stay_home_dad_32m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "office_manager_31f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "office_manager_31f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "freelance_writer_29nb",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "freelance_writer_29nb",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "fitness_instructor_26m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "fitness_instructor_26m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "paralegal_30f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "paralegal_30f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "job_seeker_admin_28m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "job_seeker_admin_28m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "bank_teller_25f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "bank_teller_25f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "seo_specialist_33m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "seo_specialist_33m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "preschool_teacher_27f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "preschool_teacher_27f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "warehouse_manager_34m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "warehouse_manager_34m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "stay_home_mom_30f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "stay_home_mom_30f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "part_time_bartender_29m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "part_time_bartender_29m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "phd_candidate_31f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "phd_candidate_31f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "dog_walker_26m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "dog_walker_26m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "event_planner_32f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "event_planner_32f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "unemployed_chef_33m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "unemployed_chef_33m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "copywriter_28f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "copywriter_28f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "night_auditor_27m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "night_auditor_27m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "adjunct_professor_34f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "adjunct_professor_34f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "retail_supervisor_29m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "retail_supervisor_29m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "medical_biller_31f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "medical_biller_31f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "uber_driver_30m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "uber_driver_30m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "social_media_manager_26f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "social_media_manager_26f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "security_guard_32m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "security_guard_32m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "dental_hygienist_28f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "dental_hygienist_28f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "unemployed_mechanic_33m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "unemployed_mechanic_33m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "grant_writer_34f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "grant_writer_34f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "it_technician_27m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "it_technician_27m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "customer_success_29f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "customer_success_29f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "property_manager_31m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "property_manager_31m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "stay_home_mom_26f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "stay_home_mom_26f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "freelance_photographer_30m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "freelance_photographer_30m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "virtual_assistant_25f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "virtual_assistant_25f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "real_estate_agent_32m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "real_estate_agent_32m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "occupational_therapist_33f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "occupational_therapist_33f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "pharmacy_tech_28m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "pharmacy_tech_28m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "museum_guide_29f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "museum_guide_29f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "sales_associate_25m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "sales_associate_25m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "graphic_designer_34f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "graphic_designer_34f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "audio_engineer_31m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "audio_engineer_31m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "yoga_teacher_27f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "yoga_teacher_27f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "accountant_38m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "accountant_38m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "middle_school_teacher_42f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "middle_school_teacher_42f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "stay_home_mom_36f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "stay_home_mom_36f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "logistics_coordinator_40m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "logistics_coordinator_40m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "freelance_illustrator_39f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "freelance_illustrator_39f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "delivery_driver_37m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "delivery_driver_37m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "legal_secretary_44f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "legal_secretary_44f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "unemployed_sales_41m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "unemployed_sales_41m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "part_time_bookkeeper_35f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "part_time_bookkeeper_35f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "insurance_adjuster_43m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "insurance_adjuster_43m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "night_shift_nurse_38f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "night_shift_nurse_38f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "postal_worker_42m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "postal_worker_42m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "stay_home_dad_39m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "stay_home_dad_39m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "massage_therapist_41f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "massage_therapist_41f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "construction_estimator_36m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "construction_estimator_36m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "freelance_editor_44f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "freelance_editor_44f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "server_37m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "server_37m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "daycare_owner_40f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "daycare_owner_40f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "electrician_43m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "electrician_43m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "data_analyst_35f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "data_analyst_35f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "high_school_teacher_49m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "high_school_teacher_49m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "administrative_assistant_52f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "administrative_assistant_52f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "unemployed_manager_47m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "unemployed_manager_47m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "customer_service_rep_50f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "customer_service_rep_50f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "retail_store_manager_46m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "retail_store_manager_46m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "medical_transcriptionist_53f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "medical_transcriptionist_53f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "truck_driver_51m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "truck_driver_51m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "local_gov_clerk_48f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "local_gov_clerk_48f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "real_estate_appraiser_54m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "real_estate_appraiser_54m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "part_time_florist_45f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "part_time_florist_45f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "retired_librarian_62f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "retired_librarian_62f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "retired_accountant_68m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "retired_accountant_68m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "empty_nester_58f",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "empty_nester_58f",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "part_time_consultant_60m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "part_time_consultant_60m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "retired_mechanic_65m",
+    "condition_id": "foreign",
+    "condition_name": "Foreign Manufacturer",
+    "answer": 6,
+    "error": null
+  },
+  {
+    "experiment_id": "myside",
+    "persona": "retired_mechanic_65m",
+    "condition_id": "domestic",
+    "condition_name": "Domestic Manufacturer",
+    "answer": 6,
+    "error": null
+  }
+]
