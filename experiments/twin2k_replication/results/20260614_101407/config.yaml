@@ -1,0 +1,24 @@
+llm:
+  provider: openrouter      # gemini | openai | anthropic | openrouter
+  model: qwen/qwen3-235b-a22b-2507
+  temperature: 0.5
+
+experiment:
+  # Which experiments to run. "all" or a list of IDs, e.g. [framing, linda, anchoring]
+  run: all
+
+  # How many personas to use per condition.
+  # "all" uses every persona in personas.py; an integer subsamples.
+  n_personas: 150
+
+  # Random seed for reproducibility (persona assignment, subsampling).
+  seed: 42
+
+  # For between-subject experiments:
+  #   within  — every persona sees every condition (more power, less realistic)
+  #   between — personas are randomly split across conditions (mirrors original design)
+  between_subject_mode: within
+
+output:
+  dir: results
+  # Each run creates a timestamped subdirectory: results/YYYYMMDD_HHMMSS/

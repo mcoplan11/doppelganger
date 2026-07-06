@@ -1,0 +1,2402 @@
+[
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "communications_major_20f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "communications_major_20f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "paralegal_30f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "paralegal_30f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "psychology_major_20f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "psychology_major_20f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "computer_technician_26m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "computer_technician_26m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "delivery_driver_37m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 320,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "delivery_driver_37m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "graphic_designer_34f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "graphic_designer_34f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "real_estate_agent_32m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "real_estate_agent_32m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "part_time_bartender_29m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 425,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "part_time_bartender_29m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "remote_support_33f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "remote_support_33f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "freelance_writer_29nb",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 895,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "freelance_writer_29nb",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "freelance_copywriter_32nb",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 895,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "freelance_copywriter_32nb",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "hotel_receptionist_24f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "hotel_receptionist_24f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "substitute_teacher_29m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 320,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "substitute_teacher_29m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "car_detailer_23m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "car_detailer_23m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "content_moderator_27f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 895,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "content_moderator_27f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "fast_food_worker_19m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "fast_food_worker_19m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "part_time_tutor_24f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 320,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "part_time_tutor_24f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "hr_assistant_27f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "hr_assistant_27f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "freelance_photographer_30m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "freelance_photographer_30m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "pharmacy_tech_28m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "pharmacy_tech_28m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "juice_barista_19f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "juice_barista_19f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "research_assistant_24f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "research_assistant_24f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "office_assistant_51m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "office_assistant_51m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "bus_driver_35m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "bus_driver_35m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "grant_writer_34f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "grant_writer_34f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "private_tutor_27f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "private_tutor_27f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "senior_clerk_55f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "senior_clerk_55f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "online_reseller_29m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 895,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "online_reseller_29m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "virtual_assistant_25f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "virtual_assistant_25f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "english_tutor_28f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "english_tutor_28f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "cafe_manager_28f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "cafe_manager_28f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "legal_secretary_44f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "legal_secretary_44f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "retail_cashier_22m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "retail_cashier_22m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "copywriter_28f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "copywriter_28f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "biology_graduate_24nb",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "biology_graduate_24nb",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "unemployed_manager_47m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 425,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "unemployed_manager_47m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 895,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "pastry_chef_26f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "pastry_chef_26f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "unemployed_chef_33m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "unemployed_chef_33m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "inventory_specialist_27f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "inventory_specialist_27f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "administrative_assistant_52f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "administrative_assistant_52f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "evening_receptionist_22f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "evening_receptionist_22f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "remote_billing_clerk_29m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "remote_billing_clerk_29m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "empty_nester_58f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 425,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "empty_nester_58f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "stay_home_dad_32m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 425,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "stay_home_dad_32m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "truck_driver_51m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "truck_driver_51m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "customer_service_rep_50f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "customer_service_rep_50f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "stay_home_mom_36f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 425,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "stay_home_mom_36f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "nursing_student_22f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "nursing_student_22f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "dry_cleaning_clerk_22f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 320,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "dry_cleaning_clerk_22f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "freelance_animator_27f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "freelance_animator_27f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "seo_specialist_33m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 895,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "seo_specialist_33m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "retired_accountant_68m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 425,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "retired_accountant_68m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "software_dev_28m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 895,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "software_dev_28m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "pool_cleaner_21m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "pool_cleaner_21m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "night_shift_nurse_38f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 425,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "night_shift_nurse_38f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "local_gov_clerk_48f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "local_gov_clerk_48f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "unemployed_mechanic_33m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "unemployed_mechanic_33m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "theater_major_21f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "theater_major_21f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "physics_student_21f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "physics_student_21f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "occupational_therapist_33f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "occupational_therapist_33f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "insurance_adjuster_43m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "insurance_adjuster_43m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "woodworker_29m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "woodworker_29m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "junior_analyst_24m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 425,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "junior_analyst_24m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "office_manager_31f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "office_manager_31f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "dog_trainer_30f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "dog_trainer_30f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "tutor_coordinator_42m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "tutor_coordinator_42m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "chemistry_major_19nb",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 425,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "chemistry_major_19nb",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "real_estate_appraiser_54m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 895,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "real_estate_appraiser_54m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "night_auditor_27m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 420,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "night_auditor_27m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "part_time_florist_45f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 320,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "part_time_florist_45f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "medical_transcriptionist_53f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 425,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "medical_transcriptionist_53f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "property_manager_31m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "property_manager_31m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "logistics_coordinator_40m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 425,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "logistics_coordinator_40m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "retail_store_manager_46m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "retail_store_manager_46m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "marketing_coordinator_26f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "marketing_coordinator_26f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "screen_printer_28m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "screen_printer_28m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "daycare_owner_40f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "daycare_owner_40f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "junior_designer_23f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "junior_designer_23f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "stay_home_dad_39m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "stay_home_dad_39m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "server_37m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "server_37m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "data_entry_clerk_26f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "data_entry_clerk_26f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "virtual_tutor_26f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "virtual_tutor_26f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "stay_home_mother_28f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "stay_home_mother_28f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "technical_writer_32m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "technical_writer_32m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "data_entry_operator_23nb",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 895,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "data_entry_operator_23nb",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "dropshipper_24m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "dropshipper_24m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "dental_hygienist_28f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "dental_hygienist_28f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "stay_home_mom_30f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "stay_home_mom_30f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "web_designer_29m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "web_designer_29m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "high_school_substitute_30f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "high_school_substitute_30f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "call_center_agent_28m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "call_center_agent_28m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "freelance_indexer_47f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 895,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "freelance_indexer_47f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "travel_agent_33m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 895,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "travel_agent_33m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "landscape_laborer_25m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "landscape_laborer_25m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "part_time_consultant_60m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "part_time_consultant_60m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "retired_mechanic_65m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "retired_mechanic_65m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "retail_merchandiser_31f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "retail_merchandiser_31f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "job_seeker_admin_28m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 320,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "job_seeker_admin_28m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "undeclared_freshman_18f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 320,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "undeclared_freshman_18f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "physical_therapy_aide_23f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "physical_therapy_aide_23f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "it_technician_27m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 950,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "it_technician_27m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "music_teacher_32f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "music_teacher_32f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "locksmith_28m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "locksmith_28m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "fitness_instructor_26m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "fitness_instructor_26m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "unemployed_sales_41m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "unemployed_sales_41m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "freelance_programmer_27nb",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "freelance_programmer_27nb",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "math_tutor_22f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "math_tutor_22f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "online_seller_33f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "online_seller_33f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "electrician_43m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 185,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "electrician_43m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "audio_engineer_31m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 425,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "audio_engineer_31m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "grocery_shopper_26f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "grocery_shopper_26f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "bakery_assistant_20f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "bakery_assistant_20f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "math_graduate_student_26m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 420,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "math_graduate_student_26m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "community_college_student_19m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "community_college_student_19m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "warehouse_manager_34m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 280,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "warehouse_manager_34m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "floral_designer_28f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "floral_designer_28f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "veterinary_assistant_24f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "veterinary_assistant_24f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "transcriptionist_30nb",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "transcriptionist_30nb",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "barista_trainer_24m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 420,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "barista_trainer_24m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "high_school_teacher_49m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "high_school_teacher_49m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "bookkeeper_48f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "bookkeeper_48f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "stay_home_mom_26f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 325,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "stay_home_mom_26f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "construction_estimator_36m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "construction_estimator_36m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "pet_sitter_24f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "pet_sitter_24f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "social_media_manager_26f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 1250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "social_media_manager_26f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "voice_actor_31m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "voice_actor_31m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "data_analyst_35f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 650,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "data_analyst_35f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "accountant_38m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 425,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "accountant_38m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "proofreader_35f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 425,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "proofreader_35f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1250,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "nanny_25f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "nanny_25f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "stay_home_father_28m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "stay_home_father_28m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "film_student_20m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "film_student_20m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "tech_support_agent_22f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "tech_support_agent_22f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "videographer_25m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "videographer_25m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "massage_therapist_41f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "massage_therapist_41f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 2800,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "flight_attendant_29f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "flight_attendant_29f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "gig_delivery_driver_31m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "gig_delivery_driver_31m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "delivery_rider_22m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "delivery_rider_22m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "event_planner_32f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "event_planner_32f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "freelance_translator_28nb",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 895,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "freelance_translator_28nb",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "freelance_editor_44f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 425,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "freelance_editor_44f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "library_assistant_24m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "library_assistant_24m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "retired_teacher_64f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "retired_teacher_64f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "house_sitter_23m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "house_sitter_23m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "biology_student_19f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "biology_student_19f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "retail_supervisor_29m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 325,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "retail_supervisor_29m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "stay_home_parent_34f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "stay_home_parent_34f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "remote_proofreader_31f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 425,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "remote_proofreader_31f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "retired_librarian_62f",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 425,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "retired_librarian_62f",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 895,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "line_cook_25m",
+    "condition_id": "control",
+    "condition_name": "No digital certificate",
+    "answer": 450,
+    "error": null
+  },
+  {
+    "experiment_id": "digitalcert_wtp",
+    "persona": "line_cook_25m",
+    "condition_id": "certificate",
+    "condition_name": "With digital passport / certificate",
+    "answer": 850,
+    "error": null
+  }
+]

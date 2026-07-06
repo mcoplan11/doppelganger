@@ -1,0 +1,2402 @@
+[
+  {
+    "experiment_id": "defaults_green",
+    "persona": "communications_major_20f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "communications_major_20f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "paralegal_30f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "paralegal_30f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "psychology_major_20f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "psychology_major_20f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "computer_technician_26m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "computer_technician_26m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "delivery_driver_37m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "delivery_driver_37m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "graphic_designer_34f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "graphic_designer_34f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "real_estate_agent_32m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "real_estate_agent_32m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "part_time_bartender_29m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "part_time_bartender_29m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "remote_support_33f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "remote_support_33f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "freelance_writer_29nb",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "freelance_writer_29nb",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "freelance_copywriter_32nb",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "freelance_copywriter_32nb",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "hotel_receptionist_24f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "hotel_receptionist_24f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "substitute_teacher_29m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "substitute_teacher_29m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "car_detailer_23m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "car_detailer_23m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "content_moderator_27f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "content_moderator_27f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "fast_food_worker_19m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "fast_food_worker_19m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "part_time_tutor_24f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "part_time_tutor_24f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "hr_assistant_27f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "hr_assistant_27f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "freelance_photographer_30m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "freelance_photographer_30m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "pharmacy_tech_28m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "pharmacy_tech_28m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "juice_barista_19f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "juice_barista_19f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "research_assistant_24f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "research_assistant_24f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "office_assistant_51m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "office_assistant_51m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "bus_driver_35m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "bus_driver_35m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "grant_writer_34f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "grant_writer_34f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "private_tutor_27f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "private_tutor_27f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "senior_clerk_55f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "senior_clerk_55f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "online_reseller_29m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "online_reseller_29m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "virtual_assistant_25f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "virtual_assistant_25f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "english_tutor_28f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "english_tutor_28f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "cafe_manager_28f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "cafe_manager_28f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "legal_secretary_44f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "legal_secretary_44f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "retail_cashier_22m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "retail_cashier_22m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "copywriter_28f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "copywriter_28f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "biology_graduate_24nb",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "biology_graduate_24nb",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "unemployed_manager_47m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "unemployed_manager_47m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "pastry_chef_26f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "pastry_chef_26f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "unemployed_chef_33m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "unemployed_chef_33m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "inventory_specialist_27f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "inventory_specialist_27f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "administrative_assistant_52f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "administrative_assistant_52f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "evening_receptionist_22f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "evening_receptionist_22f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "remote_billing_clerk_29m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "remote_billing_clerk_29m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "empty_nester_58f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "empty_nester_58f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "stay_home_dad_32m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "stay_home_dad_32m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "truck_driver_51m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "truck_driver_51m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "customer_service_rep_50f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "customer_service_rep_50f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "stay_home_mom_36f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "stay_home_mom_36f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "nursing_student_22f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "nursing_student_22f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "dry_cleaning_clerk_22f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "dry_cleaning_clerk_22f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "freelance_animator_27f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "freelance_animator_27f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "seo_specialist_33m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "seo_specialist_33m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "retired_accountant_68m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "retired_accountant_68m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "software_dev_28m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "software_dev_28m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "pool_cleaner_21m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "pool_cleaner_21m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "night_shift_nurse_38f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "night_shift_nurse_38f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "local_gov_clerk_48f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "local_gov_clerk_48f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "unemployed_mechanic_33m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "unemployed_mechanic_33m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "theater_major_21f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "theater_major_21f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "physics_student_21f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "physics_student_21f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "occupational_therapist_33f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "occupational_therapist_33f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "insurance_adjuster_43m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "insurance_adjuster_43m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "woodworker_29m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "woodworker_29m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "junior_analyst_24m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "junior_analyst_24m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "office_manager_31f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "office_manager_31f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "dog_trainer_30f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "dog_trainer_30f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "tutor_coordinator_42m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "tutor_coordinator_42m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "chemistry_major_19nb",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "chemistry_major_19nb",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "real_estate_appraiser_54m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "real_estate_appraiser_54m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "night_auditor_27m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "night_auditor_27m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "part_time_florist_45f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "part_time_florist_45f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "medical_transcriptionist_53f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "medical_transcriptionist_53f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "property_manager_31m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "property_manager_31m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "logistics_coordinator_40m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "logistics_coordinator_40m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "retail_store_manager_46m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "retail_store_manager_46m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "marketing_coordinator_26f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "marketing_coordinator_26f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "screen_printer_28m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "screen_printer_28m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "daycare_owner_40f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "daycare_owner_40f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "junior_designer_23f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "junior_designer_23f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "stay_home_dad_39m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "stay_home_dad_39m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "server_37m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "server_37m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "data_entry_clerk_26f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "data_entry_clerk_26f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "virtual_tutor_26f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "virtual_tutor_26f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "stay_home_mother_28f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "stay_home_mother_28f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "technical_writer_32m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "technical_writer_32m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "data_entry_operator_23nb",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "data_entry_operator_23nb",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "dropshipper_24m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "dropshipper_24m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "dental_hygienist_28f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "dental_hygienist_28f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "stay_home_mom_30f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "stay_home_mom_30f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "web_designer_29m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "web_designer_29m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "high_school_substitute_30f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "high_school_substitute_30f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "call_center_agent_28m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "call_center_agent_28m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "freelance_indexer_47f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "freelance_indexer_47f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "travel_agent_33m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "travel_agent_33m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "landscape_laborer_25m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "landscape_laborer_25m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "part_time_consultant_60m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "part_time_consultant_60m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "retired_mechanic_65m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "retired_mechanic_65m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "retail_merchandiser_31f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "retail_merchandiser_31f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "job_seeker_admin_28m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "job_seeker_admin_28m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "undeclared_freshman_18f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "undeclared_freshman_18f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "physical_therapy_aide_23f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "physical_therapy_aide_23f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "it_technician_27m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "it_technician_27m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "music_teacher_32f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "music_teacher_32f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "locksmith_28m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "locksmith_28m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "fitness_instructor_26m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "fitness_instructor_26m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "unemployed_sales_41m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "unemployed_sales_41m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "freelance_programmer_27nb",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "freelance_programmer_27nb",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "math_tutor_22f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "math_tutor_22f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "online_seller_33f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "online_seller_33f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "electrician_43m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "electrician_43m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "audio_engineer_31m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "audio_engineer_31m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "grocery_shopper_26f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "grocery_shopper_26f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "bakery_assistant_20f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "bakery_assistant_20f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "math_graduate_student_26m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "math_graduate_student_26m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "community_college_student_19m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "community_college_student_19m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "warehouse_manager_34m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "warehouse_manager_34m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "floral_designer_28f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "floral_designer_28f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "veterinary_assistant_24f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "veterinary_assistant_24f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "transcriptionist_30nb",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "transcriptionist_30nb",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "barista_trainer_24m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "barista_trainer_24m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "high_school_teacher_49m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "high_school_teacher_49m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "bookkeeper_48f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "bookkeeper_48f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "stay_home_mom_26f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "stay_home_mom_26f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "construction_estimator_36m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "construction_estimator_36m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "pet_sitter_24f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "pet_sitter_24f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "social_media_manager_26f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "social_media_manager_26f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "voice_actor_31m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "voice_actor_31m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "data_analyst_35f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "data_analyst_35f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "accountant_38m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "accountant_38m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "proofreader_35f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "proofreader_35f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "nanny_25f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "nanny_25f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "stay_home_father_28m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "stay_home_father_28m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "film_student_20m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "film_student_20m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "tech_support_agent_22f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "tech_support_agent_22f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "videographer_25m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "videographer_25m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "massage_therapist_41f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "massage_therapist_41f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "flight_attendant_29f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "flight_attendant_29f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "gig_delivery_driver_31m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "gig_delivery_driver_31m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "delivery_rider_22m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "delivery_rider_22m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "event_planner_32f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "event_planner_32f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "freelance_translator_28nb",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "freelance_translator_28nb",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "freelance_editor_44f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "freelance_editor_44f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "library_assistant_24m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "library_assistant_24m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "retired_teacher_64f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "retired_teacher_64f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "house_sitter_23m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "house_sitter_23m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "biology_student_19f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "biology_student_19f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "retail_supervisor_29m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "retail_supervisor_29m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "stay_home_parent_34f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "stay_home_parent_34f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "remote_proofreader_31f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "remote_proofreader_31f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "retired_librarian_62f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "retired_librarian_62f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "line_cook_25m",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "line_cook_25m",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "conventional",
+    "error": null
+  }
+]

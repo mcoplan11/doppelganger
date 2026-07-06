@@ -1,0 +1,50 @@
+[
+  {
+    "experiment_id": "defaults_green",
+    "persona": "communications_major_20f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "communications_major_20f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "paralegal_30f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "paralegal_30f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "psychology_major_20f",
+    "condition_id": "optin",
+    "condition_name": "Opt-in (default = conventional)",
+    "answer": "conventional",
+    "error": null
+  },
+  {
+    "experiment_id": "defaults_green",
+    "persona": "psychology_major_20f",
+    "condition_id": "optout",
+    "condition_name": "Opt-out (default = green)",
+    "answer": "green",
+    "error": null
+  }
+]

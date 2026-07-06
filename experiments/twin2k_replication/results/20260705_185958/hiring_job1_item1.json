@@ -1,0 +1,50 @@
+[
+  {
+    "experiment_id": "hiring_job1_item1",
+    "persona": "communications_major_20f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job1_item1",
+    "persona": "communications_major_20f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job1_item1",
+    "persona": "paralegal_30f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job1_item1",
+    "persona": "paralegal_30f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job1_item1",
+    "persona": "psychology_major_20f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job1_item1",
+    "persona": "psychology_major_20f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  }
+]

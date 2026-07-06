@@ -1,0 +1,4802 @@
+[
+  {
+    "experiment_id": "false_consensus",
+    "persona": "communications_major_20f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "communications_major_20f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "communications_major_20f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "communications_major_20f",
+    "item_id": "climate",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "paralegal_30f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "paralegal_30f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "paralegal_30f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "paralegal_30f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 68,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "psychology_major_20f",
+    "item_id": "abortion",
+    "own_view": 4,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "psychology_major_20f",
+    "item_id": "gun_control",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "psychology_major_20f",
+    "item_id": "immigration",
+    "own_view": 1,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "psychology_major_20f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "computer_technician_26m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "computer_technician_26m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "computer_technician_26m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "computer_technician_26m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 68,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "delivery_driver_37m",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "delivery_driver_37m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "delivery_driver_37m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "delivery_driver_37m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "graphic_designer_34f",
+    "item_id": "abortion",
+    "own_view": 5,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "graphic_designer_34f",
+    "item_id": "gun_control",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "graphic_designer_34f",
+    "item_id": "immigration",
+    "own_view": 1,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "graphic_designer_34f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 68,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "real_estate_agent_32m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "real_estate_agent_32m",
+    "item_id": "gun_control",
+    "own_view": 1,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "real_estate_agent_32m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "real_estate_agent_32m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "part_time_bartender_29m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "part_time_bartender_29m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "part_time_bartender_29m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "part_time_bartender_29m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "remote_support_33f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "remote_support_33f",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "remote_support_33f",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "remote_support_33f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_writer_29nb",
+    "item_id": "abortion",
+    "own_view": 4,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_writer_29nb",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 47,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_writer_29nb",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_writer_29nb",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 67,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_copywriter_32nb",
+    "item_id": "abortion",
+    "own_view": 5,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_copywriter_32nb",
+    "item_id": "gun_control",
+    "own_view": 4,
+    "public_estimate": 58,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_copywriter_32nb",
+    "item_id": "immigration",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_copywriter_32nb",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 73,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "hotel_receptionist_24f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "hotel_receptionist_24f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "hotel_receptionist_24f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "hotel_receptionist_24f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "substitute_teacher_29m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "substitute_teacher_29m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "substitute_teacher_29m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "substitute_teacher_29m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "car_detailer_23m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "car_detailer_23m",
+    "item_id": "gun_control",
+    "own_view": 1,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "car_detailer_23m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "car_detailer_23m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "content_moderator_27f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "content_moderator_27f",
+    "item_id": "gun_control",
+    "own_view": 4,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "content_moderator_27f",
+    "item_id": "immigration",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "content_moderator_27f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "fast_food_worker_19m",
+    "item_id": "abortion",
+    "own_view": 1,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "fast_food_worker_19m",
+    "item_id": "gun_control",
+    "own_view": 1,
+    "public_estimate": 30,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "fast_food_worker_19m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "fast_food_worker_19m",
+    "item_id": "climate",
+    "own_view": 2,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "part_time_tutor_24f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "part_time_tutor_24f",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "part_time_tutor_24f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "part_time_tutor_24f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "hr_assistant_27f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "hr_assistant_27f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "hr_assistant_27f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "hr_assistant_27f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_photographer_30m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_photographer_30m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_photographer_30m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_photographer_30m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "pharmacy_tech_28m",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "pharmacy_tech_28m",
+    "item_id": "gun_control",
+    "own_view": 1,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "pharmacy_tech_28m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "pharmacy_tech_28m",
+    "item_id": "climate",
+    "own_view": 2,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "juice_barista_19f",
+    "item_id": "abortion",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "juice_barista_19f",
+    "item_id": "gun_control",
+    "own_view": 1,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "juice_barista_19f",
+    "item_id": "immigration",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "juice_barista_19f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "research_assistant_24f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "research_assistant_24f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "research_assistant_24f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "research_assistant_24f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "office_assistant_51m",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "office_assistant_51m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "office_assistant_51m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "office_assistant_51m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "bus_driver_35m",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "bus_driver_35m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "bus_driver_35m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "bus_driver_35m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "grant_writer_34f",
+    "item_id": "abortion",
+    "own_view": 4,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "grant_writer_34f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "grant_writer_34f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "grant_writer_34f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "private_tutor_27f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "private_tutor_27f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "private_tutor_27f",
+    "item_id": "immigration",
+    "own_view": 5,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "private_tutor_27f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "senior_clerk_55f",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "senior_clerk_55f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "senior_clerk_55f",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "senior_clerk_55f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "online_reseller_29m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "online_reseller_29m",
+    "item_id": "gun_control",
+    "own_view": 1,
+    "public_estimate": 37,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "online_reseller_29m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "online_reseller_29m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "virtual_assistant_25f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "virtual_assistant_25f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "virtual_assistant_25f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "virtual_assistant_25f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "english_tutor_28f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "english_tutor_28f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "english_tutor_28f",
+    "item_id": "immigration",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "english_tutor_28f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "cafe_manager_28f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "cafe_manager_28f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "cafe_manager_28f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "cafe_manager_28f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "legal_secretary_44f",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "legal_secretary_44f",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "legal_secretary_44f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "legal_secretary_44f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retail_cashier_22m",
+    "item_id": "abortion",
+    "own_view": 4,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retail_cashier_22m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 34,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retail_cashier_22m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 63,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retail_cashier_22m",
+    "item_id": "climate",
+    "own_view": 4,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "copywriter_28f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "copywriter_28f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 47,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "copywriter_28f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "copywriter_28f",
+    "item_id": "climate",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "biology_graduate_24nb",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "biology_graduate_24nb",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "biology_graduate_24nb",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 47,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "biology_graduate_24nb",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "unemployed_manager_47m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "unemployed_manager_47m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "unemployed_manager_47m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "unemployed_manager_47m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "pastry_chef_26f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "pastry_chef_26f",
+    "item_id": "gun_control",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "pastry_chef_26f",
+    "item_id": "immigration",
+    "own_view": 5,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "pastry_chef_26f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 75,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "unemployed_chef_33m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "unemployed_chef_33m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "unemployed_chef_33m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "unemployed_chef_33m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "inventory_specialist_27f",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "inventory_specialist_27f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "inventory_specialist_27f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "inventory_specialist_27f",
+    "item_id": "climate",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "administrative_assistant_52f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 47,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "administrative_assistant_52f",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 47,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "administrative_assistant_52f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "administrative_assistant_52f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 63,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "evening_receptionist_22f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "evening_receptionist_22f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "evening_receptionist_22f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "evening_receptionist_22f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "remote_billing_clerk_29m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 47,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "remote_billing_clerk_29m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "remote_billing_clerk_29m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "remote_billing_clerk_29m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "empty_nester_58f",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "empty_nester_58f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "empty_nester_58f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "empty_nester_58f",
+    "item_id": "climate",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_dad_32m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_dad_32m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 47,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_dad_32m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_dad_32m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 68,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "truck_driver_51m",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "truck_driver_51m",
+    "item_id": "gun_control",
+    "own_view": 1,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "truck_driver_51m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "truck_driver_51m",
+    "item_id": "climate",
+    "own_view": 2,
+    "public_estimate": 40,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "customer_service_rep_50f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "customer_service_rep_50f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "customer_service_rep_50f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "customer_service_rep_50f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_mom_36f",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_mom_36f",
+    "item_id": "gun_control",
+    "own_view": 1,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_mom_36f",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_mom_36f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "nursing_student_22f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "nursing_student_22f",
+    "item_id": "gun_control",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "nursing_student_22f",
+    "item_id": "immigration",
+    "own_view": 1,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "nursing_student_22f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 60,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "dry_cleaning_clerk_22f",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "dry_cleaning_clerk_22f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "dry_cleaning_clerk_22f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "dry_cleaning_clerk_22f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_animator_27f",
+    "item_id": "abortion",
+    "own_view": 5,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_animator_27f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_animator_27f",
+    "item_id": "immigration",
+    "own_view": 2,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_animator_27f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "seo_specialist_33m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 47,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "seo_specialist_33m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "seo_specialist_33m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 47,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "seo_specialist_33m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 67,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retired_accountant_68m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retired_accountant_68m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retired_accountant_68m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retired_accountant_68m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "software_dev_28m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "software_dev_28m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "software_dev_28m",
+    "item_id": "immigration",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "software_dev_28m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 67,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "pool_cleaner_21m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "pool_cleaner_21m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "pool_cleaner_21m",
+    "item_id": "immigration",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "pool_cleaner_21m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "night_shift_nurse_38f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "night_shift_nurse_38f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "night_shift_nurse_38f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "night_shift_nurse_38f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "local_gov_clerk_48f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "local_gov_clerk_48f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "local_gov_clerk_48f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "local_gov_clerk_48f",
+    "item_id": "climate",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "unemployed_mechanic_33m",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "unemployed_mechanic_33m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "unemployed_mechanic_33m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "unemployed_mechanic_33m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "theater_major_21f",
+    "item_id": "abortion",
+    "own_view": 4,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "theater_major_21f",
+    "item_id": "gun_control",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "theater_major_21f",
+    "item_id": "immigration",
+    "own_view": 1,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "theater_major_21f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 75,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "physics_student_21f",
+    "item_id": "abortion",
+    "own_view": 4,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "physics_student_21f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "physics_student_21f",
+    "item_id": "immigration",
+    "own_view": 1,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "physics_student_21f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 68,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "occupational_therapist_33f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "occupational_therapist_33f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "occupational_therapist_33f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "occupational_therapist_33f",
+    "item_id": "climate",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "insurance_adjuster_43m",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "insurance_adjuster_43m",
+    "item_id": "gun_control",
+    "own_view": 1,
+    "public_estimate": 37,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "insurance_adjuster_43m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 67,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "insurance_adjuster_43m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "woodworker_29m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "woodworker_29m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "woodworker_29m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "woodworker_29m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 60,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "junior_analyst_24m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "junior_analyst_24m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "junior_analyst_24m",
+    "item_id": "immigration",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "junior_analyst_24m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 63,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "office_manager_31f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "office_manager_31f",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "office_manager_31f",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "office_manager_31f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "dog_trainer_30f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "dog_trainer_30f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "dog_trainer_30f",
+    "item_id": "immigration",
+    "own_view": 1,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "dog_trainer_30f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "tutor_coordinator_42m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "tutor_coordinator_42m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "tutor_coordinator_42m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "tutor_coordinator_42m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "chemistry_major_19nb",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "chemistry_major_19nb",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 47,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "chemistry_major_19nb",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "chemistry_major_19nb",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "real_estate_appraiser_54m",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "real_estate_appraiser_54m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "real_estate_appraiser_54m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "real_estate_appraiser_54m",
+    "item_id": "climate",
+    "own_view": 4,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "night_auditor_27m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "night_auditor_27m",
+    "item_id": "gun_control",
+    "own_view": 1,
+    "public_estimate": 37,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "night_auditor_27m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "night_auditor_27m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 63,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "part_time_florist_45f",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "part_time_florist_45f",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "part_time_florist_45f",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "part_time_florist_45f",
+    "item_id": "climate",
+    "own_view": 2,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "medical_transcriptionist_53f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 47,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "medical_transcriptionist_53f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "medical_transcriptionist_53f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "medical_transcriptionist_53f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "property_manager_31m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "property_manager_31m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "property_manager_31m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "property_manager_31m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "logistics_coordinator_40m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "logistics_coordinator_40m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "logistics_coordinator_40m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "logistics_coordinator_40m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retail_store_manager_46m",
+    "item_id": "abortion",
+    "own_view": 1,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retail_store_manager_46m",
+    "item_id": "gun_control",
+    "own_view": 1,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retail_store_manager_46m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retail_store_manager_46m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "marketing_coordinator_26f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "marketing_coordinator_26f",
+    "item_id": "gun_control",
+    "own_view": 1,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "marketing_coordinator_26f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "marketing_coordinator_26f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "screen_printer_28m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "screen_printer_28m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "screen_printer_28m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "screen_printer_28m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "daycare_owner_40f",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "daycare_owner_40f",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "daycare_owner_40f",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "daycare_owner_40f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "junior_designer_23f",
+    "item_id": "abortion",
+    "own_view": 5,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "junior_designer_23f",
+    "item_id": "gun_control",
+    "own_view": 5,
+    "public_estimate": 85,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "junior_designer_23f",
+    "item_id": "immigration",
+    "own_view": 1,
+    "public_estimate": 100,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "junior_designer_23f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 95,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_dad_39m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_dad_39m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_dad_39m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_dad_39m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "server_37m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "server_37m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "server_37m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "server_37m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "data_entry_clerk_26f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "data_entry_clerk_26f",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "data_entry_clerk_26f",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "data_entry_clerk_26f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "virtual_tutor_26f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 47,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "virtual_tutor_26f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 63,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "virtual_tutor_26f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "virtual_tutor_26f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_mother_28f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_mother_28f",
+    "item_id": "gun_control",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_mother_28f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_mother_28f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "technical_writer_32m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "technical_writer_32m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 57,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "technical_writer_32m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "technical_writer_32m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 68,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "data_entry_operator_23nb",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "data_entry_operator_23nb",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "data_entry_operator_23nb",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "data_entry_operator_23nb",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 67,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "dropshipper_24m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "dropshipper_24m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "dropshipper_24m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "dropshipper_24m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "dental_hygienist_28f",
+    "item_id": "abortion",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "dental_hygienist_28f",
+    "item_id": "gun_control",
+    "own_view": 5,
+    "public_estimate": 85,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "dental_hygienist_28f",
+    "item_id": "immigration",
+    "own_view": 5,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "dental_hygienist_28f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 85,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_mom_30f",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_mom_30f",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_mom_30f",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_mom_30f",
+    "item_id": "climate",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "web_designer_29m",
+    "item_id": "abortion",
+    "own_view": 5,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "web_designer_29m",
+    "item_id": "gun_control",
+    "own_view": 5,
+    "public_estimate": 63,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "web_designer_29m",
+    "item_id": "immigration",
+    "own_view": 5,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "web_designer_29m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 72,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "high_school_substitute_30f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "high_school_substitute_30f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "high_school_substitute_30f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "high_school_substitute_30f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "call_center_agent_28m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "call_center_agent_28m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "call_center_agent_28m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "call_center_agent_28m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_indexer_47f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_indexer_47f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_indexer_47f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_indexer_47f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "travel_agent_33m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "travel_agent_33m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "travel_agent_33m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "travel_agent_33m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "landscape_laborer_25m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "landscape_laborer_25m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "landscape_laborer_25m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "landscape_laborer_25m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "part_time_consultant_60m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "part_time_consultant_60m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "part_time_consultant_60m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "part_time_consultant_60m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retired_mechanic_65m",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retired_mechanic_65m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retired_mechanic_65m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retired_mechanic_65m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retail_merchandiser_31f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retail_merchandiser_31f",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retail_merchandiser_31f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retail_merchandiser_31f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "job_seeker_admin_28m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "job_seeker_admin_28m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "job_seeker_admin_28m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "job_seeker_admin_28m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "undeclared_freshman_18f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "undeclared_freshman_18f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "undeclared_freshman_18f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "undeclared_freshman_18f",
+    "item_id": "climate",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "physical_therapy_aide_23f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "physical_therapy_aide_23f",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "physical_therapy_aide_23f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "physical_therapy_aide_23f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "it_technician_27m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "it_technician_27m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "it_technician_27m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "it_technician_27m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 63,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "music_teacher_32f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "music_teacher_32f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "music_teacher_32f",
+    "item_id": "immigration",
+    "own_view": 1,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "music_teacher_32f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "locksmith_28m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "locksmith_28m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "locksmith_28m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "locksmith_28m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "fitness_instructor_26m",
+    "item_id": "abortion",
+    "own_view": 5,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "fitness_instructor_26m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "fitness_instructor_26m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "fitness_instructor_26m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "unemployed_sales_41m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "unemployed_sales_41m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "unemployed_sales_41m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "unemployed_sales_41m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_programmer_27nb",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_programmer_27nb",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_programmer_27nb",
+    "item_id": "immigration",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_programmer_27nb",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 68,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "math_tutor_22f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "math_tutor_22f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "math_tutor_22f",
+    "item_id": "immigration",
+    "own_view": 1,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "math_tutor_22f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "online_seller_33f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "online_seller_33f",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "online_seller_33f",
+    "item_id": "immigration",
+    "own_view": 5,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "online_seller_33f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "electrician_43m",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "electrician_43m",
+    "item_id": "gun_control",
+    "own_view": 1,
+    "public_estimate": 37,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "electrician_43m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "electrician_43m",
+    "item_id": "climate",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "audio_engineer_31m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "audio_engineer_31m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 37,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "audio_engineer_31m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "audio_engineer_31m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "grocery_shopper_26f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "grocery_shopper_26f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "grocery_shopper_26f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "grocery_shopper_26f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "bakery_assistant_20f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "bakery_assistant_20f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "bakery_assistant_20f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "bakery_assistant_20f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "math_graduate_student_26m",
+    "item_id": "abortion",
+    "own_view": 4,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "math_graduate_student_26m",
+    "item_id": "gun_control",
+    "own_view": 4,
+    "public_estimate": 58,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "math_graduate_student_26m",
+    "item_id": "immigration",
+    "own_view": 1,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "math_graduate_student_26m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 68,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "community_college_student_19m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "community_college_student_19m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "community_college_student_19m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "community_college_student_19m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "warehouse_manager_34m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "warehouse_manager_34m",
+    "item_id": "gun_control",
+    "own_view": 1,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "warehouse_manager_34m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "warehouse_manager_34m",
+    "item_id": "climate",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "floral_designer_28f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "floral_designer_28f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "floral_designer_28f",
+    "item_id": "immigration",
+    "own_view": 1,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "floral_designer_28f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "veterinary_assistant_24f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "veterinary_assistant_24f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "veterinary_assistant_24f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "veterinary_assistant_24f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "transcriptionist_30nb",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "transcriptionist_30nb",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "transcriptionist_30nb",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "transcriptionist_30nb",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "barista_trainer_24m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "barista_trainer_24m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 63,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "barista_trainer_24m",
+    "item_id": "immigration",
+    "own_view": 1,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "barista_trainer_24m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 63,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "high_school_teacher_49m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "high_school_teacher_49m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "high_school_teacher_49m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "high_school_teacher_49m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "bookkeeper_48f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "bookkeeper_48f",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "bookkeeper_48f",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "bookkeeper_48f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 75,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_mom_26f",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_mom_26f",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_mom_26f",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_mom_26f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "construction_estimator_36m",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "construction_estimator_36m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "construction_estimator_36m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "construction_estimator_36m",
+    "item_id": "climate",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "pet_sitter_24f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "pet_sitter_24f",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "pet_sitter_24f",
+    "item_id": "immigration",
+    "own_view": 2,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "pet_sitter_24f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "social_media_manager_26f",
+    "item_id": "abortion",
+    "own_view": 4,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "social_media_manager_26f",
+    "item_id": "gun_control",
+    "own_view": 4,
+    "public_estimate": 68,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "social_media_manager_26f",
+    "item_id": "immigration",
+    "own_view": 1,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "social_media_manager_26f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "voice_actor_31m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 47,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "voice_actor_31m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "voice_actor_31m",
+    "item_id": "immigration",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "voice_actor_31m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "data_analyst_35f",
+    "item_id": "abortion",
+    "own_view": 4,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "data_analyst_35f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 58,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "data_analyst_35f",
+    "item_id": "immigration",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "data_analyst_35f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 63,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "accountant_38m",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "accountant_38m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "accountant_38m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "accountant_38m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "proofreader_35f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "proofreader_35f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "proofreader_35f",
+    "item_id": "immigration",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "proofreader_35f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "nanny_25f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "nanny_25f",
+    "item_id": "gun_control",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "nanny_25f",
+    "item_id": "immigration",
+    "own_view": 2,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "nanny_25f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_father_28m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_father_28m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_father_28m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_father_28m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "film_student_20m",
+    "item_id": "abortion",
+    "own_view": 4,
+    "public_estimate": 47,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "film_student_20m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "film_student_20m",
+    "item_id": "immigration",
+    "own_view": 1,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "film_student_20m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "tech_support_agent_22f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 47,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "tech_support_agent_22f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "tech_support_agent_22f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "tech_support_agent_22f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "videographer_25m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "videographer_25m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "videographer_25m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "videographer_25m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "massage_therapist_41f",
+    "item_id": "abortion",
+    "own_view": 1,
+    "public_estimate": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "massage_therapist_41f",
+    "item_id": "gun_control",
+    "own_view": 1,
+    "public_estimate": 100,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "massage_therapist_41f",
+    "item_id": "immigration",
+    "own_view": 1,
+    "public_estimate": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "massage_therapist_41f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 95,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "flight_attendant_29f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "flight_attendant_29f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "flight_attendant_29f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "flight_attendant_29f",
+    "item_id": "climate",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "gig_delivery_driver_31m",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "gig_delivery_driver_31m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "gig_delivery_driver_31m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "gig_delivery_driver_31m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "delivery_rider_22m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "delivery_rider_22m",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "delivery_rider_22m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "delivery_rider_22m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "event_planner_32f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "event_planner_32f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 55,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "event_planner_32f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "event_planner_32f",
+    "item_id": "climate",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_translator_28nb",
+    "item_id": "abortion",
+    "own_view": 4,
+    "public_estimate": 52,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_translator_28nb",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 47,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_translator_28nb",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_translator_28nb",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_editor_44f",
+    "item_id": "abortion",
+    "own_view": 4,
+    "public_estimate": 47,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_editor_44f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_editor_44f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "freelance_editor_44f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "library_assistant_24m",
+    "item_id": "abortion",
+    "own_view": 4,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "library_assistant_24m",
+    "item_id": "gun_control",
+    "own_view": 4,
+    "public_estimate": 67,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "library_assistant_24m",
+    "item_id": "immigration",
+    "own_view": 1,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "library_assistant_24m",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 78,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retired_teacher_64f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retired_teacher_64f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retired_teacher_64f",
+    "item_id": "immigration",
+    "own_view": 1,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retired_teacher_64f",
+    "item_id": "climate",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "house_sitter_23m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "house_sitter_23m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "house_sitter_23m",
+    "item_id": "immigration",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "house_sitter_23m",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "biology_student_19f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "biology_student_19f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "biology_student_19f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "biology_student_19f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retail_supervisor_29m",
+    "item_id": "abortion",
+    "own_view": 2,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retail_supervisor_29m",
+    "item_id": "gun_control",
+    "own_view": 1,
+    "public_estimate": 35,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retail_supervisor_29m",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retail_supervisor_29m",
+    "item_id": "climate",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_parent_34f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_parent_34f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 50,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_parent_34f",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "stay_home_parent_34f",
+    "item_id": "climate",
+    "own_view": 3,
+    "public_estimate": 60,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "remote_proofreader_31f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 47,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "remote_proofreader_31f",
+    "item_id": "gun_control",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "remote_proofreader_31f",
+    "item_id": "immigration",
+    "own_view": 4,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "remote_proofreader_31f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 62,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retired_librarian_62f",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retired_librarian_62f",
+    "item_id": "gun_control",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retired_librarian_62f",
+    "item_id": "immigration",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "retired_librarian_62f",
+    "item_id": "climate",
+    "own_view": 5,
+    "public_estimate": 75,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "line_cook_25m",
+    "item_id": "abortion",
+    "own_view": 3,
+    "public_estimate": 45,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "line_cook_25m",
+    "item_id": "gun_control",
+    "own_view": 2,
+    "public_estimate": 42,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "line_cook_25m",
+    "item_id": "immigration",
+    "own_view": 3,
+    "public_estimate": 65,
+    "error": null
+  },
+  {
+    "experiment_id": "false_consensus",
+    "persona": "line_cook_25m",
+    "item_id": "climate",
+    "own_view": 4,
+    "public_estimate": 65,
+    "error": null
+  }
+]

@@ -1,0 +1,902 @@
+[
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "communications_major_20f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "paralegal_30f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "psychology_major_20f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "computer_technician_26m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "delivery_driver_37m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "graphic_designer_34f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "real_estate_agent_32m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "part_time_bartender_29m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "remote_support_33f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "freelance_writer_29nb",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "freelance_copywriter_32nb",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "hotel_receptionist_24f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "substitute_teacher_29m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "car_detailer_23m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "content_moderator_27f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "fast_food_worker_19m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "part_time_tutor_24f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "hr_assistant_27f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "freelance_photographer_30m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "pharmacy_tech_28m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "juice_barista_19f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "research_assistant_24f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "office_assistant_51m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "bus_driver_35m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "grant_writer_34f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "private_tutor_27f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "senior_clerk_55f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "online_reseller_29m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "virtual_assistant_25f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "english_tutor_28f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "cafe_manager_28f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "legal_secretary_44f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "retail_cashier_22m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "copywriter_28f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "biology_graduate_24nb",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "unemployed_manager_47m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "pastry_chef_26f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "unemployed_chef_33m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "inventory_specialist_27f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "administrative_assistant_52f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "evening_receptionist_22f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "remote_billing_clerk_29m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "empty_nester_58f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "stay_home_dad_32m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "truck_driver_51m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "customer_service_rep_50f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "stay_home_mom_36f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "nursing_student_22f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "dry_cleaning_clerk_22f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "freelance_animator_27f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "seo_specialist_33m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "retired_accountant_68m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "software_dev_28m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "pool_cleaner_21m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "night_shift_nurse_38f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "local_gov_clerk_48f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "unemployed_mechanic_33m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "theater_major_21f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "physics_student_21f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "occupational_therapist_33f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "insurance_adjuster_43m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "woodworker_29m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "junior_analyst_24m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "office_manager_31f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "dog_trainer_30f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "tutor_coordinator_42m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "chemistry_major_19nb",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "real_estate_appraiser_54m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "night_auditor_27m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "part_time_florist_45f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "medical_transcriptionist_53f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "property_manager_31m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "logistics_coordinator_40m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "retail_store_manager_46m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "marketing_coordinator_26f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "screen_printer_28m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "daycare_owner_40f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "junior_designer_23f",
+    "answer": "dominated",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "stay_home_dad_39m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "server_37m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "data_entry_clerk_26f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "virtual_tutor_26f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "stay_home_mother_28f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "technical_writer_32m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "data_entry_operator_23nb",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "dropshipper_24m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "dental_hygienist_28f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "stay_home_mom_30f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "web_designer_29m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "high_school_substitute_30f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "call_center_agent_28m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "freelance_indexer_47f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "travel_agent_33m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "landscape_laborer_25m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "part_time_consultant_60m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "retired_mechanic_65m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "retail_merchandiser_31f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "job_seeker_admin_28m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "undeclared_freshman_18f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "physical_therapy_aide_23f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "it_technician_27m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "music_teacher_32f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "locksmith_28m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "fitness_instructor_26m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "unemployed_sales_41m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "freelance_programmer_27nb",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "math_tutor_22f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "online_seller_33f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "electrician_43m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "audio_engineer_31m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "grocery_shopper_26f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "bakery_assistant_20f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "math_graduate_student_26m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "community_college_student_19m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "warehouse_manager_34m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "floral_designer_28f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "veterinary_assistant_24f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "transcriptionist_30nb",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "barista_trainer_24m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "high_school_teacher_49m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "bookkeeper_48f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "stay_home_mom_26f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "construction_estimator_36m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "pet_sitter_24f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "social_media_manager_26f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "voice_actor_31m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "data_analyst_35f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "accountant_38m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "proofreader_35f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "nanny_25f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "stay_home_father_28m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "film_student_20m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "tech_support_agent_22f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "videographer_25m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "massage_therapist_41f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "flight_attendant_29f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "gig_delivery_driver_31m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "delivery_rider_22m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "event_planner_32f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "freelance_translator_28nb",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "freelance_editor_44f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "library_assistant_24m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "retired_teacher_64f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "house_sitter_23m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "biology_student_19f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "retail_supervisor_29m",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "stay_home_parent_34f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "remote_proofreader_31f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "retired_librarian_62f",
+    "answer": "dominant",
+    "error": null
+  },
+  {
+    "experiment_id": "dominator_neglect",
+    "persona": "line_cook_25m",
+    "answer": "dominant",
+    "error": null
+  }
+]

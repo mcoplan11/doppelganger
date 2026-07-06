@@ -1,0 +1,2402 @@
+[
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "communications_major_20f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "communications_major_20f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "paralegal_30f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "paralegal_30f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "psychology_major_20f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "psychology_major_20f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "computer_technician_26m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "computer_technician_26m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "delivery_driver_37m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "delivery_driver_37m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "graphic_designer_34f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "graphic_designer_34f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "real_estate_agent_32m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "real_estate_agent_32m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "part_time_bartender_29m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "part_time_bartender_29m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "remote_support_33f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "remote_support_33f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "freelance_writer_29nb",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "freelance_writer_29nb",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 380,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "freelance_copywriter_32nb",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "freelance_copywriter_32nb",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "hotel_receptionist_24f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 1000,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "hotel_receptionist_24f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 180,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "substitute_teacher_29m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "substitute_teacher_29m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 250,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "car_detailer_23m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "car_detailer_23m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 200,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "content_moderator_27f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "content_moderator_27f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "fast_food_worker_19m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "fast_food_worker_19m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "part_time_tutor_24f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "part_time_tutor_24f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "hr_assistant_27f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "hr_assistant_27f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "freelance_photographer_30m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "freelance_photographer_30m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 380,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "pharmacy_tech_28m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "pharmacy_tech_28m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "juice_barista_19f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "juice_barista_19f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "research_assistant_24f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "research_assistant_24f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "office_assistant_51m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "office_assistant_51m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "bus_driver_35m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "bus_driver_35m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "grant_writer_34f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "grant_writer_34f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "private_tutor_27f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "private_tutor_27f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "senior_clerk_55f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "senior_clerk_55f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "online_reseller_29m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "online_reseller_29m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "virtual_assistant_25f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "virtual_assistant_25f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "english_tutor_28f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "english_tutor_28f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "cafe_manager_28f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "cafe_manager_28f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "legal_secretary_44f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "legal_secretary_44f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "retail_cashier_22m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "retail_cashier_22m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "copywriter_28f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "copywriter_28f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "biology_graduate_24nb",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "biology_graduate_24nb",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "unemployed_manager_47m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "unemployed_manager_47m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "pastry_chef_26f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "pastry_chef_26f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "unemployed_chef_33m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "unemployed_chef_33m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "inventory_specialist_27f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "inventory_specialist_27f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "administrative_assistant_52f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "administrative_assistant_52f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "evening_receptionist_22f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 1000,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "evening_receptionist_22f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 180,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "remote_billing_clerk_29m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "remote_billing_clerk_29m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "empty_nester_58f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "empty_nester_58f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "stay_home_dad_32m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "stay_home_dad_32m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "truck_driver_51m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "truck_driver_51m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "customer_service_rep_50f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "customer_service_rep_50f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "stay_home_mom_36f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "stay_home_mom_36f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 380,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "nursing_student_22f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "nursing_student_22f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "dry_cleaning_clerk_22f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "dry_cleaning_clerk_22f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "freelance_animator_27f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "freelance_animator_27f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "seo_specialist_33m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "seo_specialist_33m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 380,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "retired_accountant_68m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "retired_accountant_68m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "software_dev_28m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "software_dev_28m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 380,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "pool_cleaner_21m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "pool_cleaner_21m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "night_shift_nurse_38f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "night_shift_nurse_38f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "local_gov_clerk_48f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "local_gov_clerk_48f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "unemployed_mechanic_33m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "unemployed_mechanic_33m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "theater_major_21f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "theater_major_21f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "physics_student_21f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "physics_student_21f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "occupational_therapist_33f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "occupational_therapist_33f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "insurance_adjuster_43m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "insurance_adjuster_43m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 380,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "woodworker_29m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "woodworker_29m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "junior_analyst_24m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "junior_analyst_24m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "office_manager_31f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 1000,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "office_manager_31f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "dog_trainer_30f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "dog_trainer_30f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "tutor_coordinator_42m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "tutor_coordinator_42m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "chemistry_major_19nb",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "chemistry_major_19nb",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "real_estate_appraiser_54m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "real_estate_appraiser_54m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 328,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "night_auditor_27m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "night_auditor_27m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "part_time_florist_45f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "part_time_florist_45f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "medical_transcriptionist_53f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "medical_transcriptionist_53f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 380,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "property_manager_31m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "property_manager_31m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "logistics_coordinator_40m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "logistics_coordinator_40m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "retail_store_manager_46m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "retail_store_manager_46m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "marketing_coordinator_26f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "marketing_coordinator_26f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "screen_printer_28m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "screen_printer_28m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "daycare_owner_40f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "daycare_owner_40f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "junior_designer_23f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 1500,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "junior_designer_23f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 380,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "stay_home_dad_39m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "stay_home_dad_39m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "server_37m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "server_37m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "data_entry_clerk_26f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "data_entry_clerk_26f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "virtual_tutor_26f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "virtual_tutor_26f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "stay_home_mother_28f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "stay_home_mother_28f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "technical_writer_32m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "technical_writer_32m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "data_entry_operator_23nb",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "data_entry_operator_23nb",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "dropshipper_24m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "dropshipper_24m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "dental_hygienist_28f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "dental_hygienist_28f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "stay_home_mom_30f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "stay_home_mom_30f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "web_designer_29m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "web_designer_29m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "high_school_substitute_30f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "high_school_substitute_30f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "call_center_agent_28m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "call_center_agent_28m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "freelance_indexer_47f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "freelance_indexer_47f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "travel_agent_33m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "travel_agent_33m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "landscape_laborer_25m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "landscape_laborer_25m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 200,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "part_time_consultant_60m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "part_time_consultant_60m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "retired_mechanic_65m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "retired_mechanic_65m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "retail_merchandiser_31f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "retail_merchandiser_31f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "job_seeker_admin_28m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "job_seeker_admin_28m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "undeclared_freshman_18f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "undeclared_freshman_18f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "physical_therapy_aide_23f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 1000,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "physical_therapy_aide_23f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 180,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "it_technician_27m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "it_technician_27m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "music_teacher_32f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "music_teacher_32f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "locksmith_28m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "locksmith_28m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "fitness_instructor_26m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "fitness_instructor_26m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "unemployed_sales_41m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "unemployed_sales_41m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "freelance_programmer_27nb",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "freelance_programmer_27nb",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "math_tutor_22f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "math_tutor_22f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "online_seller_33f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "online_seller_33f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "electrician_43m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "electrician_43m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "audio_engineer_31m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "audio_engineer_31m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "grocery_shopper_26f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "grocery_shopper_26f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 200,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "bakery_assistant_20f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "bakery_assistant_20f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "math_graduate_student_26m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "math_graduate_student_26m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 380,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "community_college_student_19m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "community_college_student_19m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "warehouse_manager_34m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "warehouse_manager_34m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "floral_designer_28f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "floral_designer_28f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "veterinary_assistant_24f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "veterinary_assistant_24f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "transcriptionist_30nb",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 1200,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "transcriptionist_30nb",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "barista_trainer_24m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "barista_trainer_24m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "high_school_teacher_49m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "high_school_teacher_49m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "bookkeeper_48f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "bookkeeper_48f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "stay_home_mom_26f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "stay_home_mom_26f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "construction_estimator_36m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "construction_estimator_36m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "pet_sitter_24f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "pet_sitter_24f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "social_media_manager_26f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "social_media_manager_26f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 380,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "voice_actor_31m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "voice_actor_31m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "data_analyst_35f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "data_analyst_35f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 380,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "accountant_38m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "accountant_38m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "proofreader_35f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "proofreader_35f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "nanny_25f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "nanny_25f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "stay_home_father_28m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "stay_home_father_28m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "film_student_20m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "film_student_20m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "tech_support_agent_22f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "tech_support_agent_22f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "videographer_25m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "videographer_25m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "massage_therapist_41f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "massage_therapist_41f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 7,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "flight_attendant_29f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "flight_attendant_29f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 200,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "gig_delivery_driver_31m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "gig_delivery_driver_31m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "delivery_rider_22m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "delivery_rider_22m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "event_planner_32f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "event_planner_32f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "freelance_translator_28nb",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "freelance_translator_28nb",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 380,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "freelance_editor_44f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "freelance_editor_44f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 328,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "library_assistant_24m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 379,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "library_assistant_24m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 380,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "retired_teacher_64f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "retired_teacher_64f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "house_sitter_23m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "house_sitter_23m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "biology_student_19f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "biology_student_19f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "retail_supervisor_29m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "retail_supervisor_29m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "stay_home_parent_34f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "stay_home_parent_34f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "remote_proofreader_31f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "remote_proofreader_31f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "retired_librarian_62f",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "retired_librarian_62f",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "line_cook_25m",
+    "condition_id": "high_anchor",
+    "condition_name": "High Anchor",
+    "answer": 350,
+    "error": null
+  },
+  {
+    "experiment_id": "anchoring_redwood",
+    "persona": "line_cook_25m",
+    "condition_id": "low_anchor",
+    "condition_name": "Low Anchor",
+    "answer": 300,
+    "error": null
+  }
+]
