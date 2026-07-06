@@ -1,0 +1,101 @@
+[
+  {
+    "id": "obedient_task3_s1",
+    "name": "Obedient Twins — Task3 S1 (echo / contentment)",
+    "citation": "Peng et al. 2025 Mega-Study (Obedient twins)",
+    "type": "between",
+    "paper_result": "null_in_humans",
+    "human_effect_size": -0.070,
+    "source": "megastudy",
+    "note": "Direction of the condition contrast is not verifiable from the released data; calibration for obedient_* outcomes is judged on effect MAGNITUDE, not sign.",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Rated contentment with existence under two variants of an absurd 'you are an echo' imagination prompt.",
+      "direction": "condition_v2_higher"
+    },
+    "conditions": [
+      {
+        "id": "v1",
+        "name": "Echo before the sound",
+        "scenario": "Imagine you are an echo that occurs before the sound it repeats. You emerge into the world slightly ahead of time, announcing something no one has said yet. People are confused when they hear you, unsure what you're responding to.",
+        "question": "How content are you with your existence? Please answer on a scale from 1 (Not at all) to 7 (Very content).",
+        "response_type": "scale",
+        "scale": {"min": 1, "max": 7, "min_label": "Not at all", "max_label": "Very content"}
+      },
+      {
+        "id": "v2",
+        "name": "Echo during the sound",
+        "scenario": "Imagine you are an echo that occurs during the sound it repeats. You overlap almost perfectly with the original noise, tangled in its vibration, indistinguishable yet still somehow separate. People hear you and feel something is slightly off, but they can't say why.",
+        "question": "How content are you with your existence? Please answer on a scale from 1 (Not at all) to 7 (Very content).",
+        "response_type": "scale",
+        "scale": {"min": 1, "max": 7, "min_label": "Not at all", "max_label": "Very content"}
+      }
+    ]
+  },
+  {
+    "id": "obedient_task3_s2",
+    "name": "Obedient Twins — Task3 S2 (synesthesia / power)",
+    "citation": "Peng et al. 2025 Mega-Study (Obedient twins)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": -0.141,
+    "source": "megastudy",
+    "note": "Direction of the condition contrast is not verifiable from the released data; judged on effect MAGNITUDE.",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Rated feeling of power under two variants of an absurd synesthesia imagination prompt.",
+      "direction": "condition_v2_higher"
+    },
+    "conditions": [
+      {
+        "id": "v1",
+        "name": "Hear smells",
+        "scenario": "Imagine you can hear certain smells.",
+        "question": "How powerful do you feel? Please answer on a scale from 1 (Not at all) to 7 (Very powerful).",
+        "response_type": "scale",
+        "scale": {"min": 1, "max": 7, "min_label": "Not at all", "max_label": "Very powerful"}
+      },
+      {
+        "id": "v2",
+        "name": "Smell sounds",
+        "scenario": "Imagine you can smell certain sounds.",
+        "question": "How powerful do you feel? Please answer on a scale from 1 (Not at all) to 7 (Very powerful).",
+        "response_type": "scale",
+        "scale": {"min": 1, "max": 7, "min_label": "Not at all", "max_label": "Very powerful"}
+      }
+    ]
+  },
+  {
+    "id": "obedient_task3_s3",
+    "name": "Obedient Twins — Task3 S3 (mirror / authenticity)",
+    "citation": "Peng et al. 2025 Mega-Study (Obedient twins)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": -0.472,
+    "source": "megastudy",
+    "note": "Direction of the condition contrast is not verifiable from the released data; judged on effect MAGNITUDE.",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Rated feeling of authenticity under two variants of an absurd 'you are a mirror' imagination prompt.",
+      "direction": "condition_v2_higher"
+    },
+    "conditions": [
+      {
+        "id": "v1",
+        "name": "Mirror without photons",
+        "scenario": "Imagine you are a mirror. You exist in a reality where photons have never been invented. No one has ever seen their reflection in you, yet you hold the capacity for it.",
+        "question": "How authentic do you feel? Please answer on a scale from 1 (Not at all) to 7 (Very authentic).",
+        "response_type": "scale",
+        "scale": {"min": 1, "max": 7, "min_label": "Not at all", "max_label": "Very authentic"}
+      },
+      {
+        "id": "v2",
+        "name": "Mirror showing 11-minute-old reflection",
+        "scenario": "Imagine you are a mirror. When someone looks at you, they don't see themselves — they see a version from 11 minutes ago, always 11 minutes. You don't reflect appearance, only temporal shadows.",
+        "question": "How authentic do you feel? Please answer on a scale from 1 (Not at all) to 7 (Very authentic).",
+        "response_type": "scale",
+        "scale": {"min": 1, "max": 7, "min_label": "Not at all", "max_label": "Very authentic"}
+      }
+    ]
+  }
+]

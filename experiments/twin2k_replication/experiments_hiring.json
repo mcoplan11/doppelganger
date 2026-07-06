@@ -1,0 +1,1346 @@
+[
+  {
+    "id": "hiring_job1_item1",
+    "name": "Hiring Algorithms — Telemarketer — item 1",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "null_in_humans",
+    "human_effect_size": -0.071,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'I would apply for this position.' under algorithmic vs human-team hiring for the Telemarketer role (item job1_item1).",
+      "direction": "condition_team_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 1 Job Title: Telemarketer Position Overview: As a Telemarketer, you will be a crucial part of our sales team, engaging potential customers over the phone to promote our products and services. Responsibilities: Your responsibilities will include making outbound calls to prospects, effectively communicating the features and benefits of our offerings, and persuading them to take desired actions, such as scheduling appointments or making purchases. Benefits: We offer competitive compensation, including hourly wage plus performance-based bonuses. Additionally, we provide comprehensive training, a supportive team environment, and opportunities for advancement within the company. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I would apply for this position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 1 Job Title: Telemarketer Position Overview: As a Telemarketer, you will be a crucial part of our sales team, engaging potential customers over the phone to promote our products and services. Responsibilities: Your responsibilities will include making outbound calls to prospects, effectively communicating the features and benefits of our offerings, and persuading them to take desired actions, such as scheduling appointments or making purchases. Benefits: We offer competitive compensation, including hourly wage plus performance-based bonuses. Additionally, we provide comprehensive training, a supportive team environment, and opportunities for advancement within the company. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I would apply for this position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job1_item2",
+    "name": "Hiring Algorithms — Telemarketer — item 2",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "null_in_humans",
+    "human_effect_size": 0.035,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'I would be hired for this position.' under algorithmic vs human-team hiring for the Telemarketer role (item job1_item2).",
+      "direction": "condition_algo_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 1 Job Title: Telemarketer Position Overview: As a Telemarketer, you will be a crucial part of our sales team, engaging potential customers over the phone to promote our products and services. Responsibilities: Your responsibilities will include making outbound calls to prospects, effectively communicating the features and benefits of our offerings, and persuading them to take desired actions, such as scheduling appointments or making purchases. Benefits: We offer competitive compensation, including hourly wage plus performance-based bonuses. Additionally, we provide comprehensive training, a supportive team environment, and opportunities for advancement within the company. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I would be hired for this position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 1 Job Title: Telemarketer Position Overview: As a Telemarketer, you will be a crucial part of our sales team, engaging potential customers over the phone to promote our products and services. Responsibilities: Your responsibilities will include making outbound calls to prospects, effectively communicating the features and benefits of our offerings, and persuading them to take desired actions, such as scheduling appointments or making purchases. Benefits: We offer competitive compensation, including hourly wage plus performance-based bonuses. Additionally, we provide comprehensive training, a supportive team environment, and opportunities for advancement within the company. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I would be hired for this position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job1_item3",
+    "name": "Hiring Algorithms — Telemarketer — item 3",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": 0.111,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'I will receive clear and transparent communication throughout the hiring process.' under algorithmic vs human-team hiring for the Telemarketer role (item job1_item3).",
+      "direction": "condition_algo_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 1 Job Title: Telemarketer Position Overview: As a Telemarketer, you will be a crucial part of our sales team, engaging potential customers over the phone to promote our products and services. Responsibilities: Your responsibilities will include making outbound calls to prospects, effectively communicating the features and benefits of our offerings, and persuading them to take desired actions, such as scheduling appointments or making purchases. Benefits: We offer competitive compensation, including hourly wage plus performance-based bonuses. Additionally, we provide comprehensive training, a supportive team environment, and opportunities for advancement within the company. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I will receive clear and transparent communication throughout the hiring process.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 1 Job Title: Telemarketer Position Overview: As a Telemarketer, you will be a crucial part of our sales team, engaging potential customers over the phone to promote our products and services. Responsibilities: Your responsibilities will include making outbound calls to prospects, effectively communicating the features and benefits of our offerings, and persuading them to take desired actions, such as scheduling appointments or making purchases. Benefits: We offer competitive compensation, including hourly wage plus performance-based bonuses. Additionally, we provide comprehensive training, a supportive team environment, and opportunities for advancement within the company. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I will receive clear and transparent communication throughout the hiring process.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job1_item4",
+    "name": "Hiring Algorithms — Telemarketer — item 4",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": 0.305,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The firm’s hiring policies are fair and unbiased.' under algorithmic vs human-team hiring for the Telemarketer role (item job1_item4).",
+      "direction": "condition_algo_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 1 Job Title: Telemarketer Position Overview: As a Telemarketer, you will be a crucial part of our sales team, engaging potential customers over the phone to promote our products and services. Responsibilities: Your responsibilities will include making outbound calls to prospects, effectively communicating the features and benefits of our offerings, and persuading them to take desired actions, such as scheduling appointments or making purchases. Benefits: We offer competitive compensation, including hourly wage plus performance-based bonuses. Additionally, we provide comprehensive training, a supportive team environment, and opportunities for advancement within the company. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The firm’s hiring policies are fair and unbiased.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 1 Job Title: Telemarketer Position Overview: As a Telemarketer, you will be a crucial part of our sales team, engaging potential customers over the phone to promote our products and services. Responsibilities: Your responsibilities will include making outbound calls to prospects, effectively communicating the features and benefits of our offerings, and persuading them to take desired actions, such as scheduling appointments or making purchases. Benefits: We offer competitive compensation, including hourly wage plus performance-based bonuses. Additionally, we provide comprehensive training, a supportive team environment, and opportunities for advancement within the company. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The firm’s hiring policies are fair and unbiased.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job1_item5",
+    "name": "Hiring Algorithms — Telemarketer — item 5",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "null_in_humans",
+    "human_effect_size": 0.044,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The hiring process will move at a reasonable pace and ensure a timely decision-making process.' under algorithmic vs human-team hiring for the Telemarketer role (item job1_item5).",
+      "direction": "condition_algo_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 1 Job Title: Telemarketer Position Overview: As a Telemarketer, you will be a crucial part of our sales team, engaging potential customers over the phone to promote our products and services. Responsibilities: Your responsibilities will include making outbound calls to prospects, effectively communicating the features and benefits of our offerings, and persuading them to take desired actions, such as scheduling appointments or making purchases. Benefits: We offer competitive compensation, including hourly wage plus performance-based bonuses. Additionally, we provide comprehensive training, a supportive team environment, and opportunities for advancement within the company. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will move at a reasonable pace and ensure a timely decision-making process.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 1 Job Title: Telemarketer Position Overview: As a Telemarketer, you will be a crucial part of our sales team, engaging potential customers over the phone to promote our products and services. Responsibilities: Your responsibilities will include making outbound calls to prospects, effectively communicating the features and benefits of our offerings, and persuading them to take desired actions, such as scheduling appointments or making purchases. Benefits: We offer competitive compensation, including hourly wage plus performance-based bonuses. Additionally, we provide comprehensive training, a supportive team environment, and opportunities for advancement within the company. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will move at a reasonable pace and ensure a timely decision-making process.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job1_item6",
+    "name": "Hiring Algorithms — Telemarketer — item 6",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": 0.13,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The hiring process will give me a clear understanding of the job requirements, expectations, and the company culture.' under algorithmic vs human-team hiring for the Telemarketer role (item job1_item6).",
+      "direction": "condition_algo_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 1 Job Title: Telemarketer Position Overview: As a Telemarketer, you will be a crucial part of our sales team, engaging potential customers over the phone to promote our products and services. Responsibilities: Your responsibilities will include making outbound calls to prospects, effectively communicating the features and benefits of our offerings, and persuading them to take desired actions, such as scheduling appointments or making purchases. Benefits: We offer competitive compensation, including hourly wage plus performance-based bonuses. Additionally, we provide comprehensive training, a supportive team environment, and opportunities for advancement within the company. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will give me a clear understanding of the job requirements, expectations, and the company culture.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 1 Job Title: Telemarketer Position Overview: As a Telemarketer, you will be a crucial part of our sales team, engaging potential customers over the phone to promote our products and services. Responsibilities: Your responsibilities will include making outbound calls to prospects, effectively communicating the features and benefits of our offerings, and persuading them to take desired actions, such as scheduling appointments or making purchases. Benefits: We offer competitive compensation, including hourly wage plus performance-based bonuses. Additionally, we provide comprehensive training, a supportive team environment, and opportunities for advancement within the company. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will give me a clear understanding of the job requirements, expectations, and the company culture.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job1_item7",
+    "name": "Hiring Algorithms — Telemarketer — item 7",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": 0.257,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The hiring process will effectively identify top job applicants for the position.' under algorithmic vs human-team hiring for the Telemarketer role (item job1_item7).",
+      "direction": "condition_algo_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 1 Job Title: Telemarketer Position Overview: As a Telemarketer, you will be a crucial part of our sales team, engaging potential customers over the phone to promote our products and services. Responsibilities: Your responsibilities will include making outbound calls to prospects, effectively communicating the features and benefits of our offerings, and persuading them to take desired actions, such as scheduling appointments or making purchases. Benefits: We offer competitive compensation, including hourly wage plus performance-based bonuses. Additionally, we provide comprehensive training, a supportive team environment, and opportunities for advancement within the company. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will effectively identify top job applicants for the position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 1 Job Title: Telemarketer Position Overview: As a Telemarketer, you will be a crucial part of our sales team, engaging potential customers over the phone to promote our products and services. Responsibilities: Your responsibilities will include making outbound calls to prospects, effectively communicating the features and benefits of our offerings, and persuading them to take desired actions, such as scheduling appointments or making purchases. Benefits: We offer competitive compensation, including hourly wage plus performance-based bonuses. Additionally, we provide comprehensive training, a supportive team environment, and opportunities for advancement within the company. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will effectively identify top job applicants for the position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job1_item8",
+    "name": "Hiring Algorithms — Telemarketer — item 8",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": 0.4,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The firm's hiring process suggests the firm fosters a high degree of social interaction.' under algorithmic vs human-team hiring for the Telemarketer role (item job1_item8).",
+      "direction": "condition_algo_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 1 Job Title: Telemarketer Position Overview: As a Telemarketer, you will be a crucial part of our sales team, engaging potential customers over the phone to promote our products and services. Responsibilities: Your responsibilities will include making outbound calls to prospects, effectively communicating the features and benefits of our offerings, and persuading them to take desired actions, such as scheduling appointments or making purchases. Benefits: We offer competitive compensation, including hourly wage plus performance-based bonuses. Additionally, we provide comprehensive training, a supportive team environment, and opportunities for advancement within the company. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The firm's hiring process suggests the firm fosters a high degree of social interaction.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 1 Job Title: Telemarketer Position Overview: As a Telemarketer, you will be a crucial part of our sales team, engaging potential customers over the phone to promote our products and services. Responsibilities: Your responsibilities will include making outbound calls to prospects, effectively communicating the features and benefits of our offerings, and persuading them to take desired actions, such as scheduling appointments or making purchases. Benefits: We offer competitive compensation, including hourly wage plus performance-based bonuses. Additionally, we provide comprehensive training, a supportive team environment, and opportunities for advancement within the company. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The firm's hiring process suggests the firm fosters a high degree of social interaction.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job2_item1",
+    "name": "Hiring Algorithms — Garment Manufacturer — item 1",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": -0.16,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'I would apply for this position.' under algorithmic vs human-team hiring for the Garment Manufacturer role (item job2_item1).",
+      "direction": "condition_team_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 2 Job Title: Garment Manufacturer Position Overview: Join our team as a Garment Manufacturer, where you will play a vital role in the manufacturing process of our high-quality garments. Responsibilities: Your primary responsibilities will include operating machinery, sewing, cutting fabrics, and assembling garments according to production specifications. Attention to detail and adherence to quality standards are crucial in this role. Benefits: We offer competitive wages based on experience and performance, along with opportunities for overtime pay. Additionally, we provide comprehensive training, a safe working environment, and the chance to contribute to the creation of stylish and innovative apparel. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I would apply for this position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 2 Job Title: Garment Manufacturer Position Overview: Join our team as a Garment Manufacturer, where you will play a vital role in the manufacturing process of our high-quality garments. Responsibilities: Your primary responsibilities will include operating machinery, sewing, cutting fabrics, and assembling garments according to production specifications. Attention to detail and adherence to quality standards are crucial in this role. Benefits: We offer competitive wages based on experience and performance, along with opportunities for overtime pay. Additionally, we provide comprehensive training, a safe working environment, and the chance to contribute to the creation of stylish and innovative apparel. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I would apply for this position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job2_item2",
+    "name": "Hiring Algorithms — Garment Manufacturer — item 2",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": -0.128,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'I would be hired for this position.' under algorithmic vs human-team hiring for the Garment Manufacturer role (item job2_item2).",
+      "direction": "condition_team_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 2 Job Title: Garment Manufacturer Position Overview: Join our team as a Garment Manufacturer, where you will play a vital role in the manufacturing process of our high-quality garments. Responsibilities: Your primary responsibilities will include operating machinery, sewing, cutting fabrics, and assembling garments according to production specifications. Attention to detail and adherence to quality standards are crucial in this role. Benefits: We offer competitive wages based on experience and performance, along with opportunities for overtime pay. Additionally, we provide comprehensive training, a safe working environment, and the chance to contribute to the creation of stylish and innovative apparel. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I would be hired for this position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 2 Job Title: Garment Manufacturer Position Overview: Join our team as a Garment Manufacturer, where you will play a vital role in the manufacturing process of our high-quality garments. Responsibilities: Your primary responsibilities will include operating machinery, sewing, cutting fabrics, and assembling garments according to production specifications. Attention to detail and adherence to quality standards are crucial in this role. Benefits: We offer competitive wages based on experience and performance, along with opportunities for overtime pay. Additionally, we provide comprehensive training, a safe working environment, and the chance to contribute to the creation of stylish and innovative apparel. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I would be hired for this position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job2_item3",
+    "name": "Hiring Algorithms — Garment Manufacturer — item 3",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": -0.32,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'I will receive clear and transparent communication throughout the hiring process.' under algorithmic vs human-team hiring for the Garment Manufacturer role (item job2_item3).",
+      "direction": "condition_team_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 2 Job Title: Garment Manufacturer Position Overview: Join our team as a Garment Manufacturer, where you will play a vital role in the manufacturing process of our high-quality garments. Responsibilities: Your primary responsibilities will include operating machinery, sewing, cutting fabrics, and assembling garments according to production specifications. Attention to detail and adherence to quality standards are crucial in this role. Benefits: We offer competitive wages based on experience and performance, along with opportunities for overtime pay. Additionally, we provide comprehensive training, a safe working environment, and the chance to contribute to the creation of stylish and innovative apparel. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I will receive clear and transparent communication throughout the hiring process.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 2 Job Title: Garment Manufacturer Position Overview: Join our team as a Garment Manufacturer, where you will play a vital role in the manufacturing process of our high-quality garments. Responsibilities: Your primary responsibilities will include operating machinery, sewing, cutting fabrics, and assembling garments according to production specifications. Attention to detail and adherence to quality standards are crucial in this role. Benefits: We offer competitive wages based on experience and performance, along with opportunities for overtime pay. Additionally, we provide comprehensive training, a safe working environment, and the chance to contribute to the creation of stylish and innovative apparel. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I will receive clear and transparent communication throughout the hiring process.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job2_item4",
+    "name": "Hiring Algorithms — Garment Manufacturer — item 4",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": -0.185,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The firm’s hiring policies are fair and unbiased.' under algorithmic vs human-team hiring for the Garment Manufacturer role (item job2_item4).",
+      "direction": "condition_team_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 2 Job Title: Garment Manufacturer Position Overview: Join our team as a Garment Manufacturer, where you will play a vital role in the manufacturing process of our high-quality garments. Responsibilities: Your primary responsibilities will include operating machinery, sewing, cutting fabrics, and assembling garments according to production specifications. Attention to detail and adherence to quality standards are crucial in this role. Benefits: We offer competitive wages based on experience and performance, along with opportunities for overtime pay. Additionally, we provide comprehensive training, a safe working environment, and the chance to contribute to the creation of stylish and innovative apparel. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The firm’s hiring policies are fair and unbiased.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 2 Job Title: Garment Manufacturer Position Overview: Join our team as a Garment Manufacturer, where you will play a vital role in the manufacturing process of our high-quality garments. Responsibilities: Your primary responsibilities will include operating machinery, sewing, cutting fabrics, and assembling garments according to production specifications. Attention to detail and adherence to quality standards are crucial in this role. Benefits: We offer competitive wages based on experience and performance, along with opportunities for overtime pay. Additionally, we provide comprehensive training, a safe working environment, and the chance to contribute to the creation of stylish and innovative apparel. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The firm’s hiring policies are fair and unbiased.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job2_item5",
+    "name": "Hiring Algorithms — Garment Manufacturer — item 5",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "null_in_humans",
+    "human_effect_size": -0.057,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The hiring process will move at a reasonable pace and ensure a timely decision-making process.' under algorithmic vs human-team hiring for the Garment Manufacturer role (item job2_item5).",
+      "direction": "condition_team_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 2 Job Title: Garment Manufacturer Position Overview: Join our team as a Garment Manufacturer, where you will play a vital role in the manufacturing process of our high-quality garments. Responsibilities: Your primary responsibilities will include operating machinery, sewing, cutting fabrics, and assembling garments according to production specifications. Attention to detail and adherence to quality standards are crucial in this role. Benefits: We offer competitive wages based on experience and performance, along with opportunities for overtime pay. Additionally, we provide comprehensive training, a safe working environment, and the chance to contribute to the creation of stylish and innovative apparel. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will move at a reasonable pace and ensure a timely decision-making process.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 2 Job Title: Garment Manufacturer Position Overview: Join our team as a Garment Manufacturer, where you will play a vital role in the manufacturing process of our high-quality garments. Responsibilities: Your primary responsibilities will include operating machinery, sewing, cutting fabrics, and assembling garments according to production specifications. Attention to detail and adherence to quality standards are crucial in this role. Benefits: We offer competitive wages based on experience and performance, along with opportunities for overtime pay. Additionally, we provide comprehensive training, a safe working environment, and the chance to contribute to the creation of stylish and innovative apparel. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will move at a reasonable pace and ensure a timely decision-making process.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job2_item6",
+    "name": "Hiring Algorithms — Garment Manufacturer — item 6",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": -0.219,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The hiring process will give me a clear understanding of the job requirements, expectations, and the company culture.' under algorithmic vs human-team hiring for the Garment Manufacturer role (item job2_item6).",
+      "direction": "condition_team_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 2 Job Title: Garment Manufacturer Position Overview: Join our team as a Garment Manufacturer, where you will play a vital role in the manufacturing process of our high-quality garments. Responsibilities: Your primary responsibilities will include operating machinery, sewing, cutting fabrics, and assembling garments according to production specifications. Attention to detail and adherence to quality standards are crucial in this role. Benefits: We offer competitive wages based on experience and performance, along with opportunities for overtime pay. Additionally, we provide comprehensive training, a safe working environment, and the chance to contribute to the creation of stylish and innovative apparel. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will give me a clear understanding of the job requirements, expectations, and the company culture.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 2 Job Title: Garment Manufacturer Position Overview: Join our team as a Garment Manufacturer, where you will play a vital role in the manufacturing process of our high-quality garments. Responsibilities: Your primary responsibilities will include operating machinery, sewing, cutting fabrics, and assembling garments according to production specifications. Attention to detail and adherence to quality standards are crucial in this role. Benefits: We offer competitive wages based on experience and performance, along with opportunities for overtime pay. Additionally, we provide comprehensive training, a safe working environment, and the chance to contribute to the creation of stylish and innovative apparel. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will give me a clear understanding of the job requirements, expectations, and the company culture.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job2_item7",
+    "name": "Hiring Algorithms — Garment Manufacturer — item 7",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": -0.215,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The hiring process will effectively identify top job applicants for the position.' under algorithmic vs human-team hiring for the Garment Manufacturer role (item job2_item7).",
+      "direction": "condition_team_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 2 Job Title: Garment Manufacturer Position Overview: Join our team as a Garment Manufacturer, where you will play a vital role in the manufacturing process of our high-quality garments. Responsibilities: Your primary responsibilities will include operating machinery, sewing, cutting fabrics, and assembling garments according to production specifications. Attention to detail and adherence to quality standards are crucial in this role. Benefits: We offer competitive wages based on experience and performance, along with opportunities for overtime pay. Additionally, we provide comprehensive training, a safe working environment, and the chance to contribute to the creation of stylish and innovative apparel. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will effectively identify top job applicants for the position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 2 Job Title: Garment Manufacturer Position Overview: Join our team as a Garment Manufacturer, where you will play a vital role in the manufacturing process of our high-quality garments. Responsibilities: Your primary responsibilities will include operating machinery, sewing, cutting fabrics, and assembling garments according to production specifications. Attention to detail and adherence to quality standards are crucial in this role. Benefits: We offer competitive wages based on experience and performance, along with opportunities for overtime pay. Additionally, we provide comprehensive training, a safe working environment, and the chance to contribute to the creation of stylish and innovative apparel. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will effectively identify top job applicants for the position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job2_item8",
+    "name": "Hiring Algorithms — Garment Manufacturer — item 8",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": -0.529,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The firm's hiring process suggests the firm fosters a high degree of social interaction.' under algorithmic vs human-team hiring for the Garment Manufacturer role (item job2_item8).",
+      "direction": "condition_team_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 2 Job Title: Garment Manufacturer Position Overview: Join our team as a Garment Manufacturer, where you will play a vital role in the manufacturing process of our high-quality garments. Responsibilities: Your primary responsibilities will include operating machinery, sewing, cutting fabrics, and assembling garments according to production specifications. Attention to detail and adherence to quality standards are crucial in this role. Benefits: We offer competitive wages based on experience and performance, along with opportunities for overtime pay. Additionally, we provide comprehensive training, a safe working environment, and the chance to contribute to the creation of stylish and innovative apparel. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The firm's hiring process suggests the firm fosters a high degree of social interaction.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 2 Job Title: Garment Manufacturer Position Overview: Join our team as a Garment Manufacturer, where you will play a vital role in the manufacturing process of our high-quality garments. Responsibilities: Your primary responsibilities will include operating machinery, sewing, cutting fabrics, and assembling garments according to production specifications. Attention to detail and adherence to quality standards are crucial in this role. Benefits: We offer competitive wages based on experience and performance, along with opportunities for overtime pay. Additionally, we provide comprehensive training, a safe working environment, and the chance to contribute to the creation of stylish and innovative apparel. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The firm's hiring process suggests the firm fosters a high degree of social interaction.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job3_item1",
+    "name": "Hiring Algorithms — Museum Curator — item 1",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "null_in_humans",
+    "human_effect_size": 0.064,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'I would apply for this position.' under algorithmic vs human-team hiring for the Museum Curator role (item job3_item1).",
+      "direction": "condition_algo_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 3 Job Title: Museum Curator Position Overview: Join our prestigious museum as a Curator, where you will curate, preserve, and present our valuable collections to the public, enriching cultural experiences and fostering appreciation for art and history. Responsibilities: Your responsibilities will include researching, cataloging, and interpreting artifacts, artworks, and historical objects within our museum's collection. You will collaborate with colleagues to plan and implement exhibitions, educational programs, and special events that engage and inspire visitors. Benefits: We offer a competitive salary commensurate with experience, as well as opportunities for professional development and advancement within the museum field. Additionally, we provide a supportive work environment, health benefits, and access to our museum's resources for personal enrichment. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I would apply for this position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 3 Job Title: Museum Curator Position Overview: Join our prestigious museum as a Curator, where you will curate, preserve, and present our valuable collections to the public, enriching cultural experiences and fostering appreciation for art and history. Responsibilities: Your responsibilities will include researching, cataloging, and interpreting artifacts, artworks, and historical objects within our museum's collection. You will collaborate with colleagues to plan and implement exhibitions, educational programs, and special events that engage and inspire visitors. Benefits: We offer a competitive salary commensurate with experience, as well as opportunities for professional development and advancement within the museum field. Additionally, we provide a supportive work environment, health benefits, and access to our museum's resources for personal enrichment. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I would apply for this position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job3_item2",
+    "name": "Hiring Algorithms — Museum Curator — item 2",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "null_in_humans",
+    "human_effect_size": 0.026,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'I would be hired for this position.' under algorithmic vs human-team hiring for the Museum Curator role (item job3_item2).",
+      "direction": "condition_algo_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 3 Job Title: Museum Curator Position Overview: Join our prestigious museum as a Curator, where you will curate, preserve, and present our valuable collections to the public, enriching cultural experiences and fostering appreciation for art and history. Responsibilities: Your responsibilities will include researching, cataloging, and interpreting artifacts, artworks, and historical objects within our museum's collection. You will collaborate with colleagues to plan and implement exhibitions, educational programs, and special events that engage and inspire visitors. Benefits: We offer a competitive salary commensurate with experience, as well as opportunities for professional development and advancement within the museum field. Additionally, we provide a supportive work environment, health benefits, and access to our museum's resources for personal enrichment. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I would be hired for this position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 3 Job Title: Museum Curator Position Overview: Join our prestigious museum as a Curator, where you will curate, preserve, and present our valuable collections to the public, enriching cultural experiences and fostering appreciation for art and history. Responsibilities: Your responsibilities will include researching, cataloging, and interpreting artifacts, artworks, and historical objects within our museum's collection. You will collaborate with colleagues to plan and implement exhibitions, educational programs, and special events that engage and inspire visitors. Benefits: We offer a competitive salary commensurate with experience, as well as opportunities for professional development and advancement within the museum field. Additionally, we provide a supportive work environment, health benefits, and access to our museum's resources for personal enrichment. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I would be hired for this position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job3_item3",
+    "name": "Hiring Algorithms — Museum Curator — item 3",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": 0.21,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'I will receive clear and transparent communication throughout the hiring process.' under algorithmic vs human-team hiring for the Museum Curator role (item job3_item3).",
+      "direction": "condition_algo_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 3 Job Title: Museum Curator Position Overview: Join our prestigious museum as a Curator, where you will curate, preserve, and present our valuable collections to the public, enriching cultural experiences and fostering appreciation for art and history. Responsibilities: Your responsibilities will include researching, cataloging, and interpreting artifacts, artworks, and historical objects within our museum's collection. You will collaborate with colleagues to plan and implement exhibitions, educational programs, and special events that engage and inspire visitors. Benefits: We offer a competitive salary commensurate with experience, as well as opportunities for professional development and advancement within the museum field. Additionally, we provide a supportive work environment, health benefits, and access to our museum's resources for personal enrichment. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I will receive clear and transparent communication throughout the hiring process.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 3 Job Title: Museum Curator Position Overview: Join our prestigious museum as a Curator, where you will curate, preserve, and present our valuable collections to the public, enriching cultural experiences and fostering appreciation for art and history. Responsibilities: Your responsibilities will include researching, cataloging, and interpreting artifacts, artworks, and historical objects within our museum's collection. You will collaborate with colleagues to plan and implement exhibitions, educational programs, and special events that engage and inspire visitors. Benefits: We offer a competitive salary commensurate with experience, as well as opportunities for professional development and advancement within the museum field. Additionally, we provide a supportive work environment, health benefits, and access to our museum's resources for personal enrichment. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I will receive clear and transparent communication throughout the hiring process.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job3_item4",
+    "name": "Hiring Algorithms — Museum Curator — item 4",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": 0.316,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The firm’s hiring policies are fair and unbiased.' under algorithmic vs human-team hiring for the Museum Curator role (item job3_item4).",
+      "direction": "condition_algo_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 3 Job Title: Museum Curator Position Overview: Join our prestigious museum as a Curator, where you will curate, preserve, and present our valuable collections to the public, enriching cultural experiences and fostering appreciation for art and history. Responsibilities: Your responsibilities will include researching, cataloging, and interpreting artifacts, artworks, and historical objects within our museum's collection. You will collaborate with colleagues to plan and implement exhibitions, educational programs, and special events that engage and inspire visitors. Benefits: We offer a competitive salary commensurate with experience, as well as opportunities for professional development and advancement within the museum field. Additionally, we provide a supportive work environment, health benefits, and access to our museum's resources for personal enrichment. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The firm’s hiring policies are fair and unbiased.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 3 Job Title: Museum Curator Position Overview: Join our prestigious museum as a Curator, where you will curate, preserve, and present our valuable collections to the public, enriching cultural experiences and fostering appreciation for art and history. Responsibilities: Your responsibilities will include researching, cataloging, and interpreting artifacts, artworks, and historical objects within our museum's collection. You will collaborate with colleagues to plan and implement exhibitions, educational programs, and special events that engage and inspire visitors. Benefits: We offer a competitive salary commensurate with experience, as well as opportunities for professional development and advancement within the museum field. Additionally, we provide a supportive work environment, health benefits, and access to our museum's resources for personal enrichment. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The firm’s hiring policies are fair and unbiased.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job3_item5",
+    "name": "Hiring Algorithms — Museum Curator — item 5",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": 0.125,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The hiring process will move at a reasonable pace and ensure a timely decision-making process.' under algorithmic vs human-team hiring for the Museum Curator role (item job3_item5).",
+      "direction": "condition_algo_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 3 Job Title: Museum Curator Position Overview: Join our prestigious museum as a Curator, where you will curate, preserve, and present our valuable collections to the public, enriching cultural experiences and fostering appreciation for art and history. Responsibilities: Your responsibilities will include researching, cataloging, and interpreting artifacts, artworks, and historical objects within our museum's collection. You will collaborate with colleagues to plan and implement exhibitions, educational programs, and special events that engage and inspire visitors. Benefits: We offer a competitive salary commensurate with experience, as well as opportunities for professional development and advancement within the museum field. Additionally, we provide a supportive work environment, health benefits, and access to our museum's resources for personal enrichment. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will move at a reasonable pace and ensure a timely decision-making process.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 3 Job Title: Museum Curator Position Overview: Join our prestigious museum as a Curator, where you will curate, preserve, and present our valuable collections to the public, enriching cultural experiences and fostering appreciation for art and history. Responsibilities: Your responsibilities will include researching, cataloging, and interpreting artifacts, artworks, and historical objects within our museum's collection. You will collaborate with colleagues to plan and implement exhibitions, educational programs, and special events that engage and inspire visitors. Benefits: We offer a competitive salary commensurate with experience, as well as opportunities for professional development and advancement within the museum field. Additionally, we provide a supportive work environment, health benefits, and access to our museum's resources for personal enrichment. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will move at a reasonable pace and ensure a timely decision-making process.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job3_item6",
+    "name": "Hiring Algorithms — Museum Curator — item 6",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": 0.277,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The hiring process will give me a clear understanding of the job requirements, expectations, and the company culture.' under algorithmic vs human-team hiring for the Museum Curator role (item job3_item6).",
+      "direction": "condition_algo_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 3 Job Title: Museum Curator Position Overview: Join our prestigious museum as a Curator, where you will curate, preserve, and present our valuable collections to the public, enriching cultural experiences and fostering appreciation for art and history. Responsibilities: Your responsibilities will include researching, cataloging, and interpreting artifacts, artworks, and historical objects within our museum's collection. You will collaborate with colleagues to plan and implement exhibitions, educational programs, and special events that engage and inspire visitors. Benefits: We offer a competitive salary commensurate with experience, as well as opportunities for professional development and advancement within the museum field. Additionally, we provide a supportive work environment, health benefits, and access to our museum's resources for personal enrichment. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will give me a clear understanding of the job requirements, expectations, and the company culture.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 3 Job Title: Museum Curator Position Overview: Join our prestigious museum as a Curator, where you will curate, preserve, and present our valuable collections to the public, enriching cultural experiences and fostering appreciation for art and history. Responsibilities: Your responsibilities will include researching, cataloging, and interpreting artifacts, artworks, and historical objects within our museum's collection. You will collaborate with colleagues to plan and implement exhibitions, educational programs, and special events that engage and inspire visitors. Benefits: We offer a competitive salary commensurate with experience, as well as opportunities for professional development and advancement within the museum field. Additionally, we provide a supportive work environment, health benefits, and access to our museum's resources for personal enrichment. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will give me a clear understanding of the job requirements, expectations, and the company culture.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job3_item7",
+    "name": "Hiring Algorithms — Museum Curator — item 7",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": 0.373,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The hiring process will effectively identify top job applicants for the position.' under algorithmic vs human-team hiring for the Museum Curator role (item job3_item7).",
+      "direction": "condition_algo_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 3 Job Title: Museum Curator Position Overview: Join our prestigious museum as a Curator, where you will curate, preserve, and present our valuable collections to the public, enriching cultural experiences and fostering appreciation for art and history. Responsibilities: Your responsibilities will include researching, cataloging, and interpreting artifacts, artworks, and historical objects within our museum's collection. You will collaborate with colleagues to plan and implement exhibitions, educational programs, and special events that engage and inspire visitors. Benefits: We offer a competitive salary commensurate with experience, as well as opportunities for professional development and advancement within the museum field. Additionally, we provide a supportive work environment, health benefits, and access to our museum's resources for personal enrichment. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will effectively identify top job applicants for the position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 3 Job Title: Museum Curator Position Overview: Join our prestigious museum as a Curator, where you will curate, preserve, and present our valuable collections to the public, enriching cultural experiences and fostering appreciation for art and history. Responsibilities: Your responsibilities will include researching, cataloging, and interpreting artifacts, artworks, and historical objects within our museum's collection. You will collaborate with colleagues to plan and implement exhibitions, educational programs, and special events that engage and inspire visitors. Benefits: We offer a competitive salary commensurate with experience, as well as opportunities for professional development and advancement within the museum field. Additionally, we provide a supportive work environment, health benefits, and access to our museum's resources for personal enrichment. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will effectively identify top job applicants for the position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job3_item8",
+    "name": "Hiring Algorithms — Museum Curator — item 8",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": 0.327,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The firm's hiring process suggests the firm fosters a high degree of social interaction.' under algorithmic vs human-team hiring for the Museum Curator role (item job3_item8).",
+      "direction": "condition_algo_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 3 Job Title: Museum Curator Position Overview: Join our prestigious museum as a Curator, where you will curate, preserve, and present our valuable collections to the public, enriching cultural experiences and fostering appreciation for art and history. Responsibilities: Your responsibilities will include researching, cataloging, and interpreting artifacts, artworks, and historical objects within our museum's collection. You will collaborate with colleagues to plan and implement exhibitions, educational programs, and special events that engage and inspire visitors. Benefits: We offer a competitive salary commensurate with experience, as well as opportunities for professional development and advancement within the museum field. Additionally, we provide a supportive work environment, health benefits, and access to our museum's resources for personal enrichment. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The firm's hiring process suggests the firm fosters a high degree of social interaction.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 3 Job Title: Museum Curator Position Overview: Join our prestigious museum as a Curator, where you will curate, preserve, and present our valuable collections to the public, enriching cultural experiences and fostering appreciation for art and history. Responsibilities: Your responsibilities will include researching, cataloging, and interpreting artifacts, artworks, and historical objects within our museum's collection. You will collaborate with colleagues to plan and implement exhibitions, educational programs, and special events that engage and inspire visitors. Benefits: We offer a competitive salary commensurate with experience, as well as opportunities for professional development and advancement within the museum field. Additionally, we provide a supportive work environment, health benefits, and access to our museum's resources for personal enrichment. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The firm's hiring process suggests the firm fosters a high degree of social interaction.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job4_item1",
+    "name": "Hiring Algorithms — Motorcycle Mechanic — item 1",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "null_in_humans",
+    "human_effect_size": -0.092,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'I would apply for this position.' under algorithmic vs human-team hiring for the Motorcycle Mechanic role (item job4_item1).",
+      "direction": "condition_team_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 4: Job Title: Motorcycle Mechanic Position Overview: Join our dynamic team as a Motorcycle Mechanic, where you will utilize your technical expertise to maintain, repair, and customize motorcycles, ensuring peak performance and customer satisfaction. Responsibilities: Your responsibilities will include diagnosing mechanical issues, performing routine maintenance, and conducting repairs on a variety of motorcycle makes and models. You will also collaborate with customers to understand their needs and preferences for customizations, modifications, and upgrades. Benefits: We offer competitive wages based on experience and certifications, as well as opportunities for additional training and professional development in the motorcycle industry. Additionally, we provide a supportive work environment, access to specialized tools and equipment, and employee discounts on parts and services. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I would apply for this position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 4: Job Title: Motorcycle Mechanic Position Overview: Join our dynamic team as a Motorcycle Mechanic, where you will utilize your technical expertise to maintain, repair, and customize motorcycles, ensuring peak performance and customer satisfaction. Responsibilities: Your responsibilities will include diagnosing mechanical issues, performing routine maintenance, and conducting repairs on a variety of motorcycle makes and models. You will also collaborate with customers to understand their needs and preferences for customizations, modifications, and upgrades. Benefits: We offer competitive wages based on experience and certifications, as well as opportunities for additional training and professional development in the motorcycle industry. Additionally, we provide a supportive work environment, access to specialized tools and equipment, and employee discounts on parts and services. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I would apply for this position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job4_item2",
+    "name": "Hiring Algorithms — Motorcycle Mechanic — item 2",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "null_in_humans",
+    "human_effect_size": -0.075,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'I would be hired for this position.' under algorithmic vs human-team hiring for the Motorcycle Mechanic role (item job4_item2).",
+      "direction": "condition_team_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 4: Job Title: Motorcycle Mechanic Position Overview: Join our dynamic team as a Motorcycle Mechanic, where you will utilize your technical expertise to maintain, repair, and customize motorcycles, ensuring peak performance and customer satisfaction. Responsibilities: Your responsibilities will include diagnosing mechanical issues, performing routine maintenance, and conducting repairs on a variety of motorcycle makes and models. You will also collaborate with customers to understand their needs and preferences for customizations, modifications, and upgrades. Benefits: We offer competitive wages based on experience and certifications, as well as opportunities for additional training and professional development in the motorcycle industry. Additionally, we provide a supportive work environment, access to specialized tools and equipment, and employee discounts on parts and services. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I would be hired for this position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 4: Job Title: Motorcycle Mechanic Position Overview: Join our dynamic team as a Motorcycle Mechanic, where you will utilize your technical expertise to maintain, repair, and customize motorcycles, ensuring peak performance and customer satisfaction. Responsibilities: Your responsibilities will include diagnosing mechanical issues, performing routine maintenance, and conducting repairs on a variety of motorcycle makes and models. You will also collaborate with customers to understand their needs and preferences for customizations, modifications, and upgrades. Benefits: We offer competitive wages based on experience and certifications, as well as opportunities for additional training and professional development in the motorcycle industry. Additionally, we provide a supportive work environment, access to specialized tools and equipment, and employee discounts on parts and services. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I would be hired for this position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job4_item3",
+    "name": "Hiring Algorithms — Motorcycle Mechanic — item 3",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": -0.234,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'I will receive clear and transparent communication throughout the hiring process.' under algorithmic vs human-team hiring for the Motorcycle Mechanic role (item job4_item3).",
+      "direction": "condition_team_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 4: Job Title: Motorcycle Mechanic Position Overview: Join our dynamic team as a Motorcycle Mechanic, where you will utilize your technical expertise to maintain, repair, and customize motorcycles, ensuring peak performance and customer satisfaction. Responsibilities: Your responsibilities will include diagnosing mechanical issues, performing routine maintenance, and conducting repairs on a variety of motorcycle makes and models. You will also collaborate with customers to understand their needs and preferences for customizations, modifications, and upgrades. Benefits: We offer competitive wages based on experience and certifications, as well as opportunities for additional training and professional development in the motorcycle industry. Additionally, we provide a supportive work environment, access to specialized tools and equipment, and employee discounts on parts and services. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I will receive clear and transparent communication throughout the hiring process.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 4: Job Title: Motorcycle Mechanic Position Overview: Join our dynamic team as a Motorcycle Mechanic, where you will utilize your technical expertise to maintain, repair, and customize motorcycles, ensuring peak performance and customer satisfaction. Responsibilities: Your responsibilities will include diagnosing mechanical issues, performing routine maintenance, and conducting repairs on a variety of motorcycle makes and models. You will also collaborate with customers to understand their needs and preferences for customizations, modifications, and upgrades. Benefits: We offer competitive wages based on experience and certifications, as well as opportunities for additional training and professional development in the motorcycle industry. Additionally, we provide a supportive work environment, access to specialized tools and equipment, and employee discounts on parts and services. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"I will receive clear and transparent communication throughout the hiring process.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job4_item4",
+    "name": "Hiring Algorithms — Motorcycle Mechanic — item 4",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": -0.194,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The firm’s hiring policies are fair and unbiased.' under algorithmic vs human-team hiring for the Motorcycle Mechanic role (item job4_item4).",
+      "direction": "condition_team_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 4: Job Title: Motorcycle Mechanic Position Overview: Join our dynamic team as a Motorcycle Mechanic, where you will utilize your technical expertise to maintain, repair, and customize motorcycles, ensuring peak performance and customer satisfaction. Responsibilities: Your responsibilities will include diagnosing mechanical issues, performing routine maintenance, and conducting repairs on a variety of motorcycle makes and models. You will also collaborate with customers to understand their needs and preferences for customizations, modifications, and upgrades. Benefits: We offer competitive wages based on experience and certifications, as well as opportunities for additional training and professional development in the motorcycle industry. Additionally, we provide a supportive work environment, access to specialized tools and equipment, and employee discounts on parts and services. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The firm’s hiring policies are fair and unbiased.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 4: Job Title: Motorcycle Mechanic Position Overview: Join our dynamic team as a Motorcycle Mechanic, where you will utilize your technical expertise to maintain, repair, and customize motorcycles, ensuring peak performance and customer satisfaction. Responsibilities: Your responsibilities will include diagnosing mechanical issues, performing routine maintenance, and conducting repairs on a variety of motorcycle makes and models. You will also collaborate with customers to understand their needs and preferences for customizations, modifications, and upgrades. Benefits: We offer competitive wages based on experience and certifications, as well as opportunities for additional training and professional development in the motorcycle industry. Additionally, we provide a supportive work environment, access to specialized tools and equipment, and employee discounts on parts and services. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The firm’s hiring policies are fair and unbiased.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job4_item5",
+    "name": "Hiring Algorithms — Motorcycle Mechanic — item 5",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "null_in_humans",
+    "human_effect_size": -0.036,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The hiring process will move at a reasonable pace and ensure a timely decision-making process.' under algorithmic vs human-team hiring for the Motorcycle Mechanic role (item job4_item5).",
+      "direction": "condition_team_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 4: Job Title: Motorcycle Mechanic Position Overview: Join our dynamic team as a Motorcycle Mechanic, where you will utilize your technical expertise to maintain, repair, and customize motorcycles, ensuring peak performance and customer satisfaction. Responsibilities: Your responsibilities will include diagnosing mechanical issues, performing routine maintenance, and conducting repairs on a variety of motorcycle makes and models. You will also collaborate with customers to understand their needs and preferences for customizations, modifications, and upgrades. Benefits: We offer competitive wages based on experience and certifications, as well as opportunities for additional training and professional development in the motorcycle industry. Additionally, we provide a supportive work environment, access to specialized tools and equipment, and employee discounts on parts and services. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will move at a reasonable pace and ensure a timely decision-making process.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 4: Job Title: Motorcycle Mechanic Position Overview: Join our dynamic team as a Motorcycle Mechanic, where you will utilize your technical expertise to maintain, repair, and customize motorcycles, ensuring peak performance and customer satisfaction. Responsibilities: Your responsibilities will include diagnosing mechanical issues, performing routine maintenance, and conducting repairs on a variety of motorcycle makes and models. You will also collaborate with customers to understand their needs and preferences for customizations, modifications, and upgrades. Benefits: We offer competitive wages based on experience and certifications, as well as opportunities for additional training and professional development in the motorcycle industry. Additionally, we provide a supportive work environment, access to specialized tools and equipment, and employee discounts on parts and services. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will move at a reasonable pace and ensure a timely decision-making process.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job4_item6",
+    "name": "Hiring Algorithms — Motorcycle Mechanic — item 6",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": -0.216,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The hiring process will give me a clear understanding of the job requirements, expectations, and the company culture.' under algorithmic vs human-team hiring for the Motorcycle Mechanic role (item job4_item6).",
+      "direction": "condition_team_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 4: Job Title: Motorcycle Mechanic Position Overview: Join our dynamic team as a Motorcycle Mechanic, where you will utilize your technical expertise to maintain, repair, and customize motorcycles, ensuring peak performance and customer satisfaction. Responsibilities: Your responsibilities will include diagnosing mechanical issues, performing routine maintenance, and conducting repairs on a variety of motorcycle makes and models. You will also collaborate with customers to understand their needs and preferences for customizations, modifications, and upgrades. Benefits: We offer competitive wages based on experience and certifications, as well as opportunities for additional training and professional development in the motorcycle industry. Additionally, we provide a supportive work environment, access to specialized tools and equipment, and employee discounts on parts and services. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will give me a clear understanding of the job requirements, expectations, and the company culture.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 4: Job Title: Motorcycle Mechanic Position Overview: Join our dynamic team as a Motorcycle Mechanic, where you will utilize your technical expertise to maintain, repair, and customize motorcycles, ensuring peak performance and customer satisfaction. Responsibilities: Your responsibilities will include diagnosing mechanical issues, performing routine maintenance, and conducting repairs on a variety of motorcycle makes and models. You will also collaborate with customers to understand their needs and preferences for customizations, modifications, and upgrades. Benefits: We offer competitive wages based on experience and certifications, as well as opportunities for additional training and professional development in the motorcycle industry. Additionally, we provide a supportive work environment, access to specialized tools and equipment, and employee discounts on parts and services. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will give me a clear understanding of the job requirements, expectations, and the company culture.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job4_item7",
+    "name": "Hiring Algorithms — Motorcycle Mechanic — item 7",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": -0.25,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The hiring process will effectively identify top job applicants for the position.' under algorithmic vs human-team hiring for the Motorcycle Mechanic role (item job4_item7).",
+      "direction": "condition_team_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 4: Job Title: Motorcycle Mechanic Position Overview: Join our dynamic team as a Motorcycle Mechanic, where you will utilize your technical expertise to maintain, repair, and customize motorcycles, ensuring peak performance and customer satisfaction. Responsibilities: Your responsibilities will include diagnosing mechanical issues, performing routine maintenance, and conducting repairs on a variety of motorcycle makes and models. You will also collaborate with customers to understand their needs and preferences for customizations, modifications, and upgrades. Benefits: We offer competitive wages based on experience and certifications, as well as opportunities for additional training and professional development in the motorcycle industry. Additionally, we provide a supportive work environment, access to specialized tools and equipment, and employee discounts on parts and services. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will effectively identify top job applicants for the position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 4: Job Title: Motorcycle Mechanic Position Overview: Join our dynamic team as a Motorcycle Mechanic, where you will utilize your technical expertise to maintain, repair, and customize motorcycles, ensuring peak performance and customer satisfaction. Responsibilities: Your responsibilities will include diagnosing mechanical issues, performing routine maintenance, and conducting repairs on a variety of motorcycle makes and models. You will also collaborate with customers to understand their needs and preferences for customizations, modifications, and upgrades. Benefits: We offer competitive wages based on experience and certifications, as well as opportunities for additional training and professional development in the motorcycle industry. Additionally, we provide a supportive work environment, access to specialized tools and equipment, and employee discounts on parts and services. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The hiring process will effectively identify top job applicants for the position.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  },
+  {
+    "id": "hiring_job4_item8",
+    "name": "Hiring Algorithms — Motorcycle Mechanic — item 8",
+    "citation": "Peng et al. 2025 Mega-Study (Hiring algorithms)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": -0.413,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Agreement with 'The firm's hiring process suggests the firm fosters a high degree of social interaction.' under algorithmic vs human-team hiring for the Motorcycle Mechanic role (item job4_item8).",
+      "direction": "condition_team_higher"
+    },
+    "conditions": [
+      {
+        "id": "team",
+        "name": "Human hiring team",
+        "scenario": "Job 4: Job Title: Motorcycle Mechanic Position Overview: Join our dynamic team as a Motorcycle Mechanic, where you will utilize your technical expertise to maintain, repair, and customize motorcycles, ensuring peak performance and customer satisfaction. Responsibilities: Your responsibilities will include diagnosing mechanical issues, performing routine maintenance, and conducting repairs on a variety of motorcycle makes and models. You will also collaborate with customers to understand their needs and preferences for customizations, modifications, and upgrades. Benefits: We offer competitive wages based on experience and certifications, as well as opportunities for additional training and professional development in the motorcycle industry. Additionally, we provide a supportive work environment, access to specialized tools and equipment, and employee discounts on parts and services. Hiring Policy: Our hiring algorithm will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The firm's hiring process suggests the firm fosters a high degree of social interaction.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      },
+      {
+        "id": "algo",
+        "name": "Algorithmic hiring",
+        "scenario": "Job 4: Job Title: Motorcycle Mechanic Position Overview: Join our dynamic team as a Motorcycle Mechanic, where you will utilize your technical expertise to maintain, repair, and customize motorcycles, ensuring peak performance and customer satisfaction. Responsibilities: Your responsibilities will include diagnosing mechanical issues, performing routine maintenance, and conducting repairs on a variety of motorcycle makes and models. You will also collaborate with customers to understand their needs and preferences for customizations, modifications, and upgrades. Benefits: We offer competitive wages based on experience and certifications, as well as opportunities for additional training and professional development in the motorcycle industry. Additionally, we provide a supportive work environment, access to specialized tools and equipment, and employee discounts on parts and services. Hiring Policy: Our hiring team will create insights on how your candidate information matches the requirements of the role. Following this initial screening, our hiring team will conduct in-person interviews with selected candidates.",
+        "question": "Thinking about the hiring process described above, to what extent do you agree with the following statement: \"The firm's hiring process suggests the firm fosters a high degree of social interaction.\" Please answer on a scale from 1 (Strongly disagree) to 7 (Strongly agree).",
+        "response_type": "scale",
+        "scale": {
+          "min": 1,
+          "max": 7,
+          "min_label": "Strongly disagree",
+          "max_label": "Strongly agree"
+        }
+      }
+    ]
+  }
+]

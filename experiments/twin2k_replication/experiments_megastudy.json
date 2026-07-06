@@ -1,0 +1,112 @@
+[
+  {
+    "id": "defaults_green",
+    "name": "Default Effect — Green Energy",
+    "citation": "Peng et al. 2025 Mega-Study (Defaults); orig. Pichert & Katsikopoulos (2008)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": -0.509,
+    "source": "megastudy",
+    "analysis": {
+      "type": "proportion_comparison",
+      "risky_option": "green",
+      "description": "% choosing green/renewable electricity should be higher when green is the default (opt-out) than when conventional is the default (opt-in).",
+      "direction": "condition_optout_higher"
+    },
+    "conditions": [
+      {
+        "id": "optin",
+        "name": "Opt-in (default = conventional)",
+        "scenario": "Imagine you have to relocate to another town. After you move into your new flat, you receive a letter from the electric power supplier, Twon. You are told that by moving into your new flat you became a Twon customer: 'Twon is pleased to welcome you as a new customer. We are responsible for the basic electricity supply in this residential area. We offer low-priced electricity tariffs—you cannot beat our prices. Save money with Twon! Your monthly premium is $32'. You are kindly asked to fill in some personal data on an attached document, which you do. A couple of days later a contract is sent to you. Some weeks later you find a flyer in your mailbox, advertising offers from the electric power supplier GreenGrid: 'Switch to GreenGrid! Did you know that you can easily switch your electricity supplier? GreenGrid sells clean electricity, generated from renewable energy sources. Contribute to climate protection and environmental protection! Your monthly premium will be $39.'",
+        "question": "What do you do?",
+        "response_type": "choice",
+        "options": [
+          {"id": "conventional", "text": "Stay with Twon"},
+          {"id": "green", "text": "Switch to GreenGrid"}
+        ]
+      },
+      {
+        "id": "optout",
+        "name": "Opt-out (default = green)",
+        "scenario": "Imagine you have to relocate to another town. After you move into your new flat, you receive a letter from the electric power supplier, GreenGrid. You are told that by moving into your new flat you became a GreenGrid customer: 'GreenGrid is pleased to welcome you as a new customer. We are responsible for the basic electricity supply in this residential area. GreenGrid sells clean electricity, generated from renewable energy sources. Contribute to climate protection and environmental protection! Your monthly premium is $39'. You are kindly asked to fill in some personal data on an attached document, which you do. A couple of days later a contract is sent to you. Some weeks later you find a flyer in your mailbox, advertising offers from the electric power supplier Twon: 'Switch to Twon! Did you know that you can easily switch your electricity supplier? We offer low-priced electricity tariffs—you cannot beat our prices. Save money with Twon! Your monthly premium will be $32.'",
+        "question": "What do you do?",
+        "response_type": "choice",
+        "options": [
+          {"id": "green", "text": "Stay with GreenGrid"},
+          {"id": "conventional", "text": "Switch to Twon"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "defaults_organ",
+    "name": "Default Effect — Organ Donation",
+    "citation": "Peng et al. 2025 Mega-Study (Defaults); orig. Johnson & Goldstein (2003)",
+    "type": "between",
+    "paper_result": "null_in_humans",
+    "human_effect_size": -0.089,
+    "source": "megastudy",
+    "analysis": {
+      "type": "proportion_comparison",
+      "risky_option": "donor",
+      "description": "% who are organ donors should be higher when donor is the default (opt-out) than when non-donor is the default (opt-in). NOTE: near-null in the Mega-Study human data (d=-0.09) — useful as a specificity check.",
+      "direction": "condition_optout_higher"
+    },
+    "conditions": [
+      {
+        "id": "optin",
+        "name": "Opt-in (default = not a donor)",
+        "scenario": "Imagine that you just moved to a new state and must get a new driver's license. As you complete the application, you come across the following. Please read and respond as you would if you were actually presented this choice today. We are interested in your honest response. In this state every person is considered not to be an organ donor unless they choose to be.",
+        "question": "What do you do?",
+        "response_type": "choice",
+        "options": [
+          {"id": "not_donor", "text": "You are therefore currently not a potential donor. If this is acceptable, keep this status."},
+          {"id": "donor", "text": "Change your status to become a potential donor."}
+        ]
+      },
+      {
+        "id": "optout",
+        "name": "Opt-out (default = donor)",
+        "scenario": "Imagine that you just moved to a new state and must get a new driver's license. As you complete the application, you come across the following. Please read and respond as you would if you were actually presented this choice today. We are interested in your honest response. In this state every person is considered to be an organ donor unless they choose not to be.",
+        "question": "What do you do?",
+        "response_type": "choice",
+        "options": [
+          {"id": "donor", "text": "You are therefore currently a potential donor. If this is acceptable, keep this status."},
+          {"id": "not_donor", "text": "Change your status to no longer be a potential donor."}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "targeting_fairness",
+    "name": "Targeting Fairness (Gender-Based Advertising)",
+    "citation": "Peng et al. 2025 Mega-Study (Targeting fairness)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": -0.544,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Broad advertising should be rated as fairer than advertising directed only at the group the product suits (gender-based targeting perceived as less fair).",
+      "direction": "condition_broad_higher"
+    },
+    "conditions": [
+      {
+        "id": "targeted",
+        "name": "Targeted (advertise to women directly)",
+        "scenario": "A snack foods company has developed a new line of snacks. Initial testing showed that, due to the taste and texture profile of the snacks, the snacks are better suited to the preferences of their female customers. The company is developing a marketing plan to promote the snacks. Because they believe the snacks are best suited to their female customers, they will advertise the snacks to women directly.",
+        "question": "How fair is this advertising plan? Please answer on a scale from 1 (Not at all fair) to 9 (Very fair).",
+        "response_type": "scale",
+        "scale": {"min": 1, "max": 9, "min_label": "Not at all fair", "max_label": "Very fair"}
+      },
+      {
+        "id": "broad",
+        "name": "Broad (advertise to the general public)",
+        "scenario": "A snack foods company has developed a new line of snacks. Initial testing showed that, due to the taste and texture profile of the snacks, the snacks are better suited to the preferences of their female customers. The company is developing a marketing plan to promote the snacks. Even though they believe the snacks are best suited to their female customers, they will advertise the snacks broadly to the general public.",
+        "question": "How fair is this advertising plan? Please answer on a scale from 1 (Not at all fair) to 9 (Very fair).",
+        "response_type": "scale",
+        "scale": {"min": 1, "max": 9, "min_label": "Not at all fair", "max_label": "Very fair"}
+      }
+    ]
+  }
+]

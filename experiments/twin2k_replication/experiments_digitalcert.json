@@ -1,0 +1,66 @@
+[
+  {
+    "id": "digitalcert_wtp",
+    "name": "Digital Certificate — Perceived Price (WTP)",
+    "citation": "Peng et al. 2025 Mega-Study (Digital certificates for luxury consumption)",
+    "type": "between",
+    "paper_result": "replicated",
+    "human_effect_size": 0.301,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Perceived expensiveness of a luxury sweater should be higher when it carries a digital passport/certificate of authenticity than when it does not.",
+      "direction": "condition_certificate_higher"
+    },
+    "conditions": [
+      {
+        "id": "control",
+        "name": "No digital certificate",
+        "scenario": "Imagine you are shopping for a luxury sweater by a well-known luxury brand: a black button-up sweater with a high neckline, cuffed sleeves, and five tortoise-shell buttons. Imagine you decided to purchase this sweater and wear it to a social event. Please push yourself to imagine the event in detail — how you look, and what others will think.",
+        "question": "How expensive do you think the sweater is? Please enter your best estimate as a number of dollars.",
+        "response_type": "numeric",
+        "unit": "dollars"
+      },
+      {
+        "id": "certificate",
+        "name": "With digital passport / certificate",
+        "scenario": "Imagine you are shopping for a luxury sweater by a well-known luxury brand: a black button-up sweater with a high neckline, cuffed sleeves, and five tortoise-shell buttons. This luxury sweater is linked to a digital passport. This digital passport tags the product with a digital ID (a combination of letters and numbers) so the product is fully traceable and its manufacturing and sales process is fully transparent — anyone can review the full journey the product goes through. If you decide to purchase the sweater, you are recorded as the purchaser with the digital ID in the digital passport, which means you have proof of ownership. Imagine you decided to purchase this sweater and wear it to a social event. Please push yourself to imagine the event in detail — how you look, and what others will think.",
+        "question": "How expensive do you think the sweater is? Please enter your best estimate as a number of dollars.",
+        "response_type": "numeric",
+        "unit": "dollars"
+      }
+    ]
+  },
+  {
+    "id": "digitalcert_status",
+    "name": "Digital Certificate — Perceived Status",
+    "citation": "Peng et al. 2025 Mega-Study (Digital certificates for luxury consumption)",
+    "type": "between",
+    "paper_result": "null_in_humans",
+    "human_effect_size": 0.093,
+    "source": "megastudy",
+    "analysis": {
+      "type": "mean_comparison",
+      "description": "Perceived luxury/status/prestige of the sweater under a digital certificate vs not. NOTE: near-null in the Mega-Study human data (d=0.09) — a specificity check.",
+      "direction": "condition_certificate_higher"
+    },
+    "conditions": [
+      {
+        "id": "control",
+        "name": "No digital certificate",
+        "scenario": "Imagine you are shopping for a luxury sweater by a well-known luxury brand: a black button-up sweater with a high neckline, cuffed sleeves, and five tortoise-shell buttons. Imagine you decided to purchase this sweater and wear it to a social event. Please push yourself to imagine the event in detail — how you look, and what others will think.",
+        "question": "To what extent do you think the sweater is luxurious, high-status, and prestigious? Please answer on a scale from 1 (Not at all) to 7 (Extremely).",
+        "response_type": "scale",
+        "scale": {"min": 1, "max": 7, "min_label": "Not at all", "max_label": "Extremely"}
+      },
+      {
+        "id": "certificate",
+        "name": "With digital passport / certificate",
+        "scenario": "Imagine you are shopping for a luxury sweater by a well-known luxury brand: a black button-up sweater with a high neckline, cuffed sleeves, and five tortoise-shell buttons. This luxury sweater is linked to a digital passport. This digital passport tags the product with a digital ID (a combination of letters and numbers) so the product is fully traceable and its manufacturing and sales process is fully transparent — anyone can review the full journey the product goes through. If you decide to purchase the sweater, you are recorded as the purchaser with the digital ID in the digital passport, which means you have proof of ownership. Imagine you decided to purchase this sweater and wear it to a social event. Please push yourself to imagine the event in detail — how you look, and what others will think.",
+        "question": "To what extent do you think the sweater is luxurious, high-status, and prestigious? Please answer on a scale from 1 (Not at all) to 7 (Extremely).",
+        "response_type": "scale",
+        "scale": {"min": 1, "max": 7, "min_label": "Not at all", "max_label": "Extremely"}
+      }
+    ]
+  }
+]

@@ -77,9 +77,11 @@ def main() -> None:
     parser.add_argument("--list", action="store_true", help="List all experiment IDs and exit")
     parser.add_argument("--dry-run", type=int, metavar="N", dest="dry_run",
                         help="Sample N personas on the framing experiment, print token usage, and exit")
+    parser.add_argument("--experiments", metavar="PATH", default=str(HERE / "experiments.json"),
+                        help="Path to the experiments JSON file (default: experiments.json)")
     args = parser.parse_args()
 
-    experiments = load_experiments(HERE / "experiments.json")
+    experiments = load_experiments(Path(args.experiments))
 
     if args.list:
         print("Available experiment IDs:")
