@@ -1,0 +1,2402 @@
+[
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "communications_major_20f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "communications_major_20f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "paralegal_30f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "paralegal_30f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "psychology_major_20f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "psychology_major_20f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "computer_technician_26m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "computer_technician_26m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "delivery_driver_37m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "delivery_driver_37m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "graphic_designer_34f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "graphic_designer_34f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "real_estate_agent_32m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "real_estate_agent_32m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "part_time_bartender_29m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "part_time_bartender_29m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "remote_support_33f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "remote_support_33f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "freelance_writer_29nb",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "freelance_writer_29nb",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "freelance_copywriter_32nb",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "freelance_copywriter_32nb",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "hotel_receptionist_24f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "hotel_receptionist_24f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "substitute_teacher_29m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "substitute_teacher_29m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "car_detailer_23m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "car_detailer_23m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "content_moderator_27f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "content_moderator_27f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "fast_food_worker_19m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "fast_food_worker_19m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "part_time_tutor_24f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "part_time_tutor_24f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "hr_assistant_27f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "hr_assistant_27f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "freelance_photographer_30m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "freelance_photographer_30m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "pharmacy_tech_28m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "pharmacy_tech_28m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "juice_barista_19f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "juice_barista_19f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "research_assistant_24f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "research_assistant_24f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "office_assistant_51m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "office_assistant_51m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "bus_driver_35m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "bus_driver_35m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "grant_writer_34f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "grant_writer_34f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "private_tutor_27f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "private_tutor_27f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "senior_clerk_55f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "senior_clerk_55f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "online_reseller_29m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "online_reseller_29m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "virtual_assistant_25f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "virtual_assistant_25f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "english_tutor_28f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "english_tutor_28f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "cafe_manager_28f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "cafe_manager_28f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "legal_secretary_44f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "legal_secretary_44f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "retail_cashier_22m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "retail_cashier_22m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "copywriter_28f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "copywriter_28f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "biology_graduate_24nb",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "biology_graduate_24nb",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "unemployed_manager_47m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "unemployed_manager_47m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "pastry_chef_26f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "pastry_chef_26f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "unemployed_chef_33m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "unemployed_chef_33m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "inventory_specialist_27f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "inventory_specialist_27f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "administrative_assistant_52f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "administrative_assistant_52f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "evening_receptionist_22f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "evening_receptionist_22f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "remote_billing_clerk_29m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "remote_billing_clerk_29m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "empty_nester_58f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "empty_nester_58f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "stay_home_dad_32m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "stay_home_dad_32m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "truck_driver_51m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "truck_driver_51m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "customer_service_rep_50f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "customer_service_rep_50f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "stay_home_mom_36f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "stay_home_mom_36f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "nursing_student_22f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "nursing_student_22f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "dry_cleaning_clerk_22f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "dry_cleaning_clerk_22f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "freelance_animator_27f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "freelance_animator_27f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "seo_specialist_33m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "seo_specialist_33m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "retired_accountant_68m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "retired_accountant_68m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "software_dev_28m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "software_dev_28m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "pool_cleaner_21m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "pool_cleaner_21m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "night_shift_nurse_38f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "night_shift_nurse_38f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "local_gov_clerk_48f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "local_gov_clerk_48f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "unemployed_mechanic_33m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "unemployed_mechanic_33m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "theater_major_21f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "theater_major_21f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "physics_student_21f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "physics_student_21f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "occupational_therapist_33f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "occupational_therapist_33f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "insurance_adjuster_43m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "insurance_adjuster_43m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "woodworker_29m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "woodworker_29m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "junior_analyst_24m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "junior_analyst_24m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "office_manager_31f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "office_manager_31f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "dog_trainer_30f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "dog_trainer_30f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "tutor_coordinator_42m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "tutor_coordinator_42m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "chemistry_major_19nb",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "chemistry_major_19nb",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "real_estate_appraiser_54m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "real_estate_appraiser_54m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "night_auditor_27m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "night_auditor_27m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "part_time_florist_45f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "part_time_florist_45f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "medical_transcriptionist_53f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "medical_transcriptionist_53f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "property_manager_31m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "property_manager_31m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "logistics_coordinator_40m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "logistics_coordinator_40m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "retail_store_manager_46m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "retail_store_manager_46m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "marketing_coordinator_26f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "marketing_coordinator_26f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "screen_printer_28m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "screen_printer_28m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "daycare_owner_40f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "daycare_owner_40f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "junior_designer_23f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "junior_designer_23f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "stay_home_dad_39m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "stay_home_dad_39m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "server_37m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "server_37m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "data_entry_clerk_26f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "data_entry_clerk_26f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "virtual_tutor_26f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "virtual_tutor_26f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "stay_home_mother_28f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "stay_home_mother_28f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "technical_writer_32m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "technical_writer_32m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "data_entry_operator_23nb",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "data_entry_operator_23nb",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "dropshipper_24m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "dropshipper_24m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "dental_hygienist_28f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "dental_hygienist_28f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "stay_home_mom_30f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "stay_home_mom_30f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "web_designer_29m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "web_designer_29m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "high_school_substitute_30f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "high_school_substitute_30f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "call_center_agent_28m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "call_center_agent_28m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "freelance_indexer_47f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "freelance_indexer_47f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "travel_agent_33m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "travel_agent_33m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "landscape_laborer_25m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "landscape_laborer_25m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "part_time_consultant_60m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "part_time_consultant_60m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "retired_mechanic_65m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "retired_mechanic_65m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "retail_merchandiser_31f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "retail_merchandiser_31f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "job_seeker_admin_28m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "job_seeker_admin_28m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "undeclared_freshman_18f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "undeclared_freshman_18f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "physical_therapy_aide_23f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "physical_therapy_aide_23f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "it_technician_27m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "it_technician_27m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "music_teacher_32f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "music_teacher_32f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "locksmith_28m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "locksmith_28m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "fitness_instructor_26m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "fitness_instructor_26m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "unemployed_sales_41m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "unemployed_sales_41m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "freelance_programmer_27nb",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "freelance_programmer_27nb",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "math_tutor_22f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "math_tutor_22f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "online_seller_33f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "online_seller_33f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "electrician_43m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "electrician_43m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "audio_engineer_31m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "audio_engineer_31m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "grocery_shopper_26f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "grocery_shopper_26f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "bakery_assistant_20f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "bakery_assistant_20f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "math_graduate_student_26m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "math_graduate_student_26m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "community_college_student_19m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "community_college_student_19m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "warehouse_manager_34m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "warehouse_manager_34m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "floral_designer_28f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "floral_designer_28f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "veterinary_assistant_24f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "veterinary_assistant_24f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "transcriptionist_30nb",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "transcriptionist_30nb",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "barista_trainer_24m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "barista_trainer_24m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "high_school_teacher_49m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "high_school_teacher_49m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "bookkeeper_48f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "bookkeeper_48f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "stay_home_mom_26f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "stay_home_mom_26f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "construction_estimator_36m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "construction_estimator_36m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "pet_sitter_24f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "pet_sitter_24f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "social_media_manager_26f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "social_media_manager_26f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "voice_actor_31m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "voice_actor_31m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "data_analyst_35f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "data_analyst_35f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "accountant_38m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "accountant_38m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "proofreader_35f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "proofreader_35f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "nanny_25f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "nanny_25f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "stay_home_father_28m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "stay_home_father_28m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "film_student_20m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "film_student_20m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "tech_support_agent_22f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "tech_support_agent_22f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "videographer_25m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "videographer_25m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "massage_therapist_41f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "massage_therapist_41f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "flight_attendant_29f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "flight_attendant_29f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "gig_delivery_driver_31m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "gig_delivery_driver_31m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "delivery_rider_22m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "delivery_rider_22m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "event_planner_32f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "event_planner_32f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "freelance_translator_28nb",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "freelance_translator_28nb",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "freelance_editor_44f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "freelance_editor_44f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 1,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "library_assistant_24m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "library_assistant_24m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "retired_teacher_64f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "retired_teacher_64f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 4,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "house_sitter_23m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "house_sitter_23m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "biology_student_19f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "biology_student_19f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "retail_supervisor_29m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "retail_supervisor_29m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "stay_home_parent_34f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "stay_home_parent_34f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "remote_proofreader_31f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "remote_proofreader_31f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "retired_librarian_62f",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "retired_librarian_62f",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "line_cook_25m",
+    "condition_id": "team",
+    "condition_name": "Human hiring team",
+    "answer": 3,
+    "error": null
+  },
+  {
+    "experiment_id": "hiring_job2_item1",
+    "persona": "line_cook_25m",
+    "condition_id": "algo",
+    "condition_name": "Algorithmic hiring",
+    "answer": 2,
+    "error": null
+  }
+]

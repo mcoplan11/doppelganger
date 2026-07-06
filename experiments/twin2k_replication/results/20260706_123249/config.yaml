@@ -1,0 +1,14 @@
+llm:
+  provider: openrouter
+  model: qwen/qwen3-235b-a22b-2507
+  temperature: 0.5
+  disable_reasoning: false
+
+experiment:
+  run: all
+  n_personas: 150
+  seed: 42
+  between_subject_mode: within
+
+output:
+  dir: results
