@@ -1,10 +1,10 @@
 # Twin-2K-500 Replication
 
-Replicates the 16 heuristics-and-biases experiments from Table 3 of:
+Replicates the 17 heuristics-and-biases experiments from Table 3 of:
 
 > Toubia et al. (2025). *Twin-2K-500: A dataset for building digital twins of over 2,000 people based on their answers to over 500 questions.* arXiv:2505.17479
 
-The paper found ~7/15 effects replicated by AI digital twins (built from real respondents' prior answers). This project asks: **how many effects do Doppelganger's synthetic personas replicate?**
+Under this project's per-experiment scoring, the original study's AI digital twins (built from real respondents' prior answers) reproduce 9 of the 17 effects. This project asks: **how many effects do Doppelganger's synthetic personas replicate?**
 
 ---
 
@@ -13,7 +13,7 @@ The paper found ~7/15 effects replicated by AI digital twins (built from real re
 | File | Purpose |
 |---|---|
 | `config.yaml` | Model, temperature, N personas, seed, between/within mode |
-| `experiments.json` | All 16 experiment definitions — question text, conditions, expected effects |
+| `experiments.json` | All 17 experiment definitions — question text, conditions, expected effects |
 | `llm_client.py` | LLM abstraction (Gemini / OpenAI / Anthropic) |
 | `runner.py` | Prompts the LLM and collects responses |
 | `analysis.py` | Statistical tests and comparison table |
@@ -31,7 +31,7 @@ eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && pyenv activate en
 # Install extra dependencies if needed
 pip install scipy pyyaml
 
-# Run all 16 experiments
+# Run all 17 experiments
 python experiments/twin2k_replication/run.py
 
 # Run one experiment
@@ -61,9 +61,9 @@ The API key is read from the parent `.env` file (`GEMINI_API_KEY`, `OPENAI_API_K
 
 ---
 
-## The 16 experiments
+## The 17 experiments
 
-### Between-subject (11)
+### Between-subject (12)
 
 | ID | Name | Paper result |
 |---|---|---|

@@ -18,6 +18,20 @@ const TEAM_FROM = [
   { name: "Wisconsin",         src: "/logos/wisconsin.png" },
 ];
 
+// "Does it work?" — replication benchmark against the published Twin-2K-500 study.
+// Both models scored on the SAME 17 classic heuristics-and-biases experiments: an
+// effect "replicates" when the model reproduces the original author's result
+// (statistically significant, in the expected direction). Our model's model name is
+// intentionally not shown — it's just "our model". Source: Toubia et al. (2025).
+const REPLICATION = {
+  studyUrl: "https://arxiv.org/abs/2505.17479",
+  total: 17,
+  rows: [
+    { label: "Our model", count: 12, highlight: true },
+    { label: "The study's own AI digital twins", count: 9, highlight: false },
+  ],
+};
+
 export default function Home() {
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
@@ -148,6 +162,59 @@ export default function Home() {
           problems and judge whether an idea is worth fielding — then run the real study with
           confidence.
         </p>
+      </section>
+
+      {/* Does it actually work? — replication benchmark vs a published study */}
+      <section id="does-it-work" className="bg-white border-t border-slate-200">
+        <div className="max-w-4xl mx-auto px-6 py-20">
+          <h2 className="font-serif text-3xl font-bold text-center mb-3 text-slate-900">Does it actually work?</h2>
+          <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+            We benchmarked our AI respondents against{" "}
+            <a
+              href={REPLICATION.studyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-700 hover:text-blue-800 underline underline-offset-2"
+            >
+              Twin-2K-500
+            </a>{" "}
+            (Toubia et al., 2025) — a published dataset of {REPLICATION.total} classic
+            behavioral-science experiments, including framing effects, the Linda conjunction
+            problem, anchoring, and sunk-cost. We ran every study and counted how many of these
+            well-established human effects each model reproduced.
+          </p>
+
+          <div className="max-w-2xl mx-auto space-y-6">
+            {REPLICATION.rows.map((row) => {
+              const pct = Math.round((row.count / REPLICATION.total) * 100);
+              return (
+                <div key={row.label}>
+                  <div className="flex items-baseline justify-between mb-2">
+                    <span className={`text-sm font-medium ${row.highlight ? "text-slate-900" : "text-slate-500"}`}>
+                      {row.label}
+                    </span>
+                    <span className={`text-sm font-semibold ${row.highlight ? "text-blue-700" : "text-slate-500"}`}>
+                      {row.count} of {REPLICATION.total} effects
+                    </span>
+                  </div>
+                  <div className="h-3 w-full rounded-full bg-slate-100 overflow-hidden">
+                    <div
+                      className={`h-full rounded-full ${row.highlight ? "bg-blue-600" : "bg-slate-300"}`}
+                      style={{ width: `${pct}%` }}
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <p className="max-w-2xl mx-auto text-center text-sm text-slate-500 leading-relaxed mt-10 border-t border-slate-200 pt-8">
+            Same {REPLICATION.total} studies, same scoring. Our model reproduced more of the real
+            human effects than the AI &ldquo;digital twins&rdquo; built in the source study itself.
+            It won&apos;t catch every effect — but it&apos;s a strong signal your manipulation is
+            real before you spend on participants.
+          </p>
+        </div>
       </section>
 
       {/* What you can test */}
