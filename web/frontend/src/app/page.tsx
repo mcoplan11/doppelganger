@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { api } from "@/lib/api";
 
 const PACKS = [
@@ -65,9 +66,12 @@ export default function Home() {
       {/* Nav */}
       <nav className="border-b border-slate-200 px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
         <span className="font-bold text-lg tracking-tight">Doppelganger</span>
-        {authed
-          ? <a href="/dashboard" className="text-sm font-medium text-blue-700 hover:text-blue-800">Go to dashboard →</a>
-          : <a href="#login" className="text-sm font-medium text-blue-700 hover:text-blue-800">Sign in →</a>}
+        <div className="flex items-center gap-6 text-sm font-medium">
+          <Link href="/blog" className="text-slate-600 hover:text-slate-900">Blog</Link>
+          {authed
+            ? <a href="/dashboard" className="text-blue-700 hover:text-blue-800">Go to dashboard →</a>
+            : <a href="#login" className="text-blue-700 hover:text-blue-800">Sign in →</a>}
+        </div>
       </nav>
 
       {/* Hero */}
@@ -219,6 +223,14 @@ export default function Home() {
             It won&apos;t catch every effect — but it&apos;s a strong signal your manipulation is
             real before you spend on participants.
           </p>
+          <div className="text-center mt-6">
+            <Link
+              href="/blog/can-ai-replace-survey-respondents"
+              className="text-sm font-medium text-blue-700 hover:text-blue-800"
+            >
+              See how we measured this →
+            </Link>
+          </div>
         </div>
       </section>
 
