@@ -208,7 +208,12 @@ export default function Home() {
             })}
           </div>
 
-          <p className="max-w-2xl mx-auto text-center text-sm text-slate-500 leading-relaxed mt-10 border-t border-slate-200 pt-8">
+          <p className="max-w-2xl mx-auto text-center text-base sm:text-lg font-medium text-slate-800 leading-relaxed mt-12">
+            In plain terms: if your effect is real, there&apos;s better than a 70% chance it&apos;ll
+            show up in our AI respondents too.
+          </p>
+
+          <p className="max-w-2xl mx-auto text-center text-sm text-slate-500 leading-relaxed mt-6 border-t border-slate-200 pt-8">
             Same {REPLICATION.total} studies, same scoring. Our model reproduced more of the real
             human effects than the AI &ldquo;digital twins&rdquo; built in the source study itself.
             It won&apos;t catch every effect — but it&apos;s a strong signal your manipulation is
