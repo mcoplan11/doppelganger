@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
 
 // Blog content lives here as typed data + JSX bodies. No markdown/MDX dependency —
@@ -113,6 +114,16 @@ export const POSTS: Post[] = [
           through AI respondents to catch broken skip logic, dead-on-arrival manipulations, and
           confusing wording — then spend your participant budget on the studies that already show
           signs of life. That&apos;s the whole idea behind Doppelganger.
+        </P>
+        <P>
+          For the full methodology, per-experiment results, and honest limitations, see our{" "}
+          <Link
+            href="/research"
+            className="text-blue-700 hover:text-blue-800 underline underline-offset-2"
+          >
+            technical report
+          </Link>
+          .
         </P>
       </>
     ),
