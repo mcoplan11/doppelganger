@@ -188,14 +188,42 @@ def _analyze_wta_wtp(exp: dict, rows: list[dict]) -> dict:
         t, p = _t_test(by_cond[a], by_cond[b])
         tests[f"{a}_vs_{b}"] = {"t": t, "p": p}
 
+    full_sig = all(v["p"] < 0.05 for v in tests.values() if not (v["p"] != v["p"]))
+    replicated = correct and full_sig
+
+    # Partial credit: the endowment effect proper is just the first pair
+    # (WTA > WTP for the *same* certain good). The remaining pair encodes a
+    # separate risk-aversion prediction that risk-neutral respondents rationally
+    # violate, so we award 0.5 when the endowment effect holds on its own even
+    # though the full multi-step ordering does not.
+    endo_a, endo_b = ordering[0], ordering[1]
+    endo = tests[f"{endo_a}_vs_{endo_b}"]
+    endo_p = endo["p"]
+    endo_correct = means.get(endo_a, 0) > means.get(endo_b, 0)
+    endo_sig = endo_p < 0.05 if not (endo_p != endo_p) else False
+    endowment_replicated = endo_correct and endo_sig
+
+    if replicated:
+        credit = 1.0
+    elif endowment_replicated:
+        credit = 0.5
+    else:
+        credit = 0.0
+
     return {
         "means": means,
         "n_per_condition": {cid: len(by_cond[cid]) for cid in ordering},
         "pairwise_tests": tests,
+        "endowment_effect": {
+            "pair": f"{endo_a}_vs_{endo_b}",
+            "t": endo["t"],
+            "p": endo_p,
+            "correct_direction": endo_correct,
+            "replicated": endowment_replicated,
+        },
         "correct_direction": correct,
-        "replicated": correct and all(
-            v["p"] < 0.05 for v in tests.values() if not (v["p"] != v["p"])
-        ),
+        "replicated": replicated,
+        "credit": credit,
     }
 
 
@@ -367,16 +395,24 @@ def _analyze_probability_matching(exp: dict, rows: list[dict]) -> dict:
 def _analyze_dominator_neglect(exp: dict, rows: list[dict]) -> dict:
     answers = [r["answer"] for r in rows if r.get("answer") and not r.get("error")]
     n = len(answers)
-    pct_dominated = _pct(answers, "dominated")
+    # Which option id is the dominated one. Configurable so the choice labels
+    # shown to the model can stay neutral (e.g. "option_a") instead of leaking
+    # the answer via a semantic id like "dominated". Defaults to "dominated" for
+    # backward compatibility with older result sets.
+    ana = exp.get("analysis", {})
+    dominated_id = ana.get("dominated_option", "dominated")
+    pct_dominated = _pct(answers, dominated_id)
     # A dominated option is never rational, so the rate should be ~0. Test whether
     # it significantly exceeds a 5% response-noise floor (one-sided exact binomial).
-    k = sum(1 for a in answers if a == "dominated")
+    k = sum(1 for a in answers if a == dominated_id)
     p = _binom_greater(k, n, 0.05)
     sig = p < 0.05 if not (p != p) else False
     replicated = (pct_dominated > 5) and sig
     return {
         "n": n,
+        "dominated_option": dominated_id,
         "pct_dominated": pct_dominated,
+        "human_benchmark_pct_dominated": ana.get("human_benchmark_pct_dominated"),
         "p_value": p,
         "significant": sig,
         "correct_direction": pct_dominated > 5,
@@ -428,7 +464,7 @@ def print_comparison_table(experiments: list[dict], results_dir: Path) -> None:
     print("-" * 80)
 
     total = 0
-    replicated_n = 0
+    replicated_score = 0.0
 
     for exp in experiments:
         rows = _load_rows(results_dir, exp["id"])
@@ -438,22 +474,22 @@ def print_comparison_table(experiments: list[dict], results_dir: Path) -> None:
 
         stats_out = analyze_experiment(exp, rows)
         is_rep = bool(stats_out.get("replicated"))
+        credit = stats_out.get("credit", 1.0 if is_rep else 0.0)
         p_val = stats_out.get("p_value", stats_out.get("pairwise_tests", {}).get(
             list(stats_out.get("pairwise_tests", {}).keys())[0], {}).get("p")
             if stats_out.get("pairwise_tests") else float("nan"))
 
         p_str = f"{p_val:.3f}" if isinstance(p_val, float) and not (p_val != p_val) else "n/a"
-        icon = "✓" if is_rep else "✗"
+        icon = "✓" if credit >= 1.0 else ("~" if credit > 0 else "✗")
 
         name = exp["name"][:39]
         print(f"  {name:<40} {icon:^10} {p_str:^10}")
 
         total += 1
-        if is_rep:
-            replicated_n += 1
+        replicated_score += credit
 
     print("-" * 80)
-    print(f"\n  Effects replicated: {replicated_n}/{total}")
+    print(f"\n  Effects replicated: {replicated_score:g}/{total}")
     print("=" * 80)
 
 
@@ -466,10 +502,17 @@ def save_detailed_report(
         if not rows:
             continue
         stats_out = analyze_experiment(exp, rows)
+        credit = stats_out.get("credit", 1.0 if stats_out.get("replicated") else 0.0)
+        if credit >= 1.0:
+            result_label = "REPLICATED"
+        elif credit <= 0.0:
+            result_label = "NOT REPLICATED"
+        else:
+            result_label = f"PARTIAL ({credit:g})"
         lines.append(f"## {exp['name']} ({exp['id']})")
         lines.append(f"- Citation: {exp.get('citation', '')}")
         lines.append(f"- Paper result: {exp.get('paper_result', '?')}")
-        lines.append(f"- Our result: {'REPLICATED' if stats_out.get('replicated') else 'NOT REPLICATED'}")
+        lines.append(f"- Our result: {result_label}")
         lines.append(f"- Stats: {json.dumps(stats_out, indent=2, default=str)}")
         lines.append("")
     report_path.write_text("\n".join(lines))

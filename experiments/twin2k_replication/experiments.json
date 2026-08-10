@@ -467,14 +467,14 @@
     "paper_result": "not_replicated",
     "analysis": {
       "type": "proportion_comparison",
-      "description": "More people should refuse the vaccine (prefer omission/inaction) than refuse the 'do nothing' option",
+      "description": "Outcomes are held identical (vaccinating and not vaccinating carry the same 10-in-10,000 death risk; the vaccine only changes the CAUSE of the risk, not its size). The two conditions differ only in whether the potential harm is framed as resulting from action (commission) or inaction (omission). Omission bias predicts a higher refusal ('skip') rate when the harm would be caused by one's own action; a rational agent is indifferent and refuses at equal rates in both conditions.",
       "direction": "condition_commission_more_refusal"
     },
     "conditions": [
       {
         "id": "commission",
-        "name": "Action (Vaccination)",
-        "scenario": "A flu epidemic is expected. Without a vaccine, there is a 10 in 10,000 chance that a child will contract the flu. With the vaccine, there is a 5 in 10,000 chance the child will contract the flu from the vaccine itself (same severity). The vaccine prevents all other ways of getting the flu.",
+        "name": "Action-caused harm",
+        "scenario": "A flu epidemic is expected at your child's school. The facts below are certain:\n- If your child is NOT vaccinated, they have a 10 in 10,000 chance of dying from the flu.\n- If your child IS vaccinated, they are fully protected from the flu, but the vaccine causes a fatal reaction in 10 in 10,000 children.\nEither way, your child's overall chance of dying is exactly 10 in 10,000 — the vaccine changes only the cause of the risk, not its size. Vaccinating is an action you must actively choose to take: if you vaccinate and your child suffers the fatal reaction, the death is a direct result of the shot you chose to give.",
         "question": "Do you vaccinate your child?",
         "response_type": "choice",
         "options": [
@@ -484,13 +484,13 @@
       },
       {
         "id": "omission",
-        "name": "Inaction (No Vaccine Available)",
-        "scenario": "A flu epidemic is expected. There is no vaccine available. There is a 5 in 10,000 chance a child will contract the flu this season. There is a different strain of flu for which a vaccine exists; taking that vaccine creates a 10 in 10,000 chance of contracting the original flu (same severity) while protecting against the second strain.",
-        "question": "Do you vaccinate your child against the second strain?",
+        "name": "Inaction-caused harm",
+        "scenario": "A flu epidemic is expected at your child's school. The facts below are certain:\n- If your child is NOT vaccinated, they have a 10 in 10,000 chance of dying from the flu.\n- If your child IS vaccinated, they are fully protected from the flu, but the vaccine causes a fatal reaction in 10 in 10,000 children.\nEither way, your child's overall chance of dying is exactly 10 in 10,000 — the vaccine changes only the cause of the risk, not its size. Declining the vaccine is a choice you are actively making: if you do not vaccinate and your child dies from the flu, the death is a direct result of leaving them unprotected when a vaccine was available.",
+        "question": "Do you vaccinate your child?",
         "response_type": "choice",
         "options": [
-          {"id": "vaccinate", "text": "Yes, I vaccinate my child against the second strain."},
-          {"id": "skip", "text": "No, I do not vaccinate my child against the second strain."}
+          {"id": "vaccinate", "text": "Yes, I vaccinate my child."},
+          {"id": "skip", "text": "No, I do not vaccinate my child."}
         ]
       }
     ]
@@ -523,26 +523,28 @@
   {
     "id": "dominator_neglect",
     "name": "Dominator Neglect",
-    "citation": "Bar-Hillel & Neter (1993); Stanovich & West (2008)",
+    "citation": "Tversky & Kahneman (1986); Stanovich & West (2008)",
     "type": "within",
     "paper_result": "replicated",
     "analysis": {
       "type": "proportion_dominated",
-      "description": "Significant proportion of people should choose the dominated (non-normative) option",
-      "direction": "proportion_choosing_dominated"
+      "description": "Masked (non-transparent) stochastic dominance from Tversky & Kahneman (1986). Option B dominates Option A state-by-state (identical for white/red, strictly better for green and yellow), but the dominance is buried in the two low-probability outcomes, so it is not obvious. Dominance neglect predicts that a substantial share of respondents fail to detect it and choose the dominated Option A; ~40% of humans do so, versus ~0% when the dominance is transparent. A rational agent always picks the dominant Option B. Option ids are deliberately neutral ('option_a'/'option_b') so the labels do not reveal which option is dominated.",
+      "direction": "proportion_choosing_dominated",
+      "dominated_option": "option_a",
+      "human_benchmark_pct_dominated": 40.0
     },
     "conditions": [
       {
         "id": "dominated_choice",
-        "name": "Dominated Choice Problem",
-        "scenario": "You have won a prize and must choose between the following two options.",
+        "name": "Masked Dominance Problem",
+        "scenario": "A single marble will be drawn at random from a box. The box contains marbles of four colors in these proportions: 90% white, 6% red, 1% green, 3% yellow. You must choose one of the two payoff schemes below. The color of the marble drawn then determines how much you win or lose under the scheme you chose.",
         "question": "Which option do you choose?",
         "response_type": "choice",
         "options": [
-          {"id": "dominant", "text": "Option A: A certain gain of $50."},
-          {"id": "dominated", "text": "Option B: A 50% chance of winning $50 OR a 50% chance of winning $25. (Note: with Option B you can never win more than $50.)"}
+          {"id": "option_a", "text": "Option A: white → $0; red → win $45; green → win $30; yellow → lose $15."},
+          {"id": "option_b", "text": "Option B: white → $0; red → win $45; green → win $45; yellow → lose $10."}
         ],
-        "note": "Option A dominates Option B: A gives $50 for certain while B gives at most $50 with some chance of only $25."
+        "note": "Option B stochastically dominates Option A: payoffs are identical for white (90%) and red (6%), and B is strictly better for green ($45 vs $30) and yellow (-$10 vs -$15). Choosing Option A ('option_a') is the dominance-neglect error."
       }
     ]
   }
