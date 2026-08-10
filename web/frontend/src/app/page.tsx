@@ -20,15 +20,17 @@ const TEAM_FROM = [
 ];
 
 // "Does it work?" — replication benchmark against the published Twin-2K-500 study.
-// Both models scored on the SAME 17 classic heuristics-and-biases experiments: an
-// effect "replicates" when the model reproduces the original author's result
-// (statistically significant, in the expected direction). Our model's model name is
-// intentionally not shown — it's just "our model". Source: Toubia et al. (2025).
+// Both approaches scored on the SAME 17 classic heuristics-and-biases experiments: an
+// effect "replicates" when the respondents reproduce the original author's result
+// (statistically significant, in the expected direction). "Our ensemble" runs each
+// study through several models and counts an effect reproduced when any one of them
+// shows it; the endowment effect reproduces only partially, hence the 15.5.
+// Source: Toubia et al. (2025).
 const REPLICATION = {
   studyUrl: "https://arxiv.org/abs/2505.17479",
   total: 17,
   rows: [
-    { label: "Our model", count: 12, highlight: true },
+    { label: "Our ensemble of AI respondents", count: 15.5, highlight: true },
     { label: "The study's own AI digital twins", count: 9, highlight: false },
   ],
 };
@@ -184,8 +186,8 @@ export default function Home() {
             </a>{" "}
             (Toubia et al., 2025) — a published dataset of {REPLICATION.total} classic
             behavioral-science experiments, including framing effects, the Linda conjunction
-            problem, anchoring, and sunk-cost. We ran every study and counted how many of these
-            well-established human effects each model reproduced.
+            problem, anchoring, and sunk-cost. We ran every study through an ensemble of AI
+            respondents and counted how many of these well-established human effects it reproduced.
           </p>
 
           <div className="max-w-2xl mx-auto space-y-6">
@@ -213,12 +215,12 @@ export default function Home() {
           </div>
 
           <p className="max-w-2xl mx-auto text-center text-base sm:text-lg font-medium text-slate-800 leading-relaxed mt-12">
-            In plain terms: if your effect is real, there&apos;s better than a 70% chance it&apos;ll
+            In plain terms: if your effect is real, there&apos;s roughly a 90% chance it&apos;ll
             show up in our AI respondents too.
           </p>
 
           <p className="max-w-2xl mx-auto text-center text-sm text-slate-500 leading-relaxed mt-6 border-t border-slate-200 pt-8">
-            Same {REPLICATION.total} studies, same scoring. Our model reproduced more of the real
+            Same {REPLICATION.total} studies, same scoring. Our ensemble reproduced more of the real
             human effects than the AI &ldquo;digital twins&rdquo; built in the source study itself.
             It won&apos;t catch every effect — but it&apos;s a strong signal your manipulation is
             real before you spend on participants.

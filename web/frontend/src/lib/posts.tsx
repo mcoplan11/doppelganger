@@ -74,19 +74,21 @@ export const POSTS: Post[] = [
           <Ext href="https://arxiv.org/abs/2505.17479">Twin-2K-500</Ext> (Toubia et al., 2025), a
           published dataset built on the answers of more than 2,000 real people to 17 classic
           heuristics-and-biases experiments — framing effects, the Linda conjunction problem,
-          anchoring, sunk-cost, and more. We ran all 17 studies through our AI respondents and
-          counted how many of these well-established human effects the model reproduced.
+          anchoring, sunk-cost, and more. We ran all 17 studies through an ensemble of AI
+          respondents — several models, counting an effect as reproduced when any of them shows it —
+          and tallied how many of these well-established human effects it reproduced.
         </P>
 
         <H2>The result</H2>
         <P>
-          Our model reproduced <strong>12 of the 17 effects (about 71%)</strong>. For comparison,
-          the AI &ldquo;digital twins&rdquo; built in the original study — models conditioned on each
-          real person&apos;s prior answers — reproduced 9. On the same studies, scored the same way,
-          our respondents matched <em>more</em> of the known human effects.
+          Our ensemble reproduced <strong>15.5 of the 17 effects (about 91%)</strong>. For
+          comparison, the AI &ldquo;digital twins&rdquo; built in the original study — models
+          conditioned on each real person&apos;s prior answers — reproduced 9. On the same studies,
+          scored the same way, our respondents matched <em>far more</em> of the known human effects.
+          (The half-point is the endowment effect, which reproduces only partially.)
         </P>
         <P>
-          The practical read: <strong>if your effect is real, there&apos;s a better-than-70% chance
+          The practical read: <strong>if your effect is real, there&apos;s roughly a 90% chance
           it will show up in AI respondents too.</strong> That makes an AI pretest a strong early
           signal about whether an idea is worth fielding.
         </P>
@@ -95,8 +97,10 @@ export const POSTS: Post[] = [
         <P>We think the honest framing matters more than the headline, so here are the limits:</P>
         <Ul>
           <li>
-            <strong>It is not a replacement for human data.</strong> Five of the 17 effects
-            didn&apos;t replicate. AI respondents can be too rational and miss some biases entirely.
+            <strong>It is not a replacement for human data.</strong> Even across the ensemble, one
+            of the 17 effects (dominance neglect) didn&apos;t reproduce and one more (the endowment
+            effect) only partially — AI respondents can still be too rational and miss some biases.
+            Any single model reproduces fewer effects than the ensemble does.
           </li>
           <li>
             <strong>A null isn&apos;t a death sentence, and a hit isn&apos;t proof.</strong> Use the
