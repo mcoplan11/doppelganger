@@ -2,20 +2,20 @@ import type { Metadata } from "next";
 import { BlogShell } from "@/components/blog-shell";
 
 export const metadata: Metadata = {
-  title: "Do language models reproduce classic human decision biases?",
+  title: "Do large language models reproduce classic human decision biases?",
   description:
     "A replication benchmark on Twin-2K-500: an ensemble of language models reproduces 15.5 of 17 classic heuristics-and-biases effects (91%), compared with 8 of 16 (50%) for the original study's digital twins.",
   alternates: { canonical: "/research" },
   openGraph: {
     type: "article",
     url: "/research",
-    title: "Do language models reproduce classic human decision biases? A replication benchmark",
+    title: "Do large language models reproduce classic human decision biases? An off-the-shelf replication benchmark",
     description:
       "An ensemble of language models reproduces 15.5 of 17 classic decision biases (91%) on the Twin-2K-500 battery. Methods, results, and honest limitations.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Do language models reproduce classic human decision biases?",
+    title: "Do large language models reproduce classic human decision biases?",
     description:
       "A replication benchmark on Twin-2K-500: 15.5 of 17 classic decision biases reproduced (91%) by an ensemble of models.",
   },
@@ -60,7 +60,7 @@ export default function Research() {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
     headline:
-      "Do off-the-shelf language models reproduce classic human decision biases? A replication benchmark on Twin-2K-500",
+      "Do large language models reproduce classic human decision biases? An off-the-shelf replication benchmark on Twin-2K-500",
     datePublished: "2026-08-09",
     author: { "@type": "Organization", name: "Doppelganger Labs" },
     publisher: { "@type": "Organization", name: "Doppelganger Labs" },
@@ -75,9 +75,9 @@ export default function Research() {
       <article className="max-w-2xl mx-auto px-6 pt-16 pb-8">
         <p className="text-xs font-semibold uppercase tracking-wider text-blue-700 mb-3">Technical report</p>
         <h1 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-3 leading-tight">
-          Do off-the-shelf language models reproduce classic human decision biases?
+          Do large language models reproduce classic human decision biases?
         </h1>
-        <p className="text-slate-600 mb-1">A replication benchmark on Twin-2K-500</p>
+        <p className="text-slate-600 mb-1">An off-the-shelf replication benchmark on Twin-2K-500</p>
         <p className="text-sm text-slate-400 mb-8">Doppelganger Labs · August 2026 · Not peer reviewed</p>
 
         <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-8">
