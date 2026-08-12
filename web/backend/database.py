@@ -65,7 +65,10 @@ class Run(Base):
 
     # Survey info
     original_survey_id = Column(String, nullable=False)
-    ai_survey_id = Column(String)         # set after conversion
+    ai_survey_id = Column(String)         # primary AI copy (first ensemble model) — back-compat
+    # JSON {slug: {label, ai_survey_id}} — one Qualtrics copy per ensemble model.
+    # Models are anonymized (Model A/B/C); real identities never stored here.
+    ai_survey_ids = Column(Text)
     qualtrics_datacenter = Column(String, nullable=False)
     # Qualtrics token encrypted at rest (see crypto.py)
     qualtrics_token_enc = Column(Text, nullable=False)
@@ -115,6 +118,7 @@ def create_tables():
         "ALTER TABLE users ADD COLUMN qualtrics_datacenter VARCHAR",
         "ALTER TABLE runs ADD COLUMN last_heartbeat_at TIMESTAMP",
         "ALTER TABLE runs ADD COLUMN results_json TEXT",
+        "ALTER TABLE runs ADD COLUMN ai_survey_ids TEXT",
     ]
     for sql in migrations:
         try:

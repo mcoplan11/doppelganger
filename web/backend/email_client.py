@@ -42,6 +42,37 @@ def send_magic_link(to_email: str, magic_url: str) -> None:
     )
 
 
+def _models_table_html(models: list[dict]) -> str:
+    """Render the internal per-model breakdown table (admin email only)."""
+    td = "padding:2px 12px 2px 0"
+    rows = []
+    for m in models:
+        sessions = f"{m.get('n_completed', 0)} done"
+        if m.get("failed"):
+            sessions += f", {m['failed']} failed"
+        copy = f"<code>{m['ai_survey_id']}</code>" if m.get("ai_survey_id") else "—"
+        rows.append(
+            "<tr>"
+            f"<td style='{td}'><b>{m.get('label', '?')}</b></td>"
+            f"<td style='{td}'><code>{m.get('model', '?')}</code></td>"
+            f"<td style='{td}'>{sessions}</td>"
+            f"<td style='padding:2px 0'>{copy}</td>"
+            "</tr>"
+        )
+        if m.get("error"):
+            rows.append(
+                f"<tr><td colspan='4' style='padding:0 0 6px;color:#c00'>{m['error']}</td></tr>"
+            )
+    return (
+        "<p><b>Models (internal):</b></p>"
+        "<table style='border-collapse:collapse;font-size:13px'>"
+        f"<tr style='color:#666'><td style='{td}'>Label</td>"
+        f"<td style='{td}'>Model</td><td style='{td}'>Sessions</td>"
+        "<td style='padding:2px 0'>AI copy</td></tr>"
+        f"{''.join(rows)}</table>"
+    )
+
+
 def send_run_notification(
     *,
     run_id: int,
@@ -55,14 +86,25 @@ def send_run_notification(
     duration_seconds: int,
     branch_counts: dict,
     error: str | None,
+    models: list[dict] | None = None,
 ) -> None:
-    """Email the admin when a simulation run finishes (any outcome)."""
+    """Email the admin when a simulation run finishes (any outcome).
+
+    ADMIN-ONLY: this is internal analytics, so ``models`` may include the real
+    model identities (unlike every user-facing surface, which is anonymized).
+    Each item: {label, model, ai_survey_id, n_completed, failed, error}.
+    """
     try:
         run_type = "Trial run" if is_smoke else "Simulation"
         mins, secs = divmod(duration_seconds, 60)
         duration = f"{mins}m {secs}s" if mins else f"{secs}s"
         icon = "✅" if status == "done" else "⚠️"
         subject = f"{icon} {run_type} #{run_id} {status} — {survey_id}"
+
+        # Per-model ensemble breakdown (internal — shows real model ids).
+        models_html = ""
+        if models:
+            models_html = _models_table_html(models)
 
         conditions_html = ""
         if branch_counts:
@@ -87,6 +129,7 @@ def send_run_notification(
           <tr><td style='padding:2px 12px 2px 0;color:#666'>Duration</td><td>{duration}</td></tr>
           <tr><td style='padding:2px 12px 2px 0;color:#666'>Type</td><td>{run_type}</td></tr>
         </table>
+        {models_html}
         {conditions_html}
         {error_html}
         """

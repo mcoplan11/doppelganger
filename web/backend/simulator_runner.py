@@ -22,7 +22,6 @@ truststore.inject_into_ssl()
 
 from sqlalchemy.orm import Session
 
-from app_config import settings
 from crypto import decrypt
 from database import CreditBalance, Run, SessionLocal
 
@@ -74,22 +73,26 @@ def _friendly_error(exc: Exception, datacenter: str) -> str:
     seen in production and rewrite them with a concrete next step.
     """
     text = str(exc)
-    if "probe failed unexpectedly: 404" in text or "SVY_1.2" in text:
+    if "probe failed unexpectedly: 404" in text or "SVY_1.2" in text or "probe failed" in text:
         return (
-            "Qualtrics couldn't find the AI survey copy we just created. "
-            "This usually means your Qualtrics account has accumulated too many "
-            "survey copies from prior runs.\n\n"
-            "How to fix:\n"
+            "Qualtrics wouldn't let us create the AI survey copy — your account "
+            "looks like it's at its active-survey limit. Qualtrics caps how many "
+            "surveys can be active at once, and each run needs to activate a fresh "
+            "copy (one per AI model).\n\n"
+            "How to fix — free up some active surveys:\n"
             f"1. Open https://{datacenter}.qualtrics.com/responses/#/surveys\n"
-            "2. Find any surveys whose name ends with '- AI Copy' (these are "
-            "leftover from your previous Doppelganger runs and contain no real data)\n"
-            "3. Delete them, then start a new run here."
+            "2. Deactivate surveys you're not actively collecting on — this keeps "
+            "all of their responses. Old surveys ending in '- AI Copy' from past "
+            "runs are good candidates.\n"
+            "3. Only delete a survey if you're sure you no longer need its responses "
+            "— deactivating is safer.\n"
+            "4. Then start a new run here."
         )
-    if "503 UNAVAILABLE" in text and ("high demand" in text or "experiencing high demand" in text):
+    if "503" in text and ("UNAVAILABLE" in text or "overloaded" in text or "high demand" in text):
         return (
-            "Gemini's servers are overloaded right now ('high demand'). "
-            "This is upstream — nothing's wrong with your setup. "
-            "Wait a few minutes and try again."
+            "The AI model's servers are temporarily overloaded (a 503 from "
+            "upstream). Nothing's wrong with your setup — wait a few minutes and "
+            "try again."
         )
     if "401" in text and "qualtrics" in text.lower():
         return (
@@ -125,8 +128,15 @@ def _friendly_error(exc: Exception, datacenter: str) -> str:
     return text[:2000]
 
 
-def _convert_survey(survey_id: str, base_url: str, token: str) -> str:
-    """Mirror of convert_to_ai.main() as a callable. Returns the new AI-ready survey ID."""
+def _convert_survey(
+    survey_id: str, base_url: str, token: str, copy_label: str | None = None
+) -> str:
+    """Mirror of convert_to_ai.main() as a callable. Returns the new AI-ready survey ID.
+
+    ``copy_label`` is an anonymized model label ("Model A", …) appended to the
+    copy name so a researcher can tell the per-model copies apart in their
+    Qualtrics account WITHOUT learning which real LLM produced them.
+    """
     from convert_to_ai import (
         ConverterError,
         Qualtrics as Converter,
@@ -142,7 +152,8 @@ def _convert_survey(survey_id: str, base_url: str, token: str) -> str:
     me = client.whoami()
     owner_id = me["userId"]
     src_name = client.get_survey_name(survey_id)
-    new_id = client.copy_survey(survey_id, f"{src_name} - AI Copy", owner_id)
+    copy_name = f"{src_name} - AI Copy [{copy_label}]" if copy_label else f"{src_name} - AI Copy"
+    new_id = client.copy_survey(survey_id, copy_name, owner_id)
     try:
         pre_activation_trash_strip(client, new_id)
         convert_matrix_to_mc(client, new_id)
@@ -173,7 +184,8 @@ def _cleanup_ai_copy(
     Guards (ALL must pass before deletion fires):
       1. ai_survey_id is not None or empty
       2. ai_survey_id != original_survey_id (never touch the source survey)
-      3. Survey name fetched from Qualtrics ends with '- AI Copy'
+      3. Survey name fetched from Qualtrics contains '- AI Copy' (covers both
+         the legacy '... - AI Copy' and the per-model '... - AI Copy [Model X]')
 
     Any failure in this function is caught and logged — it must never affect
     the run's final status or error message.
@@ -202,10 +214,10 @@ def _cleanup_ai_copy(
             print(f"[run {run_id}] cleanup skipped: could not fetch survey name for {ai_survey_id}: {e}", flush=True)
             return
 
-        if not name.endswith("- AI Copy"):
+        if "- AI Copy" not in name:
             print(
                 f"[run {run_id}] cleanup ABORTED: survey {ai_survey_id} name {name!r} "
-                f"does not end with '- AI Copy'. Refusing to delete.",
+                f"does not contain '- AI Copy'. Refusing to delete.",
                 flush=True,
             )
             return
@@ -316,118 +328,214 @@ def _run_inner(
     is_smoke: bool,
     started_at: datetime,
 ) -> None:
-    from gemini_client import GeminiClient
+    """Run the survey through every model in the ensemble.
+
+    Same persona panel, one Qualtrics copy per model, results surfaced per
+    model. Models are anonymized to the researcher (Model A/B/C); real model
+    identities stay server-side (see ensemble.py). A single model failing
+    (conversion or run) does not fail the whole run — it's recorded and the
+    others proceed; the run is "done" as long as at least one model produced
+    responses.
+    """
+    from ensemble import build_client, roster_for, use_batch_for
     from personas import DEFAULT_PERSONAS
     from qualtrics_client import QualtricsClient
     from simulator import run_many
 
     base_url = f"https://{qualtrics_datacenter}.qualtrics.com/API/v3"
-
-    _set_status(run_id, "converting")
-    ai_survey_id = _convert_survey(original_survey_id, base_url, qualtrics_token)
-
-    _set_status(run_id, "running", ai_survey_id=ai_survey_id)
-    qualtrics = QualtricsClient(base_url, qualtrics_token)
-    # Trial runs use a cheap fast model — quality doesn't matter, just verifying the survey works.
-    model = "gemini-2.5-flash-lite" if is_smoke else settings.gemini_model
-    gemini = GeminiClient(settings.gemini_api_key, model, temperature=0.5)
-    survey = qualtrics.get_survey_definition(ai_survey_id)
+    roster = roster_for(is_smoke)
+    n_models = len(roster)
 
     persona_pool = list(itertools.islice(itertools.cycle(DEFAULT_PERSONAS), n_participants))
+    output_base = Path(SIMULATOR_ROOT) / "responses" / f"web_run_{run_id}"
+    output_base.mkdir(parents=True, exist_ok=True)
 
-    output_dir = Path(SIMULATOR_ROOT) / "responses" / f"web_run_{run_id}"
-    output_dir.mkdir(parents=True, exist_ok=True)
-    _save_survey_meta(output_dir, survey)
+    _set_status(run_id, "converting")
 
-    def _on_progress(completed: int) -> None:
-        _set_status(run_id, "running", credits_used=completed)
+    # Live progress: advance 0 → n_participants across the whole ensemble so the
+    # existing "X of N completed" bar stays meaningful with 3× the sessions.
+    completed_before = 0
+    primary_ai_survey_id: str | None = None
+    ai_survey_ids: dict[str, dict[str, str]] = {}   # slug -> {label, ai_survey_id}
+    model_results: list[dict] = []                   # per-model summary for results_json
+    model_notify: list[dict] = []                    # per-model breakdown for admin email
+    representative_branches: dict | None = None      # first successful model's condition split
 
-    runs = run_many(
-        qualtrics=qualtrics,
-        gemini=gemini,
-        survey=survey,
-        personas=persona_pool,
-        runs_per_persona=1,
-        out_dir=output_dir,
-        use_batch=False if is_smoke else None,
-        on_progress=_on_progress,
-        max_pending_seconds=30 * 60 if is_smoke else 10 * 60,
-        is_cancelled=lambda: _is_cancelled(run_id),
-    )
+    for spec in roster:
+        if _is_cancelled(run_id):
+            print(f"[run {run_id}] cancelled — stopping before {spec.label}", flush=True)
+            return
 
-    completed = [r for r in runs if r.completed]
-    failed_count = len(runs) - len(completed)
-    credits_used = len(completed)
-    branch_counts = Counter(r.branch_description or "unknown" for r in completed)
+        model_dir = output_base / spec.slug
+        model_dir.mkdir(parents=True, exist_ok=True)
+        ai_survey_id: str | None = None
+        try:
+            copy_label = None if is_smoke else spec.label
+            ai_survey_id = _convert_survey(
+                original_survey_id, base_url, qualtrics_token, copy_label
+            )
+            ai_survey_ids[spec.slug] = {"label": spec.label, "ai_survey_id": ai_survey_id}
+            if primary_ai_survey_id is None:
+                primary_ai_survey_id = ai_survey_id
+            _set_status(
+                run_id, "running",
+                ai_survey_id=primary_ai_survey_id,
+                ai_survey_ids=json.dumps(ai_survey_ids),
+            )
 
-    result_index_path = str(output_dir / "index.json")
-    with open(result_index_path, "w") as f:
-        json.dump({
-            "run_id": run_id,
-            "completed": credits_used,
-            "failed": failed_count,
-            "branch_distribution": dict(branch_counts),
-        }, f, indent=2)
+            qualtrics = QualtricsClient(base_url, qualtrics_token)
+            survey = qualtrics.get_survey_definition(ai_survey_id)
+            _save_survey_meta(model_dir, survey)
+            client = build_client(spec, temperature=0.5)
+
+            def _on_progress(done: int, _base: int = completed_before) -> None:
+                overall = _base + done
+                _set_status(run_id, "running",
+                            credits_used=min(n_participants, overall // n_models))
+
+            runs = run_many(
+                qualtrics=qualtrics,
+                gemini=client,
+                survey=survey,
+                personas=persona_pool,
+                runs_per_persona=1,
+                out_dir=model_dir,
+                use_batch=use_batch_for(spec, is_smoke),
+                on_progress=_on_progress,
+                max_pending_seconds=30 * 60 if is_smoke else 10 * 60,
+                is_cancelled=lambda: _is_cancelled(run_id),
+            )
+        except Exception as exc:
+            import traceback
+            print(f"[run {run_id}] model {spec.label} ({spec.model}) FAILED:\n"
+                  f"{traceback.format_exc()}", flush=True)
+            model_results.append({
+                "label": spec.label, "slug": spec.slug, "ai_survey_id": ai_survey_id,
+                "n_completed": 0, "failed": 0,
+                "error": _friendly_error(exc, qualtrics_datacenter),
+                "results": {"available": False, "questions": []},
+            })
+            model_notify.append({
+                "label": spec.label, "model": spec.model, "ai_survey_id": ai_survey_id,
+                "n_completed": 0, "failed": 0, "error": str(exc)[:500],
+            })
+            # No data was written for this model → clean up its empty copy.
+            _cleanup_ai_copy(ai_survey_id, original_survey_id, base_url, qualtrics_token, run_id)
+            continue
+
+        if _is_cancelled(run_id):
+            print(f"[run {run_id}] cancelled during/after {spec.label}", flush=True)
+            return
+
+        completed = [r for r in runs if r.completed]
+        failed = len(runs) - len(completed)
+        completed_before += len(completed)
+        branch_counts = Counter(r.branch_description or "unknown" for r in completed)
+        if completed and representative_branches is None:
+            representative_branches = dict(branch_counts)
+
+        model_error = None
+        if failed:
+            samples = [f"[{r.persona.name}] {r.error}"
+                       for r in runs if not r.completed and r.error][:3]
+            model_error = f"{failed}/{len(runs)} sessions failed. " + (
+                " | ".join(samples) if samples else "no error detail captured")
+
+        try:
+            from results import build_results
+            per_model_results = build_results(model_dir)
+        except Exception as e:
+            print(f"[run {run_id}] {spec.label} results build failed (non-fatal): {e}", flush=True)
+            per_model_results = {"available": False, "questions": []}
+
+        model_results.append({
+            "label": spec.label, "slug": spec.slug, "ai_survey_id": ai_survey_id,
+            "n_completed": len(completed), "failed": failed,
+            "error": model_error, "results": per_model_results,
+        })
+        model_notify.append({
+            "label": spec.label, "model": spec.model, "ai_survey_id": ai_survey_id,
+            "n_completed": len(completed), "failed": failed, "error": model_error,
+        })
+
+        # A model that produced nothing has an empty copy — remove it.
+        if not completed:
+            _cleanup_ai_copy(ai_survey_id, original_survey_id, base_url, qualtrics_token, run_id)
 
     if _is_cancelled(run_id):
         print(f"[run {run_id}] cancelled — skipping credit deduction and notification", flush=True)
         return
 
-    if credits_used > 0 and not is_smoke:
-        _deduct_credits(user_id, credits_used)
+    total_completed = sum(m["n_completed"] for m in model_results)
+    final_status = "done" if total_completed > 0 else "failed"
 
-    # When sessions fail, surface the actual per-session errors so the
-    # dashboard shows something diagnosable instead of just a count.
-    error_msg = None
-    if failed_count:
-        sample_errors = [
-            f"[{r.persona.name}] {r.error}"
-            for r in runs if not r.completed and r.error
-        ][:3]
-        error_msg = f"{failed_count}/{len(runs)} sessions failed. " + (
-            " | ".join(sample_errors) if sample_errors else "no error detail captured"
-        )
+    # Credits: one charge per persona for the whole ensemble run, regardless of
+    # how many models it fans out to (the 3× model cost is absorbed).
+    credits_charged = n_participants if (final_status == "done" and not is_smoke) else 0
+    if credits_charged:
+        _deduct_credits(user_id, credits_charged)
 
-    final_status = "done" if credits_used > 0 else "failed"
+    result_index_path = str(output_base / "index.json")
+    with open(result_index_path, "w") as f:
+        json.dump({
+            "run_id": run_id,
+            "ensemble": True,
+            "total_completed": total_completed,
+            "models": [
+                {k: m[k] for k in ("label", "slug", "ai_survey_id", "n_completed", "failed")}
+                for m in model_results
+            ],
+        }, f, indent=2)
 
-    # Build and persist results summary now, while output_dir still exists.
-    # Railway's filesystem is ephemeral — files vanish on every redeploy, so
-    # the results endpoint must not depend on them being present later.
     results_json_str: str | None = None
     if final_status == "done":
-        try:
-            from results import build_results
-            results_json_str = json.dumps(build_results(output_dir))
-        except Exception as e:
-            print(f"[run {run_id}] results build failed (non-fatal): {e}", flush=True)
+        results_json_str = json.dumps({
+            "ensemble": True,
+            "n_completed": total_completed,
+            "models": [
+                {
+                    "label": m["label"], "slug": m["slug"],
+                    "ai_survey_id": m["ai_survey_id"],
+                    "n_completed": m["n_completed"], "failed": m["failed"],
+                    "error": m["error"], "results": m["results"],
+                }
+                for m in model_results
+            ],
+        })
+
+    # Run-level error summary: only surface if the whole run failed, or a model
+    # was completely lost. Per-session failures live in each model's block.
+    error_msg = None
+    lost = [m["label"] for m in model_results if m["n_completed"] == 0]
+    if final_status == "failed":
+        first = next((m["error"] for m in model_results if m["error"]), None)
+        error_msg = first or "No model produced any responses."
+    elif lost:
+        error_msg = f"{len(lost)} of {len(roster)} models produced no data: {', '.join(lost)}."
 
     _set_status(
         run_id, final_status,
-        credits_used=credits_used,
+        credits_used=credits_charged if not is_smoke else 0,
         result_path=result_index_path,
-        branch_summary=json.dumps(dict(branch_counts)),
+        branch_summary=json.dumps(representative_branches or {}),
+        ai_survey_ids=json.dumps(ai_survey_ids),
         completed_at=datetime.now(timezone.utc),
         error=error_msg,
         results_json=results_json_str,
     )
-
-    # Clean up the AI survey copy when the run failed completely (no sessions
-    # succeeded, so the copy holds no real data). Multiple guards ensure we
-    # never accidentally touch the original survey or a partial-success copy.
-    if final_status == "failed" and credits_used == 0:
-        _cleanup_ai_copy(ai_survey_id, original_survey_id, base_url, qualtrics_token, run_id)
 
     from email_client import send_run_notification
     send_run_notification(
         run_id=run_id,
         user_email=user_email,
         survey_id=original_survey_id,
-        ai_survey_id=ai_survey_id,
+        ai_survey_id=primary_ai_survey_id,
         is_smoke=is_smoke,
         status=final_status,
-        credits_used=credits_used,
+        credits_used=credits_charged,
         n_participants=n_participants,
         duration_seconds=int((datetime.now(timezone.utc) - started_at).total_seconds()),
-        branch_counts=dict(branch_counts),
+        branch_counts=representative_branches or {},
         error=error_msg,
+        models=model_notify,
     )

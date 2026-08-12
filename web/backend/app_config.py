@@ -10,6 +10,9 @@ class Settings(BaseSettings):
     gemini_api_key: str
     gemini_model: str = "gemini-3.5-flash"
 
+    # OpenRouter powers the non-Gemini members of the ensemble (see ensemble.py).
+    openrouter_api_key: str = ""
+
     resend_api_key: str = ""
     from_email: str = "Doppelganger <hello@doppelgangerlabs.com>"
 

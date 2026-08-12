@@ -438,14 +438,32 @@ def download_run(
         raise HTTPException(status_code=404, detail="Results not available yet.")
     result_dir = Path(run.result_path).parent
 
-    # Build a simple CSV from individual response JSON files
+    # Map model subdir slugs -> anonymized labels (Model A/B/C). Never expose the
+    # real model behind a slug.
+    slug_to_label: dict[str, str] = {}
+    if run.ai_survey_ids:
+        try:
+            for slug, info in json.loads(run.ai_survey_ids).items():
+                slug_to_label[slug] = info.get("label", slug)
+        except Exception:
+            pass
+
+    # Ensemble runs write one subdir per model; legacy runs wrote files flat.
+    completed = sorted(result_dir.glob("*/*_completed.json"))
+    if not completed:
+        completed = [(None, p) for p in sorted(result_dir.glob("*_completed.json"))]
+    else:
+        completed = [(p.parent.name, p) for p in completed]
+
+    # Build a CSV from individual response JSON files, tagged by model.
     import csv, io
     buf = io.StringIO()
     writer = None
-    for jf in sorted(result_dir.glob("*_completed.json")):
+    for slug, jf in completed:
         with open(jf) as f:
             d = json.load(f)
         row = {
+            "model": slug_to_label.get(slug, slug) if slug else "",
             "persona": d.get("persona"),
             "branch": d.get("branch_description"),
             **d.get("embedded_data", {}),
@@ -473,10 +491,24 @@ def _run_to_dict(run: Run) -> dict:
             branch = json.loads(run.branch_summary)
         except Exception:
             pass
+    # Per-model AI copies, keyed by anonymized label (Model A/B/C). Real model
+    # identities are never stored, so nothing to redact here.
+    ai_copies: list[dict] = []
+    if run.ai_survey_ids:
+        try:
+            for slug, info in json.loads(run.ai_survey_ids).items():
+                ai_copies.append({
+                    "slug": slug,
+                    "label": info.get("label", slug),
+                    "ai_survey_id": info.get("ai_survey_id"),
+                })
+        except Exception:
+            pass
     return {
         "id": run.id,
         "original_survey_id": run.original_survey_id,
         "ai_survey_id": run.ai_survey_id,
+        "ai_survey_copies": ai_copies,
         "n_participants": run.n_participants,
         "is_smoke_test": run.is_smoke_test,
         "platform": run.platform,
