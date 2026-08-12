@@ -174,10 +174,18 @@ def _save_run(out_dir: "Path | None", idx: int, run: SessionRun) -> None:
 
 
 def _is_transient_error(error: str | None) -> bool:
-    """True for errors that are worth retrying (Gemini capacity issues)."""
+    """True for errors that are worth retrying (upstream capacity / gateway blips).
+
+    Covers model-provider capacity errors (503/429/overloaded) and transient
+    Qualtrics gateway/internal errors during session submission (502/504,
+    'Gateway Time-out', QHRI_*) which otherwise fail a whole session.
+    """
     if not error:
         return False
-    return any(s in error for s in ("503", "UNAVAILABLE", "429", "Too Many Requests", "overloaded"))
+    return any(s in error for s in (
+        "503", "UNAVAILABLE", "429", "Too Many Requests", "overloaded",
+        "502", "504", "Gateway Time-out", "Gateway Timeout", "QHRI",
+    ))
 
 
 def _run_session_with_retry(

@@ -139,10 +139,15 @@ class OpenRouterAnswerClient:
                 time.sleep(wait)
                 continue
             text = resp.choices[0].message.content
-            if not text:
-                raise ValueError("OpenRouter returned empty content")
+            if not text or not text.strip():
+                # Some models (esp. reasoning ones) occasionally return empty
+                # content. Retry within budget rather than failing the session.
+                print(f"  [openrouter] empty content, retrying "
+                      f"(attempt {attempt + 1}/5)...", flush=True)
+                time.sleep(min(20, 3 * 2 ** attempt))
+                continue
             return json.loads(_strip_fences(text.strip()))
-        raise RuntimeError("OpenRouter: exceeded max retries on rate limit")
+        raise RuntimeError("OpenRouter: no valid response after retries (rate limit or empty content)")
 
     @staticmethod
     def _retry_wait(exc: Exception, attempt: int) -> int | None:
