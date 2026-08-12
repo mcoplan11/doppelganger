@@ -1,6 +1,7 @@
 """FastAPI application — Doppelganger web service."""
 import asyncio
 import json
+import os
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -39,6 +40,24 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+_BOOT_TIME = datetime.now(timezone.utc).isoformat()
+
+
+@app.get("/health")
+def health():
+    """Liveness + deployed-version probe.
+
+    `commit` is Railway's injected RAILWAY_GIT_COMMIT_SHA (the deployed SHA);
+    `booted_at` resets on every restart/redeploy. Used to confirm a deploy is
+    live before kicking off a run.
+    """
+    return {
+        "status": "ok",
+        "commit": os.environ.get("RAILWAY_GIT_COMMIT_SHA", "unknown"),
+        "booted_at": _BOOT_TIME,
+    }
 
 
 @app.on_event("startup")
