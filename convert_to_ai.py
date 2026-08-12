@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+import time
 from typing import Any
 
 import requests
@@ -165,19 +166,34 @@ class Qualtrics:
         Note: QIDs returned by the Sessions API can refer to the ORIGINAL survey,
         not the current copy (Qualtrics bug). The caller should treat the reason
         strings as authoritative and match against the copy's questions by type.
+
+        Transient gateway/internal errors (502/503/504) are retried with backoff —
+        Qualtrics occasionally returns these right after activation. Non-transient
+        failures (e.g. 404 at the active-survey cap) fail fast.
         """
-        r = self._s.post(f"{self._base}/surveys/{survey_id}/sessions", json={}, timeout=30)
-        if r.status_code in (200, 201):
-            session_id = r.json()["result"].get("sessionId")
-            return True, {}, session_id
-        if r.status_code == 400:
-            try:
-                body = r.json()
-                incompat = body.get("meta", {}).get("error", {}).get("incompatibilities", {}) or {}
-                return False, incompat, None
-            except ValueError:
-                pass
-        raise ConverterError(f"probe failed unexpectedly: {r.status_code} {r.text[:300]}")
+        last_status: int | None = None
+        last_text: str = ""
+        for attempt in range(4):
+            if attempt:
+                time.sleep(min(30, 5 * 2 ** (attempt - 1)))  # 5s, 10s, 20s
+            r = self._s.post(f"{self._base}/surveys/{survey_id}/sessions", json={}, timeout=30)
+            if r.status_code in (200, 201):
+                session_id = r.json()["result"].get("sessionId")
+                return True, {}, session_id
+            if r.status_code == 400:
+                try:
+                    body = r.json()
+                    incompat = body.get("meta", {}).get("error", {}).get("incompatibilities", {}) or {}
+                    return False, incompat, None
+                except ValueError:
+                    pass
+            last_status, last_text = r.status_code, r.text[:300]
+            if r.status_code in (502, 503, 504):
+                print(f"  probe_session {r.status_code} on {survey_id}, retrying "
+                      f"(attempt {attempt + 1}/4)...", flush=True)
+                continue
+            break  # non-retryable (e.g. 404 at the active-survey cap) — fail fast
+        raise ConverterError(f"probe failed unexpectedly: {last_status} {last_text}")
 
     def close_session(self, survey_id: str, session_id: str) -> None:
         try:

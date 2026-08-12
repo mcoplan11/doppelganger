@@ -73,7 +73,16 @@ def _friendly_error(exc: Exception, datacenter: str) -> str:
     seen in production and rewrite them with a concrete next step.
     """
     text = str(exc)
-    if "probe failed unexpectedly: 404" in text or "SVY_1.2" in text or "probe failed" in text:
+    # Transient Qualtrics gateway/internal error during conversion (QHRI_*, 5xx) —
+    # distinct from the active-survey cap 404 below. probe_session already retries
+    # these, so reaching here means retries were exhausted.
+    if "probe failed" in text and any(s in text for s in ("502", "503", "504", "QHRI")):
+        return (
+            "Qualtrics had a temporary server error while preparing the AI survey "
+            "copy (a gateway/internal error on their end). Nothing's wrong with "
+            "your setup — wait a couple of minutes and start the run again."
+        )
+    if "probe failed unexpectedly: 404" in text or "SVY_1.2" in text:
         return (
             "Qualtrics wouldn't let us create the AI survey copy — your account "
             "looks like it's at its active-survey limit. Qualtrics caps how many "
