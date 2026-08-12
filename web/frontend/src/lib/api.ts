@@ -45,15 +45,22 @@ export const api = {
 
   listRuns: () => request<Run[]>("/runs"),
   getRun: (id: number) => request<Run>(`/runs/${id}`),
-  getResults: (id: number) => request<ResultsSummary>(`/runs/${id}/results`),
+  getResults: (id: number) => request<ResultsSummary | EnsembleResults>(`/runs/${id}/results`),
   cancelRun: (id: number) => request<Run>(`/runs/${id}/cancel`, { method: "POST" }),
   downloadUrl: (id: number) => `${BASE}/runs/${id}/download`,
 };
+
+export interface AiSurveyCopy {
+  slug: string;
+  label: string;            // anonymized: "Model A" / "Model B" / …
+  ai_survey_id: string | null;
+}
 
 export interface Run {
   id: number;
   original_survey_id: string;
   ai_survey_id: string | null;
+  ai_survey_copies?: AiSurveyCopy[];   // one Qualtrics copy per ensemble model
   n_participants: number;
   is_smoke_test: boolean;
   platform: string;
@@ -104,4 +111,28 @@ export interface ResultsSummary {
   has_conditions?: boolean;
   conditions?: string[];
   questions: QuestionResult[];
+}
+
+// One member of the model ensemble. `label` is anonymized (Model A/B/C); the
+// real underlying LLM is never sent to the client.
+export interface ModelResult {
+  label: string;
+  slug: string;
+  ai_survey_id: string | null;
+  n_completed: number;
+  failed: number;
+  error: string | null;
+  results: ResultsSummary;
+}
+
+export interface EnsembleResults {
+  ensemble: true;
+  n_completed: number;
+  models: ModelResult[];
+}
+
+export function isEnsembleResults(
+  r: ResultsSummary | EnsembleResults | null
+): r is EnsembleResults {
+  return !!r && (r as EnsembleResults).ensemble === true;
 }

@@ -133,7 +133,13 @@ export default function RunDetail() {
             <Stat label="Participants" value={run.n_participants.toString()} />
             <Stat label="Credits used" value={run.credits_used.toString()} />
             <Stat label="Type" value={run.is_smoke_test ? "Trial run" : "Full run"} />
-            {run.ai_survey_id && <Stat label="AI survey copy" value={run.ai_survey_id} />}
+            {run.ai_survey_copies && run.ai_survey_copies.length > 0
+              ? run.ai_survey_copies
+                  .filter((c) => c.ai_survey_id)
+                  .map((c) => (
+                    <Stat key={c.slug} label={`AI copy — ${c.label}`} value={c.ai_survey_id as string} />
+                  ))
+              : run.ai_survey_id && <Stat label="AI survey copy" value={run.ai_survey_id} />}
             {run.completed_at && (
               <Stat label="Completed" value={new Date(run.completed_at).toLocaleString()} />
             )}

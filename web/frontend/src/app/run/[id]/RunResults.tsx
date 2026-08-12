@@ -1,9 +1,18 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { api, type DistItem, type QuestionResult, type ResultsSummary, type Summary } from "@/lib/api";
+import {
+  api,
+  isEnsembleResults,
+  type DistItem,
+  type EnsembleResults,
+  type ModelResult,
+  type QuestionResult,
+  type ResultsSummary,
+  type Summary,
+} from "@/lib/api";
 
 export default function RunResults({ runId }: { runId: number }) {
-  const [results, setResults] = useState<ResultsSummary | null>(null);
+  const [results, setResults] = useState<ResultsSummary | EnsembleResults | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,8 +29,8 @@ export default function RunResults({ runId }: { runId: number }) {
       </div>
     );
   }
+  if (isEnsembleResults(results)) return <EnsembleView ensemble={results} />;
   if (!results?.available || results.questions.length === 0) return null;
-
   return (
     <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 mb-6">
       <h2 className="font-semibold mb-1">Results preview</h2>
@@ -30,15 +39,89 @@ export default function RunResults({ runId }: { runId: number }) {
         {results.has_conditions ? ", broken out by condition" : ""}. Directional only — a gut-check
         on whether your design produces a signal, not a substitute for human data.
       </p>
+      <ModelResultsBody results={results} />
+    </div>
+  );
+}
 
+// ── Ensemble: one independent panel per (anonymized) model ────────────────────
+function EnsembleView({ ensemble }: { ensemble: EnsembleResults }) {
+  const models = ensemble.models ?? [];
+  const withData = models.filter((m) => m.results?.available && m.results.questions.length > 0);
+  const [active, setActive] = useState(0);
+
+  if (withData.length === 0) return null;
+  const activeModel: ModelResult = withData[Math.min(active, withData.length - 1)];
+
+  return (
+    <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 mb-6">
+      <h2 className="font-semibold mb-1">Results preview — model ensemble</h2>
+      <p className="text-gray-500 text-xs mb-4 leading-relaxed">
+        Your survey was run through {models.length} independent AI models, each a separate panel
+        of {activeModel.results.n_completed ?? activeModel.n_completed} respondents. Models are
+        shown anonymously (Model A, B, …).
+      </p>
+
+      {/* How to read this */}
+      <div className="mb-5 rounded-lg border border-blue-900/60 bg-blue-950/30 px-4 py-3 text-xs text-blue-200 leading-relaxed">
+        <span className="font-semibold">How to read this:</span> each model is a different
+        simulated population. If your manipulation produces a real effect, it should move answers
+        in the expected direction in <span className="font-semibold">at least one</span> model —
+        that&rsquo;s a positive signal worth fielding. When several models agree, the signal is
+        stronger. A flat result across every model is a hint your design may not produce the effect
+        (directional only — not a substitute for human data).
+      </div>
+
+      {/* Model tabs */}
+      <div className="flex flex-wrap gap-2 mb-5">
+        {withData.map((m, i) => {
+          const idx = i;
+          const isActive = withData[Math.min(active, withData.length - 1)].slug === m.slug;
+          return (
+            <button
+              key={m.slug}
+              onClick={() => setActive(idx)}
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors border ${
+                isActive
+                  ? "bg-blue-600 border-blue-500 text-white"
+                  : "bg-gray-800 border-gray-700 text-gray-300 hover:bg-gray-700"
+              }`}
+            >
+              {m.label}
+              <span className={`ml-1.5 ${isActive ? "text-blue-200" : "text-gray-500"}`}>
+                n={m.results.n_completed ?? m.n_completed}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+
+      {models.some((m) => m.n_completed === 0) && (
+        <p className="text-amber-400/80 text-xs mb-4">
+          {models.filter((m) => m.n_completed === 0).map((m) => m.label).join(", ")} produced no
+          usable responses and {models.filter((m) => m.n_completed === 0).length === 1 ? "is" : "are"} not shown.
+        </p>
+      )}
+
+      <ModelResultsBody key={activeModel.slug} results={activeModel.results} />
+    </div>
+  );
+}
+
+// Shared question rendering for a single model's ResultsSummary.
+function ModelResultsBody({ results }: { results: ResultsSummary }) {
+  if (!results.available || results.questions.length === 0) {
+    return <p className="text-gray-500 text-sm">No results available for this model.</p>;
+  }
+  return (
+    <>
       <QuestionTOC questions={results.questions} />
-
       <div className="flex flex-col divide-y divide-gray-800">
         {results.questions.map((q) => (
           <QuestionBlock key={q.qid} q={q} hasConditions={!!results.has_conditions} />
         ))}
       </div>
-    </div>
+    </>
   );
 }
 
