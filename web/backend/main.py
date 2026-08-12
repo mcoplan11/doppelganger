@@ -53,10 +53,19 @@ def health():
     `booted_at` resets on every restart/redeploy. Used to confirm a deploy is
     live before kicking off a run.
     """
+    # Safe config diagnostics — booleans only, never the secret values. Lets us
+    # confirm whether the backend PROCESS actually sees each key without Railway
+    # dashboard access.
     return {
         "status": "ok",
         "commit": os.environ.get("RAILWAY_GIT_COMMIT_SHA", "unknown"),
         "booted_at": _BOOT_TIME,
+        "config": {
+            "gemini_key_set": bool(settings.gemini_api_key),
+            "openrouter_key_set": bool(settings.openrouter_api_key),
+            "openrouter_env_present": "OPENROUTER_API_KEY" in os.environ,
+            "openrouter_key_len": len(settings.openrouter_api_key or ""),
+        },
     }
 
 
