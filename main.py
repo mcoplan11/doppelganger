@@ -115,7 +115,14 @@ def main() -> int:
         cmd_inspect(survey)
         return 0
     if args.cmd == "run":
-        gemini = GeminiClient(cfg.gemini_api_key, cfg.gemini_model, temperature=args.temperature)
+        gemini = GeminiClient(
+            cfg.gemini_api_key,
+            cfg.gemini_model,
+            temperature=args.temperature,
+            use_vertex=cfg.gemini_use_vertex,
+            project=cfg.gemini_project,
+            location=cfg.gemini_location,
+        )
         cmd_run(args, qualtrics, gemini, survey)
         return 0
     return 1

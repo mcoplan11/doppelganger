@@ -8,6 +8,11 @@ responses/*
 web/backend/.env
 web/frontend/.env.local
 
+# GCP service-account keys — never commit (defensive; keys live in ~/ anyway)
+*sa-key*.json
+*-sa.json
+gcp-sa*.json
+
 # Python
 __pycache__/
 *.py[cod]

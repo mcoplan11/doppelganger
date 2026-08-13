@@ -1,3 +1,4 @@
+from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -7,8 +8,19 @@ class Settings(BaseSettings):
     database_url: str = "sqlite:///./app.db"
     secret_key: str = "change-me-in-production"
 
-    gemini_api_key: str
+    # AI Studio API key (fallback when not on Vertex). Optional so Vertex-only
+    # deployments don't need it.
+    gemini_api_key: str = ""
     gemini_model: str = "gemini-3.5-flash"
+
+    # Run Gemini on Vertex AI (Google Cloud) instead of the AI Studio Developer
+    # API. Vertex is what produces Cloud billing invoices + model-observability
+    # dashboards. Uses GCP-standard env var names.
+    gemini_use_vertex: bool = Field(default=False, validation_alias="GEMINI_USE_VERTEX")
+    gemini_project: str = Field(default="", validation_alias="GOOGLE_CLOUD_PROJECT")
+    gemini_location: str = Field(
+        default="global", validation_alias="GOOGLE_CLOUD_LOCATION"
+    )
 
     # OpenRouter powers the non-Gemini members of the ensemble (see ensemble.py).
     openrouter_api_key: str = ""

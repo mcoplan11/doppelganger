@@ -30,8 +30,40 @@ class BatchInput:
 
 
 class GeminiClient:
-    def __init__(self, api_key: str, model: str, temperature: float = 0.5):
-        self._client = genai.Client(api_key=api_key)
+    def __init__(
+        self,
+        api_key: str | None = None,
+        model: str = "gemini-3.5-flash",
+        temperature: float = 0.5,
+        *,
+        use_vertex: bool = False,
+        project: str | None = None,
+        location: str = "us-central1",
+    ):
+        # Two backends for Gemini, selected here:
+        #   - Vertex AI (a Google Cloud product): auth via Application Default
+        #     Credentials / a service account, billed through Cloud Billing, with
+        #     model-observability dashboards in the Cloud Console.
+        #   - Gemini Developer API (Google AI Studio): auth via an API key.
+        # Production runs on Vertex so that Cloud billing invoices and Gemini
+        # observability dashboards exist as evidence; the api_key path is kept as
+        # a fallback (set GEMINI_USE_VERTEX=false).
+        if use_vertex:
+            if not project:
+                raise ValueError(
+                    "use_vertex=True requires a GCP project id "
+                    "(set GOOGLE_CLOUD_PROJECT)."
+                )
+            self._client = genai.Client(
+                vertexai=True, project=project, location=location
+            )
+        else:
+            if not api_key:
+                raise ValueError(
+                    "GeminiClient requires an api_key when use_vertex is False."
+                )
+            self._client = genai.Client(api_key=api_key)
+        self._use_vertex = use_vertex
         self._model = model
         self._temperature = temperature
 
@@ -81,7 +113,15 @@ class GeminiClient:
         Returns {key: answers_dict or None on failure}. Keys with no answerable
         questions are returned with an empty dict immediately (no API call).
         Large rounds are automatically split into MAX_BATCH_CHUNK-sized jobs.
+
+        On Vertex AI the inline-request Batch API used below is not available
+        (Vertex batch prediction requires a Cloud Storage / BigQuery source), so
+        we transparently fall back to sequential synchronous calls. For
+        hackathon-scale panels (~150 personas) this is perfectly fine.
         """
+        if self._use_vertex:
+            return self._answer_blocks_sync_fallback(inputs, on_progress)
+
         results: dict[str, dict[str, Any] | None] = {}
 
         # Separate inputs into those needing API calls vs trivially empty ones
@@ -107,6 +147,36 @@ class GeminiClient:
                 chunk, chunk_label, poll_interval_seconds,
                 max_wait_seconds, max_pending_seconds, on_progress,
             ))
+        return results
+
+    def _answer_blocks_sync_fallback(
+        self,
+        inputs: list[BatchInput],
+        on_progress=None,
+    ) -> dict[str, dict[str, Any] | None]:
+        """Sequential sync equivalent of the batch path, used on Vertex AI."""
+        results: dict[str, dict[str, Any] | None] = {}
+        pending = [inp for inp in inputs if inp.answerable]
+        for inp in inputs:
+            if not inp.answerable:
+                results[inp.key] = {}
+        if on_progress and pending:
+            on_progress(
+                f"vertex: answering {len(pending)} blocks synchronously "
+                "(no inline batch API on Vertex)"
+            )
+        for inp in pending:
+            try:
+                results[inp.key] = self.answer_block(
+                    inp.persona,
+                    inp.answerable,
+                    inp.prior_answers,
+                    read_context=inp.read_context,
+                    survey_name=inp.survey_name,
+                )
+            except Exception as exc:  # match batch semantics: failure -> None
+                print(f"  vertex sync answer failed for {inp.key}: {exc}", flush=True)
+                results[inp.key] = None
         return results
 
     def _submit_chunk(

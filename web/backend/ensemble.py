@@ -57,6 +57,15 @@ def build_client(spec: ModelSpec, temperature: float = 0.5):
     """
     if spec.provider == "gemini":
         from gemini_client import GeminiClient
+        if settings.gemini_use_vertex:
+            return GeminiClient(
+                None,
+                spec.model,
+                temperature=temperature,
+                use_vertex=True,
+                project=settings.gemini_project,
+                location=settings.gemini_location,
+            )
         return GeminiClient(settings.gemini_api_key, spec.model, temperature=temperature)
     if spec.provider == "openrouter":
         if not settings.openrouter_api_key:

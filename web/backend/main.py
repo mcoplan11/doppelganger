@@ -23,6 +23,35 @@ from email_client import send_magic_link, send_run_notification
 from payments import CREDIT_PACKS, construct_webhook_event, create_checkout_session
 from simulator_runner import run_simulation
 
+
+def _bootstrap_gcp_credentials() -> None:
+    """Materialize a GCP service-account key from an env var into a file.
+
+    Railway (and most PaaS) only provide env vars, but Google's Application
+    Default Credentials needs a file path in GOOGLE_APPLICATION_CREDENTIALS. If
+    GCP_SA_KEY_B64 is set, decode it to disk and point ADC at it. No-ops locally
+    (where ADC is configured via `gcloud auth application-default login`), so it
+    is safe to always call. Must run before any Vertex client is constructed.
+    """
+    import base64
+
+    b64 = os.environ.get("GCP_SA_KEY_B64")
+    if not b64:
+        return
+    cred_path = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS", "/tmp/gcp-sa.json")
+    try:
+        data = base64.b64decode(b64)
+        with open(cred_path, "wb") as f:
+            f.write(data)
+        os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = cred_path
+        print(f"[startup] wrote GCP credentials to {cred_path} ({len(data)} bytes)",
+              flush=True)
+    except Exception as exc:  # never crash boot over this — /health will show it
+        print(f"[startup] failed to materialize GCP credentials: {exc}", flush=True)
+
+
+_bootstrap_gcp_credentials()
+
 app = FastAPI(title="Doppelganger API", version="1.0.0")
 
 _allowed_origins = list({
@@ -61,6 +90,12 @@ def health():
         "commit": os.environ.get("RAILWAY_GIT_COMMIT_SHA", "unknown"),
         "booted_at": _BOOT_TIME,
         "config": {
+            "gemini_backend": "vertex" if settings.gemini_use_vertex else "ai_studio",
+            "gemini_project": settings.gemini_project if settings.gemini_use_vertex else "",
+            "gemini_location": settings.gemini_location,
+            "gcp_credentials_present": bool(
+                os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+            ),
             "gemini_key_set": bool(settings.gemini_api_key),
             "openrouter_key_set": bool(settings.openrouter_api_key),
             "openrouter_env_present": "OPENROUTER_API_KEY" in os.environ,
