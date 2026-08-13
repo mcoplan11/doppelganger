@@ -21,6 +21,7 @@ from crypto import decrypt, encrypt
 from database import CreditBalance, Purchase, Run, SessionLocal, User, create_tables, get_db
 from email_client import send_magic_link, send_run_notification
 from payments import CREDIT_PACKS, construct_webhook_event, create_checkout_session
+from rate_limit import SlidingWindowLimiter
 from simulator_runner import run_simulation
 
 
@@ -72,6 +73,26 @@ app.add_middleware(
 
 
 _BOOT_TIME = datetime.now(timezone.utc).isoformat()
+
+# Best-effort abuse throttle for the unauthenticated magic-link endpoint.
+# Tuned to favor real users: the per-recipient limit is what stops email
+# bombing (a human needs 1-2 links); the per-IP cap is a deliberately loose
+# backstop because Railway routes every user through one proxy IP and our
+# users often share university NAT, so a tight per-IP limit would throttle
+# everyone at once. Easily tuned — raise if any real user ever trips it.
+_auth_limiter = SlidingWindowLimiter()
+_MAGIC_LINK_RULES_FOR = lambda email, ip: [
+    (f"magiclink:email:{email}", 5, 900),   # 5 per recipient per 15 min
+    (f"magiclink:ip:{ip}", 100, 900),        # 100 per source IP per 15 min
+]
+
+
+def _client_ip(request: Request) -> str:
+    """Real client IP behind Railway's proxy (X-Forwarded-For first hop)."""
+    xff = request.headers.get("x-forwarded-for")
+    if xff:
+        return xff.split(",")[0].strip()
+    return request.client.host if request.client else "unknown"
 
 
 @app.get("/health")
@@ -146,8 +167,22 @@ class MagicLinkRequest(BaseModel):
 
 
 @app.post("/auth/request")
-def request_magic_link(body: MagicLinkRequest, db: Session = Depends(get_db)):
+def request_magic_link(body: MagicLinkRequest, request: Request, db: Session = Depends(get_db)):
     """Send a magic link email. Creates user if first time."""
+    # Abuse throttle. On limit hit we return the SAME success response and just
+    # skip the send: a real user who somehow trips it already has valid links in
+    # their inbox, so login still works, while a bot gets a silent no-op and no
+    # user row is created. Fails OPEN — any limiter error allows the request.
+    try:
+        ip = _client_ip(request)
+        allowed = _auth_limiter.allow(_MAGIC_LINK_RULES_FOR(body.email.lower(), ip))
+    except Exception as exc:  # never let the throttle break login
+        print(f"[rate-limit] limiter error, allowing request: {exc}", flush=True)
+        allowed = True
+    if not allowed:
+        print(f"[rate-limit] suppressed magic link for {body.email} from {ip}", flush=True)
+        return {"detail": "Magic link sent. Check your email."}
+
     user = db.query(User).filter(User.email == body.email).first()
     if not user:
         user = User(email=body.email)
