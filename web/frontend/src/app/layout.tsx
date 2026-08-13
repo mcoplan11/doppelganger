@@ -64,7 +64,7 @@ const JSON_LD = {
   description: DESCRIPTION,
   offers: {
     "@type": "Offer",
-    price: "4.99",
+    price: "7.99",
     priceCurrency: "USD",
   },
 };

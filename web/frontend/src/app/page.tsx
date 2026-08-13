@@ -4,10 +4,9 @@ import Link from "next/link";
 import { api } from "@/lib/api";
 
 const PACKS = [
-  { id: "starter",  credits: 50,  price: "$4.99",  per: "$0.10", label: "Starter" },
-  { id: "standard", credits: 100, price: "$8.99",  per: "$0.09", label: "Standard", popular: true },
-  { id: "pro",      credits: 250, price: "$19.99", per: "$0.08", label: "Pro" },
-  { id: "research", credits: 500, price: "$34.99", per: "$0.07", label: "Research" },
+  { id: "starter",  credits: 200,  price: "$7.99",  per: "$0.04",  label: "Starter" },
+  { id: "standard", credits: 600,  price: "$14.99", per: "$0.025", label: "Standard", popular: true },
+  { id: "pro",      credits: 1200, price: "$24.99", per: "$0.02",  label: "Pro" },
 ];
 
 // Team-background affiliations (honest "built by", NOT customer endorsements).
