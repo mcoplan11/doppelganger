@@ -418,6 +418,12 @@ def _run_inner(
             import traceback
             print(f"[run {run_id}] model {spec.label} ({spec.model}) FAILED:\n"
                   f"{traceback.format_exc()}", flush=True)
+            # _convert_survey attaches the partial copy id to the exception when
+            # it fails mid-conversion (after copy_survey, before returning), so
+            # the local ai_survey_id is still None here. Recover it so we clean
+            # up and report the copy instead of leaking an orphan in the account.
+            if ai_survey_id is None:
+                ai_survey_id = getattr(exc, "ai_survey_id", None)
             model_results.append({
                 "label": spec.label, "slug": spec.slug, "ai_survey_id": ai_survey_id,
                 "n_completed": 0, "failed": 0,

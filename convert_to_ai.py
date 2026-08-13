@@ -188,11 +188,16 @@ class Qualtrics:
                 except ValueError:
                     pass
             last_status, last_text = r.status_code, r.text[:300]
-            if r.status_code in (502, 503, 504):
+            # 5xx are gateway/internal errors. A 404 right after activation is
+            # usually eventual-consistency lag — the freshly-created copy isn't
+            # queryable at /sessions yet — not the active-survey cap, so it's
+            # worth the same retries. If a 404 is a genuine cap it will persist
+            # and still fail fast after the attempts (preserving the cap error).
+            if r.status_code in (502, 503, 504, 404):
                 print(f"  probe_session {r.status_code} on {survey_id}, retrying "
                       f"(attempt {attempt + 1}/4)...", flush=True)
                 continue
-            break  # non-retryable (e.g. 404 at the active-survey cap) — fail fast
+            break  # other non-retryable statuses — fail fast
         raise ConverterError(f"probe failed unexpectedly: {last_status} {last_text}")
 
     def close_session(self, survey_id: str, session_id: str) -> None:
