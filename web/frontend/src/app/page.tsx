@@ -40,6 +40,10 @@ export default function Home() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [authed, setAuthed] = useState(false);
+  const [checkingOut, setCheckingOut] = useState<string | null>(null);
+  // Set when an anonymous visitor clicks "Buy" — shows a prompt in the login
+  // section explaining they must sign in via emailed link before purchasing.
+  const [promptLogin, setPromptLogin] = useState(false);
 
   // If the visitor already has a valid session (e.g. clicked the magic link
   // earlier), surface a "Go to dashboard" path so they're never stranded on the
@@ -47,6 +51,30 @@ export default function Home() {
   useEffect(() => {
     api.me().then(() => setAuthed(true)).catch(() => setAuthed(false));
   }, []);
+
+  // Buy-credits click on the marketing page. Anonymous visitors can't check out
+  // (the backend requires a session), so instead of silently scrolling we send
+  // them to the login form with a clear "sign in via email link first" message.
+  // Signed-in visitors go straight to Stripe checkout.
+  async function handleBuy(packId: string) {
+    if (!authed) {
+      setPromptLogin(true);
+      document.getElementById("login")?.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+    setCheckingOut(packId);
+    try {
+      const { checkout_url } = await api.checkout(packId);
+      window.location.assign(checkout_url);
+    } catch {
+      // Session likely expired since page load — treat as logged out and
+      // prompt them to sign in again rather than showing a raw error.
+      setAuthed(false);
+      setPromptLogin(true);
+      setCheckingOut(null);
+      document.getElementById("login")?.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
@@ -315,16 +343,17 @@ export default function Home() {
                 <div className="text-2xl font-bold mb-1 text-slate-900">{pack.price}</div>
                 <div className="text-slate-500 text-sm mb-4">{pack.credits} respondents · {pack.per} each</div>
                 <div className="font-semibold text-lg mb-6 text-slate-900">{pack.label}</div>
-                <a
-                  href="#login"
-                  className={`mt-auto text-center py-2 rounded-lg font-medium text-sm transition ${
+                <button
+                  onClick={() => handleBuy(pack.id)}
+                  disabled={checkingOut === pack.id}
+                  className={`mt-auto text-center py-2 rounded-lg font-medium text-sm transition disabled:opacity-50 ${
                     pack.popular
                       ? "bg-blue-700 hover:bg-blue-800 text-white"
                       : "bg-slate-100 hover:bg-slate-200 text-slate-800"
                   }`}
                 >
-                  Buy {pack.label}
-                </a>
+                  {checkingOut === pack.id ? "Redirecting…" : `Buy ${pack.label}`}
+                </button>
               </div>
             ))}
           </div>
@@ -347,6 +376,13 @@ export default function Home() {
             </div>
           ) : (
           <>
+          {promptLogin && !sent && (
+            <div className="mb-6 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-800">
+              Please log in to buy credits. Enter your email below and we&apos;ll send you a
+              secure sign-in link — click the link in that email to finish signing in, then
+              you can complete your purchase.
+            </div>
+          )}
           <h2 className="font-serif text-2xl font-bold mb-2 text-slate-900">Start pretesting</h2>
           <p className="text-slate-600 text-sm mb-6">No password — we&apos;ll email you a secure sign-in link.</p>
           {sent ? (

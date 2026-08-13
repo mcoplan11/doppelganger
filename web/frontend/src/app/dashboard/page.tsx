@@ -43,9 +43,18 @@ function DashboardInner() {
     setCheckingOut(packId);
     try {
       const { checkout_url } = await api.checkout(packId);
-      window.location.href = checkout_url;
+      window.location.assign(checkout_url);
     } catch (err: unknown) {
-      alert(err instanceof Error ? err.message : "Checkout failed.");
+      const msg = err instanceof Error ? err.message : "Checkout failed.";
+      // A 401 here means the session expired between page load and click.
+      // Send them to the login form to sign in again via email link rather
+      // than showing a confusing raw error.
+      if (/log ?in|session|401|not logged/i.test(msg)) {
+        alert("Your session has expired. Please log in again — enter your email to get a sign-in link.");
+        router.push("/#login");
+        return;
+      }
+      alert(msg);
       setCheckingOut(null);
     }
   }
