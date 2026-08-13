@@ -125,10 +125,25 @@ export interface ModelResult {
   results: ResultsSummary;
 }
 
+// AI results-interpreter output — a plain-language read produced by a model in
+// production (see backend interpreter.py). Best-effort: may be absent.
+export interface InterpretationIssue {
+  question: string;
+  concern: string;
+  suggestion: string;
+}
+export interface Interpretation {
+  headline: string;
+  observations: string[];
+  issues_to_check: InterpretationIssue[];
+  recommendation: string;
+}
+
 export interface EnsembleResults {
   ensemble: true;
   n_completed: number;
   models: ModelResult[];
+  interpretation?: Interpretation;
 }
 
 export function isEnsembleResults(

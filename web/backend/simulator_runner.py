@@ -369,6 +369,7 @@ def _run_inner(
     model_results: list[dict] = []                   # per-model summary for results_json
     model_notify: list[dict] = []                    # per-model breakdown for admin email
     representative_branches: dict | None = None      # first successful model's condition split
+    run_survey_name: str | None = None               # survey title, for the AI interpreter
 
     for spec in roster:
         if _is_cancelled(run_id):
@@ -394,6 +395,8 @@ def _run_inner(
 
             qualtrics = QualtricsClient(base_url, qualtrics_token)
             survey = qualtrics.get_survey_definition(ai_survey_id)
+            if run_survey_name is None:
+                run_survey_name = getattr(survey, "name", None)
             _save_survey_meta(model_dir, survey)
             client = build_client(spec, temperature=0.5)
 
@@ -504,7 +507,7 @@ def _run_inner(
 
     results_json_str: str | None = None
     if final_status == "done":
-        results_json_str = json.dumps({
+        results_payload = {
             "ensemble": True,
             "n_completed": total_completed,
             "models": [
@@ -516,7 +519,21 @@ def _run_inner(
                 }
                 for m in model_results
             ],
-        })
+        }
+        # AI results-interpreter: an in-production model decision that reads the
+        # anonymized distributions and flags pretest issues. Best-effort — never
+        # let it block completion or credit deduction.
+        try:
+            from interpreter import generate_interpretation
+            interp = generate_interpretation(
+                run_survey_name, n_participants, results_payload["models"]
+            )
+            if interp:
+                results_payload["interpretation"] = interp
+                print(f"[run {run_id}] AI interpretation attached.", flush=True)
+        except Exception as e:
+            print(f"[run {run_id}] interpretation failed (non-fatal): {e}", flush=True)
+        results_json_str = json.dumps(results_payload)
 
     # Run-level error summary: only surface if the whole run failed, or a model
     # was completely lost. Per-session failures live in each model's block.
