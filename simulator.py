@@ -295,6 +295,12 @@ def _run_many_batched(
     total_sessions = len(personas) * runs_per_persona
     states: list[_BatchState] = []
     flat_idx = 0
+    # Log the reason for the first few start failures live (not just the final
+    # count) so a startup problem — e.g. Qualtrics rate-limiting a 600-wide run —
+    # is diagnosable straight from the Railway log without waiting for the
+    # post-run error summary. Throttled so a mass failure can't flood the log.
+    MAX_START_ERRORS_LOGGED = 5
+    start_errors_logged = 0
     print(f"{log_prefix}Phase 1: starting {total_sessions} Qualtrics sessions...",
           flush=True)
     for persona in personas:
@@ -313,9 +319,16 @@ def _run_many_batched(
             except Exception as e:
                 run.error = f"{type(e).__name__}: {e}"
                 _save_run(out_dir, flat_idx, run)
+                if start_errors_logged < MAX_START_ERRORS_LOGGED:
+                    start_errors_logged += 1
+                    print(f"{log_prefix}  start_session failed "
+                          f"({flat_idx}/{total_sessions}): {run.error}", flush=True)
+                    if start_errors_logged == MAX_START_ERRORS_LOGGED:
+                        print(f"{log_prefix}  (further start_session errors "
+                              f"suppressed — see the count below)", flush=True)
             states.append(state)
-    print(f"{log_prefix}Sessions started. "
-          f"{sum(1 for s in states if s.run.error)} failed at start.",
+    n_start_failed = sum(1 for s in states if s.run.error)
+    print(f"{log_prefix}Sessions started. {n_start_failed} failed at start.",
           flush=True)
 
     round_idx = 0
