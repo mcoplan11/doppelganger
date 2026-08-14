@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import random
 import re
+import time
 from dataclasses import dataclass, field, replace
 from typing import Any
 
@@ -122,15 +124,39 @@ class QualtricsClient:
         self,
         survey: SurveyDefinition,
         embedded_data: dict[str, str] | None = None,
+        *,
+        max_attempts: int = 4,
     ) -> SessionBlock:
         url = f"{self._base_url}/surveys/{survey.survey_id}/sessions"
         body: dict[str, Any] = {}
         if embedded_data:
             body["embeddedData"] = embedded_data
-        resp = self._session.post(url, json=body, timeout=60)
-        _raise_with_body(resp)
-        result = resp.json()["result"]
-        return _parse_session_block(result, survey)
+        # Qualtrics intermittently returns transient 5xx (commonly a QHRSI_2.0
+        # wrapping an upstream 502/504) when many sessions are created in a short
+        # window — e.g. a 600-participant panel started across 3 parallel models.
+        # These are not deterministic failures; a retry with jittered backoff
+        # almost always succeeds. Non-transient errors (4xx, auth) fail fast via
+        # _raise_with_body. Jitter keeps the parallel per-model runs from retrying
+        # in lockstep and re-spiking the server. Mirrors convert_to_ai.probe_session.
+        resp = None
+        for attempt in range(max_attempts):
+            if attempt:
+                backoff = min(20, 3 * 2 ** (attempt - 1))  # 3s, 6s, 12s (cap 20)
+                time.sleep(backoff + random.uniform(0, 1.5))
+            resp = self._session.post(url, json=body, timeout=60)
+            if resp.ok:
+                result = resp.json()["result"]
+                return _parse_session_block(result, survey)
+            if attempt < max_attempts - 1 and _is_transient_response(resp):
+                print(
+                    f"  start_session {resp.status_code} on {survey.survey_id}, "
+                    f"retrying (attempt {attempt + 1}/{max_attempts})...",
+                    flush=True,
+                )
+                continue
+            break
+        _raise_with_body(resp)  # non-transient, or retries exhausted — always raises
+        raise RuntimeError("unreachable")  # for type-checkers
 
     def advance_session(
         self,
@@ -149,6 +175,15 @@ class QualtricsClient:
         url = f"{self._base_url}/surveys/{survey_id}/sessions/{session_id}"
         resp = self._session.post(url, json={"close": True}, timeout=30)
         _raise_with_body(resp)
+
+
+def _is_transient_response(resp: requests.Response) -> bool:
+    """True for Qualtrics responses worth retrying — gateway/internal server
+    errors that occur under load rather than deterministic request failures."""
+    if resp.status_code in (500, 502, 503, 504):
+        return True
+    body = resp.text or ""
+    return any(s in body for s in ("QHRSI", "QHRI", "Gateway Time-out", "Gateway Timeout"))
 
 
 def _raise_with_body(resp: requests.Response) -> None:
