@@ -150,8 +150,12 @@ def run_many(
         use_batch = total_sessions > batch_threshold
 
     if use_batch:
-        print(f"{log_prefix}Using Gemini Batch API "
-              f"({total_sessions} sessions > threshold {batch_threshold} = batch mode).",
+        # NB: "batched runner" is the round-based loop, NOT necessarily the real
+        # Gemini Batch API. Actual LLM dispatch depends on the client: Gemini
+        # Batch API off-Vertex, concurrent sync on Vertex (no inline batch API),
+        # and a thread pool for OpenRouter.
+        print(f"{log_prefix}Using batched runner "
+              f"({total_sessions} sessions > threshold {batch_threshold}).",
               flush=True)
         return _run_many_batched(
             qualtrics, gemini, survey, personas, runs_per_persona, out_dir,
