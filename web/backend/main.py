@@ -436,7 +436,14 @@ def _reap_stuck_runs(db: Session, runs: list[Run]) -> None:
                 created = run.created_at
                 if created and created.tzinfo is None:
                     created = created.replace(tzinfo=timezone.utc)
-                duration = int((run.completed_at - created).total_seconds()) if created else 0
+                # After db.commit() above, SQLAlchemy expires these attributes, so
+                # re-reading run.completed_at returns a naive datetime from Postgres.
+                # Normalize before subtracting or it raises "can't subtract
+                # offset-naive and offset-aware datetimes".
+                completed = run.completed_at
+                if completed and completed.tzinfo is None:
+                    completed = completed.replace(tzinfo=timezone.utc)
+                duration = int((completed - created).total_seconds()) if (created and completed) else 0
                 send_run_notification(
                     run_id=run.id,
                     user_email=user_email,

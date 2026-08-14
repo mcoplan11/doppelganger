@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import time
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from typing import Any
 
@@ -39,6 +40,7 @@ class GeminiClient:
         use_vertex: bool = False,
         project: str | None = None,
         location: str = "us-central1",
+        sync_workers: int = 8,
     ):
         # Two backends for Gemini, selected here:
         #   - Vertex AI (a Google Cloud product): auth via Application Default
@@ -66,6 +68,12 @@ class GeminiClient:
         self._use_vertex = use_vertex
         self._model = model
         self._temperature = temperature
+        # On Vertex there is no inline Batch API, so batched rounds fall back to
+        # sync generate_content calls. Those calls are independent and the genai
+        # client is safe to share across threads, so we fan them out across a
+        # bounded pool instead of answering one question at a time (otherwise a
+        # single 600-session round is thousands of serial calls — hours long).
+        self._sync_workers = max(1, sync_workers)
 
     def answer_block(
         self,
@@ -160,14 +168,17 @@ class GeminiClient:
         for inp in inputs:
             if not inp.answerable:
                 results[inp.key] = {}
-        if on_progress and pending:
+        if not pending:
+            return results
+        if on_progress:
             on_progress(
-                f"vertex: answering {len(pending)} blocks synchronously "
-                "(no inline batch API on Vertex)"
+                f"vertex: answering {len(pending)} blocks concurrently "
+                f"({self._sync_workers} workers; no inline batch API on Vertex)"
             )
-        for inp in pending:
+
+        def _one(inp: BatchInput) -> tuple[str, dict[str, Any] | None]:
             try:
-                results[inp.key] = self.answer_block(
+                return inp.key, self.answer_block(
                     inp.persona,
                     inp.answerable,
                     inp.prior_answers,
@@ -176,7 +187,13 @@ class GeminiClient:
                 )
             except Exception as exc:  # match batch semantics: failure -> None
                 print(f"  vertex sync answer failed for {inp.key}: {exc}", flush=True)
-                results[inp.key] = None
+                return inp.key, None
+
+        with ThreadPoolExecutor(max_workers=self._sync_workers) as pool:
+            for key, answer in pool.map(_one, pending):
+                results[key] = answer
+                if on_progress:
+                    on_progress(f"vertex answered {key}")
         return results
 
     def _submit_chunk(

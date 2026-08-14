@@ -9,7 +9,9 @@ directly rather than via subprocess so DB state can be updated live.
 import itertools
 import json
 import sys
+import threading
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -48,6 +50,27 @@ def _set_status(run_id: int, status: str, **kwargs) -> None:
             run.last_heartbeat_at = datetime.now(timezone.utc)
             for k, v in kwargs.items():
                 setattr(run, k, v)
+            db.commit()
+    finally:
+        db.close()
+
+
+def _touch_heartbeat(run_id: int) -> None:
+    """Bump last_heartbeat_at without changing status.
+
+    The stuck-run reaper (main._reap_stuck_runs) treats a stale heartbeat as
+    "the process died and orphaned this run." Progress-driven bumps alone are
+    too coarse — a single long batch round or session can outlast the reaper
+    threshold on a run that's perfectly alive. A steady heartbeat while the
+    task is active makes the reaper fire only on genuinely dead processes.
+
+    Only touches active rows so it can never resurrect a terminal state.
+    """
+    db = _db()
+    try:
+        run = db.query(Run).filter(Run.id == run_id).first()
+        if run and run.status in ("converting", "running"):
+            run.last_heartbeat_at = datetime.now(timezone.utc)
             db.commit()
     finally:
         db.close()
@@ -288,6 +311,22 @@ def run_simulation(run_id: int) -> None:
     finally:
         db.close()
 
+    # Liveness heartbeat: while this in-process task is alive, bump the run's
+    # heartbeat every 60s so the stuck-run reaper doesn't false-positive on a
+    # long-but-healthy run. The thread dies with the process, so a redeploy/OOM
+    # that orphans the run correctly lets the heartbeat go stale and be reaped.
+    stop_heartbeat = threading.Event()
+
+    def _heartbeat_loop() -> None:
+        while not stop_heartbeat.wait(60):
+            try:
+                _touch_heartbeat(run_id)
+            except Exception as e:
+                print(f"[run {run_id}] heartbeat error (non-fatal): {e}", flush=True)
+
+    heartbeat = threading.Thread(target=_heartbeat_loop, daemon=True)
+    heartbeat.start()
+
     try:
         _run_inner(
             run_id, user_id, user_email, original_survey_id,
@@ -324,6 +363,8 @@ def run_simulation(run_id: int) -> None:
             branch_counts={},
             error=friendly,
         )
+    finally:
+        stop_heartbeat.set()
 
 
 def _run_inner(
@@ -361,49 +402,53 @@ def _run_inner(
 
     _set_status(run_id, "converting")
 
-    # Live progress: advance 0 → n_participants across the whole ensemble so the
-    # existing "X of N completed" bar stays meaningful with 3× the sessions.
-    completed_before = 0
-    primary_ai_survey_id: str | None = None
+    # Live progress across the whole ensemble. The models now run in parallel,
+    # so each reports its own cumulative completed count and we sum the latest
+    # value per model (under a lock) to keep the "X of N completed" bar honest.
+    state_lock = threading.Lock()
     ai_survey_ids: dict[str, dict[str, str]] = {}   # slug -> {label, ai_survey_id}
-    model_results: list[dict] = []                   # per-model summary for results_json
-    model_notify: list[dict] = []                    # per-model breakdown for admin email
-    representative_branches: dict | None = None      # first successful model's condition split
-    run_survey_name: str | None = None               # survey title, for the AI interpreter
+    primary_ai_survey_id: str | None = None
+    model_progress: dict[str, int] = {}             # slug -> latest cumulative completed
 
-    for spec in roster:
-        if _is_cancelled(run_id):
-            print(f"[run {run_id}] cancelled — stopping before {spec.label}", flush=True)
-            return
-
-        model_dir = output_base / spec.slug
-        model_dir.mkdir(parents=True, exist_ok=True)
-        ai_survey_id: str | None = None
-        try:
-            copy_label = None if is_smoke else spec.label
-            ai_survey_id = _convert_survey(
-                original_survey_id, base_url, qualtrics_token, copy_label
-            )
-            ai_survey_ids[spec.slug] = {"label": spec.label, "ai_survey_id": ai_survey_id}
+    def _register_copy(slug: str, label: str, ai_id: str) -> None:
+        """Record a model's AI copy and surface it to the frontend immediately."""
+        nonlocal primary_ai_survey_id
+        with state_lock:
+            ai_survey_ids[slug] = {"label": label, "ai_survey_id": ai_id}
             if primary_ai_survey_id is None:
-                primary_ai_survey_id = ai_survey_id
+                primary_ai_survey_id = ai_id
             _set_status(
                 run_id, "running",
                 ai_survey_id=primary_ai_survey_id,
                 ai_survey_ids=json.dumps(ai_survey_ids),
             )
 
+    def _report_progress(slug: str, done: int) -> None:
+        with state_lock:
+            model_progress[slug] = done
+            overall = sum(model_progress.values())
+            _set_status(run_id, "running",
+                        credits_used=min(n_participants, overall // n_models))
+
+    def _run_one_model(spec) -> dict:
+        """Convert + run one model. Never raises: a single model's failure is
+        captured and returned so the other models (and the run) survive it."""
+        ai_survey_id: str | None = None
+        survey_name: str | None = None
+        try:
+            model_dir = output_base / spec.slug
+            model_dir.mkdir(parents=True, exist_ok=True)
+            copy_label = None if is_smoke else spec.label
+            ai_survey_id = _convert_survey(
+                original_survey_id, base_url, qualtrics_token, copy_label
+            )
+            _register_copy(spec.slug, spec.label, ai_survey_id)
+
             qualtrics = QualtricsClient(base_url, qualtrics_token)
             survey = qualtrics.get_survey_definition(ai_survey_id)
-            if run_survey_name is None:
-                run_survey_name = getattr(survey, "name", None)
+            survey_name = getattr(survey, "name", None)
             _save_survey_meta(model_dir, survey)
             client = build_client(spec, temperature=0.5)
-
-            def _on_progress(done: int, _base: int = completed_before) -> None:
-                overall = _base + done
-                _set_status(run_id, "running",
-                            credits_used=min(n_participants, overall // n_models))
 
             runs = run_many(
                 qualtrics=qualtrics,
@@ -413,7 +458,7 @@ def _run_inner(
                 runs_per_persona=1,
                 out_dir=model_dir,
                 use_batch=use_batch_for(spec, is_smoke),
-                on_progress=_on_progress,
+                on_progress=lambda done, _slug=spec.slug: _report_progress(_slug, done),
                 max_pending_seconds=30 * 60 if is_smoke else 10 * 60,
                 is_cancelled=lambda: _is_cancelled(run_id),
             )
@@ -427,30 +472,19 @@ def _run_inner(
             # up and report the copy instead of leaking an orphan in the account.
             if ai_survey_id is None:
                 ai_survey_id = getattr(exc, "ai_survey_id", None)
-            model_results.append({
-                "label": spec.label, "slug": spec.slug, "ai_survey_id": ai_survey_id,
-                "n_completed": 0, "failed": 0,
-                "error": _friendly_error(exc, qualtrics_datacenter),
-                "results": {"available": False, "questions": []},
-            })
-            model_notify.append({
-                "label": spec.label, "model": spec.model, "ai_survey_id": ai_survey_id,
-                "n_completed": 0, "failed": 0, "error": str(exc)[:500],
-            })
-            # No data was written for this model → clean up its empty copy.
             _cleanup_ai_copy(ai_survey_id, original_survey_id, base_url, qualtrics_token, run_id)
-            continue
-
-        if _is_cancelled(run_id):
-            print(f"[run {run_id}] cancelled during/after {spec.label}", flush=True)
-            return
+            return {
+                "label": spec.label, "slug": spec.slug, "model": spec.model,
+                "ai_survey_id": ai_survey_id, "n_completed": 0, "failed": 0,
+                "results_error": _friendly_error(exc, qualtrics_datacenter),
+                "notify_error": str(exc)[:500],
+                "results": {"available": False, "questions": []},
+                "branch_counts": {}, "survey_name": survey_name,
+            }
 
         completed = [r for r in runs if r.completed]
         failed = len(runs) - len(completed)
-        completed_before += len(completed)
         branch_counts = Counter(r.branch_description or "unknown" for r in completed)
-        if completed and representative_branches is None:
-            representative_branches = dict(branch_counts)
 
         model_error = None
         if failed:
@@ -466,23 +500,52 @@ def _run_inner(
             print(f"[run {run_id}] {spec.label} results build failed (non-fatal): {e}", flush=True)
             per_model_results = {"available": False, "questions": []}
 
-        model_results.append({
-            "label": spec.label, "slug": spec.slug, "ai_survey_id": ai_survey_id,
-            "n_completed": len(completed), "failed": failed,
-            "error": model_error, "results": per_model_results,
-        })
-        model_notify.append({
-            "label": spec.label, "model": spec.model, "ai_survey_id": ai_survey_id,
-            "n_completed": len(completed), "failed": failed, "error": model_error,
-        })
-
         # A model that produced nothing has an empty copy — remove it.
         if not completed:
             _cleanup_ai_copy(ai_survey_id, original_survey_id, base_url, qualtrics_token, run_id)
 
+        return {
+            "label": spec.label, "slug": spec.slug, "model": spec.model,
+            "ai_survey_id": ai_survey_id, "n_completed": len(completed), "failed": failed,
+            "results_error": model_error, "notify_error": model_error,
+            "results": per_model_results,
+            "branch_counts": dict(branch_counts) if completed else {},
+            "survey_name": survey_name,
+        }
+
+    if _is_cancelled(run_id):
+        print(f"[run {run_id}] cancelled — stopping before model runs", flush=True)
+        return
+
+    # Run every model concurrently — they're fully independent (own Qualtrics
+    # copy, own client), so total wall-clock ≈ the slowest single model rather
+    # than the sum of all three. pool.map preserves roster order, so Model A/B/C
+    # labels stay stable regardless of which model finishes first.
+    with ThreadPoolExecutor(max_workers=n_models) as pool:
+        model_outcomes = list(pool.map(_run_one_model, roster))
+
     if _is_cancelled(run_id):
         print(f"[run {run_id}] cancelled — skipping credit deduction and notification", flush=True)
         return
+
+    model_results = [
+        {"label": r["label"], "slug": r["slug"], "ai_survey_id": r["ai_survey_id"],
+         "n_completed": r["n_completed"], "failed": r["failed"],
+         "error": r["results_error"], "results": r["results"]}
+        for r in model_outcomes
+    ]
+    model_notify = [
+        {"label": r["label"], "model": r["model"], "ai_survey_id": r["ai_survey_id"],
+         "n_completed": r["n_completed"], "failed": r["failed"], "error": r["notify_error"]}
+        for r in model_outcomes
+    ]
+    representative_branches = next(
+        (r["branch_counts"] for r in model_outcomes
+         if r["n_completed"] > 0 and r["branch_counts"]), None
+    )
+    run_survey_name = next(
+        (r["survey_name"] for r in model_outcomes if r["survey_name"]), None
+    )
 
     total_completed = sum(m["n_completed"] for m in model_results)
     final_status = "done" if total_completed > 0 else "failed"

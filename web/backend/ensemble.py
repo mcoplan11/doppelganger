@@ -79,17 +79,26 @@ def build_client(spec: ModelSpec, temperature: float = 0.5):
             spec.model,
             temperature=temperature,
             disable_reasoning=spec.disable_reasoning,
+            # Reasoning models (glm-5.2, qwen3-235b) are latency-bound, so the
+            # in-round thread pool is the throughput lever. 12 is a safe bump
+            # over the default 8 given the client's built-in 429 backoff.
+            max_workers=12,
         )
     raise ValueError(f"Unknown provider {spec.provider!r} for model {spec.label!r}")
 
 
 def use_batch_for(spec: ModelSpec, is_smoke: bool) -> bool | None:
-    """Batch-API eligibility. Only Gemini has a batch API; OpenRouter is sync.
+    """Batch-runner eligibility (the ``use_batch`` arg to ``simulator.run_many``).
 
-    Returns the ``use_batch`` value to pass to ``simulator.run_many``:
-      - False for OpenRouter (no batch API) and for smoke runs (fast feedback).
-      - None (auto-detect by size) for full Gemini runs.
+    Both providers benefit from the batched runner — it fans the per-round LLM
+    calls out concurrently while keeping all Qualtrics session mutation on the
+    serial main loop:
+      - Gemini: real Batch API off-Vertex; a concurrent sync fallback on Vertex.
+      - OpenRouter: no batch API, but ``answer_blocks_batch`` runs a thread pool.
+    Returning None lets ``run_many`` auto-enable it by panel size.
+
+    Smoke runs stay on the serial path for fast, simple single-session feedback.
     """
-    if spec.provider != "gemini" or is_smoke:
+    if is_smoke:
         return False
     return None
