@@ -33,9 +33,16 @@ class ModelSpec:
     disable_reasoning: bool = False
 
 
+# Model A's Gemini model. Hardcoded on purpose — changing it requires a deploy.
+# To switch cost/quality, edit this one line and redeploy:
+#   "gemini-2.5-flash"       — cheaper (current)
+#   "gemini-3.5-flash"       — higher quality, ~2x cost
+#   "gemini-2.5-flash-lite"  — cheapest (same as the free/smoke test)
+MODEL_A_GEMINI = "gemini-2.5-flash"
+
 # Ordered roster. Labels/slugs are the public identity; `model` is a secret.
 ROSTER: list[ModelSpec] = [
-    ModelSpec("Model A", "model_a", "gemini", "gemini-3.5-flash"),
+    ModelSpec("Model A", "model_a", "gemini", MODEL_A_GEMINI),
     ModelSpec("Model B", "model_b", "openrouter", "z-ai/glm-5.2"),
     ModelSpec("Model C", "model_c", "openrouter", "qwen/qwen3-235b-a22b-2507"),
 ]
