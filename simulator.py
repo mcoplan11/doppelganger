@@ -126,6 +126,7 @@ def run_many(
     on_progress: "Callable[[int], None] | None" = None,
     max_pending_seconds: int = 30 * 60,
     is_cancelled: "Callable[[], bool] | None" = None,
+    log_prefix: str = "",
 ) -> list[SessionRun]:
     """Run each persona through the survey N times.
 
@@ -138,20 +139,28 @@ def run_many(
 
     `is_cancelled()` is polled between rounds/sessions; if it returns True the
     run stops immediately and returns whatever completed so far.
+
+    `log_prefix` is prepended to every progress line — the ensemble runner uses
+    it to tag each model's output (e.g. "[run 52][Model A] ") since the models
+    run in parallel and otherwise interleave indistinguishably. Defaults to ""
+    so CLI/experiment output is unchanged.
     """
     total_sessions = len(personas) * runs_per_persona
     if use_batch is None:
         use_batch = total_sessions > batch_threshold
 
     if use_batch:
-        print(f"Using Gemini Batch API "
+        print(f"{log_prefix}Using Gemini Batch API "
               f"({total_sessions} sessions > threshold {batch_threshold} = batch mode).",
               flush=True)
         return _run_many_batched(
             qualtrics, gemini, survey, personas, runs_per_persona, out_dir,
-            on_progress, max_pending_seconds, is_cancelled,
+            on_progress, max_pending_seconds, is_cancelled, log_prefix,
         )
-    return _run_many_sync(qualtrics, gemini, survey, personas, runs_per_persona, out_dir, is_cancelled)
+    return _run_many_sync(
+        qualtrics, gemini, survey, personas, runs_per_persona, out_dir,
+        is_cancelled, log_prefix,
+    )
 
 
 def _save_run(out_dir: "Path | None", idx: int, run: SessionRun) -> None:
@@ -230,21 +239,25 @@ def _run_many_sync(
     runs_per_persona: int,
     out_dir: "Path | None",
     is_cancelled: "Callable[[], bool] | None" = None,
+    log_prefix: str = "",
 ) -> list[SessionRun]:
     runs: list[SessionRun] = []
+    total = len(personas) * runs_per_persona
     idx = 0
     for persona in personas:
         for i in range(runs_per_persona):
             if is_cancelled and is_cancelled():
-                print(f"[run cancelled] stopping sync run before {persona.name}", flush=True)
+                print(f"{log_prefix}[run cancelled] stopping sync run before {persona.name}", flush=True)
                 return runs
             idx += 1
-            print(f"\n[{persona.name} {i + 1}/{runs_per_persona}] starting session...", flush=True)
+            pct = idx * 100 // total if total else 0
+            print(f"\n{log_prefix}[{idx}/{total} ({pct}%)] {persona.name} "
+                  f"{i + 1}/{runs_per_persona} starting session...", flush=True)
             run = run_session(qualtrics, gemini, survey, persona)
             runs.append(run)
             status = "completed" if run.completed else f"FAILED ({run.error})"
             branch = f" branch={run.branch_description!r}" if run.branch_description else ""
-            print(f"  → {status}{branch}", flush=True)
+            print(f"{log_prefix}  → {status}{branch}", flush=True)
             _save_run(out_dir, idx, run)
     return runs
 
@@ -270,6 +283,7 @@ def _run_many_batched(
     on_progress: "Callable[[int], None] | None" = None,
     max_pending_seconds: int = 30 * 60,
     is_cancelled: "Callable[[], bool] | None" = None,
+    log_prefix: str = "",
 ) -> list[SessionRun]:
     """Cross-persona batched runner.
 
@@ -278,9 +292,10 @@ def _run_many_batched(
     batch round to resolve, distribute answers back, then advance each
     session's Qualtrics state. Repeat until every session is done or errored.
     """
+    total_sessions = len(personas) * runs_per_persona
     states: list[_BatchState] = []
     flat_idx = 0
-    print(f"Phase 1: starting {len(personas) * runs_per_persona} Qualtrics sessions...",
+    print(f"{log_prefix}Phase 1: starting {total_sessions} Qualtrics sessions...",
           flush=True)
     for persona in personas:
         for i in range(runs_per_persona):
@@ -299,13 +314,14 @@ def _run_many_batched(
                 run.error = f"{type(e).__name__}: {e}"
                 _save_run(out_dir, flat_idx, run)
             states.append(state)
-    print(f"Sessions started. {sum(1 for s in states if s.run.error)} failed at start.",
+    print(f"{log_prefix}Sessions started. "
+          f"{sum(1 for s in states if s.run.error)} failed at start.",
           flush=True)
 
     round_idx = 0
     while True:
         if is_cancelled and is_cancelled():
-            print(f"[run cancelled] stopping batched run after round {round_idx}", flush=True)
+            print(f"{log_prefix}[run cancelled] stopping batched run after round {round_idx}", flush=True)
             return [s.run for s in states]
         active = [s for s in states
                   if not s.run.completed and not s.run.error
@@ -346,10 +362,13 @@ def _run_many_batched(
                 key_map[composite_key] = (s, q)
 
         n_q = len(inputs)
-        print(f"\n--- Round {round_idx}: {len(active)} active sessions "
-              f"({n_q} question requests) ---", flush=True)
+        done_so_far = sum(1 for s in states if s.run.completed)
+        pct = done_so_far * 100 // total_sessions if total_sessions else 0
+        print(f"\n{log_prefix}--- Round {round_idx}: {len(active)} active, "
+              f"{done_so_far}/{total_sessions} done ({pct}%) "
+              f"— {n_q} question requests ---", flush=True)
         if db_only:
-            print(f"  ({len(db_only)} sessions on all-DB blocks — no Gemini call needed)",
+            print(f"{log_prefix}  ({len(db_only)} sessions on all-DB blocks — no Gemini call needed)",
                   flush=True)
 
         # Merge per-question answers back into per-session dicts.
@@ -366,7 +385,7 @@ def _run_many_batched(
                 if batch_attempt:
                     wait = 5 * 60  # 5 min between retries
                     print(
-                        f"  Batch attempt {batch_attempt + 1}/3 — waiting {wait//60} min "
+                        f"{log_prefix}  Batch attempt {batch_attempt + 1}/3 — waiting {wait//60} min "
                         f"before retry (last error: {last_batch_err})...",
                         flush=True,
                     )
@@ -376,22 +395,23 @@ def _run_many_batched(
                         inputs,
                         poll_interval_seconds=30,
                         max_pending_seconds=max_pending_seconds,
-                        on_progress=lambda msg: print(f"  {msg}", flush=True),
+                        on_progress=lambda msg: print(f"{log_prefix}  {msg}", flush=True),
                     )
                     break
                 except Exception as e:
                     last_batch_err = e
-                    print(f"  BATCH ERROR (attempt {batch_attempt + 1}/3): {e}", file=sys.stderr, flush=True)
+                    print(f"{log_prefix}  BATCH ERROR (attempt {batch_attempt + 1}/3): {e}",
+                          file=sys.stderr, flush=True)
 
             if raw is None:
                 print(
-                    f"  All batch attempts failed — falling back to sync for "
+                    f"{log_prefix}  All batch attempts failed — falling back to sync for "
                     f"{len(active)} remaining sessions. Last error: {last_batch_err}",
                     file=sys.stderr, flush=True,
                 )
                 for s in active:
                     if is_cancelled and is_cancelled():
-                        print(f"[run cancelled] stopping sync fallback before {s.persona.name}", flush=True)
+                        print(f"{log_prefix}[run cancelled] stopping sync fallback before {s.persona.name}", flush=True)
                         return [s2.run for s2 in states]
                     sync_run = _run_session_with_retry(qualtrics, gemini, survey, s.persona)
                     s.run.completed = sync_run.completed
@@ -402,7 +422,7 @@ def _run_many_batched(
                     s.run.embedded_data = sync_run.embedded_data
                     _save_run(out_dir, s.idx, s.run)
                     status = "✓ completed" if sync_run.completed else f"✗ failed ({sync_run.error})"
-                    print(f"  [sync fallback] {s.persona.name}: {status}", flush=True)
+                    print(f"{log_prefix}  [sync fallback] {s.persona.name}: {status}", flush=True)
                 break
 
             # Collect batch results; queue any missing/empty answers for a
@@ -427,13 +447,13 @@ def _run_many_batched(
                     retry_key_map[retry_key] = (s, q)
 
             if retry_inputs:
-                print(f"  Batch retry: {len(retry_inputs)} questions with empty responses...",
+                print(f"{log_prefix}  Batch retry: {len(retry_inputs)} questions with empty responses...",
                       flush=True)
                 try:
                     retry_raw = gemini.answer_blocks_batch(
                         retry_inputs,
                         poll_interval_seconds=30,
-                        on_progress=lambda msg: print(f"    {msg}", flush=True),
+                        on_progress=lambda msg: print(f"{log_prefix}    {msg}", flush=True),
                     )
                     for retry_key, single_ans in retry_raw.items():
                         s, q = retry_key_map[retry_key]
@@ -479,7 +499,10 @@ def _run_many_batched(
             if next_block.done:
                 s.run.completed = True
                 _save_run(out_dir, s.idx, s.run)
-                print(f"  ✓ {s.persona.name}: completed", flush=True)
+                done_now = sum(1 for s2 in states if s2.run.completed)
+                pct_now = done_now * 100 // total_sessions if total_sessions else 0
+                print(f"{log_prefix}  ✓ {s.persona.name}: completed "
+                      f"({done_now}/{total_sessions}, {pct_now}%)", flush=True)
 
         if on_progress:
             on_progress(sum(1 for s in states if s.run.completed))
@@ -491,7 +514,7 @@ def _run_many_batched(
 
     completed = sum(1 for s in states if s.run.completed)
     failed = sum(1 for s in states if s.run.error)
-    print(f"\nBatched run done. {completed} completed, {failed} failed.", flush=True)
+    print(f"\n{log_prefix}Batched run done. {completed} completed, {failed} failed.", flush=True)
     return [s.run for s in states]
 
 

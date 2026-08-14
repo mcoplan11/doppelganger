@@ -409,6 +409,8 @@ def _run_inner(
     ai_survey_ids: dict[str, dict[str, str]] = {}   # slug -> {label, ai_survey_id}
     primary_ai_survey_id: str | None = None
     model_progress: dict[str, int] = {}             # slug -> latest cumulative completed
+    last_logged_overall = -1                         # de-dupe the ensemble progress line
+    total_ensemble_sessions = n_participants * n_models
 
     def _register_copy(slug: str, label: str, ai_id: str) -> None:
         """Record a model's AI copy and surface it to the frontend immediately."""
@@ -424,11 +426,21 @@ def _run_inner(
             )
 
     def _report_progress(slug: str, done: int) -> None:
+        nonlocal last_logged_overall
         with state_lock:
             model_progress[slug] = done
             overall = sum(model_progress.values())
             _set_status(run_id, "running",
                         credits_used=min(n_participants, overall // n_models))
+            # Log the ensemble-wide roll-up, but only when it moves — the
+            # per-model round headers (tagged with the log_prefix below) carry
+            # the fine-grained liveness; this line is the single "how far along
+            # is the whole run" signal.
+            if overall != last_logged_overall:
+                last_logged_overall = overall
+                pct = overall * 100 // total_ensemble_sessions if total_ensemble_sessions else 0
+                print(f"[run {run_id}] ensemble progress: "
+                      f"{overall}/{total_ensemble_sessions} sessions ({pct}%)", flush=True)
 
     def _run_one_model(spec) -> dict:
         """Convert + run one model. Never raises: a single model's failure is
@@ -461,6 +473,7 @@ def _run_inner(
                 on_progress=lambda done, _slug=spec.slug: _report_progress(_slug, done),
                 max_pending_seconds=30 * 60 if is_smoke else 10 * 60,
                 is_cancelled=lambda: _is_cancelled(run_id),
+                log_prefix=f"[run {run_id}][{spec.label}] ",
             )
         except Exception as exc:
             import traceback
