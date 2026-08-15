@@ -56,17 +56,31 @@ function Ext({ href, children }: { href: string; children: React.ReactNode }) {
 }
 
 export default function Research() {
+  const SITE = "https://doppelgangerlabs.com";
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    headline:
-      "Do large language models reproduce classic human decision biases? An off-the-shelf replication benchmark on Twin-2K-500",
-    datePublished: "2026-08-09",
-    author: { "@type": "Organization", name: "Doppelganger Labs" },
-    publisher: { "@type": "Organization", name: "Doppelganger Labs" },
-    url: "https://doppelgangerlabs.com/research",
-    description:
-      "A replication benchmark on Twin-2K-500: an ensemble of language models reproduces 15.5 of 17 classic decision biases (91%).",
+    "@graph": [
+      {
+        "@type": "ScholarlyArticle",
+        headline:
+          "Do large language models reproduce classic human decision biases? An off-the-shelf replication benchmark on Twin-2K-500",
+        datePublished: "2026-08-09",
+        author: { "@id": `${SITE}/#organization` },
+        publisher: { "@id": `${SITE}/#organization` },
+        url: `${SITE}/research`,
+        mainEntityOfPage: `${SITE}/research`,
+        sameAs: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7262199",
+        description:
+          "A replication benchmark on Twin-2K-500: an ensemble of language models reproduces 15.5 of 17 classic decision biases (91%).",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+          { "@type": "ListItem", position: 2, name: "Research", item: `${SITE}/research` },
+        ],
+      },
+    ],
   };
 
   return (
@@ -78,7 +92,10 @@ export default function Research() {
           Do large language models reproduce classic human decision biases?
         </h1>
         <p className="text-slate-600 mb-1">An off-the-shelf replication benchmark on Twin-2K-500</p>
-        <p className="text-sm text-slate-400 mb-8">Doppelganger Labs · August 2026 · Not peer reviewed</p>
+        <p className="text-sm text-slate-400 mb-3">Doppelganger Labs · August 2026 · Not peer reviewed</p>
+        <p className="mb-8">
+          <Ext href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7262199">Read the full paper on SSRN &rarr;</Ext>
+        </p>
 
         <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-8">
           <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Abstract</p>
@@ -223,6 +240,13 @@ export default function Research() {
         </P>
 
         <H2>References</H2>
+        <p className="text-sm text-slate-600 mb-4">
+          This report is also available on SSRN:{" "}
+          <Ext href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7262199">
+            papers.ssrn.com/sol3/papers.cfm?abstract_id=7262199
+          </Ext>
+          .
+        </p>
         <ol className="list-decimal pl-6 space-y-2 text-sm text-slate-600 leading-relaxed">
           <li>
             Toubia, O., et al. (2025). <em>Twin-2K-500: A dataset for building digital twins of over

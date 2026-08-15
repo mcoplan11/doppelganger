@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Doppelganger">
+  <rect width="512" height="512" rx="96" fill="#0f172a"/>
+  <!-- Two overlapping "doppelganger" silhouettes: one solid, one accent -->
+  <circle cx="205" cy="196" r="58" fill="#cbd5e1"/>
+  <path d="M115 380c0-58 40-98 90-98s90 40 90 98z" fill="#cbd5e1"/>
+  <circle cx="307" cy="196" r="58" fill="#3b82f6"/>
+  <path d="M217 380c0-58 40-98 90-98s90 40 90 98z" fill="#3b82f6" fill-opacity="0.92"/>
+</svg>

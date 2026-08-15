@@ -49,16 +49,34 @@ export default async function BlogPost({
 
   const Body = post.Body;
 
+  // Cross-link to the other posts so readers (and crawlers) move between related
+  // pages instead of dead-ending — helps discovery and spreads internal link equity.
+  const related = POSTS.filter((p) => p.slug !== post.slug);
+
+  const SITE = "https://doppelgangerlabs.com";
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.title,
-    description: post.description,
-    datePublished: post.date,
-    dateModified: post.date,
-    url: `https://doppelgangerlabs.com/blog/${post.slug}`,
-    author: { "@type": "Organization", name: "Doppelganger" },
-    publisher: { "@type": "Organization", name: "Doppelganger" },
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.description,
+        datePublished: post.date,
+        dateModified: post.date,
+        url: `${SITE}/blog/${post.slug}`,
+        mainEntityOfPage: `${SITE}/blog/${post.slug}`,
+        author: { "@id": `${SITE}/#organization` },
+        publisher: { "@id": `${SITE}/#organization` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+          { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE}/blog` },
+          { "@type": "ListItem", position: 3, name: post.title, item: `${SITE}/blog/${post.slug}` },
+        ],
+      },
+    ],
   };
 
   return (
@@ -88,6 +106,32 @@ export default async function BlogPost({
             Pretest a survey free →
           </Link>
         </div>
+
+        <aside className="mt-12 border-t border-slate-200 pt-8">
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-4">
+            Keep reading
+          </h2>
+          <ul className="space-y-3">
+            {related.map((p) => (
+              <li key={p.slug}>
+                <Link
+                  href={`/blog/${p.slug}`}
+                  className="text-blue-700 hover:text-blue-800 font-medium underline underline-offset-2"
+                >
+                  {p.title}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link
+                href="/research"
+                className="text-blue-700 hover:text-blue-800 font-medium underline underline-offset-2"
+              >
+                Research report: Do LLMs reproduce classic human decision biases?
+              </Link>
+            </li>
+          </ul>
+        </aside>
       </article>
     </BlogShell>
   );

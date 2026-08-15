@@ -53,20 +53,55 @@ export const metadata: Metadata = {
   },
 };
 
-// Organization + product structured data so search engines understand what we are.
+// Organization + product structured data so search engines (and AI answer engines)
+// understand what we are. Emitted as an @graph so the Organization is a single shared
+// entity that the product, website, and every article/blog page can reference by @id.
+const SITE = "https://doppelgangerlabs.com";
+const ORG_ID = `${SITE}/#organization`;
+
 const JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Doppelganger",
-  applicationCategory: "BusinessApplication",
-  operatingSystem: "Web",
-  url: "https://doppelgangerlabs.com",
-  description: DESCRIPTION,
-  offers: {
-    "@type": "Offer",
-    price: "7.99",
-    priceCurrency: "USD",
-  },
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": ORG_ID,
+      name: "Doppelganger Labs",
+      url: SITE,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE}/logo.svg`,
+        width: 512,
+        height: 512,
+      },
+      description: DESCRIPTION,
+      email: "hello@doppelgangerlabs.com",
+      // Add public profiles here (X, LinkedIn, GitHub) to strengthen the knowledge
+      // entity Google/AI engines build for the brand, e.g.:
+      // sameAs: ["https://x.com/...", "https://www.linkedin.com/company/..."],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE}/#website`,
+      url: SITE,
+      name: "Doppelganger",
+      description: DESCRIPTION,
+      publisher: { "@id": ORG_ID },
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "Doppelganger",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      url: SITE,
+      description: DESCRIPTION,
+      publisher: { "@id": ORG_ID },
+      offers: {
+        "@type": "Offer",
+        price: "7.99",
+        priceCurrency: "USD",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({

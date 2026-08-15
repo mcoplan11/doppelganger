@@ -34,6 +34,36 @@ const REPLICATION = {
   ],
 };
 
+// Buyer-intent questions people actually type. Doubles as FAQPage structured data
+// (below), which is what Google and AI answer engines pull into featured snippets
+// and AI Overviews. Keep answers factual and self-contained.
+const FAQS: Array<{ q: string; a: string }> = [
+  {
+    q: "Can AI replace survey respondents?",
+    a: "Not for confirmatory research, but AI respondents are a strong pretest. In our benchmark against the published Twin-2K-500 dataset, an ensemble of AI respondents reproduced about 91% of 17 classic human decision-making effects. If an effect is real, there's roughly a 90% chance it shows up in AI respondents too — enough to catch broken studies before you pay for a real sample.",
+  },
+  {
+    q: "How accurate are AI survey respondents?",
+    a: "On an external, published benchmark of 17 classic behavioral experiments, Doppelganger's ensemble reproduced 15.5 of them (about 91%), compared with 9 for the AI 'digital twins' built in the original study. Accuracy varies by task: some biases reproduce fully, a few only partially, and AI can still be 'too rational' on effects like dominance neglect.",
+  },
+  {
+    q: "How much does it cost to pretest a survey with AI?",
+    a: "Credits start at $7.99 for 200 respondents (about $0.04 each), and a full pretest typically costs less than a single MTurk or Prolific pilot. You buy credits up front and one credit equals one AI respondent.",
+  },
+  {
+    q: "What kinds of surveys can I test?",
+    a: "Any text-based Qualtrics survey: multiple choice, Likert and matrix questions, open-ended text, demographics and screeners, and branching, skip logic, or randomized conditions. AI respondents can't yet see image, video, or audio stimuli — multimodal support is coming.",
+  },
+  {
+    q: "Do I still need real participants?",
+    a: "Yes. AI pretesting is a screening tool, not a replacement for human data. Use it to catch broken skip logic, dead-on-arrival manipulations, and confusing wording, then spend your participant budget on the studies that already show signs of life. A null result in simulation is not proof of a null in humans.",
+  },
+  {
+    q: "How does Doppelganger work with Qualtrics?",
+    a: "You point Doppelganger at your Qualtrics survey and it runs the study through persona-conditioned AI respondents in minutes, returning per-question results so you can see whether your manipulation moved anything before you field it on people.",
+  },
+];
+
 export default function Home() {
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
@@ -96,6 +126,7 @@ export default function Home() {
       <nav className="border-b border-slate-200 px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
         <span className="font-bold text-lg tracking-tight">Doppelganger</span>
         <div className="flex items-center gap-6 text-sm font-medium">
+          <Link href="/research" className="text-slate-600 hover:text-slate-900">Research</Link>
           <Link href="/blog" className="text-slate-600 hover:text-slate-900">Blog</Link>
           {authed
             ? <a href="/dashboard" className="text-blue-700 hover:text-blue-800">Go to dashboard →</a>
@@ -252,12 +283,18 @@ export default function Home() {
             It won&apos;t catch every effect — but it&apos;s a strong signal your manipulation is
             real before you spend on participants.
           </p>
-          <div className="text-center mt-6">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6">
             <Link
               href="/blog/can-ai-replace-survey-respondents"
               className="text-sm font-medium text-blue-700 hover:text-blue-800"
             >
               See how we measured this →
+            </Link>
+            <Link
+              href="/research"
+              className="text-sm font-medium text-blue-700 hover:text-blue-800"
+            >
+              Read the research paper →
             </Link>
           </div>
         </div>
@@ -357,6 +394,48 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ — visible answers + FAQPage structured data for rich results / AI Overviews */}
+      <section id="faq" className="bg-slate-50 border-y border-slate-200">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: FAQS.map((f) => ({
+                "@type": "Question",
+                name: f.q,
+                acceptedAnswer: { "@type": "Answer", text: f.a },
+              })),
+            }),
+          }}
+        />
+        <div className="max-w-3xl mx-auto px-6 py-20">
+          <h2 className="font-serif text-3xl font-bold text-center mb-12 text-slate-900">
+            Frequently asked questions
+          </h2>
+          <div className="divide-y divide-slate-200">
+            {FAQS.map((f) => (
+              <div key={f.q} className="py-6 first:pt-0">
+                <h3 className="font-semibold text-lg text-slate-900 mb-2">{f.q}</h3>
+                <p className="text-slate-600 leading-relaxed">{f.a}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-sm text-slate-500 mt-10">
+            More on the evidence in our{" "}
+            <Link href="/research" className="text-blue-700 hover:text-blue-800 font-medium">
+              research report
+            </Link>{" "}
+            and{" "}
+            <Link href="/blog" className="text-blue-700 hover:text-blue-800 font-medium">
+              blog
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
