@@ -69,7 +69,8 @@ function DashboardInner() {
   return (
     <main className="min-h-screen bg-gray-950 text-white">
       <nav className="border-b border-gray-800 px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
-        <span className="font-bold text-lg tracking-tight">Doppelganger</span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo-wordmark.png" alt="Doppelganger Labs" className="h-8 w-auto" />
         <div className="flex items-center gap-4">
           <span className="text-gray-400 text-sm">{user.email}</span>
           <button onClick={handleLogout} className="text-sm text-gray-500 hover:text-gray-300">Log out</button>

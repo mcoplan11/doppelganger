@@ -124,7 +124,8 @@ export default function Home() {
     <main className="min-h-screen bg-white text-slate-900">
       {/* Nav */}
       <nav className="border-b border-slate-200 px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
-        <span className="font-bold text-lg tracking-tight">Doppelganger</span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo-wordmark.png" alt="Doppelganger Labs" className="h-8 w-auto" />
         <div className="flex items-center gap-6 text-sm font-medium">
           <Link href="/research" className="text-slate-600 hover:text-slate-900">Research</Link>
           <Link href="/blog" className="text-slate-600 hover:text-slate-900">Blog</Link>

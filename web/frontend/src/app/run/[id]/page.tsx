@@ -64,7 +64,8 @@ export default function RunDetail() {
   return (
     <main className="min-h-screen bg-gray-950 text-white">
       <nav className="border-b border-gray-800 px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
-        <span className="font-bold text-lg tracking-tight">Doppelganger</span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo-wordmark.png" alt="Doppelganger Labs" className="h-8 w-auto" />
         <button onClick={() => router.push("/dashboard")} className="text-sm text-gray-400 hover:text-white">
           ← Dashboard
         </button>
