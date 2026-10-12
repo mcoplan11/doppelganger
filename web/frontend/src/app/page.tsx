@@ -48,7 +48,7 @@ const FAQS: Array<{ q: string; a: string }> = [
   },
   {
     q: "How much does it cost to pretest a survey with AI?",
-    a: "Credits start at $7.99 for 200 respondents (about $0.04 each), and a full pretest typically costs less than a single MTurk or Prolific pilot. You buy credits up front and one credit equals one AI respondent.",
+    a: "Every new account starts with 200 free credits — enough for a full pretest before you pay anything. After that, credits start at $7.99 for 200 respondents (about $0.04 each), and a full pretest typically costs less than a single MTurk or Prolific pilot. One credit equals one AI respondent.",
   },
   {
     q: "What kinds of surveys can I test?",
@@ -153,7 +153,7 @@ export default function Home() {
           </a>
         </div>
         <p className="text-sm text-slate-500 mt-4">
-          Free to try · No credit card · Results in minutes
+          Start with 200 free AI respondents · No credit card · Results in minutes
         </p>
       </section>
 
@@ -363,7 +363,8 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-6 py-20">
           <h2 className="font-serif text-3xl font-bold text-center mb-3 text-slate-900">Pricing that fits a research budget</h2>
           <p className="text-center text-slate-600 mb-12">
-            Buy credits up front · 1 credit = 1 AI respondent · A full pretest costs less than a single MTurk pilot.
+            Every new account starts with 200 free credits · 1 credit = 1 AI respondent · A full
+            pretest costs less than a single MTurk pilot.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {PACKS.map((pack) => (
@@ -464,7 +465,10 @@ export default function Home() {
             </div>
           )}
           <h2 className="font-serif text-2xl font-bold mb-2 text-slate-900">Start pretesting</h2>
-          <p className="text-slate-600 text-sm mb-6">No password — we&apos;ll email you a secure sign-in link.</p>
+          <p className="text-slate-600 text-sm mb-6">
+            New accounts start with 200 free credits. No password — we&apos;ll email you a secure
+            sign-in link.
+          </p>
           {sent ? (
             <div className="text-green-700 font-medium">
               ✓ Check your email for a magic link.

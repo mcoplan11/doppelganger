@@ -90,6 +90,10 @@ app.add_middleware(
 
 _BOOT_TIME = datetime.now(timezone.utc).isoformat()
 
+# Free credits granted on first sign-up — enough for a real first study, so new
+# users can experience the full product before paying.
+SIGNUP_CREDITS = 200
+
 # Best-effort abuse throttle for the unauthenticated magic-link endpoint.
 # Tuned to favor real users: the per-recipient limit is what stops email
 # bombing (a human needs 1-2 links); the per-IP cap is a deliberately loose
@@ -204,7 +208,7 @@ def request_magic_link(body: MagicLinkRequest, request: Request, db: Session = D
         user = User(email=body.email)
         db.add(user)
         db.flush()
-        bal = CreditBalance(user_id=user.id, balance=0)
+        bal = CreditBalance(user_id=user.id, balance=SIGNUP_CREDITS)
         db.add(bal)
         db.commit()
 
