@@ -31,6 +31,12 @@ class Settings(BaseSettings):
     stripe_secret_key: str = ""
     stripe_webhook_secret: str = ""
 
+    # PayPal (Orders v2). Defaults to the sandbox environment — set
+    # PAYPAL_BASE_URL=https://api-m.paypal.com for live payments.
+    paypal_client_id: str = ""
+    paypal_client_secret: str = ""
+    paypal_base_url: str = "https://api-m.sandbox.paypal.com"
+
     frontend_url: str = "http://localhost:3000"
 
     # Qualtrics datacenter (e.g. "yul1") — used when building base_url for API calls

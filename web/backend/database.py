@@ -48,7 +48,9 @@ class Purchase(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    provider = Column(String, default="stripe")  # stripe | paypal
     stripe_session_id = Column(String, unique=True, index=True)
+    paypal_order_id = Column(String, unique=True, index=True)
     credits = Column(Integer, nullable=False)
     amount_cents = Column(Integer, nullable=False)
     status = Column(String, default="pending")  # pending | paid | failed
@@ -119,6 +121,10 @@ def create_tables():
         "ALTER TABLE runs ADD COLUMN last_heartbeat_at TIMESTAMP",
         "ALTER TABLE runs ADD COLUMN results_json TEXT",
         "ALTER TABLE runs ADD COLUMN ai_survey_ids TEXT",
+        "ALTER TABLE purchases ADD COLUMN provider VARCHAR DEFAULT 'stripe'",
+        "ALTER TABLE purchases ADD COLUMN paypal_order_id VARCHAR",
+        "CREATE UNIQUE INDEX IF NOT EXISTS ix_purchases_paypal_order_id "
+        "ON purchases (paypal_order_id)",
     ]
     for sql in migrations:
         try:

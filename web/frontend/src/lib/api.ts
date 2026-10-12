@@ -32,6 +32,17 @@ export const api = {
       method: "POST",
       body: JSON.stringify({ pack_id }),
     }),
+  // PayPal (Orders v2): create on pack selection, capture after buyer approval.
+  paypalCreateOrder: (pack_id: string) =>
+    request<{ order_id: string }>("/credits/paypal/orders", {
+      method: "POST",
+      body: JSON.stringify({ pack_id }),
+    }),
+  paypalCaptureOrder: (order_id: string) =>
+    request<{ credits_added: number; balance: number }>(
+      `/credits/paypal/orders/${order_id}/capture`,
+      { method: "POST" }
+    ),
 
   // Runs
   createRun: (body: {

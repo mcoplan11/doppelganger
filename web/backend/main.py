@@ -1,4 +1,13 @@
 """FastAPI application — Doppelganger web service."""
+# truststore must wrap the ssl module BEFORE urllib3/requests are first imported
+# (payments.py and stripe both pull in requests below). Injecting after urllib3
+# has captured the original SSLContext causes infinite recursion in ssl.py's
+# verify_mode setter on every HTTPS call. simulator_runner injects again later —
+# that's a harmless no-op once this has run.
+import truststore
+
+truststore.inject_into_ssl()
+
 import asyncio
 import json
 import os
@@ -20,7 +29,14 @@ from app_config import settings
 from crypto import decrypt, encrypt
 from database import CreditBalance, Purchase, Run, SessionLocal, User, create_tables, get_db
 from email_client import send_magic_link, send_run_notification
-from payments import CREDIT_PACKS, construct_webhook_event, create_checkout_session
+from payments import (
+    CREDIT_PACKS,
+    capture_paypal_order,
+    construct_webhook_event,
+    create_checkout_session,
+    create_paypal_order,
+    get_pack,
+)
 from rate_limit import SlidingWindowLimiter
 from simulator_runner import run_simulation
 
@@ -276,6 +292,68 @@ def create_checkout(
         cancel_url=f"{settings.frontend_url}/dashboard",
     )
     return {"checkout_url": url}
+
+
+# PayPal credit purchases (Orders v2, sandbox by default — see app_config).
+# Two-step server-side flow driven by the PayPal Buttons on the dashboard:
+#   1. POST /credits/paypal/orders            → create order (price from pack, never client)
+#   2. buyer approves in the PayPal popup
+#   3. POST /credits/paypal/orders/{id}/capture → capture + fulfil credits
+# A pending Purchase row is written at order creation so capture can verify the
+# order belongs to the calling user and fulfil idempotently.
+
+@app.post("/credits/paypal/orders")
+def create_paypal_credit_order(
+    body: CheckoutRequest,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    pack = get_pack(body.pack_id)
+    order_id = create_paypal_order(pack_id=body.pack_id, user_email=user.email)
+    db.add(Purchase(
+        user_id=user.id,
+        provider="paypal",
+        paypal_order_id=order_id,
+        credits=pack["credits"],
+        amount_cents=pack["price_cents"],
+        status="pending",
+    ))
+    db.commit()
+    return {"order_id": order_id}
+
+
+@app.post("/credits/paypal/orders/{order_id}/capture")
+def capture_paypal_credit_order(
+    order_id: str,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    purchase = (
+        db.query(Purchase)
+        .filter(Purchase.paypal_order_id == order_id, Purchase.user_id == user.id)
+        .first()
+    )
+    if not purchase:
+        raise HTTPException(status_code=404, detail="Order not found.")
+
+    bal = db.query(CreditBalance).filter(CreditBalance.user_id == user.id).first()
+    if not bal:
+        bal = CreditBalance(user_id=user.id, balance=0)
+        db.add(bal)
+
+    # Idempotency: a re-capture (double click, retry) must not double-credit.
+    if purchase.status == "paid":
+        return {"credits_added": 0, "balance": bal.balance}
+
+    order = capture_paypal_order(order_id)
+    if order.get("status") != "COMPLETED":
+        raise HTTPException(status_code=402, detail="PayPal payment was not completed.")
+
+    purchase.status = "paid"
+    bal.balance += purchase.credits
+    bal.updated_at = datetime.now(timezone.utc)
+    db.commit()
+    return {"credits_added": purchase.credits, "balance": bal.balance}
 
 
 @app.post("/webhooks/stripe")

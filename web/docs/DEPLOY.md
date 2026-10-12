@@ -15,6 +15,10 @@
    - `GEMINI_API_KEY` = your production Gemini key
    - `STRIPE_SECRET_KEY` = sk_live_...
    - `STRIPE_WEBHOOK_SECRET` = whsec_... (from Stripe → Webhooks → add endpoint)
+   - `PAYPAL_CLIENT_ID` / `PAYPAL_CLIENT_SECRET` = from developer.paypal.com →
+     Apps & Credentials (sandbox creds for demo; live creds for production)
+   - `PAYPAL_BASE_URL` = https://api-m.sandbox.paypal.com (default) or
+     https://api-m.paypal.com for live payments
    - `RESEND_API_KEY` = re_... (from resend.com)
    - `FROM_EMAIL` = noreply@yourdomain.com (must be a verified sender in Resend)
    - `FRONTEND_URL` = https://your-app.vercel.app
@@ -39,6 +43,8 @@ In Stripe Dashboard → Developers → Webhooks:
 4. Add environment variables:
    - `NEXT_PUBLIC_API_URL` = https://your-backend.up.railway.app
    - `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` = pk_live_...
+   - `NEXT_PUBLIC_PAYPAL_CLIENT_ID` = same client ID as the backend (sandbox or
+     live). When unset, the dashboard falls back to card-only (Stripe) checkout.
 5. Deploy.
 
 ---
