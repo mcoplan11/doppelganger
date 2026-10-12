@@ -57,9 +57,18 @@ export const api = {
   listRuns: () => request<Run[]>("/runs"),
   getRun: (id: number) => request<Run>(`/runs/${id}`),
   getResults: (id: number) => request<ResultsSummary | EnsembleResults>(`/runs/${id}/results`),
+  getResponses: (id: number) => request<RespondentData>(`/runs/${id}/responses`),
   cancelRun: (id: number) => request<Run>(`/runs/${id}/cancel`, { method: "POST" }),
   downloadUrl: (id: number) => `${BASE}/runs/${id}/download`,
 };
+
+// Respondent-level rows for the results data grid. Columns is the union of row
+// keys in first-seen order (model, persona, branch, then per-question answers).
+export interface RespondentData {
+  available: boolean;
+  columns: string[];
+  rows: Record<string, string | number | null>[];
+}
 
 export interface AiSurveyCopy {
   slug: string;

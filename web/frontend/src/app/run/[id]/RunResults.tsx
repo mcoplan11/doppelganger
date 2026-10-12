@@ -11,6 +11,7 @@ import {
   type ResultsSummary,
   type Summary,
 } from "@/lib/api";
+import RespondentGrid from "./RespondentGrid";
 
 export default function RunResults({ runId }: { runId: number }) {
   const [results, setResults] = useState<ResultsSummary | EnsembleResults | null>(null);
@@ -30,18 +31,28 @@ export default function RunResults({ runId }: { runId: number }) {
       </div>
     );
   }
-  if (isEnsembleResults(results)) return <EnsembleView ensemble={results} />;
+  if (isEnsembleResults(results)) {
+    return (
+      <>
+        <EnsembleView ensemble={results} />
+        <RespondentGrid runId={runId} />
+      </>
+    );
+  }
   if (!results?.available || results.questions.length === 0) return null;
   return (
-    <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 mb-6">
-      <h2 className="font-semibold mb-1">Results preview</h2>
-      <p className="text-gray-500 text-xs mb-6 leading-relaxed">
-        Based on {results.n_completed} AI {results.n_completed === 1 ? "respondent" : "respondents"}
-        {results.has_conditions ? ", broken out by condition" : ""}. Directional only — a gut-check
-        on whether your design produces a signal, not a substitute for human data.
-      </p>
-      <ModelResultsBody results={results} />
-    </div>
+    <>
+      <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 mb-6">
+        <h2 className="font-semibold mb-1">Results preview</h2>
+        <p className="text-gray-500 text-xs mb-6 leading-relaxed">
+          Based on {results.n_completed} AI {results.n_completed === 1 ? "respondent" : "respondents"}
+          {results.has_conditions ? ", broken out by condition" : ""}. Directional only — a gut-check
+          on whether your design produces a signal, not a substitute for human data.
+        </p>
+        <ModelResultsBody results={results} />
+      </div>
+      <RespondentGrid runId={runId} />
+    </>
   );
 }
 

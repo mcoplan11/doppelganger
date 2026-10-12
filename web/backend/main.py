@@ -610,15 +610,15 @@ def get_run_results(
     return result
 
 
-@app.get("/runs/{run_id}/download")
-def download_run(
-    run_id: int,
-    user: User = Depends(get_current_user),
-    db: Session = Depends(get_db),
-):
-    run = db.query(Run).filter(Run.id == run_id, Run.user_id == user.id).first()
-    if not run or not run.result_path:
-        raise HTTPException(status_code=404, detail="Results not available yet.")
+def _respondent_rows(run: Run) -> tuple[list[str], list[dict]]:
+    """Flatten a run's per-session response files into tabular rows.
+
+    Returns (columns, rows): columns is the union of keys in first-seen order so
+    heterogeneous rows (e.g. branch-dependent questions) share one schema. Rows
+    are tagged with the anonymized model label — never the real model name.
+    """
+    if not run.result_path:
+        return [], []
     result_dir = Path(run.result_path).parent
 
     # Map model subdir slugs -> anonymized labels (Model A/B/C). Never expose the
@@ -638,13 +638,14 @@ def download_run(
     else:
         completed = [(p.parent.name, p) for p in completed]
 
-    # Build a CSV from individual response JSON files, tagged by model.
-    import csv, io
-    buf = io.StringIO()
-    writer = None
+    columns: list[str] = []
+    rows: list[dict] = []
     for slug, jf in completed:
-        with open(jf) as f:
-            d = json.load(f)
+        try:
+            with open(jf) as f:
+                d = json.load(f)
+        except Exception:
+            continue
         row = {
             "model": slug_to_label.get(slug, slug) if slug else "",
             "persona": d.get("persona"),
@@ -653,9 +654,51 @@ def download_run(
             **{k: (v if not isinstance(v, (dict, list)) else json.dumps(v))
                for k, v in d.get("answers", {}).items()},
         }
-        if writer is None:
-            writer = csv.DictWriter(buf, fieldnames=list(row.keys()))
-            writer.writeheader()
+        for key in row:
+            if key not in columns:
+                columns.append(key)
+        rows.append(row)
+    return columns, rows
+
+
+@app.get("/runs/{run_id}/responses")
+def get_run_responses(
+    run_id: int,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    """Respondent-level rows for the results data grid.
+
+    Built from on-disk session files, so it can be unavailable for old runs
+    after a redeploy — the frontend treats {available: false} as "hide grid".
+    """
+    run = db.query(Run).filter(Run.id == run_id, Run.user_id == user.id).first()
+    if not run:
+        raise HTTPException(status_code=404, detail="Run not found.")
+    columns, rows = _respondent_rows(run)
+    return {"available": bool(rows), "columns": columns, "rows": rows}
+
+
+@app.get("/runs/{run_id}/download")
+def download_run(
+    run_id: int,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    run = db.query(Run).filter(Run.id == run_id, Run.user_id == user.id).first()
+    if not run or not run.result_path:
+        raise HTTPException(status_code=404, detail="Results not available yet.")
+
+    columns, rows = _respondent_rows(run)
+    if not rows:
+        raise HTTPException(status_code=404, detail="Results not available yet.")
+
+    # Build a CSV from individual response JSON files, tagged by model.
+    import csv, io
+    buf = io.StringIO()
+    writer = csv.DictWriter(buf, fieldnames=columns, restval="")
+    writer.writeheader()
+    for row in rows:
         writer.writerow(row)
 
     buf.seek(0)
