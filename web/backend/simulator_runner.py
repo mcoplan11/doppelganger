@@ -133,6 +133,24 @@ def _friendly_error(exc: Exception, datacenter: str) -> str:
             "Qualtrics IDs → API Token, and confirm the datacenter matches "
             "(e.g. 'yul1' for yul1.qualtrics.com)."
         )
+    if "403" in text and "qualtrics" in text.lower():
+        return (
+            "Qualtrics refused the request (403 Forbidden). Your credentials "
+            "reached Qualtrics, but the account behind the API token isn't "
+            "allowed to use the Qualtrics API. This is common on university "
+            "accounts — API access is a permission your Qualtrics brand "
+            "administrator has to turn on per user.\n\n"
+            "How to fix:\n"
+            "1. In Qualtrics go to Account Settings → Qualtrics IDs → API and "
+            "click 'Generate Token'. If that section is missing or the button "
+            "is disabled, your account doesn't have API access yet.\n"
+            "2. Ask your Qualtrics brand administrator (at a university this is "
+            "usually the IT / survey-platform team) to enable the 'Access API' "
+            "permission for your account, then generate a fresh token and save "
+            "it here again.\n"
+            "3. Note that free qualtrics.com accounts don't include API access — "
+            "you need an account on a licensed brand, e.g. your institution's."
+        )
     # Converter couldn't make the survey AI-compatible (a feature/element we don't
     # auto-handle yet). Give the researcher a self-serve path AND keep the raw
     # detail so support can add a fix. The full traceback is also logged server-side.

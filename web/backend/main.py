@@ -16,6 +16,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Annotated
 
+import requests
 import stripe
 from fastapi import BackgroundTasks, Body, Depends, FastAPI, HTTPException, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
@@ -420,6 +421,36 @@ class RunRequest(BaseModel):
     platform: str = "prolific"  # prolific | mturk
 
 
+def _validate_qualtrics_credentials(token: str, datacenter: str) -> None:
+    """Fail fast if the token can't use the Qualtrics API.
+
+    Without this, a bad token/datacenter only surfaces after the run has
+    started, as a failed-run email. A quick whoami here turns that into an
+    immediate 400 with the same friendly message the runner would produce.
+    """
+    from simulator_runner import _friendly_error
+
+    url = f"https://{datacenter}.qualtrics.com/API/v3/whoami"
+    try:
+        resp = requests.get(url, headers={"X-API-TOKEN": token}, timeout=15)
+        resp.raise_for_status()
+    except requests.HTTPError as exc:
+        raise HTTPException(status_code=400, detail=_friendly_error(exc, datacenter))
+    except requests.ConnectionError:
+        raise HTTPException(
+            status_code=400,
+            detail=(
+                f"We couldn't reach https://{datacenter}.qualtrics.com — "
+                "double-check your datacenter ID (it's the subdomain you see "
+                "when logged into Qualtrics, e.g. 'yul1' or 'ca1')."
+            ),
+        )
+    except requests.Timeout:
+        # Qualtrics being slow isn't the user's fault — let the run proceed
+        # and rely on the runner's own error handling if it's a real outage.
+        pass
+
+
 def _extract_survey_id(survey_url: str) -> str:
     """Pull SV_... ID from a Qualtrics URL or return as-is if already an ID."""
     import re
@@ -450,6 +481,8 @@ def create_run(
                 status_code=402,
                 detail=f"Not enough credits. You have {bal.balance if bal else 0}, need {n}.",
             )
+
+    _validate_qualtrics_credentials(body.qualtrics_token, body.qualtrics_datacenter)
 
     token_enc = encrypt(body.qualtrics_token)
 
