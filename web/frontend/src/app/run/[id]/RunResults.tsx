@@ -11,7 +11,7 @@ import {
   type ResultsSummary,
   type Summary,
 } from "@/lib/api";
-import RespondentGrid from "./RespondentGrid";
+import ResponseExplorer from "./ResponseExplorer";
 
 export default function RunResults({ runId }: { runId: number }) {
   const [results, setResults] = useState<ResultsSummary | EnsembleResults | null>(null);
@@ -35,7 +35,7 @@ export default function RunResults({ runId }: { runId: number }) {
     return (
       <>
         <EnsembleView ensemble={results} />
-        <RespondentGrid runId={runId} />
+        <ResponseExplorer runId={runId} />
       </>
     );
   }
@@ -51,7 +51,7 @@ export default function RunResults({ runId }: { runId: number }) {
         </p>
         <ModelResultsBody results={results} />
       </div>
-      <RespondentGrid runId={runId} />
+      <ResponseExplorer runId={runId} />
     </>
   );
 }
