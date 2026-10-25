@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { api, type Run } from "@/lib/api";
 import RunResults from "./RunResults";
@@ -71,11 +72,13 @@ export default function RunDetail() {
         </button>
       </nav>
 
-      <div className="max-w-2xl mx-auto px-6 py-12">
+      {/* Completed runs get a wide container — the results preview and the
+          respondent/comparison grids need the horizontal room. */}
+      <div className={`${run.status === "done" ? "max-w-5xl" : "max-w-2xl"} mx-auto px-6 py-12`}>
         <div className="flex items-start justify-between mb-8">
           <div>
             <h1 className="text-2xl font-bold mb-1">
-              {run.is_smoke_test ? "Trial run" : "Simulation"} #{run.id}
+              {run.is_sample ? "Sample study" : run.is_smoke_test ? "Trial run" : "Simulation"} #{run.id}
             </h1>
             <p className="text-gray-400 text-sm">{run.original_survey_id}</p>
           </div>
@@ -107,6 +110,17 @@ export default function RunDetail() {
             <span className="text-red-400 text-xs ml-2">✕ Failed</span>
           )}
         </div>
+
+        {/* Sample-study explainer */}
+        {run.is_sample && (
+          <div className="mb-6 rounded-xl border border-purple-800/60 bg-purple-950/30 px-5 py-4 text-sm text-purple-200 leading-relaxed">
+            <span className="font-semibold">This is a sample study</span> we pre-loaded into your
+            account — a 2-condition price-framing experiment answered by the full model ensemble —
+            so you can explore results before connecting Qualtrics. Your own runs will look just
+            like this. You have free credits waiting:{" "}
+            <Link href="/run/new" className="underline hover:text-white">start a real simulation →</Link>
+          </div>
+        )}
 
         {/* Status message */}
         <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 mb-6">

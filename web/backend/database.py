@@ -77,6 +77,8 @@ class Run(Base):
 
     n_participants = Column(Integer, nullable=False)
     is_smoke_test = Column(Boolean, default=False)
+    # Pre-seeded demo run (see sample_run.py) — never touched Qualtrics or an LLM.
+    is_sample = Column(Boolean, default=False)
     platform = Column(String, default="prolific")  # prolific | mturk
 
     # run lifecycle: converting | smoke_test | awaiting_approval | running | done | failed
@@ -88,6 +90,9 @@ class Run(Base):
     result_path = Column(Text)
     branch_summary = Column(Text)  # JSON string of condition counts
     results_json = Column(Text)    # serialized build_results() output; survives Railway deploys
+    # Respondent-level {columns, rows} for /responses. Normally rebuilt from
+    # on-disk session files; set directly for sample runs (which have no files).
+    responses_json = Column(Text)
 
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
     completed_at = Column(DateTime)
@@ -123,6 +128,8 @@ def create_tables():
         "ALTER TABLE runs ADD COLUMN ai_survey_ids TEXT",
         "ALTER TABLE purchases ADD COLUMN provider VARCHAR DEFAULT 'stripe'",
         "ALTER TABLE purchases ADD COLUMN paypal_order_id VARCHAR",
+        "ALTER TABLE runs ADD COLUMN is_sample BOOLEAN DEFAULT FALSE",
+        "ALTER TABLE runs ADD COLUMN responses_json TEXT",
         "CREATE UNIQUE INDEX IF NOT EXISTS ix_purchases_paypal_order_id "
         "ON purchases (paypal_order_id)",
     ]

@@ -217,9 +217,17 @@ function RunRow({ run }: { run: Run }) {
       onClick={() => router.push(`/run/${run.id}`)}
     >
       <div>
-        <div className="font-medium text-sm">{run.original_survey_id}</div>
+        <div className="font-medium text-sm flex items-center gap-2">
+          {run.original_survey_id}
+          {run.is_sample && (
+            <span className="text-[10px] font-semibold uppercase tracking-wider text-purple-300 border border-purple-700/60 bg-purple-950/40 rounded px-1.5 py-0.5">
+              Sample
+            </span>
+          )}
+        </div>
         <div className="text-gray-500 text-xs mt-0.5">
-          {run.n_participants} participants · {run.is_smoke_test ? "trial run" : "full run"} ·{" "}
+          {run.n_participants} participants ·{" "}
+          {run.is_sample ? "sample study" : run.is_smoke_test ? "trial run" : "full run"} ·{" "}
           {new Date(run.created_at).toLocaleDateString()}
         </div>
       </div>

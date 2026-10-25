@@ -149,6 +149,20 @@ def health():
 @app.on_event("startup")
 async def startup():
     create_tables()
+    # Accounts created before the sample-study feature get it here (new accounts
+    # are seeded at sign-up). Idempotent, so repeat boots are a cheap no-op.
+    try:
+        from sample_run import backfill_sample_runs
+
+        db = SessionLocal()
+        try:
+            n = backfill_sample_runs(db)
+            if n:
+                print(f"[startup] seeded sample run for {n} existing users", flush=True)
+        finally:
+            db.close()
+    except Exception as exc:
+        print(f"[startup] sample-run backfill failed: {exc}", flush=True)
     asyncio.create_task(_reaper_loop())
 
 
@@ -212,6 +226,13 @@ def request_magic_link(body: MagicLinkRequest, request: Request, db: Session = D
         bal = CreditBalance(user_id=user.id, balance=SIGNUP_CREDITS)
         db.add(bal)
         db.commit()
+        # Pre-seed a completed sample study so the first dashboard visit has
+        # explorable results. Best-effort — never block sign-up over it.
+        try:
+            from sample_run import create_sample_run
+            create_sample_run(db, user.id)
+        except Exception as exc:
+            print(f"[signup] sample run seeding failed for {body.email}: {exc}", flush=True)
 
     token = make_magic_token(body.email)
     magic_url = f"{settings.frontend_url}/auth/verify?token={token}"
@@ -654,6 +675,14 @@ def _respondent_rows(run: Run) -> tuple[list[str], list[dict]]:
     heterogeneous rows (e.g. branch-dependent questions) share one schema. Rows
     are tagged with the anonymized model label — never the real model name.
     """
+    # Sample runs (and any future run that caches rows in the DB) have no
+    # on-disk session files — serve the stored payload instead.
+    if run.responses_json:
+        try:
+            cached = json.loads(run.responses_json)
+            return cached.get("columns", []), cached.get("rows", [])
+        except Exception:
+            pass
     if not run.result_path:
         return [], []
     result_dir = Path(run.result_path).parent
@@ -723,7 +752,7 @@ def download_run(
     db: Session = Depends(get_db),
 ):
     run = db.query(Run).filter(Run.id == run_id, Run.user_id == user.id).first()
-    if not run or not run.result_path:
+    if not run or not (run.result_path or run.responses_json):
         raise HTTPException(status_code=404, detail="Results not available yet.")
 
     columns, rows = _respondent_rows(run)
@@ -774,6 +803,7 @@ def _run_to_dict(run: Run) -> dict:
         "ai_survey_copies": ai_copies,
         "n_participants": run.n_participants,
         "is_smoke_test": run.is_smoke_test,
+        "is_sample": bool(run.is_sample),
         "platform": run.platform,
         "status": run.status,
         "credits_used": run.credits_used,

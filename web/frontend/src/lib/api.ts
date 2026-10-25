@@ -83,6 +83,7 @@ export interface Run {
   ai_survey_copies?: AiSurveyCopy[];   // one Qualtrics copy per ensemble model
   n_participants: number;
   is_smoke_test: boolean;
+  is_sample?: boolean;   // pre-seeded demo run — results only, no Qualtrics behind it
   platform: string;
   status: string;
   credits_used: number;
