@@ -80,7 +80,9 @@ def run_session(
         current_block = block
         while not current_block.done:
             for q in current_block.questions:
-                if q.question_type == "DB" and q.prompt_text:
+                # image_urls counts too: a DB block can be a pure image stimulus
+                # (e.g. the ad being rated) with no text at all.
+                if q.question_type == "DB" and (q.prompt_text or q.image_urls):
                     read_context.append(q)
 
             answers = gemini.answer_block(
@@ -360,7 +362,8 @@ def _run_many_batched(
 
         for s in active:
             for q in s.current_block.questions:
-                if q.question_type == "DB" and q.prompt_text:
+                # image_urls counts too: a DB block can be a pure image stimulus.
+                if q.question_type == "DB" and (q.prompt_text or q.image_urls):
                     s.read_context.append(q)
             answerable = [q for q in s.current_block.questions if is_answerable(q)]
             if not answerable:

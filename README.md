@@ -178,6 +178,7 @@ The simulator then translates these choice IDs into the Sessions API format (`{c
 Doppelganger uses the Qualtrics **Sessions API** (not the bulk response endpoint) so branching and skip logic fires server-side. This means:
 
 - Randomizer elements are supported — Qualtrics assigns branches, not the simulator.
+- Image stimuli (ads, product photos) are supported — `<img>` tags in question or descriptive text are extracted (`stimuli.py`), downloaded once per unique image, and attached to the LLM call as multimodal content. The web app detects image surveys automatically and routes them to a vision-capable model roster (`ensemble.VISION_ROSTER`); text-only surveys keep the benchmark-validated default roster.
 - Slider questions, CAPTCHA blocks, and end-of-survey redirect flows are **not** supported by the Sessions API and must be removed or replaced before running. See `CONVERTER.md` for the conversion workflow.
 
 ---

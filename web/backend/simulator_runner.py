@@ -411,7 +411,23 @@ def _run_inner(
     from simulator import run_many
 
     base_url = f"https://{qualtrics_datacenter}.qualtrics.com/API/v3"
-    roster = roster_for(is_smoke)
+
+    # Image surveys route to the vision roster (see ensemble.VISION_ROSTER);
+    # detection reads the ORIGINAL survey definition, before any AI copies
+    # exist. A failed probe falls back to the text roster — if the definition
+    # is unreadable the run will fail loudly at conversion anyway.
+    has_images = False
+    try:
+        probe = QualtricsClient(base_url, qualtrics_token)
+        has_images = probe.get_survey_definition(original_survey_id).has_image_stimuli
+    except Exception as exc:
+        print(f"[run {run_id}] image-stimuli detection failed "
+              f"(assuming text-only): {exc}", flush=True)
+    if has_images:
+        print(f"[run {run_id}] survey contains image stimuli — using vision roster",
+              flush=True)
+
+    roster = roster_for(is_smoke, has_images)
     n_models = len(roster)
 
     persona_pool = list(itertools.islice(itertools.cycle(DEFAULT_PERSONAS), n_participants))

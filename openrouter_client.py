@@ -22,9 +22,12 @@ from gemini_client import (
     BatchInput,
     _build_prompt,
     _build_response_schema,
+    collect_image_urls,
+    image_labels_for,
 )
 from personas import Persona
 from qualtrics_client import Question
+from stimuli import image_data_url
 
 _BASE_URL = "https://openrouter.ai/api/v1"
 
@@ -66,10 +69,13 @@ class OpenRouterAnswerClient:
         if not answerable:
             return {}
         schema = _build_response_schema(answerable)
+        image_urls = collect_image_urls(answerable, read_context or [])
+        labels = image_labels_for(image_urls)
         prompt = _build_prompt(
-            persona, answerable, prior_answers, read_context or [], survey_name
+            persona, answerable, prior_answers, read_context or [], survey_name,
+            image_labels=labels,
         )
-        return self._complete(prompt, schema)
+        return self._complete(prompt, schema, image_urls, labels)
 
     # ── batch (sequential/threaded sync — no OpenRouter batch API) ─────────────
     def answer_blocks_batch(
@@ -95,12 +101,14 @@ class OpenRouterAnswerClient:
 
         def _one(inp: BatchInput) -> tuple[str, dict[str, Any] | None]:
             schema = _build_response_schema(inp.answerable)
+            image_urls = collect_image_urls(inp.answerable, inp.read_context)
+            labels = image_labels_for(image_urls)
             prompt = _build_prompt(
                 inp.persona, inp.answerable, inp.prior_answers,
-                inp.read_context, inp.survey_name,
+                inp.read_context, inp.survey_name, image_labels=labels,
             )
             try:
-                return inp.key, self._complete(prompt, schema)
+                return inp.key, self._complete(prompt, schema, image_urls, labels)
             except Exception as exc:
                 print(f"  [openrouter] {inp.key} failed: {exc}", flush=True)
                 return inp.key, None
@@ -113,12 +121,19 @@ class OpenRouterAnswerClient:
         return results
 
     # ── low-level call with retry + JSON extraction ────────────────────────────
-    def _complete(self, prompt: str, schema: dict[str, Any]) -> dict[str, Any]:
+    def _complete(
+        self,
+        prompt: str,
+        schema: dict[str, Any],
+        image_urls: list[str] | None = None,
+        image_labels: dict[str, str] | None = None,
+    ) -> dict[str, Any]:
         schema_hint = json.dumps(schema, indent=2)
         full_prompt = (
             f"/no_think\n\n{prompt}\n\n"
             f"Return ONLY valid JSON matching this schema:\n{schema_hint}"
         )
+        content = _build_message_content(full_prompt, image_urls or [], image_labels or {})
         for attempt in range(5):
             kwargs: dict[str, Any] = {}
             if self._disable_reasoning:
@@ -126,7 +141,7 @@ class OpenRouterAnswerClient:
             try:
                 resp = self._client.chat.completions.create(
                     model=self._model,
-                    messages=[{"role": "user", "content": full_prompt}],
+                    messages=[{"role": "user", "content": content}],
                     temperature=self._temperature,
                     **kwargs,
                 )
@@ -158,6 +173,33 @@ class OpenRouterAnswerClient:
         if m:
             return int(float(m.group(1))) + 2
         return min(120, 30 * 2 ** attempt)
+
+
+def _build_message_content(
+    prompt: str, image_urls: list[str], image_labels: dict[str, str]
+) -> "str | list[dict[str, Any]]":
+    """Plain string for text-only blocks (unchanged behavior); OpenAI-style
+    content parts when the block has image stimuli. Images go in as base64
+    data URLs (fetched once, cached in stimuli.fetch_image) so providers never
+    have to reach Qualtrics-hosted URLs themselves. A failed download degrades
+    to a text note so the session still completes."""
+    if not image_urls:
+        return prompt
+    parts: list[dict[str, Any]] = [{"type": "text", "text": prompt}]
+    for url in image_urls:
+        label = image_labels.get(url, url)
+        try:
+            data_url = image_data_url(url)
+        except Exception as exc:
+            print(f"  [stimuli] failed to fetch {label} ({url}): {exc}", flush=True)
+            parts.append({
+                "type": "text",
+                "text": f"\n{label}: (image failed to load — answer from the text alone)",
+            })
+            continue
+        parts.append({"type": "text", "text": f"\n{label}:"})
+        parts.append({"type": "image_url", "image_url": {"url": data_url}})
+    return parts
 
 
 def _strip_fences(text: str) -> str:

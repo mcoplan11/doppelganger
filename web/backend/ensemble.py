@@ -47,13 +47,30 @@ ROSTER: list[ModelSpec] = [
     ModelSpec("Model C", "model_c", "openrouter", "qwen/qwen3-235b-a22b-2507"),
 ]
 
+# Vision roster, used only when the survey contains image stimuli (<img> tags
+# in question/descriptive text). Text-only surveys keep the Twin-2K-validated
+# ROSTER above; glm-5.2 and qwen3-235b are text-only models, so image surveys
+# swap Model B/C to vision-capable siblings from the SAME families, priced in
+# the same band (glm-4.6v $0.30/$0.90 per M in/out; qwen3-vl-235b $0.21/$1.90
+# vs qwen3-235b $0.09/$0.55 — checked 2026-10-29). Model A (Gemini Flash) is
+# natively multimodal and stays. Labels are identical on purpose: the public
+# identity is "Model A/B/C", whichever variant served the run.
+VISION_ROSTER: list[ModelSpec] = [
+    ModelSpec("Model A", "model_a", "gemini", MODEL_A_GEMINI),
+    ModelSpec("Model B", "model_b", "openrouter", "z-ai/glm-4.6v"),
+    ModelSpec("Model C", "model_c", "openrouter", "qwen/qwen3-vl-235b-a22b-instruct"),
+]
+
 # Trial ("smoke") runs use a single cheap model — quality doesn't matter, we're
 # only verifying the survey converts and submits. Kept anonymous for symmetry.
+# gemini-2.5-flash-lite is multimodal, so the same spec covers image surveys.
 SMOKE_SPEC = ModelSpec("Trial", "trial", "gemini", "gemini-2.5-flash-lite")
 
 
-def roster_for(is_smoke: bool) -> list[ModelSpec]:
-    return [SMOKE_SPEC] if is_smoke else list(ROSTER)
+def roster_for(is_smoke: bool, has_images: bool = False) -> list[ModelSpec]:
+    if is_smoke:
+        return [SMOKE_SPEC]
+    return list(VISION_ROSTER if has_images else ROSTER)
 
 
 def build_client(spec: ModelSpec, temperature: float = 0.5):

@@ -8,6 +8,8 @@ from typing import Any
 
 import requests
 
+from stimuli import extract_image_urls, origin_of
+
 
 @dataclass
 class Choice:
@@ -31,6 +33,9 @@ class Question:
     # tells us multi- vs single-select; they put it in `options.multiSelect`
     # instead. Captured here so allows_multiple_answers can honor it.
     multi_select: bool | None = None
+    # Image stimuli (<img> tags) embedded in the question HTML, extracted before
+    # _strip_html discards them. Absolute URLs, in on-screen order.
+    image_urls: list[str] = field(default_factory=list)
 
     @property
     def is_multiple_choice(self) -> bool:
@@ -71,6 +76,13 @@ class SurveyDefinition:
     qid_to_block: dict[str, str]
     branches: list[RandomizerBranch]
     raw: dict[str, Any] = field(default_factory=dict)
+    # Datacenter origin (https://{dc}.qualtrics.com) — used to absolutize
+    # relative image URLs in session-block HTML.
+    origin: str = ""
+
+    @property
+    def has_image_stimuli(self) -> bool:
+        return any(q.image_urls for q in self.questions)
 
     @property
     def has_branching_logic(self) -> bool:
@@ -112,7 +124,7 @@ class QualtricsClient:
         resp = self._session.get(url, timeout=30)
         _raise_with_body(resp)
         payload = resp.json()["result"]
-        return _parse_survey_definition(survey_id, payload)
+        return _parse_survey_definition(survey_id, payload, origin=origin_of(self._base_url))
 
     def create_response(self, survey_id: str, values: dict[str, Any]) -> dict[str, Any]:
         url = f"{self._base_url}/surveys/{survey_id}/responses"
@@ -222,13 +234,16 @@ def _parse_session_block(
         base = survey.question(base_qid)
         if base is not None:
             display = _strip_html(q.get("display", "")) or base.prompt_text
+            # Prefer images from the live display HTML (piped URLs resolved);
+            # fall back to the survey-definition extraction.
+            images = extract_image_urls(q.get("display", ""), survey.origin) or base.image_urls
             # When base differs from raw qid (loop iteration), rewrite qid to the
             # iteration-prefixed form so submissions use the same key.
-            questions.append(replace(base, qid=qid, prompt_text=display))
+            questions.append(replace(base, qid=qid, prompt_text=display, image_urls=images))
         else:
             # Fallback: parse what we can directly from the camelCase entry.
             # Happens when the survey def doesn't expose the question (rare).
-            questions.append(_parse_question_camel(q))
+            questions.append(_parse_question_camel(q, survey.origin))
     return SessionBlock(
         session_id=result.get("sessionId") or fallback_session_id or "",
         questions=questions,
@@ -252,7 +267,7 @@ def _strip_loop_prefix(qid: str) -> str:
 _TYPE_MAP = {"db": "DB", "mc": "MC", "te": "TE", "matrix": "Matrix", "slider": "Slider"}
 
 
-def _parse_question_camel(entry: dict[str, Any]) -> Question:
+def _parse_question_camel(entry: dict[str, Any], origin: str = "") -> Question:
     """Parse a session-block question in the camelCase / list shape used by
     loop & merge surveys. Used only when the survey definition doesn't have a
     base record for this question (e.g. dynamically-generated questions)."""
@@ -278,12 +293,15 @@ def _parse_question_camel(entry: dict[str, Any]) -> Question:
         choices=choices,
         multi_select=options.get("multiSelect"),
         raw=entry,
+        image_urls=extract_image_urls(entry.get("display", ""), origin),
     )
 
 
-def _parse_survey_definition(survey_id: str, payload: dict[str, Any]) -> SurveyDefinition:
+def _parse_survey_definition(
+    survey_id: str, payload: dict[str, Any], origin: str = ""
+) -> SurveyDefinition:
     raw_questions = payload.get("Questions", {})
-    questions = [_parse_question(qid, q) for qid, q in raw_questions.items()]
+    questions = [_parse_question(qid, q, origin) for qid, q in raw_questions.items()]
 
     qid_to_block = _build_qid_to_block(payload.get("Blocks") or {})
     branches = _extract_randomizer_branches(payload.get("SurveyFlow") or {})
@@ -295,6 +313,7 @@ def _parse_survey_definition(survey_id: str, payload: dict[str, Any]) -> SurveyD
         qid_to_block=qid_to_block,
         branches=branches,
         raw=payload,
+        origin=origin,
     )
 
 
@@ -366,7 +385,7 @@ def _describe_embedded(embedded: dict[str, str]) -> str:
     return ", ".join(f"{k}={v}" for k, v in embedded.items())
 
 
-def _parse_question(qid: str, q: dict[str, Any]) -> Question:
+def _parse_question(qid: str, q: dict[str, Any], origin: str = "") -> Question:
     choices_raw = q.get("Choices") or {}
     choice_order = q.get("ChoiceOrder") or list(choices_raw.keys())
     recode_values = q.get("RecodeValues") or {}
@@ -409,6 +428,7 @@ def _parse_question(qid: str, q: dict[str, Any]) -> Question:
         choices=choices,
         sub_questions=sub_questions,
         raw=q,
+        image_urls=extract_image_urls(q.get("QuestionText", ""), origin),
     )
 
 

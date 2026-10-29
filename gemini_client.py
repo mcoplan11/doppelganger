@@ -12,6 +12,7 @@ from google.genai.types import InlinedRequest
 
 from personas import Persona
 from qualtrics_client import Question
+from stimuli import fetch_image
 
 
 @dataclass
@@ -88,13 +89,17 @@ class GeminiClient:
             return {}
 
         schema = _build_response_schema(answerable)
+        image_urls = collect_image_urls(answerable, read_context or [])
+        labels = image_labels_for(image_urls)
         prompt = _build_prompt(
-            persona, answerable, prior_answers, read_context or [], survey_name
+            persona, answerable, prior_answers, read_context or [], survey_name,
+            image_labels=labels,
         )
+        contents = _build_contents(prompt, image_urls, labels)
 
         resp = self._client.models.generate_content(
             model=self._model,
-            contents=prompt,
+            contents=contents,
             config=types.GenerateContentConfig(
                 response_mime_type="application/json",
                 response_schema=schema,
@@ -291,11 +296,14 @@ class GeminiClient:
 
 def _build_inline_request(inp: BatchInput, temperature: float) -> InlinedRequest:
     schema = _build_response_schema(inp.answerable)
+    image_urls = collect_image_urls(inp.answerable, inp.read_context)
+    labels = image_labels_for(image_urls)
     prompt = _build_prompt(
-        inp.persona, inp.answerable, inp.prior_answers, inp.read_context, inp.survey_name
+        inp.persona, inp.answerable, inp.prior_answers, inp.read_context,
+        inp.survey_name, image_labels=labels,
     )
     return InlinedRequest(
-        contents=prompt,
+        contents=_build_contents(prompt, image_urls, labels),
         config=types.GenerateContentConfig(
             response_mime_type="application/json",
             response_schema=schema,
@@ -311,7 +319,60 @@ def is_answerable(q: Question) -> bool:
 def _is_answerable(q: Question) -> bool:
     if q.question_type in {"DB", "Timing", "Meta", "PGR", "SS"}:
         return False
-    return bool(q.prompt_text)
+    # A question whose entire prompt is an image (e.g. "rate this ad" where the
+    # stimulus carries the content) still needs an answer.
+    return bool(q.prompt_text or q.image_urls)
+
+
+def collect_image_urls(
+    questions: list[Question], read_context: list[Question]
+) -> list[str]:
+    """Every image URL the respondent can currently see, deduped, in on-screen
+    order: scenario/instruction images first, then the new questions' images."""
+    urls: list[str] = []
+    for q in list(read_context) + list(questions):
+        for u in q.image_urls:
+            if u not in urls:
+                urls.append(u)
+    return urls
+
+
+def image_labels_for(image_urls: list[str]) -> dict[str, str]:
+    """url → "IMAGE n" labels shared by the prompt text and the attachments."""
+    return {u: f"IMAGE {i}" for i, u in enumerate(image_urls, 1)}
+
+
+def _image_note(q: Question, image_labels: dict[str, str] | None) -> str:
+    """Inline marker tying a question/context entry to its attached image(s)."""
+    if not image_labels or not q.image_urls:
+        return ""
+    labels = [image_labels[u] for u in q.image_urls if u in image_labels]
+    return f" [shows attached {', '.join(labels)}]" if labels else ""
+
+
+def _build_contents(
+    prompt: str, image_urls: list[str], image_labels: dict[str, str]
+) -> Any:
+    """Gemini `contents`: the prompt string alone, or prompt + labeled image
+    parts when the block has image stimuli. A failed image download degrades to
+    a text note so the session still completes (the model is told the image is
+    missing rather than silently seeing nothing)."""
+    if not image_urls:
+        return prompt
+    parts: list[Any] = [types.Part.from_text(text=prompt)]
+    for url in image_urls:
+        label = image_labels.get(url, url)
+        try:
+            data, mime = fetch_image(url)
+        except Exception as exc:
+            print(f"  [stimuli] failed to fetch {label} ({url}): {exc}", flush=True)
+            parts.append(types.Part.from_text(
+                text=f"\n{label}: (image failed to load — answer from the text alone)"
+            ))
+            continue
+        parts.append(types.Part.from_text(text=f"\n{label}:"))
+        parts.append(types.Part.from_bytes(data=data, mime_type=mime))
+    return parts
 
 
 def _build_prompt(
@@ -320,6 +381,7 @@ def _build_prompt(
     prior_answers: list[tuple[Question, Any]],
     read_context: list[Question],
     survey_name: str,
+    image_labels: dict[str, str] | None = None,
 ) -> str:
     lines = [
         "You are responding to a Qualtrics survey, staying fully in character as this persona:",
@@ -341,7 +403,7 @@ def _build_prompt(
             "no response required, but treat them as the situation you are now responding to):"
         )
         for i, q in enumerate(read_context, 1):
-            lines.append(f"  ({i}) {q.prompt_text}")
+            lines.append(f"  ({i}) {q.prompt_text}{_image_note(q, image_labels)}")
         lines.append("")
 
     if prior_answers:
@@ -354,7 +416,8 @@ def _build_prompt(
     lines.append("NEW QUESTIONS — answer each:")
     for q in questions:
         lines.append("")
-        lines.append(f"[{q.qid}] ({q.question_type}/{q.selector}) {q.prompt_text}")
+        lines.append(f"[{q.qid}] ({q.question_type}/{q.selector}) "
+                     f"{q.prompt_text}{_image_note(q, image_labels)}")
         if q.is_multiple_choice:
             for c in q.choices:
                 lines.append(f"  - choice_id={c.choice_id} (recode={c.recode}): {c.text}")

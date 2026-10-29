@@ -46,7 +46,8 @@ def patched(monkeypatch, tmp_path):
         ensemble.ModelSpec("Model B", "model_b", "openrouter", "m-b"),
         ensemble.ModelSpec("Model C", "model_c", "openrouter", "m-c"),
     ]
-    monkeypatch.setattr(ensemble, "roster_for", lambda is_smoke: list(roster))
+    monkeypatch.setattr(ensemble, "roster_for",
+                        lambda is_smoke, has_images=False: list(roster))
     monkeypatch.setattr(ensemble, "use_batch_for", lambda spec, is_smoke: False)
     monkeypatch.setattr(ensemble, "build_client", lambda spec, temperature=0.5: object())
 
