@@ -52,7 +52,7 @@ const FAQS: Array<{ q: string; a: string }> = [
   },
   {
     q: "What kinds of surveys can I test?",
-    a: "Any text-based Qualtrics survey: multiple choice, Likert and matrix questions, open-ended text, demographics and screeners, and branching, skip logic, or randomized conditions. AI respondents can't yet see image, video, or audio stimuli — multimodal support is coming.",
+    a: "Any Qualtrics survey built from text and images: multiple choice, Likert and matrix questions, open-ended text, demographics and screeners, and branching, skip logic, or randomized conditions. Image stimuli are supported too — AI respondents actually see embedded images, so you can pretest ad ratings, product photos, and other visual stimuli. Video and audio aren't supported yet.",
   },
   {
     q: "Do I still need real participants?",
@@ -306,24 +306,33 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-6 py-20">
           <h2 className="font-serif text-3xl font-bold text-center mb-3 text-slate-900">What you can pretest today</h2>
           <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-            If your survey is text-based, you can run it through Doppelganger right now. Our AI
-            respondents read and answer written questions — they can&apos;t yet see images or watch video.
+            If your survey is built from text and images, you can run it through Doppelganger right
+            now. Our AI respondents read written questions and actually see embedded images — they
+            can&apos;t yet watch video or listen to audio.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Works today */}
             <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
               <h3 className="font-semibold text-lg mb-5 text-slate-900">Works today</h3>
               <ul className="space-y-3">
-                {[
-                  "Multiple choice & checkboxes",
-                  "Likert scales & matrix / grid questions",
-                  "Open-ended text responses",
-                  "Demographic & screening questions",
-                  "Branching, skip logic & randomized conditions",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-slate-700">
+                {([
+                  { label: "Multiple choice & checkboxes" },
+                  { label: "Likert scales & matrix / grid questions" },
+                  { label: "Open-ended text responses" },
+                  { label: "Demographic & screening questions" },
+                  { label: "Branching, skip logic & randomized conditions" },
+                  { label: "Image stimuli (e.g. rating an ad or product photo)", isNew: true },
+                ] as Array<{ label: string; isNew?: boolean }>).map((item) => (
+                  <li key={item.label} className="flex items-start gap-3 text-sm text-slate-700">
                     <span className="text-green-600 font-bold mt-0.5">✓</span>
-                    <span>{item}</span>
+                    <span>
+                      {item.label}
+                      {item.isNew && (
+                        <span className="ml-2 align-middle text-xs font-semibold uppercase tracking-wider text-green-700 bg-green-50 border border-green-200 rounded-full px-2 py-0.5">
+                          New
+                        </span>
+                      )}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -338,7 +347,6 @@ export default function Home() {
               </div>
               <ul className="space-y-3">
                 {[
-                  "Image stimuli (e.g. rating an ad or product photo)",
                   "Video stimuli",
                   "Audio clips",
                   "Interactive tasks — heatmaps, drag-and-drop, sliders",
@@ -350,8 +358,8 @@ export default function Home() {
                 ))}
               </ul>
               <p className="text-sm text-slate-500 mt-5 pt-4 border-t border-slate-200 leading-relaxed">
-                We&apos;re building multimodal pretesting — soon your AI respondents will see images
-                and watch video too.
+                Your AI respondents already see images — full multimodal pretesting is next, with
+                video and audio on the way.
               </p>
             </div>
           </div>
