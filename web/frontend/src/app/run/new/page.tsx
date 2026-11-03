@@ -86,13 +86,23 @@ export default function NewRun() {
               onChange={(e) => set("qualtrics_token", e.target.value)}
               className="input"
             />
-            <button
-              type="button"
-              onClick={() => setShowTokenHelp((v) => !v)}
-              className="text-blue-400 hover:text-blue-300 text-xs mt-1.5 underline underline-offset-2"
-            >
-              {showTokenHelp ? "Hide instructions" : "How do I find my API token?"}
-            </button>
+            <div className="flex items-center gap-4">
+              <button
+                type="button"
+                onClick={() => setShowTokenHelp((v) => !v)}
+                className="text-blue-400 hover:text-blue-300 text-xs mt-1.5 underline underline-offset-2"
+              >
+                {showTokenHelp ? "Hide instructions" : "How do I find my API token?"}
+              </button>
+              <a
+                href="/security"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 text-xs mt-1.5 underline underline-offset-2"
+              >
+                What we do with your token
+              </a>
+            </div>
             {showTokenHelp && (
               <div className="mt-2 bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-xs text-gray-300 leading-relaxed space-y-1">
                 <p className="font-medium text-white mb-2">Finding your Qualtrics API token:</p>

@@ -510,12 +510,17 @@ export default function Home() {
       <footer className="border-t border-slate-200 text-slate-500 text-sm py-8">
         <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <span>© {new Date().getFullYear()} Doppelganger · A survey pretesting tool · Not affiliated with Qualtrics or Google</span>
-          <a
-            href="mailto:hello@doppelgangerlabs.com"
-            className="text-blue-600 hover:text-blue-700 font-medium"
-          >
-            hello@doppelgangerlabs.com
-          </a>
+          <div className="flex items-center gap-5">
+            <a href="/security" className="text-blue-600 hover:text-blue-700 font-medium">
+              Security
+            </a>
+            <a
+              href="mailto:hello@doppelgangerlabs.com"
+              className="text-blue-600 hover:text-blue-700 font-medium"
+            >
+              hello@doppelgangerlabs.com
+            </a>
+          </div>
         </div>
       </footer>
     </main>
