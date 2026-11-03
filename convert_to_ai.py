@@ -38,6 +38,8 @@ SOFT_STRIP_TAGS = {
 # API caches the survey state at activation; deletions made afterward don't
 # propagate, even if survey-definitions GET shows them removed (Qualtrics bug,
 # discovered 2026-05-25 on Hiding Success Full).
+# Sliders are converted by convert_sliders_to_te() before this strip runs; the
+# entries here are a safety net for any slider the converter didn't catch.
 INCOMPATIBLE_TYPE_SELECTORS = {
     ("Slider", "STAR"),
     ("Slider", "HSLIDER"),
@@ -381,6 +383,118 @@ def convert_matrix_to_mc(client: Qualtrics, survey_id: str) -> list[tuple[str, l
     return converted
 
 
+def _slider_bounds(q: dict) -> tuple[float, float, int]:
+    """Extract (min, max, num_decimals) from a Slider question's Configuration.
+
+    Qualtrics stores these as strings or numbers depending on which editor
+    created the survey; missing values fall back to the editor defaults
+    (0-100, whole numbers). STAR sliders that carry no explicit bounds rate
+    1..NumStars instead.
+    """
+    cfg = q.get("Configuration", {}) or {}
+
+    def _num(val: Any, default: float) -> float:
+        try:
+            return float(val)
+        except (TypeError, ValueError):
+            return float(default)
+
+    if q.get("Selector") == "STAR" and cfg.get("CSSliderMax") in (None, ""):
+        return 1.0, _num(cfg.get("NumStars"), 5), 0
+
+    lo = _num(cfg.get("CSSliderMin"), 0)
+    hi = _num(cfg.get("CSSliderMax"), 100)
+    decimals = int(_num(cfg.get("NumDecimals"), 0))
+    return lo, hi, decimals
+
+
+def _fmt_bound(v: float) -> str:
+    return str(int(v)) if float(v).is_integer() else str(v)
+
+
+def convert_sliders_to_te(client: Qualtrics, survey_id: str) -> list[tuple[str, list[str]]]:
+    """Convert Slider questions into numeric text-entry questions.
+
+    The Sessions API rejects every slider selector (STAR/HSLIDER/HBAR/VRTL),
+    but sliders are often the study's key DVs. Rather than strip them, each
+    slider statement becomes a single-line text-entry question asking for a
+    number in the slider's min-max range — same granularity, same scale. The
+    "Please enter the number" phrasing deliberately matches the simulator's
+    _NUMERIC_HINTS so LLM answers get reduced to the bare number on submit.
+
+    Runs before activation. New questions land in the same block as the
+    original slider (preserving the experimental condition). A single-statement
+    slider keeps the original DataExportTag so the response column matches the
+    source survey; multi-statement sliders export as tag_rowtag, mirroring
+    convert_matrix_to_mc. The original is deleted BEFORE creating replacements
+    so the kept tag doesn't collide. Returns list of (original_qid, [new_qids]).
+    """
+    defn = client.get_definition(survey_id)
+    questions = defn.get("Questions", {}) or {}
+    blocks = defn.get("Blocks", {}) or {}
+
+    qid_block: dict[str, str] = {}
+    for bid, b in blocks.items():
+        for e in b.get("BlockElements", []) or []:
+            if e.get("Type") == "Question" and e.get("QuestionID"):
+                qid_block[e["QuestionID"]] = bid
+
+    converted: list[tuple[str, list[str]]] = []
+    for qid, q in list(questions.items()):
+        if q.get("QuestionType") != "Slider":
+            continue
+
+        block_id = qid_block.get(qid)
+        stem = q.get("QuestionText", "")
+        tag = q.get("DataExportTag", "") or qid
+        rows = q.get("Choices", {}) or {}
+        row_tags = q.get("ChoiceDataExportTags") or {}
+        row_order = [str(x) for x in (q.get("ChoiceOrder") or list(rows.keys()))]
+
+        lo, hi, decimals = _slider_bounds(q)
+        note = (f"Please enter the number between {_fmt_bound(lo)} and "
+                f"{_fmt_bound(hi)} that best represents your answer.")
+        if decimals:
+            note += f" Up to {decimals} decimal place(s) allowed."
+
+        # Each Choice is one slider statement; a slider with no statements is a
+        # single item on the stem alone.
+        if rows:
+            items = [(rk, rows[rk].get("Display", "")) for rk in row_order if rk in rows]
+        else:
+            items = [(None, "")]
+
+        client.delete_question(survey_id, qid)
+
+        new_qids: list[str] = []
+        for rk, row_text in items:
+            qtext = stem
+            if row_text:
+                qtext += f"<br><strong>{row_text}</strong>"
+            qtext += f"<br><em>{note}</em>"
+            if rk is None or len(items) == 1:
+                new_tag = tag
+            else:
+                row_tag = (row_tags.get(rk) if isinstance(row_tags, dict) else None) or rk
+                new_tag = f"{tag}_{row_tag}"
+            payload = {
+                "QuestionText": qtext,
+                "QuestionText_Unsafe": qtext,
+                "DataExportTag": new_tag,
+                "QuestionType": "TE",
+                "Selector": "SL",
+                "Configuration": {"QuestionDescriptionOption": "UseText"},
+                "QuestionDescription": (row_text or stem or qid)[:100],
+                "Validation": {"Settings": {
+                    "ForceResponse": "OFF", "ForceResponseType": "ON", "Type": "None"}},
+                "Language": [],
+            }
+            new_qids.append(client.create_question(survey_id, payload, block_id))
+
+        converted.append((qid, new_qids))
+    return converted
+
+
 def pre_activation_flow_strip(client: Qualtrics, survey_id: str) -> list[str]:
     """Neutralize EndSurvey flow elements the Sessions API rejects.
 
@@ -549,6 +663,12 @@ def main() -> int:
         for oq, nqs in mtx:
             print(f"  - {oq} → {len(nqs)} MC questions")
         print(f"  total matrices converted: {len(mtx)}")
+
+        print("\nConverting Slider questions to numeric text entry...")
+        sld = convert_sliders_to_te(client, new_id)
+        for oq, nqs in sld:
+            print(f"  - {oq} → {len(nqs)} TE questions")
+        print(f"  total sliders converted: {len(sld)}")
 
         print("\nPre-activation strip (incompatible types + soft-strip tags)...")
         pre = pre_activation_strip(client, new_id, do_soft=not args.no_soft_strip)

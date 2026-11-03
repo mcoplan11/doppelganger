@@ -322,6 +322,7 @@ export default function Home() {
                   { label: "Demographic & screening questions" },
                   { label: "Branching, skip logic & randomized conditions" },
                   { label: "Image stimuli (e.g. rating an ad or product photo)", isNew: true },
+                  { label: "Sliders & star ratings (converted to numeric entry)", isNew: true },
                 ] as Array<{ label: string; isNew?: boolean }>).map((item) => (
                   <li key={item.label} className="flex items-start gap-3 text-sm text-slate-700">
                     <span className="text-green-600 font-bold mt-0.5">✓</span>
@@ -349,7 +350,7 @@ export default function Home() {
                 {[
                   "Video stimuli",
                   "Audio clips",
-                  "Interactive tasks — heatmaps, drag-and-drop, sliders",
+                  "Interactive tasks — heatmaps, drag-and-drop",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-slate-500">
                     <span className="text-slate-300 font-bold mt-0.5">○</span>

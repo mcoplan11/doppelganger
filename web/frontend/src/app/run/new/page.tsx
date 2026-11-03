@@ -141,8 +141,8 @@ export default function NewRun() {
           <div className="bg-gray-900 border border-gray-700 rounded-xl p-4 text-sm">
             <p className="text-gray-300 font-medium mb-1">An AI-compatible survey copy will be created</p>
             <p className="text-gray-500 text-xs leading-relaxed mb-3">
-              Some questions aren&apos;t compatible with AI respondents — sliders, CAPTCHAs, and redirect
-              flows will be modified or removed. We create a separate copy of your survey (named
+              Some questions aren&apos;t compatible with AI respondents — sliders are converted to
+              numeric entry (same scale), while CAPTCHAs and redirect flows are removed. We create a separate copy of your survey (named
               &ldquo;[Your Survey Name] - AI Copy&rdquo;) so your original is never touched. The copy
               will appear in your Qualtrics account and can be deleted after the run.
             </p>

@@ -25,15 +25,29 @@ Options:
 - `--no-soft-strip` — keep demographics, consent, attention checks (only strip mechanically-incompatible types). Conservative.
 - `--keep-on-failure` — if conversion fails, leave the partial copy in your account for inspection instead of deleting it.
 
+## What it converts
+
+The Sessions API rejects these outright, but they're often the study's key DVs,
+so instead of stripping them the converter rebuilds them as compatible types:
+
+- `Matrix/Likert` → one single-answer MC question per row, with the matrix's
+  rating scale as the choices (`convert_matrix_to_mc`). Export tags become
+  `tag_rowtag`.
+- `Slider/*` (HSLIDER, STAR, HBAR, VRTL) → one numeric text-entry question per
+  slider statement, asking for a number in the slider's min–max range
+  (`convert_sliders_to_te`). Same scale and granularity; the "Please enter the
+  number" phrasing matches the simulator's numeric hints so LLM answers are
+  reduced to the bare number. Single-statement sliders keep the original export
+  tag; multi-statement sliders export as `tag_rowtag`.
+
 ## What it strips
 
 ### Always (Sessions API rejects these — would 400 the run)
-- `Slider/*` (any sub-type: HSLIDER, STAR, HBAR, VRTL)
 - `Timing/*` (PageTimer, FirstClick, LastClick)
 - `Captcha/V2`
-- `Matrix/Likert`
 - `Meta/Browser`
 - `TE/PW`
+- Any `Slider/*` or `Matrix/Likert` the conversion pass didn't catch (safety net)
 
 If the API surfaces a new incompatible type after the conversion (`⚠️ Sessions API rejected additional types AFTER activation`), add it to `INCOMPATIBLE_TYPE_SELECTORS` in `convert_to_ai.py`.
 
