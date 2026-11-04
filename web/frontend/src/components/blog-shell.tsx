@@ -14,6 +14,7 @@ export function BlogShell({ children }: { children: ReactNode }) {
         <div className="flex items-center gap-6 text-sm font-medium">
           <Link href="/research" className="text-slate-600 hover:text-slate-900">Research</Link>
           <Link href="/blog" className="text-slate-600 hover:text-slate-900">Blog</Link>
+          <Link href="/biases" className="text-slate-600 hover:text-slate-900">Biases</Link>
           <Link href="/sample-size-calculator" className="text-slate-600 hover:text-slate-900">Calculator</Link>
           <Link href="/security" className="text-slate-600 hover:text-slate-900">Security</Link>
           <Link href="/#login" className="text-blue-700 hover:text-blue-800">Sign in →</Link>

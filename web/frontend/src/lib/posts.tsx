@@ -285,7 +285,14 @@ export const POSTS: Post[] = [
           >
             reproduced 15.5 of 17 known human effects (~91%)
           </Link>
-          {" "}— framing, anchoring, conjunction fallacy, sunk cost, and more. Economists have found
+          {" "}— framing, anchoring, conjunction fallacy, sunk cost, and more (see the{" "}
+          <Link
+            href="/biases"
+            className="text-blue-700 hover:text-blue-800 underline underline-offset-2"
+          >
+            bias-by-bias breakdown
+          </Link>
+          ). Economists have found
           LLMs reproducing classic results as{" "}
           <Ext href="https://www.nber.org/papers/w31122">simulated economic agents</Ext> (Horton,
           2023). The pattern across studies: well-established, robust human effects usually
