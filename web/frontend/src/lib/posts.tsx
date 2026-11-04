@@ -418,6 +418,13 @@ export const POSTS: Post[] = [
             className="text-blue-700 hover:text-blue-800 underline underline-offset-2"
           >
             power-analysis primer
+          </Link>{" "}
+          — or plug your own study into the free{" "}
+          <Link
+            href="/sample-size-calculator"
+            className="text-blue-700 hover:text-blue-800 underline underline-offset-2"
+          >
+            sample size &amp; cost calculator
           </Link>
           .
         </P>
@@ -609,8 +616,15 @@ export const POSTS: Post[] = [
         <P>
           You can&apos;t derive your final sample size from AI respondents — but you can use a cheap
           AI pretest to sanity-check direction and catch a manipulation that does nothing before you
-          commit to a power analysis at all. Use tools like{" "}
-          <Ext href="https://www.gpower.hhu.de/">G*Power</Ext> for the formal calculation, and use a
+          commit to a power analysis at all. Try our free{" "}
+          <Link
+            href="/sample-size-calculator"
+            className="text-blue-700 hover:text-blue-800 underline underline-offset-2"
+          >
+            sample size calculator
+          </Link>{" "}
+          for the common two-condition case (with a fielding-cost estimate), use{" "}
+          <Ext href="https://www.gpower.hhu.de/">G*Power</Ext> for complex designs, and use a
           pretest to make sure the thing you&apos;re powering for is actually there.
         </P>
       </>
