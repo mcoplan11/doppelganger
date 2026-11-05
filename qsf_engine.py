@@ -93,7 +93,13 @@ def parse_qsf(qsf: str | bytes | dict) -> ParsedQsf:
     if not isinstance(qsf, dict) or "SurveyElements" not in qsf:
         raise QsfError(["File is not a Qualtrics .qsf export (no SurveyElements)."])
 
-    name = (qsf.get("SurveyEntry") or {}).get("SurveyName", "Uploaded survey")
+    entry = qsf.get("SurveyEntry") or {}
+    name = entry.get("SurveyName", "Uploaded survey")
+    # Image stimuli: QSFs sometimes embed <img> with brand-relative src paths
+    # (/ControlPanel/Graphic.php?IM=...). The brand's vanity hostname serves
+    # those publicly (anonymous respondents load them), so resolve against it.
+    brand = (entry.get("SurveyBrandID") or "").strip()
+    origin = f"https://{brand}.qualtrics.com" if brand else ""
 
     question_payloads: dict[str, dict] = {}
     blocks: dict[str, dict] = {}
@@ -127,7 +133,7 @@ def parse_qsf(qsf: str | bytes | dict) -> ParsedQsf:
         "Blocks": blocks,
         "SurveyFlow": {"Flow": flow},
     }
-    definition = _parse_survey_definition("qsf_local", def_payload, origin="")
+    definition = _parse_survey_definition("qsf_local", def_payload, origin=origin)
 
     questions: dict[str, Question] = {}
     display_logic: dict[str, dict] = {}
@@ -253,6 +259,18 @@ def validate_qsf(parsed: ParsedQsf) -> list[str]:
 
     for qid, dl in parsed.display_logic.items():
         _validate_logic(dl, f"display logic on {qid}", add)
+
+    # Image stimuli: never drop images silently. If a question's HTML contains
+    # an <img> that extract_image_urls couldn't resolve to an absolute URL,
+    # surface it — for stimulus studies the image IS the manipulation.
+    for qid, q in parsed.questions.items():
+        payload = parsed.raw_question_payloads.get(qid.split("_")[0]) or {}
+        html = payload.get("QuestionText") or ""
+        if "<img" in html.lower() and not q.image_urls:
+            tag = payload.get("DataExportTag") or qid
+            add(f"Question “{tag}” embeds an image whose URL we can't resolve "
+                "from the .qsf. Run this survey via the Qualtrics API connection, "
+                "or edit the image to use a full https:// URL and re-export.")
 
     return problems
 

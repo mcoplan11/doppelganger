@@ -205,6 +205,37 @@ def test_malformed_input_raises():
         parse_qsf(json.dumps({"hello": "world"}))
 
 
+def test_absolute_image_urls_flow_through():
+    qsf = _make_qsf()
+    qsf["SurveyElements"][0]["Payload"]["QuestionText"] = (
+        'Rate this ad. <img src="https://cdn.example.com/ad.png">')
+    p = parse_qsf(json.dumps(qsf))
+    assert validate_qsf(p) == []
+    assert p.questions["QID1"].image_urls == ["https://cdn.example.com/ad.png"]
+    assert p.definition.has_image_stimuli  # drives vision-roster routing
+
+
+def test_relative_image_urls_resolve_against_brand():
+    qsf = _make_qsf()
+    qsf["SurveyEntry"]["SurveyBrandID"] = "ubc"
+    qsf["SurveyElements"][0]["Payload"]["QuestionText"] = (
+        'Look: <img src="/ControlPanel/Graphic.php?IM=IM_abc123">')
+    p = parse_qsf(json.dumps(qsf))
+    assert validate_qsf(p) == []
+    assert p.questions["QID1"].image_urls == [
+        "https://ubc.qualtrics.com/ControlPanel/Graphic.php?IM=IM_abc123"]
+
+
+def test_unresolvable_image_fails_validation_loudly():
+    qsf = _make_qsf()
+    qsf["SurveyEntry"].pop("SurveyBrandID", None)
+    qsf["SurveyElements"][0]["Payload"]["QuestionText"] = (
+        'Look: <img src="/ControlPanel/Graphic.php?IM=IM_abc123">')
+    p = parse_qsf(json.dumps(qsf))
+    problems = validate_qsf(p)
+    assert any("image" in s.lower() for s in problems)
+
+
 def test_selected_choice_branch_condition():
     """Branch on a question choice selected in a PRIOR block."""
     qsf = _make_qsf()
