@@ -54,6 +54,13 @@ export const api = {
     platform?: string;
   }) => request<Run>("/runs", { method: "POST", body: JSON.stringify(body) }),
 
+  createQsfRun: (body: {
+    qsf_content: string;
+    n_participants: number;
+    smoke_test?: boolean;
+    platform?: string;
+  }) => request<Run>("/runs/qsf", { method: "POST", body: JSON.stringify(body) }),
+
   listRuns: () => request<Run[]>("/runs"),
   getRun: (id: number) => request<Run>(`/runs/${id}`),
   getResults: (id: number) => request<ResultsSummary | EnsembleResults>(`/runs/${id}/results`),

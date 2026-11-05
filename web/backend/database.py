@@ -79,6 +79,10 @@ class Run(Base):
     is_smoke_test = Column(Boolean, default=False)
     # Pre-seeded demo run (see sample_run.py) — never touched Qualtrics or an LLM.
     is_sample = Column(Boolean, default=False)
+    # "qualtrics" (API connection, AI copies in the user's account) or
+    # "qsf" (uploaded .qsf run locally; results in dashboard/CSV only).
+    mode = Column(String, default="qualtrics")
+    qsf_json = Column(Text)  # the uploaded .qsf content, qsf-mode runs only
     platform = Column(String, default="prolific")  # prolific | mturk
 
     # run lifecycle: converting | smoke_test | awaiting_approval | running | done | failed
@@ -130,6 +134,8 @@ def create_tables():
         "ALTER TABLE purchases ADD COLUMN paypal_order_id VARCHAR",
         "ALTER TABLE runs ADD COLUMN is_sample BOOLEAN DEFAULT FALSE",
         "ALTER TABLE runs ADD COLUMN responses_json TEXT",
+        "ALTER TABLE runs ADD COLUMN mode VARCHAR DEFAULT 'qualtrics'",
+        "ALTER TABLE runs ADD COLUMN qsf_json TEXT",
         "CREATE UNIQUE INDEX IF NOT EXISTS ix_purchases_paypal_order_id "
         "ON purchases (paypal_order_id)",
     ]

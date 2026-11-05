@@ -86,13 +86,24 @@ export default function Security() {
           </ul>
         </div>
 
-        <H2>Why we need API access at all</H2>
+        <H2>If you&apos;d rather not share a token at all</H2>
         <P>
-          Doppelganger runs AI respondents through the official Qualtrics Sessions API, which plays
-          your survey back server-side — your own randomizer assigns conditions and your own
-          branching and skip logic fire, exactly as they would for a human participant. That
-          fidelity is the point of the product, and it is only possible through the API. A QSF file
-          upload alone would not let Qualtrics run your survey logic.
+          You can skip the API entirely: upload your survey&apos;s .qsf export (Tools &rarr;
+          Import/Export &rarr; Export Survey) and Doppelganger runs it through our own survey
+          engine — randomizer, branching, and display logic included. Nothing touches any
+          Qualtrics account, no credential changes hands, and results arrive in your dashboard
+          and as a CSV download. The rest of this page covers the API connection mode, which you
+          only need if you want AI responses recorded in your own Qualtrics Data &amp; Analysis
+          tab.
+        </P>
+
+        <H2>Why the API connection exists</H2>
+        <P>
+          In API mode, Doppelganger runs AI respondents through the official Qualtrics Sessions
+          API, which plays your survey back server-side — your own randomizer assigns conditions
+          and your own branching and skip logic fire, exactly as they would for a human
+          participant — and responses land in a copy inside your own account, where you analyze
+          them like any dataset.
         </P>
 
         <H2>Every endpoint we call</H2>

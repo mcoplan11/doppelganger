@@ -529,6 +529,81 @@ def create_run(
     return _run_to_dict(run)
 
 
+class QsfRunRequest(BaseModel):
+    qsf_content: str          # the .qsf file text (QSF exports are JSON)
+    n_participants: int
+    smoke_test: bool = False
+    platform: str = "prolific"
+
+
+_QSF_MAX_BYTES = 20 * 1024 * 1024  # generous; big academic QSFs are a few MB
+
+
+@app.post("/runs/qsf")
+def create_qsf_run(
+    body: QsfRunRequest,
+    background_tasks: BackgroundTasks,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    """Create a run from an uploaded .qsf — no Qualtrics API token needed.
+
+    The survey is validated against the local engine's supported-feature
+    whitelist up front, so unsupported surveys fail here with a specific
+    reason instead of mid-run.
+    """
+    if len(body.qsf_content.encode("utf-8", errors="ignore")) > _QSF_MAX_BYTES:
+        raise HTTPException(status_code=400, detail="QSF file is too large (20 MB max).")
+
+    # simulator_runner's import puts the repo root on sys.path for qsf_engine.
+    from simulator_runner import run_simulation as _rs  # noqa: F401
+    from qsf_engine import QsfError, parse_qsf, validate_qsf
+
+    try:
+        parsed = parse_qsf(body.qsf_content)
+    except QsfError as exc:
+        raise HTTPException(status_code=400, detail=" ".join(exc.problems))
+    problems = validate_qsf(parsed)
+    if problems:
+        raise HTTPException(
+            status_code=400,
+            detail="This survey uses features QSF mode can't run yet: "
+                   + " | ".join(problems[:5])
+                   + " — You can run it via the Qualtrics API connection instead.",
+        )
+
+    n = 3 if body.smoke_test else body.n_participants
+    if n < 1 or n > 1000:
+        raise HTTPException(status_code=400, detail="n_participants must be 1–1000.")
+
+    if not body.smoke_test:
+        bal = db.query(CreditBalance).filter(CreditBalance.user_id == user.id).first()
+        if not bal or bal.balance < n:
+            raise HTTPException(
+                status_code=402,
+                detail=f"Not enough credits. You have {bal.balance if bal else 0}, need {n}.",
+            )
+
+    run = Run(
+        user_id=user.id,
+        mode="qsf",
+        qsf_json=body.qsf_content,
+        original_survey_id=(parsed.definition.name or "Uploaded survey")[:80],
+        qualtrics_datacenter="",
+        qualtrics_token_enc="",
+        n_participants=n,
+        is_smoke_test=body.smoke_test,
+        platform=body.platform,
+        status="converting",
+    )
+    db.add(run)
+    db.commit()
+    db.refresh(run)
+
+    background_tasks.add_task(run_simulation, run.id)
+    return _run_to_dict(run)
+
+
 # A run that's been active far longer than any plausible runtime was almost
 # certainly orphaned by a backend restart (simulations run as in-process
 # background tasks, so a redeploy kills them mid-flight and nothing ever updates
@@ -805,6 +880,7 @@ def _run_to_dict(run: Run) -> dict:
         "is_smoke_test": run.is_smoke_test,
         "is_sample": bool(run.is_sample),
         "platform": run.platform,
+        "mode": run.mode or "qualtrics",
         "status": run.status,
         "credits_used": run.credits_used,
         "error": run.error,

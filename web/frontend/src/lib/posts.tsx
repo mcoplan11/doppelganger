@@ -166,6 +166,14 @@ export const POSTS: Post[] = [
           On university (&ldquo;brand&rdquo;) accounts, API access is a per-user permission that
           your Qualtrics brand administrator has to switch on. Here&apos;s how to get it.
         </P>
+        <P>
+          <em>
+            Update: if you&apos;re here because of Doppelganger specifically, you no longer need
+            API access at all — you can upload your survey&apos;s .qsf export directly and skip
+            this entire process. The guide below still applies to the API connection mode and any
+            other tool that needs a token.
+          </em>
+        </P>
 
         <H2>Step 1: Find your brand administrator</H2>
         <P>

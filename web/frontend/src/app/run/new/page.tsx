@@ -18,6 +18,8 @@ export default function NewRun() {
   const [copyConsent, setCopyConsent] = useState(true);
   const [showTokenHelp, setShowTokenHelp] = useState(false);
   const [tokenSaved, setTokenSaved] = useState(false);
+  const [mode, setMode] = useState<"qualtrics" | "qsf">("qualtrics");
+  const [qsfFile, setQsfFile] = useState<{ name: string; content: string } | null>(null);
 
   useEffect(() => {
     api.me().then((me) => {
@@ -39,13 +41,36 @@ export default function NewRun() {
     setLoading(true);
     setError("");
     try {
-      const run = await api.createRun({ ...form, smoke_test: smoke });
+      const run =
+        mode === "qsf"
+          ? await api.createQsfRun({
+              qsf_content: qsfFile!.content,
+              n_participants: form.n_participants,
+              smoke_test: smoke,
+              platform: form.platform,
+            })
+          : await api.createRun({ ...form, smoke_test: smoke });
       router.push(`/run/${run.id}`);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
       setLoading(false);
     }
   }
+
+  async function onQsfPicked(file: File | undefined) {
+    setError("");
+    if (!file) {
+      setQsfFile(null);
+      return;
+    }
+    const content = await file.text();
+    setQsfFile({ name: file.name, content });
+  }
+
+  const canSubmit =
+    mode === "qsf"
+      ? Boolean(qsfFile)
+      : Boolean(form.survey_url && form.qualtrics_token && copyConsent);
 
   return (
     <main className="min-h-screen bg-gray-950 text-white">
@@ -67,7 +92,55 @@ export default function NewRun() {
           It only takes a couple of minutes and costs nothing.
         </div>
 
+        {/* Mode toggle: connect the Qualtrics API, or upload a .qsf export */}
+        <div className="flex rounded-lg border border-gray-700 overflow-hidden mb-6 text-sm font-medium">
+          <button
+            type="button"
+            onClick={() => setMode("qualtrics")}
+            className={`flex-1 py-2.5 transition ${
+              mode === "qualtrics" ? "bg-blue-600 text-white" : "bg-gray-900 text-gray-400 hover:text-gray-200"
+            }`}
+          >
+            Connect Qualtrics
+          </button>
+          <button
+            type="button"
+            onClick={() => setMode("qsf")}
+            className={`flex-1 py-2.5 transition ${
+              mode === "qsf" ? "bg-blue-600 text-white" : "bg-gray-900 text-gray-400 hover:text-gray-200"
+            }`}
+          >
+            Upload .qsf file
+          </button>
+        </div>
+        {mode === "qsf" && (
+          <p className="text-gray-500 text-xs leading-relaxed -mt-3 mb-6">
+            No API token needed. Export your survey from Qualtrics (Survey → Tools → Import/Export
+            → Export Survey) and upload the .qsf here. Your survey logic — randomizer, branching,
+            display logic — runs on our servers; results appear in your dashboard and as a CSV
+            download. Your Qualtrics account is never touched.
+          </p>
+        )}
+
         <div className="flex flex-col gap-5">
+          {mode === "qsf" && (
+            <Field label="Survey file (.qsf)" hint="Exported from Qualtrics via Tools → Import/Export → Export Survey.">
+              <label className="flex items-center gap-3 cursor-pointer bg-gray-900 border border-gray-700 hover:border-gray-500 rounded-lg px-4 py-3 transition">
+                <input
+                  type="file"
+                  accept=".qsf,application/json"
+                  onChange={(e) => onQsfPicked(e.target.files?.[0])}
+                  className="hidden"
+                />
+                <span className="text-sm text-blue-400 font-medium">Choose file</span>
+                <span className="text-sm text-gray-400 truncate">
+                  {qsfFile ? qsfFile.name : "No file selected"}
+                </span>
+              </label>
+            </Field>
+          )}
+
+          {mode === "qualtrics" && (<>
           <Field label="Qualtrics survey URL or ID" hint="e.g. https://mccombs.qualtrics.com/jfe/form/SV_abc123 or just SV_abc123">
             <input
               type="text"
@@ -124,6 +197,7 @@ export default function NewRun() {
               className="input"
             />
           </Field>
+          </>)}
 
           <Field label="Recruitment platform" hint="Where you plan to recruit real participants. This helps us tailor the AI personas to match your sample.">
             <select
@@ -147,7 +221,21 @@ export default function NewRun() {
             />
           </Field>
 
-          {/* AI copy disclosure */}
+          {/* Mode-specific disclosure */}
+          {mode === "qsf" && (
+            <div className="bg-gray-900 border border-gray-700 rounded-xl p-4 text-sm">
+              <p className="text-gray-300 font-medium mb-1">How .qsf runs work</p>
+              <p className="text-gray-500 text-xs leading-relaxed">
+                Your survey runs through our local survey engine — nothing is created in any
+                Qualtrics account, and responses are available in your dashboard and as a CSV
+                download. Sliders are converted to numeric entry (same scale); CAPTCHAs and
+                timers are skipped. Surveys using Loop &amp; Merge or quotas aren&apos;t supported
+                in .qsf mode yet — you&apos;ll get a specific message before any credits are used,
+                and you can run those via the Qualtrics connection instead.
+              </p>
+            </div>
+          )}
+          {mode === "qualtrics" && (
           <div className="bg-gray-900 border border-gray-700 rounded-xl p-4 text-sm">
             <p className="text-gray-300 font-medium mb-1">An AI-compatible survey copy will be created</p>
             <p className="text-gray-500 text-xs leading-relaxed mb-3">
@@ -173,6 +261,7 @@ export default function NewRun() {
               </p>
             )}
           </div>
+          )}
 
           {error && (
             <div className="bg-red-900/30 border border-red-700 text-red-300 rounded-lg px-4 py-3 text-sm">
@@ -183,14 +272,14 @@ export default function NewRun() {
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
             <button
               onClick={() => submit(true)}
-              disabled={loading || !form.survey_url || !form.qualtrics_token || !copyConsent}
+              disabled={loading || !canSubmit}
               className="flex-1 border border-gray-700 hover:border-gray-500 disabled:opacity-40 text-gray-200 font-medium py-3 rounded-lg transition"
             >
               {loading ? "Starting…" : "Trial run (3 participants, free)"}
             </button>
             <button
               onClick={() => submit(false)}
-              disabled={loading || !form.survey_url || !form.qualtrics_token || !copyConsent}
+              disabled={loading || !canSubmit}
               className="flex-1 bg-blue-600 hover:bg-blue-500 disabled:opacity-40 text-white font-semibold py-3 rounded-lg transition"
             >
               {loading ? "Starting…" : `Run ${form.n_participants} participants`}

@@ -323,8 +323,10 @@ def run_simulation(run_id: int) -> None:
         user_id = run.user_id
         user_email = run.user.email if run.user else "unknown"
         original_survey_id = run.original_survey_id
+        mode = run.mode or "qualtrics"
+        qsf_json = run.qsf_json
         qualtrics_datacenter = run.qualtrics_datacenter
-        qualtrics_token = decrypt(run.qualtrics_token_enc)
+        qualtrics_token = "" if mode == "qsf" else decrypt(run.qualtrics_token_enc)
         n_participants = run.n_participants
         is_smoke = run.is_smoke_test
         started_at = datetime.now(timezone.utc)
@@ -351,7 +353,7 @@ def run_simulation(run_id: int) -> None:
         _run_inner(
             run_id, user_id, user_email, original_survey_id,
             qualtrics_datacenter, qualtrics_token, n_participants, is_smoke,
-            started_at,
+            started_at, mode=mode, qsf_json=qsf_json,
         )
     except Exception as exc:
         import traceback
@@ -397,6 +399,8 @@ def _run_inner(
     n_participants: int,
     is_smoke: bool,
     started_at: datetime,
+    mode: str = "qualtrics",
+    qsf_json: str | None = None,
 ) -> None:
     """Run the survey through every model in the ensemble.
 
@@ -414,17 +418,28 @@ def _run_inner(
 
     base_url = f"https://{qualtrics_datacenter}.qualtrics.com/API/v3"
 
+    # QSF mode: the survey runs through the local flow engine — parsed once
+    # here, one engine instance per model below (so EvenPresentation balancing
+    # is per model run, matching the per-model Qualtrics copies in API mode).
+    qsf_parsed = None
+    if mode == "qsf":
+        from qsf_engine import parse_qsf
+        qsf_parsed = parse_qsf(qsf_json or "")
+
     # Image surveys route to the vision roster (see ensemble.VISION_ROSTER);
     # detection reads the ORIGINAL survey definition, before any AI copies
     # exist. A failed probe falls back to the text roster — if the definition
     # is unreadable the run will fail loudly at conversion anyway.
     has_images = False
-    try:
-        probe = QualtricsClient(base_url, qualtrics_token)
-        has_images = probe.get_survey_definition(original_survey_id).has_image_stimuli
-    except Exception as exc:
-        print(f"[run {run_id}] image-stimuli detection failed "
-              f"(assuming text-only): {exc}", flush=True)
+    if qsf_parsed is not None:
+        has_images = qsf_parsed.definition.has_image_stimuli
+    else:
+        try:
+            probe = QualtricsClient(base_url, qualtrics_token)
+            has_images = probe.get_survey_definition(original_survey_id).has_image_stimuli
+        except Exception as exc:
+            print(f"[run {run_id}] image-stimuli detection failed "
+                  f"(assuming text-only): {exc}", flush=True)
     if has_images:
         print(f"[run {run_id}] survey contains image stimuli — using vision roster",
               flush=True)
@@ -437,6 +452,10 @@ def _run_inner(
     output_base.mkdir(parents=True, exist_ok=True)
 
     _set_status(run_id, "converting")
+    if qsf_parsed is not None:
+        # No conversion step in QSF mode — go straight to running so the UI
+        # doesn't sit on "converting" while sessions spin up.
+        _set_status(run_id, "running")
 
     # Live progress across the whole ensemble. The models now run in parallel,
     # so each reports its own cumulative completed count and we sum the latest
@@ -486,14 +505,20 @@ def _run_inner(
         try:
             model_dir = output_base / spec.slug
             model_dir.mkdir(parents=True, exist_ok=True)
-            copy_label = None if is_smoke else spec.label
-            ai_survey_id = _convert_survey(
-                original_survey_id, base_url, qualtrics_token, copy_label
-            )
-            _register_copy(spec.slug, spec.label, ai_survey_id)
+            if qsf_parsed is not None:
+                # Local engine: no Qualtrics copy, no cleanup, no token.
+                from qsf_engine import LocalSessionEngine
+                qualtrics = LocalSessionEngine(qsf_parsed)
+                survey = qsf_parsed.definition
+            else:
+                copy_label = None if is_smoke else spec.label
+                ai_survey_id = _convert_survey(
+                    original_survey_id, base_url, qualtrics_token, copy_label
+                )
+                _register_copy(spec.slug, spec.label, ai_survey_id)
 
-            qualtrics = QualtricsClient(base_url, qualtrics_token)
-            survey = qualtrics.get_survey_definition(ai_survey_id)
+                qualtrics = QualtricsClient(base_url, qualtrics_token)
+                survey = qualtrics.get_survey_definition(ai_survey_id)
             survey_name = getattr(survey, "name", None)
             _save_survey_meta(model_dir, survey)
             client = build_client(spec, temperature=0.5)
