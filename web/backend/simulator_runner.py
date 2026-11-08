@@ -573,11 +573,22 @@ def _run_inner(
         branch_counts = Counter(r.branch_description or "unknown" for r in completed)
 
         model_error = None
+        user_facing_error = None
         if failed:
             samples = [f"[{r.persona.name}] {r.error}"
                        for r in runs if not r.completed and r.error][:3]
             model_error = f"{failed}/{len(runs)} sessions failed. " + (
                 " | ".join(samples) if samples else "no error detail captured")
+            # Provider/billing detail (e.g. "OpenRouter out of credits — top
+            # up") is for the admin email only; the user-reachable results
+            # payload gets a clean message that doesn't leak internals.
+            user_facing_error = model_error
+            if "out of credits" in model_error.lower():
+                user_facing_error = (
+                    f"{failed}/{len(runs)} sessions hit a temporary capacity "
+                    "issue on our side. Email hello@doppelgangerlabs.com for a "
+                    "free re-run of this model."
+                )
 
         try:
             from results import build_results
@@ -593,7 +604,7 @@ def _run_inner(
         return {
             "label": spec.label, "slug": spec.slug, "model": spec.model,
             "ai_survey_id": ai_survey_id, "n_completed": len(completed), "failed": failed,
-            "results_error": model_error, "notify_error": model_error,
+            "results_error": user_facing_error, "notify_error": model_error,
             "results": per_model_results,
             "branch_counts": dict(branch_counts) if completed else {},
             "survey_name": survey_name,
