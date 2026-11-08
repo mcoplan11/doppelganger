@@ -27,6 +27,10 @@ class User(Base):
     # Saved Qualtrics credentials — auto-populated from the most recent run
     qualtrics_token_enc = Column(Text)
     qualtrics_datacenter = Column(String)
+    # Signup attribution: self-reported source (dropdown on dashboard) and the
+    # first-touch referrer/UTM blob captured client-side at signup.
+    heard_from = Column(String)
+    attribution_json = Column(Text)
 
     credits = relationship("CreditBalance", back_populates="user", uselist=False)
     purchases = relationship("Purchase", back_populates="user")
@@ -141,6 +145,8 @@ def create_tables():
         "ALTER TABLE runs ADD COLUMN mode VARCHAR DEFAULT 'qualtrics'",
         "ALTER TABLE runs ADD COLUMN qsf_json TEXT",
         "ALTER TABLE runs ADD COLUMN credit_cost INTEGER",
+        "ALTER TABLE users ADD COLUMN heard_from VARCHAR",
+        "ALTER TABLE users ADD COLUMN attribution_json TEXT",
         "CREATE UNIQUE INDEX IF NOT EXISTS ix_purchases_paypal_order_id "
         "ON purchases (paypal_order_id)",
     ]

@@ -19,7 +19,9 @@ export default function Dashboard() {
 function DashboardInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [user, setUser] = useState<{ email: string; credits: number } | null>(null);
+  const [user, setUser] = useState<{ email: string; credits: number; heard_from?: string | null } | null>(null);
+  const [heardFrom, setHeardFrom] = useState("");
+  const [heardFromDone, setHeardFromDone] = useState(false);
   const [runs, setRuns] = useState<Run[]>([]);
   const [packs, setPacks] = useState<{ id: string; credits: number; price_cents: number; label: string }[]>([]);
   const [checkingOut, setCheckingOut] = useState<string | null>(null);
@@ -86,6 +88,47 @@ function DashboardInner() {
         {purchased && (
           <div className="bg-green-900/40 border border-green-700 rounded-xl px-5 py-4 mb-6 text-green-300">
             ✓ Credits added to your account!
+          </div>
+        )}
+
+        {/* One-time attribution prompt — hidden once answered or dismissed */}
+        {!user.heard_from && !heardFromDone && (
+          <div className="bg-gray-900 border border-gray-800 rounded-xl px-5 py-4 mb-6 flex flex-col sm:flex-row sm:items-center gap-3">
+            <span className="text-gray-300 text-sm flex-1">How did you hear about Doppelganger?</span>
+            <select
+              value={heardFrom}
+              onChange={(e) => setHeardFrom(e.target.value)}
+              className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm text-white"
+            >
+              <option value="">Select…</option>
+              <option value="google_search">Google search</option>
+              <option value="chatgpt_ai">ChatGPT or another AI tool</option>
+              <option value="colleague">A colleague or friend</option>
+              <option value="social_media">Social media</option>
+              <option value="conference_listserv">Conference or mailing list</option>
+              <option value="other">Other</option>
+            </select>
+            <div className="flex gap-2">
+              <button
+                disabled={!heardFrom}
+                onClick={() => {
+                  api.setHeardFrom(heardFrom).catch(() => {});
+                  setHeardFromDone(true);
+                }}
+                className="bg-blue-600 hover:bg-blue-500 disabled:opacity-40 text-white text-sm font-medium px-4 py-2 rounded-lg"
+              >
+                Save
+              </button>
+              <button
+                onClick={() => {
+                  api.setHeardFrom("dismissed").catch(() => {});
+                  setHeardFromDone(true);
+                }}
+                className="text-gray-500 hover:text-gray-300 text-sm px-2"
+              >
+                ✕
+              </button>
+            </div>
           </div>
         )}
 

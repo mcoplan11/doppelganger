@@ -15,12 +15,35 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
 
 export const api = {
   // Auth
-  requestMagicLink: (email: string) =>
-    request("/auth/request", { method: "POST", body: JSON.stringify({ email }) }),
+  requestMagicLink: (email: string) => {
+    // Attach first-touch attribution (captured in AttributionCapture) so a
+    // brand-new account records how the visitor found us. Best-effort.
+    let attribution: Record<string, string> | undefined;
+    try {
+      const raw = typeof window !== "undefined" && localStorage.getItem("dg_attribution");
+      if (raw) attribution = JSON.parse(raw);
+    } catch {
+      /* ignore */
+    }
+    return request("/auth/request", {
+      method: "POST",
+      body: JSON.stringify({ email, attribution }),
+    });
+  },
   logout: () => request("/auth/logout", { method: "POST" }),
 
   // Me
-  me: () => request<{ id: number; email: string; credits: number; qualtrics_token: string | null; qualtrics_datacenter: string | null }>("/me"),
+  me: () =>
+    request<{
+      id: number;
+      email: string;
+      credits: number;
+      qualtrics_token: string | null;
+      qualtrics_datacenter: string | null;
+      heard_from: string | null;
+    }>("/me"),
+  setHeardFrom: (value: string) =>
+    request("/me/heard-from", { method: "POST", body: JSON.stringify({ value }) }),
 
   // Credits
   packs: () =>

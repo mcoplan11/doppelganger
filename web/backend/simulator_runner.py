@@ -10,6 +10,7 @@ import itertools
 import json
 import sys
 import threading
+import time
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
@@ -313,6 +314,34 @@ def _save_survey_meta(output_dir: Path, survey) -> None:
     )
 
 
+# Throttle for the low-credit admin alert: at most one email per process per
+# 24h, so a busy day near the threshold doesn't flood the inbox. Process-local
+# is fine — a redeploy resetting the clock just means one extra reminder.
+_last_credit_alert: float = 0.0
+
+
+def _maybe_alert_low_credits(balance: float, run_id: int) -> None:
+    global _last_credit_alert
+    now = time.time()
+    if now - _last_credit_alert < 24 * 3600:
+        return
+    _last_credit_alert = now
+    try:
+        from email_client import ADMIN_EMAIL, _send
+        _send(
+            ADMIN_EMAIL,
+            f"⚠️ OpenRouter credits low: ${balance:.2f}",
+            f"<p>OpenRouter balance is <b>${balance:.2f}</b> (checked at the start "
+            f"of run #{run_id}).</p>"
+            "<p>Below ~$0, Model B/C sessions will start failing (see run #81). "
+            "Top up at <a href='https://openrouter.ai/settings/credits'>"
+            "openrouter.ai/settings/credits</a> or confirm auto-top-up is active.</p>",
+        )
+        print(f"[run {run_id}] low-credit alert email sent (${balance:.2f})", flush=True)
+    except Exception as e:
+        print(f"[run {run_id}] low-credit alert failed (non-fatal): {e}", flush=True)
+
+
 def run_simulation(run_id: int) -> None:
     """Entry point called as a FastAPI background task."""
     db = _db()
@@ -460,6 +489,8 @@ def _run_inner(
             level = "⚠️ LOW — top up at openrouter.ai" if balance < 5 else "ok"
             print(f"[run {run_id}] OpenRouter credits remaining: "
                   f"${balance:.2f} ({level})", flush=True)
+            if balance < 5:
+                _maybe_alert_low_credits(balance, run_id)
 
     persona_pool = list(itertools.islice(itertools.cycle(DEFAULT_PERSONAS), n_participants))
     output_base = Path(SIMULATOR_ROOT) / "responses" / f"web_run_{run_id}"

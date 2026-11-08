@@ -203,6 +203,9 @@ async def _reaper_loop() -> None:
 
 class MagicLinkRequest(BaseModel):
     email: EmailStr
+    # First-touch attribution captured client-side (referrer, UTM params,
+    # landing path). Stored once at account creation, never overwritten.
+    attribution: dict | None = None
 
 
 @app.post("/auth/request")
@@ -225,6 +228,11 @@ def request_magic_link(body: MagicLinkRequest, request: Request, db: Session = D
     user = db.query(User).filter(User.email == body.email).first()
     if not user:
         user = User(email=body.email)
+        if body.attribution:
+            try:
+                user.attribution_json = json.dumps(body.attribution)[:2000]
+            except (TypeError, ValueError):
+                pass
         db.add(user)
         db.flush()
         bal = CreditBalance(user_id=user.id, balance=SIGNUP_CREDITS)
@@ -296,7 +304,25 @@ def get_me(
         "created_at": user.created_at,
         "qualtrics_datacenter": user.qualtrics_datacenter,
         "qualtrics_token": decrypt(user.qualtrics_token_enc) if user.qualtrics_token_enc else None,
+        "heard_from": user.heard_from,
     }
+
+
+class HeardFromRequest(BaseModel):
+    value: str
+
+
+@app.post("/me/heard-from")
+def set_heard_from(
+    body: HeardFromRequest,
+    user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    """Save the self-reported 'how did you hear about us' answer (or
+    'dismissed' when the user closes the prompt without answering)."""
+    user.heard_from = body.value.strip()[:100] or None
+    db.commit()
+    return {"ok": True}
 
 
 # ── Credits / Payments ───────────────────────────────────────────────────────
