@@ -657,6 +657,39 @@ def _run_inner(
     if credits_charged:
         _deduct_credits(user_id, credits_charged)
 
+    # Persist respondent-level rows NOW, while the session files still exist.
+    # Railway's disk is ephemeral: any redeploy wipes it, and the lazy cache in
+    # main._respondent_rows only materialized on first view — run #81's rows
+    # were lost that way. Same row shape as main._respondent_rows.
+    responses_json_str: str | None = None
+    if total_completed > 0:
+        try:
+            slug_to_label = {spec.slug: spec.label for spec in roster}
+            columns: list[str] = []
+            rows: list[dict] = []
+            for jf in sorted(output_base.glob("*/*_completed.json")):
+                try:
+                    d = json.loads(jf.read_text())
+                except Exception:
+                    continue
+                row = {
+                    "model": slug_to_label.get(jf.parent.name, jf.parent.name),
+                    "persona": d.get("persona"),
+                    "branch": d.get("branch_description"),
+                    **(d.get("embedded_data") or {}),
+                    **{k: (v if not isinstance(v, (dict, list)) else json.dumps(v))
+                       for k, v in (d.get("answers") or {}).items()},
+                }
+                for key in row:
+                    if key not in columns:
+                        columns.append(key)
+                rows.append(row)
+            if rows:
+                responses_json_str = json.dumps({"columns": columns, "rows": rows})
+        except Exception as e:
+            print(f"[run {run_id}] respondent-row persistence failed (non-fatal): {e}",
+                  flush=True)
+
     result_index_path = str(output_base / "index.json")
     with open(result_index_path, "w") as f:
         json.dump({
@@ -718,6 +751,7 @@ def _run_inner(
         completed_at=datetime.now(timezone.utc),
         error=error_msg,
         results_json=results_json_str,
+        responses_json=responses_json_str,
     )
 
     from email_client import send_run_notification
