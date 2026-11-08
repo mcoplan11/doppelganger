@@ -51,6 +51,166 @@ function Ext({ href, children }: { href: string; children: ReactNode }) {
 
 export const POSTS: Post[] = [
   {
+    slug: "synthetic-respondent-tools",
+    title: "Synthetic respondent tools in 2026: an honest comparison",
+    description:
+      "Synthetic Users, Evidenza, Yabble, Fairgen, and Doppelganger compared: what each tool actually does, which runs your real survey instrument, and when you shouldn't use any of them.",
+    date: "2026-11-08",
+    readMinutes: 7,
+    Body: () => (
+      <>
+        <P>
+          &ldquo;Synthetic respondents&rdquo; has become an umbrella label for at least three
+          genuinely different products: AI personas you interview in a chat window, statistical
+          boosts that stretch a real human sample, and simulated panels that answer questions you
+          describe to them. They get compared as if they were interchangeable; they are not. Here
+          is what the major tools actually do, where each is strong, and the one question that
+          separates them for anyone running a real study.
+        </P>
+
+        <H2>The question that sorts the category</H2>
+        <P>
+          <strong>Does the tool run your actual survey instrument, or a description of it?</strong>{" "}
+          Most synthetic-respondent platforms have you describe your study, paste in questions, or
+          chat with personas. That's useful for early discovery — but your experiment isn&apos;t a
+          description. It&apos;s a specific Qualtrics survey with a randomizer, branching, display
+          logic, counterbalancing, and exact wording. If the simulation doesn&apos;t execute that
+          instrument, it can&apos;t tell you whether <em>the study you&apos;re about to pay to
+          field</em> works: whether the manipulation moves anything, whether the logic routes
+          correctly, whether the wording survives contact with a reader.
+        </P>
+
+        <H2>The tools, honestly</H2>
+        <Ul>
+          <li>
+            <strong><Ext href="https://www.syntheticusers.com/">Synthetic Users</Ext></strong> —
+            AI personas (with OCEAN personality profiles) you interview in a conversational
+            format. Built for qualitative UX discovery and product research: exploring reactions,
+            generating hypotheses, stress-testing concepts in an afternoon. It is an interview
+            tool, not a survey engine — there&apos;s no randomized instrument being executed.
+          </li>
+          <li>
+            <strong><Ext href="https://www.evidenza.ai/">Evidenza</Ext></strong> — enterprise
+            synthetic-audience platform aimed at B2B and hard-to-reach buyers (their customer list
+            runs toward BlackRock and Microsoft). Strong for market sizing, messaging, and
+            audiences you can&apos;t practically recruit. Enterprise sales process and pricing to
+            match.
+          </li>
+          <li>
+            <strong><Ext href="https://www.yabble.com/">Yabble</Ext></strong> (now part of YouGov)
+            — &ldquo;Virtual Audiences&rdquo; blending LLMs with YouGov&apos;s behavioral data,
+            sold as a subscription (reported from around $800/month). Consumer-insights oriented:
+            ask questions of a synthetic audience, get directional answers fast.
+          </li>
+          <li>
+            <strong><Ext href="https://www.fairgen.ai/">Fairgen</Ext></strong> — a different
+            animal: it doesn&apos;t simulate respondents at all. It learns the structure of a real
+            fielded survey and statistically boosts under-sampled segments, roughly doubling a
+            subgroup&apos;s effective sample. The most statistically conservative option here —
+            and only applicable after you already have human data.
+          </li>
+          <li>
+            <strong>Doppelganger</strong> (this site) — runs AI respondents through your{" "}
+            <em>actual Qualtrics survey</em>: upload the .qsf or connect the API, and your own
+            randomizer assigns conditions, your branching fires, your exact wording and image
+            stimuli are what respondents see. Built for experimenters who want a pretest before
+            paying for participants, priced per respondent (about $0.04) with no subscription or
+            sales call.
+          </li>
+        </Ul>
+
+        <div className="overflow-hidden rounded-lg border border-slate-200 mb-6">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="bg-slate-50 text-slate-600">
+                <th className="text-left font-semibold px-4 py-2">Tool</th>
+                <th className="text-left font-semibold px-4 py-2">Built for</th>
+                <th className="text-left font-semibold px-4 py-2">Runs your real instrument?</th>
+                <th className="text-left font-semibold px-4 py-2">Pricing model</th>
+              </tr>
+            </thead>
+            <tbody className="text-slate-700">
+              <tr className="border-t border-slate-100">
+                <td className="px-4 py-2 font-medium">Synthetic Users</td>
+                <td className="px-4 py-2">Qualitative UX interviews</td>
+                <td className="px-4 py-2 text-slate-400">No — conversational personas</td>
+                <td className="px-4 py-2">Subscription</td>
+              </tr>
+              <tr className="border-t border-slate-100">
+                <td className="px-4 py-2 font-medium">Evidenza</td>
+                <td className="px-4 py-2">Enterprise B2B audiences</td>
+                <td className="px-4 py-2 text-slate-400">No — described studies</td>
+                <td className="px-4 py-2">Enterprise contract</td>
+              </tr>
+              <tr className="border-t border-slate-100">
+                <td className="px-4 py-2 font-medium">Yabble / YouGov</td>
+                <td className="px-4 py-2">Consumer insights Q&amp;A</td>
+                <td className="px-4 py-2 text-slate-400">No — virtual audience queries</td>
+                <td className="px-4 py-2">Subscription (~$800/mo reported)</td>
+              </tr>
+              <tr className="border-t border-slate-100">
+                <td className="px-4 py-2 font-medium">Fairgen</td>
+                <td className="px-4 py-2">Boosting real human samples</td>
+                <td className="px-4 py-2">N/A — augments fielded data</td>
+                <td className="px-4 py-2">Enterprise contract</td>
+              </tr>
+              <tr className="border-t border-slate-100">
+                <td className="px-4 py-2 font-medium">Doppelganger</td>
+                <td className="px-4 py-2">Pretesting survey experiments</td>
+                <td className="px-4 py-2 text-green-700 font-semibold">Yes — your Qualtrics survey, real randomizer</td>
+                <td className="px-4 py-2">Per respondent (~$0.04), free trial</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <H2>What about validity?</H2>
+        <P>
+          Every vendor on this list (us included) should be pressed on the same question: where is
+          the published validation? Independent aggregations of synthetic-vs-human comparisons are
+          sobering — one{" "}
+          <Ext href="https://insightinnovationventures.substack.com/p/synthetic-sample-is-not-the-market">
+            review of 285 published comparisons
+          </Ext>{" "}
+          found synthetic and human samples agreeing only about a quarter of the time on point
+          estimates. Our own position is that synthetic respondents are a{" "}
+          <em>pretest, not a replacement</em>, and our evidence is public: on the Twin-2K-500
+          battery of 17 classic behavioral experiments, our ensemble{" "}
+          <Link href="/research" className="text-blue-700 hover:text-blue-800 underline underline-offset-2">
+            reproduced 15.5 of 17 known human effects (~91%)
+          </Link>
+          {" "}— including a{" "}
+          <Link href="/biases" className="text-blue-700 hover:text-blue-800 underline underline-offset-2">
+            bias-by-bias breakdown
+          </Link>{" "}
+          of the two failures. Directional effects in classic paradigms reproduce well; precise
+          point estimates and novel effects are exactly where you should trust any synthetic tool
+          least.
+        </P>
+
+        <H2>When you shouldn&apos;t use any of them</H2>
+        <Ul>
+          <li>Your final, confirmatory sample. Synthetic data doesn&apos;t go in the paper.</li>
+          <li>
+            Effects that depend on inattention or masked information — AI respondents are too
+            rational for those (ours included; see{" "}
+            <Link href="/biases/dominance-neglect" className="text-blue-700 hover:text-blue-800 underline underline-offset-2">
+              dominance neglect
+            </Link>
+            ).
+          </li>
+          <li>Precise prevalence estimates (&ldquo;what % of the population believes X&rdquo;).</li>
+        </Ul>
+        <P>
+          For everything upstream of that — catching broken logic, dead manipulations, confusing
+          wording, and getting an early directional read before you spend your participant budget —
+          a synthetic pretest is the best new tool in years. Pick the one that tests the study
+          you&apos;re actually going to run.
+        </P>
+      </>
+    ),
+  },
+  {
     slug: "qualtrics-generate-test-responses",
     title: "How to generate test responses in Qualtrics — and what they can't catch",
     description:
@@ -413,7 +573,15 @@ export const POSTS: Post[] = [
         </P>
         <P>
           That&apos;s the philosophy Doppelganger is built on: run your actual Qualtrics survey
-          through AI respondents first, then spend your participant budget where it counts.
+          through AI respondents first, then spend your participant budget where it counts. If
+          you&apos;re evaluating the category, we also wrote an{" "}
+          <Link
+            href="/blog/synthetic-respondent-tools"
+            className="text-blue-700 hover:text-blue-800 underline underline-offset-2"
+          >
+            honest comparison of the major synthetic respondent tools
+          </Link>
+          , including where each one (us included) shouldn&apos;t be trusted.
         </P>
       </>
     ),
