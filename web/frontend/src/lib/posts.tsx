@@ -52,20 +52,80 @@ function Ext({ href, children }: { href: string; children: ReactNode }) {
 export const POSTS: Post[] = [
   {
     slug: "qualtrics-generate-test-responses",
-    title: "Qualtrics test responses: what the built-in generator does — and what it can't catch",
+    title: "How to generate test responses in Qualtrics — and what they can't catch",
     description:
-      "Qualtrics can fill your survey with random test responses in one click. Here's what that's good for, what it misses, and when you need respondents that actually read the questions.",
+      "Step-by-step: how to generate test responses in Qualtrics, what random test data is good for, what it misses, and when you need respondents that actually read the questions.",
     date: "2026-11-02",
     readMinutes: 5,
     Body: () => (
       <>
         <P>
-          Qualtrics has a built-in way to test a survey before you field it: open your project, go
-          to <strong>Tools &rarr; Review &rarr; Generate test responses</strong>, choose a number,
-          and Qualtrics fills your survey with automated responses. It&apos;s free, instant, and
-          every researcher should run it at least once before launching. But it&apos;s important to
-          understand what those test responses are — and what they aren&apos;t.
+          Qualtrics has a built-in way to fill your survey with automated test responses before you
+          field it. It&apos;s free, instant, and every researcher should run it at least once before
+          launching. Here&apos;s how to do it — and what those responses can and can&apos;t tell you.
         </P>
+
+        <H2>How to generate test responses in Qualtrics</H2>
+        <ol className="list-decimal pl-6 space-y-2 mb-4 text-slate-700 leading-relaxed">
+          <li>Open your survey project in Qualtrics.</li>
+          <li>Click <strong>Tools</strong> in the survey editor toolbar.</li>
+          <li>Select <strong>Review</strong>, then <strong>Generate test responses</strong>.</li>
+          <li>Choose how many responses to generate and confirm.</li>
+          <li>
+            Open <strong>Data &amp; Analysis</strong> to inspect the generated data. When
+            you&apos;re done, filter and delete the test responses (they&apos;re flagged as survey
+            previews) before collecting real data.
+          </li>
+        </ol>
+        <P>
+          One important thing to know before you rely on the output: these test responses are{" "}
+          <strong>random clicks</strong>, not simulated participants. That makes them great for some
+          checks and useless for others.
+        </P>
+
+        <div className="overflow-hidden rounded-lg border border-slate-200 mb-6">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="bg-slate-50 text-slate-600">
+                <th className="text-left font-semibold px-4 py-2"></th>
+                <th className="text-left font-semibold px-4 py-2">Qualtrics test responses</th>
+                <th className="text-left font-semibold px-4 py-2">AI respondents</th>
+              </tr>
+            </thead>
+            <tbody className="text-slate-700">
+              <tr className="border-t border-slate-100">
+                <td className="px-4 py-2 font-medium">How answers are chosen</td>
+                <td className="px-4 py-2">Random clicks</td>
+                <td className="px-4 py-2">Questions are read and answered in persona</td>
+              </tr>
+              <tr className="border-t border-slate-100">
+                <td className="px-4 py-2 font-medium">Data pipeline &amp; variable check</td>
+                <td className="px-4 py-2 text-green-700 font-semibold">Yes</td>
+                <td className="px-4 py-2 text-green-700 font-semibold">Yes</td>
+              </tr>
+              <tr className="border-t border-slate-100">
+                <td className="px-4 py-2 font-medium">Detects a dead manipulation</td>
+                <td className="px-4 py-2 text-slate-400">No — conditions answer identically</td>
+                <td className="px-4 py-2 text-green-700 font-semibold">Yes</td>
+              </tr>
+              <tr className="border-t border-slate-100">
+                <td className="px-4 py-2 font-medium">Flags confusing wording</td>
+                <td className="px-4 py-2 text-slate-400">No</td>
+                <td className="px-4 py-2 text-green-700 font-semibold">Yes</td>
+              </tr>
+              <tr className="border-t border-slate-100">
+                <td className="px-4 py-2 font-medium">Early effect-direction signal</td>
+                <td className="px-4 py-2 text-slate-400">No — pure noise</td>
+                <td className="px-4 py-2 text-green-700 font-semibold">Yes</td>
+              </tr>
+              <tr className="border-t border-slate-100">
+                <td className="px-4 py-2 font-medium">Cost</td>
+                <td className="px-4 py-2">Free</td>
+                <td className="px-4 py-2">A few dollars</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <H2>What the built-in generator is good for</H2>
         <P>
@@ -122,6 +182,17 @@ export const POSTS: Post[] = [
           , an ensemble of AI respondents reproduced about 91% of known human effects — far from
           perfect, but a dramatically stronger pretest signal than random clicks.
         </P>
+        <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 my-6">
+          <p className="text-slate-800 leading-relaxed text-[15px]">
+            <strong>Try it on your own survey:</strong> export your .qsf (Tools &rarr;
+            Import/Export &rarr; Export Survey) and{" "}
+            <Link href="/" className="text-blue-700 hover:text-blue-800 underline underline-offset-2 font-medium">
+              upload it to Doppelganger
+            </Link>{" "}
+            — no API access needed, a free 3-respondent trial run, and your randomization and
+            branching run exactly as designed.
+          </p>
+        </div>
 
         <H2>A sensible testing ladder</H2>
         <Ul>
