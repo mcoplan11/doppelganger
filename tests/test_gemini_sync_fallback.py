@@ -94,3 +94,17 @@ def test_calls_run_concurrently(monkeypatch):
     assert len(out) == 8
     assert all(v == {"ans": "ok"} for v in out.values())
     assert peak > 1, f"expected concurrent execution, peak inflight was {peak}"
+
+
+def test_openrouter_credit_error_classification():
+    """402-credit errors must be classified (fail fast with a clear message),
+    everything else must stay retryable/swallowable. Guards the fix for run
+    #81, where 200 sessions died as 'batch retry still empty' because glm's
+    32k default max_tokens pre-auth 402'd against a low OpenRouter balance."""
+    from openrouter_client import _is_credit_error
+
+    assert _is_credit_error(
+        "Error code: 402 - This request requires more credits, or fewer max_tokens.")
+    assert _is_credit_error("402: can only afford 29840 tokens")
+    assert not _is_credit_error("Error code: 429 - rate limited")
+    assert not _is_credit_error("Error code: 502 - bad gateway")

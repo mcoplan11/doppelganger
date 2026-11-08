@@ -447,6 +447,18 @@ def _run_inner(
     roster = roster_for(is_smoke, has_images)
     n_models = len(roster)
 
+    # Low OpenRouter credits killed run #81 (every Model B request 402'd).
+    # Log the balance up front so a doomed run is diagnosable from the first
+    # lines of its log; never block on it (the check is best-effort).
+    if any(spec.provider == "openrouter" for spec in roster):
+        import os
+        from openrouter_client import remaining_credits
+        balance = remaining_credits(os.getenv("OPENROUTER_API_KEY", ""))
+        if balance is not None:
+            level = "⚠️ LOW — top up at openrouter.ai" if balance < 5 else "ok"
+            print(f"[run {run_id}] OpenRouter credits remaining: "
+                  f"${balance:.2f} ({level})", flush=True)
+
     persona_pool = list(itertools.islice(itertools.cycle(DEFAULT_PERSONAS), n_participants))
     output_base = Path(SIMULATOR_ROOT) / "responses" / f"web_run_{run_id}"
     output_base.mkdir(parents=True, exist_ok=True)

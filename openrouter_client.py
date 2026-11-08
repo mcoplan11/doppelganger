@@ -31,6 +31,25 @@ from stimuli import image_data_url
 
 _BASE_URL = "https://openrouter.ai/api/v1"
 
+# Answers are small JSON objects; reasoning models burn some output tokens
+# thinking first. Without an explicit cap OpenRouter pre-authorizes the
+# model's FULL output ceiling (32k+ for glm-4.6v), so a low-but-positive
+# credit balance 402s every request. 8k is ample and keeps pre-auth honest.
+_MAX_COMPLETION_TOKENS = 8192
+
+
+class OpenRouterCreditsError(RuntimeError):
+    """OpenRouter account balance can't cover the request (HTTP 402).
+
+    Deliberately NOT swallowed into an empty answer: every subsequent request
+    will fail the same way, so sessions should fail fast with this message
+    instead of burning retries and reporting 'batch retry still empty'.
+    """
+
+
+def _is_credit_error(msg: str) -> bool:
+    return "402" in msg and ("credits" in msg.lower() or "afford" in msg.lower())
+
 
 class OpenRouterAnswerClient:
     def __init__(
@@ -109,6 +128,8 @@ class OpenRouterAnswerClient:
             )
             try:
                 return inp.key, self._complete(prompt, schema, image_urls, labels)
+            except OpenRouterCreditsError:
+                raise  # account-level, not question-level — fail the batch loudly
             except Exception as exc:
                 print(f"  [openrouter] {inp.key} failed: {exc}", flush=True)
                 return inp.key, None
@@ -143,9 +164,16 @@ class OpenRouterAnswerClient:
                     model=self._model,
                     messages=[{"role": "user", "content": content}],
                     temperature=self._temperature,
+                    max_tokens=_MAX_COMPLETION_TOKENS,
                     **kwargs,
                 )
             except Exception as exc:
+                if _is_credit_error(str(exc)):
+                    raise OpenRouterCreditsError(
+                        "OpenRouter account is out of credits — top up at "
+                        "openrouter.ai to restore Model B/C. Original error: "
+                        f"{str(exc)[:200]}"
+                    ) from exc
                 wait = self._retry_wait(exc, attempt)
                 if wait is None:
                     raise
@@ -173,6 +201,26 @@ class OpenRouterAnswerClient:
         if m:
             return int(float(m.group(1))) + 2
         return min(120, 30 * 2 ** attempt)
+
+
+def remaining_credits(api_key: str) -> float | None:
+    """Best-effort remaining balance in dollars (purchased − used).
+    Returns None on any failure — callers only use this for logging/warnings,
+    never to block a run."""
+    import httpx
+    import truststore
+
+    try:
+        ssl_ctx = truststore.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+        resp = httpx.get(
+            f"{_BASE_URL}/credits",
+            headers={"Authorization": f"Bearer {api_key}"},
+            verify=ssl_ctx, timeout=10.0,
+        )
+        data = resp.json()["data"]
+        return float(data["total_credits"]) - float(data["total_usage"])
+    except Exception:
+        return None
 
 
 def _build_message_content(
