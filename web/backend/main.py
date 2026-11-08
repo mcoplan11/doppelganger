@@ -93,7 +93,11 @@ _BOOT_TIME = datetime.now(timezone.utc).isoformat()
 
 # Free credits granted on first sign-up — enough for a real first study, so new
 # users can experience the full product before paying.
-SIGNUP_CREDITS = 200
+SIGNUP_CREDITS = 100
+
+# Image surveys run the vision model roster, which costs meaningfully more
+# per response than the text roster — priced at 2 credits per respondent.
+IMAGE_CREDIT_MULTIPLIER = 2
 
 # Best-effort abuse throttle for the unauthenticated magic-link endpoint.
 # Tuned to favor real users: the per-recipient limit is what stops email
@@ -494,16 +498,34 @@ def create_run(
     if n < 1 or n > 1000:
         raise HTTPException(status_code=400, detail="n_participants must be 1–1000.")
 
+    _validate_qualtrics_credentials(body.qualtrics_token, body.qualtrics_datacenter)
+
+    # Image surveys run the (pricier) vision roster — 2 credits per respondent.
+    # Detection probes the survey definition; on probe failure fall back to 1×
+    # (the run itself will surface a real access problem loudly at conversion).
+    multiplier = 1
+    if not body.smoke_test:
+        try:
+            from qualtrics_client import QualtricsClient
+            qc = QualtricsClient(
+                f"https://{body.qualtrics_datacenter}.qualtrics.com/API/v3",
+                body.qualtrics_token,
+            )
+            if qc.get_survey_definition(survey_id).has_image_stimuli:
+                multiplier = IMAGE_CREDIT_MULTIPLIER
+        except Exception:
+            pass
+    cost = 0 if body.smoke_test else n * multiplier
+
     # Check credits (smoke tests are free)
     if not body.smoke_test:
         bal = db.query(CreditBalance).filter(CreditBalance.user_id == user.id).first()
-        if not bal or bal.balance < n:
+        if not bal or bal.balance < cost:
+            suffix = " (this survey contains images — 2 credits per respondent)" if multiplier > 1 else ""
             raise HTTPException(
                 status_code=402,
-                detail=f"Not enough credits. You have {bal.balance if bal else 0}, need {n}.",
+                detail=f"Not enough credits. You have {bal.balance if bal else 0}, need {cost}{suffix}.",
             )
-
-    _validate_qualtrics_credentials(body.qualtrics_token, body.qualtrics_datacenter)
 
     token_enc = encrypt(body.qualtrics_token)
 
@@ -520,6 +542,7 @@ def create_run(
         is_smoke_test=body.smoke_test,
         platform=body.platform,
         status="converting",
+        credit_cost=cost,
     )
     db.add(run)
     db.commit()
@@ -576,12 +599,16 @@ def create_qsf_run(
     if n < 1 or n > 1000:
         raise HTTPException(status_code=400, detail="n_participants must be 1–1000.")
 
+    multiplier = IMAGE_CREDIT_MULTIPLIER if parsed.definition.has_image_stimuli else 1
+    cost = 0 if body.smoke_test else n * multiplier
+
     if not body.smoke_test:
         bal = db.query(CreditBalance).filter(CreditBalance.user_id == user.id).first()
-        if not bal or bal.balance < n:
+        if not bal or bal.balance < cost:
+            suffix = " (this survey contains images — 2 credits per respondent)" if multiplier > 1 else ""
             raise HTTPException(
                 status_code=402,
-                detail=f"Not enough credits. You have {bal.balance if bal else 0}, need {n}.",
+                detail=f"Not enough credits. You have {bal.balance if bal else 0}, need {cost}{suffix}.",
             )
 
     run = Run(
@@ -595,6 +622,7 @@ def create_qsf_run(
         is_smoke_test=body.smoke_test,
         platform=body.platform,
         status="converting",
+        credit_cost=cost,
     )
     db.add(run)
     db.commit()

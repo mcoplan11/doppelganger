@@ -210,7 +210,7 @@ export default function NewRun() {
             </select>
           </Field>
 
-          <Field label="Number of participants" hint="Full run size. Credits deducted per completed participant.">
+          <Field label="Number of participants" hint="Full run size. 1 credit per participant for text surveys; 2 credits per participant if your survey contains images (image runs use vision-capable models).">
             <input
               type="number"
               min={1}

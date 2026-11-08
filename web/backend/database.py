@@ -83,6 +83,10 @@ class Run(Base):
     # "qsf" (uploaded .qsf run locally; results in dashboard/CSV only).
     mode = Column(String, default="qualtrics")
     qsf_json = Column(Text)  # the uploaded .qsf content, qsf-mode runs only
+    # Total credits quoted at creation (n_participants × multiplier; image
+    # surveys are 2×). Charged on completion. NULL on legacy rows → runner
+    # falls back to n_participants.
+    credit_cost = Column(Integer)
     platform = Column(String, default="prolific")  # prolific | mturk
 
     # run lifecycle: converting | smoke_test | awaiting_approval | running | done | failed
@@ -136,6 +140,7 @@ def create_tables():
         "ALTER TABLE runs ADD COLUMN responses_json TEXT",
         "ALTER TABLE runs ADD COLUMN mode VARCHAR DEFAULT 'qualtrics'",
         "ALTER TABLE runs ADD COLUMN qsf_json TEXT",
+        "ALTER TABLE runs ADD COLUMN credit_cost INTEGER",
         "CREATE UNIQUE INDEX IF NOT EXISTS ix_purchases_paypal_order_id "
         "ON purchases (paypal_order_id)",
     ]

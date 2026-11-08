@@ -325,6 +325,7 @@ def run_simulation(run_id: int) -> None:
         original_survey_id = run.original_survey_id
         mode = run.mode or "qualtrics"
         qsf_json = run.qsf_json
+        credit_cost = run.credit_cost
         qualtrics_datacenter = run.qualtrics_datacenter
         qualtrics_token = "" if mode == "qsf" else decrypt(run.qualtrics_token_enc)
         n_participants = run.n_participants
@@ -353,7 +354,7 @@ def run_simulation(run_id: int) -> None:
         _run_inner(
             run_id, user_id, user_email, original_survey_id,
             qualtrics_datacenter, qualtrics_token, n_participants, is_smoke,
-            started_at, mode=mode, qsf_json=qsf_json,
+            started_at, mode=mode, qsf_json=qsf_json, credit_cost=credit_cost,
         )
     except Exception as exc:
         import traceback
@@ -401,6 +402,7 @@ def _run_inner(
     started_at: datetime,
     mode: str = "qualtrics",
     qsf_json: str | None = None,
+    credit_cost: int | None = None,
 ) -> None:
     """Run the survey through every model in the ensemble.
 
@@ -647,9 +649,11 @@ def _run_inner(
     total_completed = sum(m["n_completed"] for m in model_results)
     final_status = "done" if total_completed > 0 else "failed"
 
-    # Credits: one charge per persona for the whole ensemble run, regardless of
-    # how many models it fans out to (the 3× model cost is absorbed).
-    credits_charged = n_participants if (final_status == "done" and not is_smoke) else 0
+    # Credits: charge the cost quoted at run creation (n_participants ×
+    # multiplier; image surveys are 2×). Legacy rows created before the
+    # credit_cost column fall back to the old 1-per-participant pricing.
+    quoted = credit_cost if credit_cost is not None else n_participants
+    credits_charged = quoted if (final_status == "done" and not is_smoke) else 0
     if credits_charged:
         _deduct_credits(user_id, credits_charged)
 
