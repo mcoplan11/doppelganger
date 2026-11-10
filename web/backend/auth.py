@@ -84,4 +84,17 @@ def get_current_user(
     user = db.query(User).filter(User.id == user_id).first()
     if not user:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="User not found.")
+    # Activity tracking: bump last_active_at on authenticated traffic, but only
+    # when it's stale by >5 minutes — one write per active session window
+    # instead of one per request (the dashboard polls every 5s during runs).
+    now = datetime.now(timezone.utc)
+    last = user.last_active_at
+    if last is not None and last.tzinfo is None:
+        last = last.replace(tzinfo=timezone.utc)
+    if last is None or (now - last) > timedelta(minutes=5):
+        try:
+            user.last_active_at = now
+            db.commit()
+        except Exception:
+            db.rollback()  # never fail a request over activity bookkeeping
     return user

@@ -31,6 +31,9 @@ class User(Base):
     # first-touch referrer/UTM blob captured client-side at signup.
     heard_from = Column(String)
     attribution_json = Column(Text)
+    # Bumped on authenticated requests (throttled to ~5 min granularity in
+    # auth.get_current_user) — "when did this user last touch the product".
+    last_active_at = Column(DateTime)
 
     credits = relationship("CreditBalance", back_populates="user", uselist=False)
     purchases = relationship("Purchase", back_populates="user")
@@ -147,6 +150,7 @@ def create_tables():
         "ALTER TABLE runs ADD COLUMN credit_cost INTEGER",
         "ALTER TABLE users ADD COLUMN heard_from VARCHAR",
         "ALTER TABLE users ADD COLUMN attribution_json TEXT",
+        "ALTER TABLE users ADD COLUMN last_active_at TIMESTAMP",
         "CREATE UNIQUE INDEX IF NOT EXISTS ix_purchases_paypal_order_id "
         "ON purchases (paypal_order_id)",
     ]
